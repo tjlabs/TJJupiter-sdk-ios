@@ -5,10 +5,6 @@
 [![License](https://img.shields.io/cocoapods/l/TJJupiterSDK.svg?style=flat)](https://cocoapods.org/pods/TJJupiterSDK)
 [![Platform](https://img.shields.io/cocoapods/p/TJJupiterSDK.svg?style=flat)](https://cocoapods.org/pods/TJJupiterSDK)
 
-## Example
-
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
-
 ## Requirements
 
 ## Installation
@@ -22,7 +18,7 @@ pod 'TJJupiterSDK'
 
 ## Author
 
-tjlabs-dev, 92098727+tjlabs-dev@users.noreply.github.com
+tjlabs-dev, dev@tjlabscorp.com
 
 ## License
 
