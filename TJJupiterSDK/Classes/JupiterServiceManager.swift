@@ -63,7 +63,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
     }
     
     public func stopService(completion: @escaping (Bool, String) -> Void) {
-        serviceManager?.stopService(completion: { _, _ in})
+        serviceManager?.stopService(completion: completion)
     }
     
     public func setNaviDestination(dest: Point) {
