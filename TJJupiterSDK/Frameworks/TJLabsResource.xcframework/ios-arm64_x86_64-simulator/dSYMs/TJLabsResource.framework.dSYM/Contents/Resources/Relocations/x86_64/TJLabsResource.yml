@@ -1381,7 +1381,7 @@ relocations:
   - { offset: 0x7BF83, size: 0x8, addend: 0x0, symName: '_$s14TJLabsResource0aB7ManagerC10getLevelId06sectorF012buildingName05levelI0SiSgSi_S2StF', symObjAddr: 0x6600, symBinAddr: 0x334C0, symSize: 0x110 }
   - { offset: 0x7C122, size: 0x8, addend: 0x0, symName: '_$s14TJLabsResource0aB7ManagerC17getUnitsByLevelId05levelH0SayAA8UnitDataVGSgSi_tF', symObjAddr: 0x6770, symBinAddr: 0x33630, symSize: 0x90 }
   - { offset: 0x7C186, size: 0x8, addend: 0x0, symName: '_$s14TJLabsResource0aB7ManagerC18getLevelIdbyUnitId04unitH0SiSgSi_tF', symObjAddr: 0x6800, symBinAddr: 0x336C0, symSize: 0xA0 }
-  - { offset: 0x7C206, size: 0x8, addend: 0x0, symName: '_$s14TJLabsResource0aB7ManagerC18getAffineParamData8sectorIdAA14WGS84TransformVSgSi_tF', symObjAddr: 0x6990, symBinAddr: 0x33850, symSize: 0xE0 }
+  - { offset: 0x7C206, size: 0x8, addend: 0x0, symName: '_$s14TJLabsResource0aB7ManagerC17getWGS84Transform8sectorIdAA0eF0VSgSi_tF', symObjAddr: 0x6990, symBinAddr: 0x33850, symSize: 0xE0 }
   - { offset: 0x7C293, size: 0x8, addend: 0x0, symName: '_$s14TJLabsResource0aB7ManagerC22getCurrentSectorBundleAA0fG0VSgyF', symObjAddr: 0x6A70, symBinAddr: 0x33930, symSize: 0x60 }
   - { offset: 0x7C2D6, size: 0x8, addend: 0x0, symName: '_$s14TJLabsResource0aB7ManagerC11getSectorIdSiSgyF', symObjAddr: 0x6AD0, symBinAddr: 0x33990, symSize: 0xE0 }
   - { offset: 0x7C319, size: 0x8, addend: 0x0, symName: '_$s14TJLabsResource0aB7ManagerC13getSectorNameSSSgyF', symObjAddr: 0x6BB0, symBinAddr: 0x33A70, symSize: 0x120 }

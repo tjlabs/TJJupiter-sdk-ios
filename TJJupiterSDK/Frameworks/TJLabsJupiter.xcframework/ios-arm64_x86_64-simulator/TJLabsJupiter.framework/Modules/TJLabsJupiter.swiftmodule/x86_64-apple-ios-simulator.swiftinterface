@@ -428,6 +428,9 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   #if compiler(>=5.3) && $NonescapableTypes
   public func getDefaultPosition(sectorId: Swift.Int) -> TJLabsResource.DefaultPosition?
   #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getWgs84Transform(sectorId: Swift.Int) -> TJLabsResource.WGS84Transform?
+  #endif
 }
 @_hasMissingDesignatedInitializers public class JupiterNetworkConstants {
   public static func setServerURL(region: Swift.String)

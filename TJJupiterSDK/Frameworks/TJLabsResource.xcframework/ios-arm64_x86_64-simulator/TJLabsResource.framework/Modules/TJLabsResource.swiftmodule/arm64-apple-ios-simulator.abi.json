@@ -15147,8 +15147,8 @@
           },
           {
             "kind": "Function",
-            "name": "getAffineParamData",
-            "printedName": "getAffineParamData(sectorId:)",
+            "name": "getWGS84Transform",
+            "printedName": "getWGS84Transform(sectorId:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -15172,8 +15172,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:14TJLabsResource0aB7ManagerC18getAffineParamData8sectorIdAA14WGS84TransformVSgSi_tF",
-            "mangledName": "$s14TJLabsResource0aB7ManagerC18getAffineParamData8sectorIdAA14WGS84TransformVSgSi_tF",
+            "usr": "s:14TJLabsResource0aB7ManagerC17getWGS84Transform8sectorIdAA0eF0VSgSi_tF",
+            "mangledName": "$s14TJLabsResource0aB7ManagerC17getWGS84Transform8sectorIdAA0eF0VSgSi_tF",
             "moduleName": "TJLabsResource",
             "declAttributes": [
               "AccessControl"

@@ -440,7 +440,7 @@ public class TJLabsResourceManager {
   public func getBuildingLevelImageData() -> [Swift.String : UIKit.UIImage]
   public func getBuildingLevelWardsData() -> [Swift.String : [TJLabsResource.LevelWard]]
   #if compiler(>=5.3) && $NonescapableTypes
-  public func getAffineParamData(sectorId: Swift.Int) -> TJLabsResource.WGS84Transform?
+  public func getWGS84Transform(sectorId: Swift.Int) -> TJLabsResource.WGS84Transform?
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   public func getCurrentSectorBundle() -> TJLabsResource.SectorBundle?

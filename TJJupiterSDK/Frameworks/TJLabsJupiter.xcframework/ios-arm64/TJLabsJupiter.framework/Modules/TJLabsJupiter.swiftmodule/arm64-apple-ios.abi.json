@@ -17833,6 +17833,41 @@
               "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getWgs84Transform",
+            "printedName": "getWgs84Transform(sectorId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "TJLabsResource.WGS84Transform?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "WGS84Transform",
+                    "printedName": "TJLabsResource.WGS84Transform",
+                    "usr": "s:14TJLabsResource14WGS84TransformV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13TJLabsJupiter17NavigationManagerC17getWgs84Transform8sectorId0A8Resource05WGS84G0VSgSi_tF",
+            "mangledName": "$s13TJLabsJupiter17NavigationManagerC17getWgs84Transform8sectorId0A8Resource05WGS84G0VSgSi_tF",
+            "moduleName": "TJLabsJupiter",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
