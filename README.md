@@ -19,8 +19,6 @@ It delivers real-time indoor location results, navigation routing, and movement 
 - 🧭 Navigation routing (start / destination / waypoint)
 - 🔄 Real-time positioning result stream
 - 🏢 Indoor / Outdoor state detection
-- 🧪 Simulation & Mocking mode for testing
-- 🧩 Clean Wrapper API (independent from internal Jupiter engine)
 
 ---
 
