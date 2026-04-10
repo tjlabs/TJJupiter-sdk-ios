@@ -69,7 +69,10 @@ import TJJupiterSDK
 ```
 
 ### 2. Authentication
-
+- You must obtain a token to use the SDK.
+- The link below is a guide to the token issuance process.
+- https://www.notion.so/tjlabs/SDK-Authorization-33eaef6d5b728034856ddc23489588f0?source=copy_link
+  
 ```swift
 TJJupiterAuth.shared.auth(
     accessKey: "YOUR_ACCESS_KEY",
