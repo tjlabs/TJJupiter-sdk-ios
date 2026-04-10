@@ -452,7 +452,7 @@ public class TJLabsResourceManager {
   public func getSectorName() -> Swift.String?
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
-  public func getDefaultPosition() -> TJLabsResource.DefaultPosition?
+  public func getDefaultPosition(sectorId: Swift.Int) -> TJLabsResource.DefaultPosition?
   #endif
   public func setDebugOption(flag: Swift.Bool)
   @objc deinit

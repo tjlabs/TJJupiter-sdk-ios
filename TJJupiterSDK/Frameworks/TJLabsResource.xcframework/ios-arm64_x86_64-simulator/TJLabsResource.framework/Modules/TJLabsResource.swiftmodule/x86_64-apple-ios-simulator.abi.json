@@ -15270,7 +15270,7 @@
           {
             "kind": "Function",
             "name": "getDefaultPosition",
-            "printedName": "getDefaultPosition()",
+            "printedName": "getDefaultPosition(sectorId:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -15285,11 +15285,17 @@
                   }
                 ],
                 "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
               }
             ],
             "declKind": "Func",
-            "usr": "s:14TJLabsResource0aB7ManagerC18getDefaultPositionAA0eF0VSgyF",
-            "mangledName": "$s14TJLabsResource0aB7ManagerC18getDefaultPositionAA0eF0VSgyF",
+            "usr": "s:14TJLabsResource0aB7ManagerC18getDefaultPosition8sectorIdAA0eF0VSgSi_tF",
+            "mangledName": "$s14TJLabsResource0aB7ManagerC18getDefaultPosition8sectorIdAA0eF0VSgSi_tF",
             "moduleName": "TJLabsResource",
             "declAttributes": [
               "AccessControl"
@@ -16460,35 +16466,35 @@
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "StringLiteral",
-      "offset": 8356,
+      "offset": 8365,
       "length": 30,
       "value": "\"TJLabsResource.BundleOutput.\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 8415,
+      "offset": 8424,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 9121,
+      "offset": 9130,
       "length": 3,
       "value": "-90"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 9146,
+      "offset": 9155,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 16944,
+      "offset": 16953,
       "length": 5,
       "value": "false"
     },

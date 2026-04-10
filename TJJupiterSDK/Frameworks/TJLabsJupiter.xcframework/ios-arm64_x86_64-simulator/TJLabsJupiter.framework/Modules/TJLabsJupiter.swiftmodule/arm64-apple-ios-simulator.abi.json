@@ -17798,6 +17798,41 @@
               "AccessControl"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getDefaultPosition",
+            "printedName": "getDefaultPosition(sectorId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "TJLabsResource.DefaultPosition?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "DefaultPosition",
+                    "printedName": "TJLabsResource.DefaultPosition",
+                    "usr": "s:14TJLabsResource15DefaultPositionV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13TJLabsJupiter17NavigationManagerC18getDefaultPosition8sectorId0A8Resource0fG0VSgSi_tF",
+            "mangledName": "$s13TJLabsJupiter17NavigationManagerC18getDefaultPosition8sectorId0A8Resource0fG0VSgSi_tF",
+            "moduleName": "TJLabsJupiter",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
