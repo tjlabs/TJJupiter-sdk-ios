@@ -4,6 +4,7 @@ import TJLabsCommon
 import TJLabsJupiter
 
 public class JupiterServiceManager: NavigationManagerDelegate {
+    
     public static let sdkVersion = "2.0.0"
     
     public func onJupiterSuccess(_ isSuccess: Bool, _ code: TJLabsJupiter.JupiterErrorCode?) {
