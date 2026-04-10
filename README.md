@@ -242,6 +242,7 @@ manager.setMockingMode()
 
 - Sample code is below.
 - For a more detailed example, please refer to the demo project at the link below.
+- https://github.com/tjlabs/TJJupiter-demo-ios
   
 ```swift
 final class ViewController: UIViewController, JupiterServiceManagerDelegate {
