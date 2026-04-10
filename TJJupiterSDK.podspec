@@ -12,7 +12,7 @@ Pod::Spec.new do |s|
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'tjlabs-dev' => 'dev@tjlabscorp.com' }
   s.source           = { :git => 'https://github.com/tjlabs/TJJupiter-sdk-ios.git', :tag => s.version.to_s }
-
+  
   s.static_framework = true
   s.source_files = 'TJJupiterSDK/Classes/**/*'
   s.vendored_frameworks = 'TJJupiterSDK/Frameworks/*.xcframework'
