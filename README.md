@@ -41,7 +41,7 @@ pod 'TJJupiterSDK'
 
 ## 🏁 Guide
 - If you need a more detailed guide, please refer to this link.
-https://www.notion.so/tjlabs/TJLABS-TJJupiterSDK-Guide-336aef6d5b728030b9f2d6354a6e23ca?source=copy_link
+- https://www.notion.so/tjlabs/TJLABS-TJJupiterSDK-Guide-336aef6d5b728030b9f2d6354a6e23ca?source=copy_link
 
 ### 1. Import
 
