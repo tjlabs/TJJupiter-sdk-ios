@@ -1,0 +1,504 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target x86_64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name TJLabsResource
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+import Foundation
+import Swift
+import TJLabsAuth
+@_exported import TJLabsResource
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol TJLabsResourceManagerDelegate : AnyObject {
+  func onSectorBundleData(_ manager: TJLabsResource.TJLabsResourceManager, sectorId: Swift.Int, data: TJLabsResource.BundleOutput)
+  func onBuildingsData(_ manager: TJLabsResource.TJLabsResourceManager, sectorId: Swift.Int, data: [TJLabsResource.BuildingData])
+  func onScaleOffsetData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, data: [Swift.Float])
+  func onPathPixelData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, data: TJLabsResource.PathPixelData)
+  func onNodeLinkData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, type: TJLabsResource.NodeLinkType, data: Any)
+  func onUnitsData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, data: [TJLabsResource.UnitData])
+  func onGeofenceData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, data: TJLabsResource.GeofenceData)
+  func onEntranceData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, data: TJLabsResource.EntranceData)
+  func onEntranceRouteData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, data: TJLabsResource.EntranceRouteData)
+  #if compiler(>=5.3) && $NonescapableTypes
+  func onImageData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, data: UIKit.UIImage?)
+  #endif
+  func onWardsData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, data: [TJLabsResource.LevelWard])
+  func onAffineParam(_ manager: TJLabsResource.TJLabsResourceManager, data: TJLabsResource.WGS84Transform)
+  func onLandmarkData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, data: [Swift.String : TJLabsResource.LandmarkData])
+  func onError(_ manager: TJLabsResource.TJLabsResourceManager, error: TJLabsResource.ResourceError, key: Swift.String)
+}
+public enum ResourceError {
+  case SectorBundle
+  case PathPixel
+  case Node
+  case Link
+  case BuildingLevel
+  case Image
+  case Scale
+  case Entrance
+  case Units
+  case Geofence
+  case Wards
+  case Affine
+  case Landmark
+  public static func == (a: TJLabsResource.ResourceError, b: TJLabsResource.ResourceError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum ResourceRegion : Swift.String {
+  case KOREA
+  case CANADA
+  case US_EAST
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct SectorIdOsInput : Swift.Codable {
+  public var sector_id: Swift.Int
+  public var operating_system: Swift.String
+  public init(sector_id: Swift.Int, operating_system: Swift.String = "iOS")
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct BundleOutput : Swift.Codable {
+  public let url: Swift.String
+  public let version_id: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SectorBundle : Swift.Codable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public let debug: Swift.Bool
+  public let defaultPosition: TJLabsResource.DefaultPosition?
+  public let wgs84Transform: TJLabsResource.WGS84Transform?
+  public let buildings: [TJLabsResource.Building]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct DefaultPosition : Swift.Codable {
+  public let building: TJLabsResource.DefaultBuilding
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct DefaultBuilding : Swift.Codable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public let level: TJLabsResource.DefaultLevel
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct DefaultLevel : Swift.Codable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public let x: Swift.Int
+  public let y: Swift.Int
+  public let heading: Swift.Int
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct WGS84Transform : Swift.Codable {
+  public let xxScale: Swift.Double
+  public let yyScale: Swift.Double
+  public let xyShear: Swift.Double
+  public let yxShear: Swift.Double
+  public let xTranslation: Swift.Double
+  public let yTranslation: Swift.Double
+  public let headingOffset: Swift.Double
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Building : Swift.Codable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public let levels: [TJLabsResource.Level]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Level : Swift.Codable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public let operatingSystem: Swift.String
+  public let mapImage: TJLabsResource.MapImage
+  public let geofence: TJLabsResource.GeofenceData
+  public let entrances: [TJLabsResource.Entrance]
+  public let units: [TJLabsResource.UnitData]
+  public let graph: TJLabsResource.Graph
+  public let wards: [TJLabsResource.Ward]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct BuildingData : Swift.Codable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public let levels: [TJLabsResource.LevelData]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LevelData : Swift.Codable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct MapImage : Swift.Codable {
+  public let url: Swift.String
+  public let imageWidth: Swift.Int
+  public let imageHeight: Swift.Int
+  public let scaleX: Swift.Float
+  public let scaleY: Swift.Float
+  public let offsetX: Swift.Float
+  public let offsetY: Swift.Float
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct GeofenceData : Swift.Codable {
+  public let entranceArea: [[Swift.Float]]
+  public let entranceMatchingArea: [[Swift.Float]]
+  public let levelChangeArea: [[Swift.Float]]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Entrance : Swift.Codable {
+  public let id: Swift.Int
+  public let number: Swift.Int
+  public let scale: Swift.Float
+  public let url: Swift.String
+  public let innermost_ward: TJLabsResource.InnermostWard
+  public let outermost_ward: TJLabsResource.OutermostWard
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct EntranceData : Swift.Codable {
+  public var id: Swift.Int
+  public var number: Swift.Int
+  public var velocityScale: Swift.Float
+  public var innermostWard: TJLabsResource.InnermostWard?
+  public var outermostWard: TJLabsResource.OutermostWard?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(id: Swift.Int, number: Swift.Int, velocityScale: Swift.Float, innermostWard: TJLabsResource.InnermostWard? = nil, outermostWard: TJLabsResource.OutermostWard? = nil)
+  #endif
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct EntranceRouteData {
+  public var routeLevel: [Swift.String]
+  public var route: [[Swift.Float]]
+  public init(routeLevel: [Swift.String], route: [[Swift.Float]])
+}
+public struct InnermostWard : Swift.Codable {
+  public let level: TJLabsResource.LevelInfo
+  public let id: Swift.Int
+  public let name: Swift.String
+  public let x: Swift.Float
+  public let y: Swift.Float
+  public let is_turn: Swift.Bool
+  public let headings: [Swift.Float]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LevelInfo : Swift.Codable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct OutermostWard : Swift.Codable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct UnitData : Swift.Codable {
+  public let id: Swift.Int
+  public let category: TJLabsResource.Category
+  public let name: Swift.String
+  public let is_restricted: Swift.Bool
+  public let x: Swift.Float
+  public let y: Swift.Float
+  public let parking_space_code: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum Category : Swift.String, Swift.Codable {
+  case PARKING_SPACE
+  case ENTRANCE_EXIT
+  case UNKNOWN
+  public init(from decoder: any Swift.Decoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct Graph : Swift.Codable {
+  public let nodes: [TJLabsResource.GraphNode]
+  public let links: [TJLabsResource.GraphLink]
+  public let linkFeatures: [TJLabsResource.LinkFeature]
+  public let linkGroups: [TJLabsResource.GraphLinkGroup]
+  public let path: TJLabsResource.PathInfo
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct NodeData {
+  public let number: Swift.Int
+  public let coords: [Swift.Float]
+  public let directions: [TJLabsResource.NodeDirection]
+  public let connected_nodes: [Swift.Int]
+  public let connected_links: [Swift.Int]
+}
+public struct NodeDirection : Swift.Codable {
+  public let heading: Swift.Float
+  public let is_end: Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LinkData {
+  public let number: Swift.Int
+  public let start_node: Swift.Int
+  public let end_node: Swift.Int
+  public let distance: Swift.Float
+  public let included_heading: [Swift.Float]
+  public let group_number: Swift.Int
+}
+public enum NodeLinkType : Swift.Codable {
+  case NODE, LINK, LINK_GROUP, FILE
+  public static func == (a: TJLabsResource.NodeLinkType, b: TJLabsResource.NodeLinkType) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LevelGraphNodesOutput : Swift.Codable {
+  public let nodes: [TJLabsResource.GraphNode]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct GraphNode : Swift.Codable {
+  public let id: Swift.Int
+  public let number: Swift.Int
+  public let x: Swift.Int
+  public let y: Swift.Int
+  public let available_in_headings: [Swift.Int]
+  public let available_out_headings: [Swift.Int]
+  public let connected_links: [TJLabsResource.GraphLinkMini]
+  public let connected_nodes: [TJLabsResource.GraphNodeMini]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LevelGraphLinksOutput : Swift.Codable {
+  public let links: [TJLabsResource.GraphLink]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct GraphLink : Swift.Codable {
+  public let id: Swift.Int
+  public let number: Swift.Int
+  public let node_a: TJLabsResource.GraphNodeMini
+  public let node_b: TJLabsResource.GraphNodeMini
+  public let available_headings: [Swift.Int]
+  public let distance: Swift.Int
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LevelGraphLinkGroupsOutput : Swift.Codable {
+  public let link_groups: [TJLabsResource.GraphLinkGroup]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct GraphLinkGroup : Swift.Codable {
+  public let id: Swift.Int
+  public let number: Swift.Int
+  public let links: [TJLabsResource.GraphLinkMini]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct GraphNodeMini : Swift.Codable {
+  public let id: Swift.Int
+  public let number: Swift.Int
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct GraphLinkMini : Swift.Codable {
+  public let id: Swift.Int
+  public let number: Swift.Int
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LinkFeature : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PathInfo : Swift.Codable {
+  public let url: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PathPixelData {
+  public var road: [[Swift.Float]]
+  public var roadMinMax: [Swift.Float]
+  public var roadScale: [Swift.Float]
+  public var roadHeading: [Swift.String]
+  public init(road: [[Swift.Float]], roadMinMax: [Swift.Float], roadScale: [Swift.Float], roadHeading: [Swift.String])
+}
+public struct Ward : Swift.Codable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public let rf_landmarks: [TJLabsResource.RFLandmark]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LevelWard : Swift.Codable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RFLandmark : Swift.Codable {
+  public let id: Swift.Int
+  public let x: Swift.Int
+  public let y: Swift.Int
+  public let rssi: Swift.Float
+  public let links: [TJLabsResource.GraphLinkMini]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LandmarkData : Swift.Codable {
+  public let ward_name: Swift.String
+  public let peaks: [TJLabsResource.PeakData]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct PeakData : Swift.Codable {
+  public let x: Swift.Int
+  public let y: Swift.Int
+  public let rssi: Swift.Float
+  public let matched_links: [Swift.Int]
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class ResourceLogger {
+  public static func setDebugOption(set: Swift.Bool)
+  public static func setInfoOption(set: Swift.Bool)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TJLabsFileDownloader {
+  public static let shared: TJLabsResource.TJLabsFileDownloader
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func downloadCSVFile(from url: Foundation.URL, fname: Swift.String, completion: @escaping (Foundation.URL?, (any Swift.Error)?) -> Swift.Void)
+  #endif
+  @objc deinit
+}
+public class TJLabsResourceManager {
+  public static let shared: TJLabsResource.TJLabsResourceManager
+  weak public var delegate: (any TJLabsResource.TJLabsResourceManagerDelegate)?
+  public init()
+  public func loadResources(region: Swift.String, sectorId: Swift.Int, landmarkTh: Swift.Float = -90, forceUpdate: Swift.Bool = false, completion: @escaping (Swift.Bool) -> Swift.Void)
+  public func isDebug() -> Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func loadSectorBundle(region: Swift.String, sectorId: Swift.Int, forceUpdate: Swift.Bool = false, completion: @escaping (TJLabsResource.BundleOutput?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getMatchedLevelId(key: Swift.String) -> Swift.Int?
+  #endif
+  public func getBuildingData() -> [Swift.Int : [TJLabsResource.BuildingData]]
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getBuildingName(buildingId: Swift.Int) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getBuildingId(buildingName: Swift.String) -> Swift.Int?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getLevelName(levelId: Swift.Int) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getLevelId(sectorId: Swift.Int, buildingName: Swift.String, levelName: Swift.String) -> Swift.Int?
+  #endif
+  public func getScaleOffset() -> [Swift.String : [Swift.Float]]
+  public func getPathPixelData() -> [Swift.String : TJLabsResource.PathPixelData]
+  public func getBuildingLevelUnitsData() -> [Swift.String : [TJLabsResource.UnitData]]
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getUnitsByLevelId(levelId: Swift.Int) -> [TJLabsResource.UnitData]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getLevelIdbyUnitId(unitId: Swift.Int) -> Swift.Int?
+  #endif
+  public func getGeofenceData() -> [Swift.String : TJLabsResource.GeofenceData]
+  public func getEntranceData() -> [Swift.String : TJLabsResource.EntranceData]
+  public func getEntranceRouteData() -> [Swift.String : TJLabsResource.EntranceRouteData]
+  public func getBuildingLevelImageData() -> [Swift.String : UIKit.UIImage]
+  public func getBuildingLevelWardsData() -> [Swift.String : [TJLabsResource.LevelWard]]
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getWGS84Transform(sectorId: Swift.Int) -> TJLabsResource.WGS84Transform?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getCurrentSectorBundle() -> TJLabsResource.SectorBundle?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getSectorId() -> Swift.Int?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getSectorName() -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getDefaultPosition(sectorId: Swift.Int) -> TJLabsResource.DefaultPosition?
+  #endif
+  public func setDebugOption(flag: Swift.Bool)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TJLabsResourceNetworkConstants {
+  public static func setServerURL(region: Swift.String)
+  public static func getUserBaseURL() -> Swift.String
+  public static func getUserSectorVersion() -> Swift.String
+  public static func getUserSectorURL() -> Swift.String
+  public static func getUserScaleVersion() -> Swift.String
+  public static func getUserScaleURL() -> Swift.String
+  public static func getUserPathPixelVersion() -> Swift.String
+  public static func getUserPathPixelURL() -> Swift.String
+  public static func getUserLevelUnitsVersion() -> Swift.String
+  public static func getUserLevelUnitsURL() -> Swift.String
+  public static func getUserGeoVersion() -> Swift.String
+  public static func getUserGeoURL() -> Swift.String
+  public static func getUserEntrancesVersion() -> Swift.String
+  public static func getUserEntrancesURL() -> Swift.String
+  public static func getUserLevelWardsVersion() -> Swift.String
+  public static func getUserLevelWardsURL() -> Swift.String
+  public static func getUserGraphNodesVersion() -> Swift.String
+  public static func getUserGraphNodesURL() -> Swift.String
+  public static func getUserGraphLinksVersion() -> Swift.String
+  public static func getUserGraphLinksURL() -> Swift.String
+  public static func getUserGraphLinkFeaturesVersion() -> Swift.String
+  public static func getUserGraphLinkFeaturesURL() -> Swift.String
+  public static func getUserGraphLinkGroupsVersion() -> Swift.String
+  public static func getUserGraphLinkGroupsURL() -> Swift.String
+  public static func getUserGraphPathsVersion() -> Swift.String
+  public static func getUserGraphPathsURL() -> Swift.String
+  public static func getUserMapsLandmarkVersion() -> Swift.String
+  public static func getUserMapsLandmarkURL() -> Swift.String
+  public static func getUserAffineVersion() -> Swift.String
+  public static func getUserAffineURL() -> Swift.String
+  public static func getUserSectorBundleVersion() -> Swift.String
+  public static func getUserSectorBundleURL() -> Swift.String
+  @objc deinit
+}
+extension TJLabsResource.ResourceError : Swift.Equatable {}
+extension TJLabsResource.ResourceError : Swift.Hashable {}
+extension TJLabsResource.ResourceRegion : Swift.Equatable {}
+extension TJLabsResource.ResourceRegion : Swift.Hashable {}
+extension TJLabsResource.ResourceRegion : Swift.RawRepresentable {}
+extension TJLabsResource.Category : Swift.Equatable {}
+extension TJLabsResource.Category : Swift.Hashable {}
+extension TJLabsResource.Category : Swift.RawRepresentable {}
+extension TJLabsResource.NodeLinkType : Swift.Equatable {}
+extension TJLabsResource.NodeLinkType : Swift.Hashable {}

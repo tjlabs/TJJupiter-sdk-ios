@@ -1,0 +1,82 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target x86_64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name TJLabsAuth
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+import Foundation
+import Security
+import Swift
+@_exported import TJLabsAuth
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public enum AuthRegion : Swift.String {
+  case KOREA
+  case US_EAST
+  case CANADA
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct ClientMeta : Swift.Codable {
+  public init(app_version: Swift.String, app_package: Swift.String, device_model: Swift.String, os_version: Swift.String, sdks: [TJLabsAuth.SdkMeta])
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SdkMeta : Swift.Codable {
+  public init(name: Swift.String, version: Swift.String)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum TokenResult {
+  case success(Swift.String)
+  case failure(TJLabsAuth.TokenResult.FailureReason, statusCode: Swift.Int?, message: Swift.String?)
+  public enum FailureReason {
+    case authFailed
+    case credentialsMissing
+    public static func == (a: TJLabsAuth.TokenResult.FailureReason, b: TJLabsAuth.TokenResult.FailureReason) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+public enum SecretConfig {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func set(clientMeta: TJLabsAuth.ClientMeta?)
+  #endif
+  public static func configureFromEmbeddedPlist()
+  public static var clientKey: Swift.String {
+    get
+  }
+  public static var clientSecret: Swift.String {
+    get
+  }
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static var clientMeta: TJLabsAuth.ClientMeta? {
+    get
+  }
+  #endif
+}
+@_hasMissingDesignatedInitializers public class TJLabsAuthConstants {
+  public static func setServerURL(region: Swift.String, serverType: Swift.String)
+  public static func getUserBaseURL() -> Swift.String
+  public static func getUserTokenVersion() -> Swift.String
+  public static func getUserTokenURL() -> Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TJLabsAuthManager {
+  public static let shared: TJLabsAuth.TJLabsAuthManager
+  public func getAccessToken(update: Swift.Bool = true, completion: @escaping (TJLabsAuth.TokenResult) -> Swift.Void)
+  public func auth(accessKey: Swift.String, secretAccessKey: Swift.String, completion: @escaping (Swift.Int, Swift.Bool) -> Swift.Void)
+  public func isTokenNearExpiry(threshold: Foundation.TimeInterval = 60) -> Swift.Bool
+  @objc deinit
+}
+extension TJLabsAuth.AuthRegion : Swift.Equatable {}
+extension TJLabsAuth.AuthRegion : Swift.Hashable {}
+extension TJLabsAuth.AuthRegion : Swift.RawRepresentable {}
+extension TJLabsAuth.TokenResult.FailureReason : Swift.Equatable {}
+extension TJLabsAuth.TokenResult.FailureReason : Swift.Hashable {}
