@@ -40,6 +40,8 @@ pod 'TJJupiterSDK'
 ---
 
 ## 🏁 Guide
+- If you need a more detailed guide, please refer to this link.
+https://www.notion.so/tjlabs/TJLABS-TJJupiterSDK-Guide-336aef6d5b728030b9f2d6354a6e23ca?source=copy_link
 
 ### 1. Import
 
@@ -116,6 +118,8 @@ extension ViewController: JupiterServiceManagerDelegate {
 
 - It is not supported yet.
   
+---
+
 
 ## 📚 Position Result
 
@@ -220,6 +224,8 @@ public enum JupiterServiceCode: Int {
 }
 ```
 
+---
+
 ## 🦿 Mocking Mode
 
 - Since Jupiter performs positioning based on TJLABS' BLE beacons, it cannot receive indoor location data outside of the actual service area.
@@ -228,6 +234,8 @@ public enum JupiterServiceCode: Int {
 ```swift
 manager.setMockingMode()
 ```
+
+---
 
 ## 📌 Example
 
