@@ -15,7 +15,7 @@ Pod::Spec.new do |s|
 
   s.static_framework = true
   s.source_files = 'TJJupiterSDK/Classes/**/*'
-  s.vendored_frameworks = 'OlympusSDK/Frameworks/*.xcframework'
+  s.vendored_frameworks = 'TJJupiterSDK/Frameworks/*.xcframework'
   s.pod_target_xcconfig = { 'SWIFT_OPTIMIZATION_LEVEL' => '-Owholemodule' }
 
 end

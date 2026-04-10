@@ -176,10 +176,16 @@ code_sign_if_enabled() {
 }
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/TJJupiterSDK/TJJupiterSDK.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TJJupiterSDK/TJLabsAuth.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TJJupiterSDK/TJLabsCommon.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TJJupiterSDK/TJLabsJupiter.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TJJupiterSDK/TJLabsResource.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "${BUILT_PRODUCTS_DIR}/TJJupiterSDK/TJJupiterSDK.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TJJupiterSDK/TJLabsAuth.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TJJupiterSDK/TJLabsCommon.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TJJupiterSDK/TJLabsJupiter.framework"
+  install_framework "${PODS_XCFRAMEWORKS_BUILD_DIR}/TJJupiterSDK/TJLabsResource.framework"
 fi
 if [ "${COCOAPODS_PARALLEL_CODE_SIGN}" == "true" ]; then
   wait
