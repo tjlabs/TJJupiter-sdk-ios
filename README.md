@@ -128,13 +128,6 @@ extension ViewController: JupiterServiceManagerDelegate {
 ---
 
 
-## 🧭 Navigation
-
-- It is not supported yet.
-  
----
-
-
 ## 📚 Position Result
 
 ### JupiterResult
@@ -287,3 +280,9 @@ final class ViewController: UIViewController, JupiterServiceManagerDelegate {
     }
 }
 ```
+
+---
+
+## 📄 License
+
+TJJupiterSDK is proprietary software provided by TJLabs under a separate commercial license agreement. Redistribution is not permitted except as agreed in writing.
