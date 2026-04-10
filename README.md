@@ -50,6 +50,11 @@ It delivers real-time indoor location results, navigation routing, and movement 
 ```ruby
 pod 'TJJupiterSDK'
 ```
+If you cannot find TJJupiterSDK in pod. Write below line in podfile.
+
+```ruby
+source '<https://github.com/CocoaPods/Specs.git>'
+```
 
 ---
 
