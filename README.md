@@ -27,6 +27,19 @@ It delivers real-time indoor location results, navigation routing, and movement 
 
 - iOS 15.0+
 - Swift 5.0+
+- Info.plist
+    - Privacy - Motion Usage Description
+    - Privacy - Bluetooth Peripheral Usage Description
+    - Privacy - Bluetooth Always Usage Description
+    - Privacy - Location When In Usage Description
+    - Required device capabilities
+        - item : Accelerometer
+        - item : Gyroscope
+        - item : Magnetometer
+        - item : Bluetooth Low Energy
+    - Required background modes
+        - App communicates using CoreBluetooth
+        - App registers for location updates
 
 ---
 
