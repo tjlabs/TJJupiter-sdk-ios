@@ -20619,7 +20619,7 @@
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 46518,
+      "offset": 46592,
       "length": 5,
       "value": "false"
     },
@@ -22425,7 +22425,7 @@
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Navi\/NavigationManager.swift",
       "kind": "Array",
-      "offset": 11557,
+      "offset": 11567,
       "length": 2,
       "value": "[]"
     },
