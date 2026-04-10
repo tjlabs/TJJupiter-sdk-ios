@@ -39,7 +39,7 @@ pod 'TJJupiterSDK'
 
 ---
 
-## Guide
+## 🏁 Guide
 
 ### 1. Import
 
@@ -66,6 +66,7 @@ manager.delegate = self
 ```
 
 ### 4. Start Service
+
 ```swift
 manager.startService(
     region: JupiterRegion.KOREA.rawValue,
@@ -76,6 +77,7 @@ manager.startService(
 ```
 
 ### 5. Stop Service
+
 ```swift
 manager.stopService { success, message in
     print("Stopped:", success)
@@ -85,6 +87,7 @@ manager.stopService { success, message in
 ---
 
 ## 📡 Delegate
+
 ```swift
 extension ViewController: JupiterServiceManagerDelegate {
 
@@ -108,8 +111,16 @@ extension ViewController: JupiterServiceManagerDelegate {
 
 ---
 
-## 📍 Service Result
+## 📍 Service
+
+## 🧭 Navigation
+
+- It is not supported yet.
+
+## 📚 Position Result
+
 ### JupiterResult
+
 ```swift
 public struct JupiterResult: Codable {
     public var mobile_time: Int
@@ -127,6 +138,7 @@ public struct JupiterResult: Codable {
 ```
 
 ### Position
+
 ```swift
 public struct Position {
     public var x: Float
@@ -136,6 +148,7 @@ public struct Position {
 ```
 
 ### LLH
+
 ```swift
 public struct LLH {
     public var lat: Double
@@ -147,6 +160,7 @@ public struct LLH {
 ## 📚 Core Enums
 
 ### JupiterRegion
+
 ```swift
 public enum JupiterRegion: String {
     case KOREA
@@ -156,6 +170,7 @@ public enum JupiterRegion: String {
 ```
 
 ### UserMode
+
 ```swift
 public enum UserMode: String {
     case MODE_PEDESTRIAN = "PDR"
@@ -165,6 +180,7 @@ public enum UserMode: String {
 ```
 
 ### InOutState
+
 ```swift
 public enum InOutState: Int {
     case OUT_TO_IN = 0
@@ -176,6 +192,7 @@ public enum InOutState: Int {
 ```
 
 ### JupiterErrorCode
+
 ```swift
 public enum JupiterErrorCode: Int {
     case INVALID_ID
@@ -189,6 +206,7 @@ public enum JupiterErrorCode: Int {
 ```
 
 ### JupiterServiceCode
+
 ```swift
 public enum JupiterServiceCode: Int {
     case SERVICE_FAIL
@@ -202,16 +220,20 @@ public enum JupiterServiceCode: Int {
 }
 ```
 
-## Mocking Mode
+## 🦿 Mocking Mode
+
 - Since Jupiter performs positioning based on TJLABS' BLE beacons, it cannot receive indoor location data outside of the actual service area.
 - If you use the mocking mode below, you can receive a randomly defined JupiterResult even outside the service area.
+- 
 ```swift
 manager.setMockingMode()
 ```
 
-## Example
+## 📌 Example
+
 - Sample code is below.
 - For a more detailed example, please refer to the demo project at the link below.
+  
 ```swift
 final class ViewController: UIViewController, JupiterServiceManagerDelegate {
 
