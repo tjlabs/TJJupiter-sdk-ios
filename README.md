@@ -10,6 +10,9 @@ TJJupiterSDK is an iOS SDK that provides Jupiter-based indoor positioning and na
 
 It delivers real-time indoor location results, navigation routing, and movement tracking using BLE signals and sensor fusion.
 
+
+### Version 2.0.0
+
 ---
 
 ## ✨ Features
