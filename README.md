@@ -1,4 +1,5 @@
 # TJJupiterSDK
+### Version 2.0.0
 
 [![Version](https://img.shields.io/cocoapods/v/TJJupiterSDK.svg?style=flat)](https://cocoapods.org/pods/TJJupiterSDK)
 [![License](https://img.shields.io/cocoapods/l/TJJupiterSDK.svg?style=flat)](https://cocoapods.org/pods/TJJupiterSDK)
@@ -9,9 +10,6 @@ TJJupiterSDK is an iOS SDK that provides Jupiter-based indoor service features s
 TJJupiterSDK is an iOS SDK that provides Jupiter-based indoor positioning and navigation services.
 
 It delivers real-time indoor location results, navigation routing, and movement tracking using BLE signals and sensor fusion.
-
-
-### Version 2.0.0
 
 ---
 
