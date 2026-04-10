@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.description      = "TJLabs JupiterSDK for iOS"
 
   s.homepage         = 'https://www.tjlabscorp.com'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = { :type => 'TJLABS', :file => 'LICENSE' }
   s.author           = { 'tjlabs-dev' => 'dev@tjlabscorp.com' }
   s.source           = { :git => 'https://github.com/tjlabs/TJJupiter-sdk-ios.git', :tag => s.version.to_s }
   
