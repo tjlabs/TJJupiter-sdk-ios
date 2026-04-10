@@ -214,13 +214,13 @@ public enum InOutState: Int {
 
 ```swift
 public enum JupiterErrorCode: Int {
-    case INVALID_ID
-    case INVALID_MODE
-    case NETWORK_DISCONNECT
-    case DUPLICATED_SERVICE
-    case LOGIN_FAIL
-    case GENERATOR_FAIL
-    case CALC_INIT_FAIL
+    case INVALID_ID = 0
+    case INVALID_MODE = 1
+    case NETWORK_DISCONNECT = 2
+    case DUPLICATED_SERVICE = 3
+    case LOGIN_FAIL = 4
+    case GENERATOR_FAIL = 5
+    case CALC_INIT_FAIL = 6
 }
 ```
 
@@ -228,14 +228,14 @@ public enum JupiterErrorCode: Int {
 
 ```swift
 public enum JupiterServiceCode: Int {
-    case SERVICE_FAIL
-    case SERVICE_SUCCESS
-    case BECOME_BACKGROUND
-    case BECOME_FOREGROUND
-    case BLUETOOTH_UNAVAILABLE
-    case BLUETOOTH_OFF
-    case BLUETOOTH_SCAN_STOP
-    case NETWORK_DISCONNECT
+    case SERVICE_FAIL = 0
+    case SERVICE_SUCCESS = 1
+    case BECOME_BACKGROUND = 2
+    case BECOME_FOREGROUND = 3
+    case BLUETOOTH_UNAVAILABLE = 4
+    case BLUETOOTH_OFF = 5
+    case BLUETOOTH_SCAN_STOP = 6
+    case NETWORK_DISCONNECT = 7
 }
 ```
 
