@@ -40,10 +40,15 @@ extension JupiterRegion {
 
 
 // MARK: - To Wrap 필요
-
 extension TJLabsJupiter.InOutState {
     func toWrap() -> InOutState {
         return InOutState(rawValue: self.rawValue) ?? .UNKNOWN
+    }
+}
+
+extension TJLabsJupiter.InitErrorCode {
+    func toWrap() -> InitErrorCode {
+        return InitErrorCode(rawValue: self.rawValue) ?? .UNKNOWN
     }
 }
 
@@ -74,7 +79,7 @@ extension TJLabsJupiter.LLH {
         return LLH(
             lat: self.lat,
             lon: self.lon,
-            heading: self.heading
+            azimuth: self.azimuth
         )
     }
 }
@@ -97,24 +102,6 @@ extension TJLabsJupiter.JupiterResult {
     }
 }
 
-extension InOutState {
-    func toJupiter() -> TJLabsJupiter.InOutState {
-        return TJLabsJupiter.InOutState(rawValue: self.rawValue) ?? .UNKNOWN
-    }
-}
-
-extension JupiterErrorCode {
-    func toJupiter() -> TJLabsJupiter.JupiterErrorCode {
-        return TJLabsJupiter.JupiterErrorCode(rawValue: self.rawValue) ?? .INVALID_ID
-    }
-}
-
-extension JupiterServiceCode {
-    func toJupiter() -> TJLabsJupiter.JupiterServiceCode {
-        return TJLabsJupiter.JupiterServiceCode(rawValue: self.rawValue) ?? .SERVICE_FAIL
-    }
-}
-
 extension Position {
     func toJupiter() -> TJLabsJupiter.Position {
         return TJLabsJupiter.Position(
@@ -130,7 +117,7 @@ extension LLH {
         return TJLabsJupiter.LLH(
             lat: self.lat,
             lon: self.lon,
-            heading: self.heading
+            azimuth: self.azimuth
         )
     }
 }
