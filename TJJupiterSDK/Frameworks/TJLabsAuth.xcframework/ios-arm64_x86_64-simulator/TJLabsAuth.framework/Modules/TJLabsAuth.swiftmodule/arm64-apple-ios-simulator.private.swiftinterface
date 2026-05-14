@@ -1,6 +1,6 @@
 // swift-interface-format-version: 1.0
 // swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
-// swift-module-flags: -target arm64-apple-ios15.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name TJLabsAuth
+// swift-module-flags: -target arm64-apple-ios16.6-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name TJLabsAuth
 // swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import Foundation
 import Security
@@ -9,10 +9,22 @@ import Swift
 import _Concurrency
 import _StringProcessing
 import _SwiftConcurrencyShims
+public enum AuthCloud : Swift.String {
+  case AWS
+  case GCP
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public enum AuthRegion : Swift.String {
   case KOREA
   case US_EAST
   case CANADA
+  case SAUDI
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
   #endif
@@ -62,7 +74,7 @@ public enum SecretConfig {
   #endif
 }
 @_hasMissingDesignatedInitializers public class TJLabsAuthConstants {
-  public static func setServerURL(region: Swift.String, serverType: Swift.String)
+  public static func setServerURL(cloud: Swift.String, region: Swift.String, serverType: Swift.String)
   public static func getUserBaseURL() -> Swift.String
   public static func getUserTokenVersion() -> Swift.String
   public static func getUserTokenURL() -> Swift.String
@@ -70,11 +82,15 @@ public enum SecretConfig {
 }
 @_hasMissingDesignatedInitializers public class TJLabsAuthManager {
   public static let shared: TJLabsAuth.TJLabsAuthManager
+  public var isAuthorized: Swift.Bool
   public func getAccessToken(update: Swift.Bool = true, completion: @escaping (TJLabsAuth.TokenResult) -> Swift.Void)
   public func auth(accessKey: Swift.String, secretAccessKey: Swift.String, completion: @escaping (Swift.Int, Swift.Bool) -> Swift.Void)
   public func isTokenNearExpiry(threshold: Foundation.TimeInterval = 60) -> Swift.Bool
   @objc deinit
 }
+extension TJLabsAuth.AuthCloud : Swift.Equatable {}
+extension TJLabsAuth.AuthCloud : Swift.Hashable {}
+extension TJLabsAuth.AuthCloud : Swift.RawRepresentable {}
 extension TJLabsAuth.AuthRegion : Swift.Equatable {}
 extension TJLabsAuth.AuthRegion : Swift.Hashable {}
 extension TJLabsAuth.AuthRegion : Swift.RawRepresentable {}

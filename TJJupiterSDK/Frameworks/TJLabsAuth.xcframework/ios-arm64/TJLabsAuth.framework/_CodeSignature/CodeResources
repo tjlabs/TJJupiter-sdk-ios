@@ -10,27 +10,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		7qkCbMkR0++gcO3MjHpQm0JUlvQ=
+		XjWV/rhmgeMZO9nxh41Okz8lKio=
 		</data>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		J4/sDgaL2gaGpleUV5LsJL9CXoo=
+		VP/+DcT/FeEOqrvE2t6+k4dB7H4=
 		</data>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		BMoIP6nsPUkIyvoE3n65/F6pz5Y=
+		eIGjppGZZz/OXWnzHSdDJB8HwsA=
 		</data>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		nAVyEZbXPY5prpMbA3dXVQqVjS4=
+		iukc+2tboe38BO0J5Ug7BAJtKbI=
 		</data>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		BMoIP6nsPUkIyvoE3n65/F6pz5Y=
+		eIGjppGZZz/OXWnzHSdDJB8HwsA=
 		</data>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		asEnJV1JI5/jd1RYrrvd2EIU430=
+		n7WIocVgK/Jmxwu/fAfKPHKbwCs=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -54,35 +54,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			3l7k8FP70SLJTn3Z5NN1Q+ywng9XQlZkvB268QJ6Bx8=
+			XZH4o6yJpMuHyb/33z8VuyRhwSF6bFydGVg83xBE/QE=
 			</data>
 		</dict>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Imbkkf4wwcIJSIyQfW1sy18GrpLpeRud09/IRdQOtto=
+			bXrr6x9OrXybuk9Ld63hNwuDcEi7V6bpGCfX8pGzdh4=
 			</data>
 		</dict>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YmAg25iByWhVmJ+THValFwcm39Rnv6X04gkK5s7Ty6g=
+			HX9guEIAajXEvJqMCyjcVx6+/JQQwvi0DDC9yQaKPXE=
 			</data>
 		</dict>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Imbkkf4wwcIJSIyQfW1sy18GrpLpeRud09/IRdQOtto=
+			bXrr6x9OrXybuk9Ld63hNwuDcEi7V6bpGCfX8pGzdh4=
 			</data>
 		</dict>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pdy2n2DVSYIXt8JspcNT614r6c3AMvKClFt/gUhqhcc=
+			cairNPlekcGcMfR24ABnsRRZ5NTZgxNy7zLOuNreqi0=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

@@ -4,7 +4,7 @@
   "summary": "A short description of TJJupiterSDK.",
   "swift_versions": "5.0",
   "platforms": {
-    "ios": "15.0"
+    "ios": "16.0"
   },
   "description": "TJLabs JupiterSDK for iOS",
   "homepage": "https://www.tjlabscorp.com",
