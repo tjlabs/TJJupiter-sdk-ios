@@ -1,5 +1,5 @@
 # TJJupiterSDK
-### Version 2.0.0
+### Version 2.0.1
 
 [![Version](https://img.shields.io/cocoapods/v/TJJupiterSDK.svg?style=flat)](https://cocoapods.org/pods/TJJupiterSDK)
 [![License](https://img.shields.io/cocoapods/l/TJJupiterSDK.svg?style=flat)](https://cocoapods.org/pods/TJJupiterSDK)
@@ -85,19 +85,19 @@ TJJupiterAuth.shared.auth(
 ### 3. Initialize Service
 
 ```swift
-let manager = JupiterServiceManager(id: "USER_ID")
+let manager = JupiterServiceManager(
+    id: "USER_ID",
+    region: JupiterRegion.KOREA.rawValue,
+    sectorId: 123,
+    debugOption: false
+)
 manager.delegate = self
 ```
 
 ### 4. Start Service
 
 ```swift
-manager.startService(
-    region: JupiterRegion.KOREA.rawValue,
-    sectorId: 123,
-    mode: .MODE_AUTO,
-    debugOption: false
-)
+manager.startService(mode: .MODE_AUTO)
 ```
 
 ### 5. Stop Service
@@ -115,6 +115,8 @@ manager.stopService { success, message in
 ```swift
 extension ViewController: JupiterServiceManagerDelegate {
 
+    func onInitSuccess(_ isSuccess: Bool, _ code: InitErrorCode?) {}
+
     func onJupiterSuccess(_ isSuccess: Bool, _ code: JupiterErrorCode?) {}
 
     func onJupiterReport(_ code: JupiterServiceCode, _ msg: String) {}
@@ -124,6 +126,8 @@ extension ViewController: JupiterServiceManagerDelegate {
     func isJupiterInOutStateChanged(_ state: InOutState) {}
 
     func isUserGuidanceOut() {}
+
+    func isUserArrived() {}
 
     func isNavigationRouteChanged(_ routes: [(String, String, Int, Float, Float)]) {}
 
@@ -172,7 +176,7 @@ public struct Position {
 public struct LLH {
     public var lat: Double
     public var lon: Double
-    public var heading: Double
+    public var azimuth: Double
 }
 ```
 
@@ -202,11 +206,26 @@ public enum UserMode: String {
 
 ```swift
 public enum InOutState: Int {
+    case UNKNOWN = -1
     case OUT_TO_IN = 0
     case INDOOR = 1
     case IN_TO_OUT = 2
     case OUTDOOR = 3
+}
+```
+
+### InitErrorCode
+
+```swift
+public enum InitErrorCode: Int {
     case UNKNOWN = -1
+    case NOT_AUTHORIZED = 0
+    case INVALID_ID = 1
+    case INVALID_MODE = 2
+    case NETWORK_DISCONNECT = 3
+    case DUPLICATED_SERVICE = 4
+    case LOGIN_FAIL = 5
+    case CALC_INIT_FAIL = 6
 }
 ```
 
@@ -214,6 +233,7 @@ public enum InOutState: Int {
 
 ```swift
 public enum JupiterErrorCode: Int {
+    case UNKNOWN = -1
     case INVALID_ID = 0
     case INVALID_MODE = 1
     case NETWORK_DISCONNECT = 2
@@ -228,6 +248,7 @@ public enum JupiterErrorCode: Int {
 
 ```swift
 public enum JupiterServiceCode: Int {
+    case UNKNOWN = -1
     case SERVICE_FAIL = 0
     case SERVICE_SUCCESS = 1
     case BECOME_BACKGROUND = 2
