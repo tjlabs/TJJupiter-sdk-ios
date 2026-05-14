@@ -25,7 +25,7 @@ It delivers real-time indoor location results, navigation routing, and movement 
 
 ## 📦 Requirements
 
-- iOS 15.0+
+- iOS 16.0+
 - Swift 5.0+
 - Info.plist
     - Privacy - Motion Usage Description
