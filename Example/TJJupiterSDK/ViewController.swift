@@ -3,6 +3,11 @@ import UIKit
 import TJJupiterSDK
 
 class ViewController: UIViewController, JupiterServiceManagerDelegate {
+    
+    func onInitSuccess(_ isSuccess: Bool, _ code: TJJupiterSDK.InitErrorCode?) {
+        // TODO
+    }
+    
     func onJupiterSuccess(_ isSuccess: Bool, _ code: JupiterErrorCode?) {
         // TODD
     }
@@ -21,6 +26,10 @@ class ViewController: UIViewController, JupiterServiceManagerDelegate {
     
     func isUserGuidanceOut() {
         // TODD
+    }
+    
+    func isUserArrived() {
+        // TODO
     }
     
     func isNavigationRouteChanged(_ routes: [(String, String, Int, Float, Float)]) {
@@ -50,8 +59,12 @@ class ViewController: UIViewController, JupiterServiceManagerDelegate {
     
     func initialize() {
         let userId = "TJJupiterExample"
-        serviceManager = JupiterServiceManager(id: userId)
+        serviceManager = JupiterServiceManager(id: userId, region: JupiterRegion.KOREA.rawValue, sectorId: 20, debugOption: false)
         serviceManager?.delegate = self
+    }
+    
+    func start() {
+        serviceManager?.startService(mode: .MODE_VEHICLE)
     }
 }
 
