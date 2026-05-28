@@ -60,7 +60,11 @@ public enum SecretConfig {
   #if compiler(>=5.3) && $NonescapableTypes
   public static func set(clientMeta: TJLabsAuth.ClientMeta?)
   #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func set(customerKey: Swift.String, clientMeta: TJLabsAuth.ClientMeta? = nil)
+  #endif
   public static func configureFromEmbeddedPlist()
+  public static func configureFromEmbeddedPlist(customerKey: Swift.String)
   public static var clientKey: Swift.String {
     get
   }
@@ -84,6 +88,10 @@ public enum SecretConfig {
   public static let shared: TJLabsAuth.TJLabsAuthManager
   public var isAuthorized: Swift.Bool
   public func getAccessToken(update: Swift.Bool = true, completion: @escaping (TJLabsAuth.TokenResult) -> Swift.Void)
+  public func getTenantUserName() -> Swift.String
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func setClientConfigKey(_ customerKey: Swift.String, clientMeta: TJLabsAuth.ClientMeta? = nil)
+  #endif
   public func auth(accessKey: Swift.String, secretAccessKey: Swift.String, completion: @escaping (Swift.Int, Swift.Bool) -> Swift.Void)
   public func isTokenNearExpiry(threshold: Foundation.TimeInterval = 60) -> Swift.Bool
   @objc deinit

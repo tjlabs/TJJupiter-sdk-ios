@@ -14,11 +14,11 @@
 		</data>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		VP/+DcT/FeEOqrvE2t6+k4dB7H4=
+		EhknESYKfWivBLj5HlylBMzxgrY=
 		</data>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		eIGjppGZZz/OXWnzHSdDJB8HwsA=
+		ik7+peXkuFRe53kHnrooM5HNazc=
 		</data>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
@@ -26,11 +26,11 @@
 		</data>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		eIGjppGZZz/OXWnzHSdDJB8HwsA=
+		ik7+peXkuFRe53kHnrooM5HNazc=
 		</data>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		n7WIocVgK/Jmxwu/fAfKPHKbwCs=
+		ODJqDcLbqchgrepVunEkGTgto88=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>TJLabsAuthSecretConfig.plist</key>
 		<data>
-		w5Mo+thk3fLxAvYYbmwEk6qxu9U=
+		WHwLg9j6uYGoOCVjZg4Nn7aYX5A=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -54,14 +54,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XZH4o6yJpMuHyb/33z8VuyRhwSF6bFydGVg83xBE/QE=
+			xp9yFY1NufA3nEphVbf8ZaNW8f2VH4Vl2oEcL5T5coA=
 			</data>
 		</dict>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bXrr6x9OrXybuk9Ld63hNwuDcEi7V6bpGCfX8pGzdh4=
+			speTTJNbI7iMbFaPJamsvI8/m2Tm/5U5fVnZMfI6IfU=
 			</data>
 		</dict>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftdoc</key>
@@ -75,14 +75,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bXrr6x9OrXybuk9Ld63hNwuDcEi7V6bpGCfX8pGzdh4=
+			speTTJNbI7iMbFaPJamsvI8/m2Tm/5U5fVnZMfI6IfU=
 			</data>
 		</dict>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cairNPlekcGcMfR24ABnsRRZ5NTZgxNy7zLOuNreqi0=
+			a+ZWsyJhaGJEXxciq3v44drVSaUOLlP7K8frlXEozjk=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -96,7 +96,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yFOcm9dWjQylhYeUdYvs5chyoLGmOspkmCNydmBiVEg=
+			kPWlWYZ6WvUczJz6XJ1ugXrgcYWv7qQKLJ0Zc5bDZ/Q=
 			</data>
 		</dict>
 	</dict>

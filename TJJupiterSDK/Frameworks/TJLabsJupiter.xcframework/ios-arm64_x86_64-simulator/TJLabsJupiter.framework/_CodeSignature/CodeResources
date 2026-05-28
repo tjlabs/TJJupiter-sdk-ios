@@ -14,11 +14,11 @@
 		</data>
 		<key>Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		6SUFMT2d2Iw9MDv+2rCQFoYaFD8=
+		ciZn+T27nlM3AZIFAUwYQk0XUBo=
 		</data>
 		<key>Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		AFBw7AvSFAX0xvqHJKLf0XpK2hc=
+		L19VB1GELdlcMjkzczE9pdUEMMY=
 		</data>
 		<key>Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -26,19 +26,19 @@
 		</data>
 		<key>Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		AFBw7AvSFAX0xvqHJKLf0XpK2hc=
+		L19VB1GELdlcMjkzczE9pdUEMMY=
 		</data>
 		<key>Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ZREYDghKVrK5SFbJ9wxftyarDkg=
+		qe79m9tfwTqfdTHSTrkcR9dASrw=
 		</data>
 		<key>Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		6SUFMT2d2Iw9MDv+2rCQFoYaFD8=
+		ciZn+T27nlM3AZIFAUwYQk0XUBo=
 		</data>
 		<key>Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		B4uYrao25TXyvbtInzR2GjK9TlA=
+		TzQ4MHRolu0Tq+biuTqnjJg5A/w=
 		</data>
 		<key>Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		B4uYrao25TXyvbtInzR2GjK9TlA=
+		TzQ4MHRolu0Tq+biuTqnjJg5A/w=
 		</data>
 		<key>Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ZhqkxuQMD/Ysmh3x8KVmbrJFUB4=
+		Ueb0eLxcpIts7OgW8FLoIZvqmEQ=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -70,14 +70,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			wsheO51Sl7hABitnKpDZg+81Q5fJkUeoKL0ugFwx/Yo=
+			OHY3LkDh757eXczpw4V7MDmhdkZrPBvzrLn0aZBb8y8=
 			</data>
 		</dict>
 		<key>Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TBghjr5CFKaAmzY8MivlUcxTNrr+T4+vwHUfZlzSoxk=
+			lfmSX0fBhVhYqrKEAxCiYhA3fwUWsNfiGkUELscMztg=
 			</data>
 		</dict>
 		<key>Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -91,28 +91,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TBghjr5CFKaAmzY8MivlUcxTNrr+T4+vwHUfZlzSoxk=
+			lfmSX0fBhVhYqrKEAxCiYhA3fwUWsNfiGkUELscMztg=
 			</data>
 		</dict>
 		<key>Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			F+3hdO5LjLkM7pRUiWkBJdtEhNoO44s8wx0t10ziLYQ=
+			KNXvNQk5vQWYTZQSNpqD2hifOcm2T8M5GGeoRyFRf4w=
 			</data>
 		</dict>
 		<key>Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wsheO51Sl7hABitnKpDZg+81Q5fJkUeoKL0ugFwx/Yo=
+			OHY3LkDh757eXczpw4V7MDmhdkZrPBvzrLn0aZBb8y8=
 			</data>
 		</dict>
 		<key>Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+06fJt6hCC/SbvKjdhm/BpGBa7ttrAc5B2Snqv+eQ58=
+			jfNrtrddFp7JRJFQ35DX4Hyn1vOpW8tNBPBWxsOaNaA=
 			</data>
 		</dict>
 		<key>Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -126,14 +126,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			+06fJt6hCC/SbvKjdhm/BpGBa7ttrAc5B2Snqv+eQ58=
+			jfNrtrddFp7JRJFQ35DX4Hyn1vOpW8tNBPBWxsOaNaA=
 			</data>
 		</dict>
 		<key>Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hSUBUBFkJndu9NKOOnw6Am1LmafcaToazofGcp51kL4=
+			tS5LLpbIGeoUYfLG/btTfbV4t9RCnsJ8FZvkNBAJrK4=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

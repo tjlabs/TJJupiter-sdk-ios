@@ -36,7 +36,7 @@ class ViewController: UIViewController, JupiterServiceManagerDelegate {
         // TODO
     }
     
-    func isNavigationRouteFailed() {
+    func isNavigationRouteFailed(_ reason: NavigationRouteFailureReason) {
         // TODO
     }
     
@@ -67,4 +67,3 @@ class ViewController: UIViewController, JupiterServiceManagerDelegate {
         serviceManager?.startService(mode: .MODE_VEHICLE)
     }
 }
-

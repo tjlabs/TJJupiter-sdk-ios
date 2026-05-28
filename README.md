@@ -1,5 +1,5 @@
 # TJJupiterSDK
-### Version 2.0.1
+### Version 2.0.2
 
 [![Version](https://img.shields.io/cocoapods/v/TJJupiterSDK.svg?style=flat)](https://cocoapods.org/pods/TJJupiterSDK)
 [![License](https://img.shields.io/cocoapods/l/TJJupiterSDK.svg?style=flat)](https://cocoapods.org/pods/TJJupiterSDK)
@@ -131,7 +131,7 @@ extension ViewController: JupiterServiceManagerDelegate {
 
     func isNavigationRouteChanged(_ routes: [(String, String, Int, Float, Float)]) {}
 
-    func isNavigationRouteFailed() {}
+    func isNavigationRouteFailed(_ reason: NavigationRouteFailureReason) {}
 
     func isWaypointChanged(_ waypoints: [[Double]]) {}
 }
@@ -268,7 +268,9 @@ public enum JupiterServiceCode: Int {
 - If you use the mocking mode below, you can receive a randomly defined JupiterResult even outside the service area.
 - 
 ```swift
-manager.setMockingMode()
+manager.setMockMode(mode: .VEHICLE_INDOOR_OUTDOOR) { success in
+    print("Mock mode:", success)
+}
 ```
 
 ---

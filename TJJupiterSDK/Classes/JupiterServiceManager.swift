@@ -9,10 +9,10 @@ protocol JupiterNavigationServiceManaging: AnyObject {
     func stopService(completion: @escaping (Bool, String) -> Void)
     func setNaviDestination(dest: TJLabsJupiter.Point, isVehicle: Bool)
     func setNaviWaypoints(waypoints: [[Double]])
-    func requestRouting(start: TJLabsJupiter.RoutingStart, end: TJLabsJupiter.Point, waypoints: [TJLabsJupiter.Point], is_vehicle: Bool, completion: @escaping (RoutingResult?, [NavigationLevelRoute]) -> Void)
-    func setSimulationMode(flag: Bool, rfdFileName: String, uvdFileName: String, eventFileName: String)
-    func setSimulationModeLegacy(flag: Bool, bleFileName: String, sensorFileName: String)
-    func setMockingMode()
+    func requestRouting(start: TJLabsJupiter.RoutingStart, end: TJLabsJupiter.Point, waypoints: [TJLabsJupiter.Point], is_vehicle: Bool, completion: @escaping (RoutingResult?, [NavigationLevelRoute], TJLabsJupiter.NavigationRouteFailureReason?) -> Void)
+    func setReplayMode(flag: Bool, rfdFileName: String, uvdFileName: String, eventFileName: String)
+    func setReplayModeLegacy(flag: Bool, bleFileName: String, sensorFileName: String)
+    func setMockMode(mode: TJLabsJupiter.JupiterMockMode, completion: @escaping (Bool) -> Void)
 }
 
 extension NavigationManager: JupiterNavigationServiceManaging {}
@@ -39,7 +39,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         case stop
     }
     
-    public static let sdkVersion = "2.0.1"
+    public static let sdkVersion = "2.0.2"
     private let lifecycleLock = NSLock()
     private var serviceState: ServiceState = .stopped
     private var activeMode: UserMode?
@@ -86,8 +86,8 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         delegate?.isNavigationRouteChanged(routes)
     }
     
-    public func isNavigationRouteFailed() {
-        delegate?.isNavigationRouteFailed()
+    public func isNavigationRouteFailed(_ reason: TJLabsJupiter.NavigationRouteFailureReason) {
+        delegate?.isNavigationRouteFailed(reason.toWrap())
     }
     
     public func isWaypointChanged(_ waypoints: [[Double]]) {
@@ -162,22 +162,24 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         let startPoint = start.toJupiter()
         let endPoint = end.toJupiter()
         let naviWaypoints = waypoints.map { $0.toJupiter() }
-        serviceManager.requestRouting(start: startPoint, end: endPoint, waypoints: naviWaypoints, is_vehicle: isVehicleMode) { result, _ in
+        serviceManager.requestRouting(start: startPoint, end: endPoint, waypoints: naviWaypoints, is_vehicle: isVehicleMode) { result, _, _ in
             completion(result)
         }
     }
     
-    //MARK: - Simulation Mode
-    public func setSimulationMode(flag: Bool, rfdFileName: String, uvdFileName: String, eventFileName: String) {
-        serviceManager.setSimulationMode(flag: flag, rfdFileName: rfdFileName, uvdFileName: uvdFileName, eventFileName: eventFileName)
+    //MARK: - Replay Mode
+    public func setReplayMode(flag: Bool, rfdFileName: String, uvdFileName: String, eventFileName: String) {
+        serviceManager.setReplayMode(flag: flag, rfdFileName: rfdFileName, uvdFileName: uvdFileName, eventFileName: eventFileName)
     }
     
-    public func setSimulationModeLegacy(flag: Bool, bleFileName: String, sensorFileName: String) {
-        serviceManager.setSimulationModeLegacy(flag: flag, bleFileName: bleFileName, sensorFileName: sensorFileName)
+    public func setReplayModeLegacy(flag: Bool, bleFileName: String, sensorFileName: String) {
+        serviceManager.setReplayModeLegacy(flag: flag, bleFileName: bleFileName, sensorFileName: sensorFileName)
     }
     
-    public func setMockingMode() {
-        serviceManager.setMockingMode()
+    public func setMockMode(mode: JupiterMockMode, completion: @escaping (Bool) -> Void) {
+        serviceManager.setMockMode(mode: mode.toJupiter(), completion: { isSuccess in
+            completion(isSuccess)
+        })
     }
     
     private func handleStartSuccess() {
