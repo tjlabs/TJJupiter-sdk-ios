@@ -38,6 +38,12 @@ extension JupiterRegion {
     }
 }
 
+extension JupiterMockMode {
+    func toJupiter() -> TJLabsJupiter.JupiterMockMode {
+        return TJLabsJupiter.JupiterMockMode(rawValue: self.rawValue) ?? .NONE
+    }
+}
+
 
 // MARK: - To Wrap 필요
 extension TJLabsJupiter.InOutState {
@@ -54,13 +60,19 @@ extension TJLabsJupiter.InitErrorCode {
 
 extension TJLabsJupiter.JupiterErrorCode {
     func toWrap() -> JupiterErrorCode {
-        return JupiterErrorCode(rawValue: self.rawValue) ?? .INVALID_ID
+        return JupiterErrorCode(rawValue: self.rawValue) ?? .UNKNOWN
     }
 }
 
 extension TJLabsJupiter.JupiterServiceCode {
     func toWrap() -> JupiterServiceCode {
-        return JupiterServiceCode(rawValue: self.rawValue) ?? .SERVICE_FAIL
+        return JupiterServiceCode(rawValue: self.rawValue) ?? .UNKNOWN
+    }
+}
+
+extension TJLabsJupiter.NavigationRouteFailureReason {
+    func toWrap() -> NavigationRouteFailureReason {
+        return NavigationRouteFailureReason(rawValue: self.rawValue) ?? .unknown
     }
 }
 

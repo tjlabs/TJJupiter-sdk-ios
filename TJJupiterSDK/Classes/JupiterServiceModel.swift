@@ -11,7 +11,7 @@ public protocol JupiterServiceManagerDelegate: AnyObject {
     func isUserGuidanceOut()
     func isUserArrived()
     func isNavigationRouteChanged(_ routes: [(String, String, Int, Float, Float)])
-    func isNavigationRouteFailed()
+    func isNavigationRouteFailed(_ reason: NavigationRouteFailureReason)
     func isWaypointChanged(_ waypoints: [[Double]])
 }
 
@@ -39,22 +39,16 @@ public enum InitErrorCode: Int {
     case UNKNOWN = -1
     case NOT_AUTHORIZED = 0
     case INVALID_ID = 1
-    case INVALID_MODE = 2
-    case NETWORK_DISCONNECT = 3
-    case DUPLICATED_SERVICE = 4
-    case LOGIN_FAIL = 5
-    case CALC_INIT_FAIL = 6
+    case NETWORK_DISCONNECT = 2
+    case LOGIN_FAIL = 3
+    case LOAD_RESOURCE_FAIL = 4
 }
 
 public enum JupiterErrorCode: Int {
     case UNKNOWN = -1
-    case INVALID_ID = 0
-    case INVALID_MODE = 1
-    case NETWORK_DISCONNECT = 2
-    case DUPLICATED_SERVICE = 3
-    case LOGIN_FAIL = 4
-    case GENERATOR_FAIL = 5
-    case CALC_INIT_FAIL = 6
+    case NOT_INITIALIZED = 0
+    case DUPLICATED_SERVICE = 1
+    case GENERATOR_FAIL = 2
 }
 
 public enum JupiterServiceCode: Int {
@@ -67,6 +61,21 @@ public enum JupiterServiceCode: Int {
     case BLUETOOTH_OFF = 5
     case BLUETOOTH_SCAN_STOP = 6
     case NETWORK_DISCONNECT = 7
+    case GET_FIRST_RESULT = 8
+}
+
+public enum NavigationRouteFailureReason: String, Codable {
+    case unknown = "unknown"
+    case serverResponse = "server_response"
+    case tooClose = "too_close"
+}
+
+public enum JupiterMockMode: String {
+    case NONE = "NONE"
+    case VEHICLE_INDOOR_OUTDOOR = "VEHICLE_INDOOR_OUTDOOR"
+    case VEHICLE_OUTDOOR_PARKING = "VEHICLE_OUTDOOR_PARKING"
+    case PEDESTRIAN_INDOOR_PARKING = "PEDESTRIAN_INDOOR_PARKING"
+    case PEDESTRIAN_PARKING_INDOOR = "PEDESTRIAN_PARKING_INDOOR"
 }
 
 public struct JupiterResult: Codable {

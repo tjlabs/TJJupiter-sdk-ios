@@ -22,13 +22,15 @@ private final class MockNavigationManager: JupiterNavigationServiceManaging {
     
     func setNaviWaypoints(waypoints: [[Double]]) {}
     
-    func requestRouting(start: TJLabsJupiter.RoutingStart, end: TJLabsJupiter.Point, waypoints: [TJLabsJupiter.Point], is_vehicle: Bool, completion: @escaping (RoutingResult?, [NavigationLevelRoute]) -> Void) {}
+    func requestRouting(start: TJLabsJupiter.RoutingStart, end: TJLabsJupiter.Point, waypoints: [TJLabsJupiter.Point], is_vehicle: Bool, completion: @escaping (RoutingResult?, [NavigationLevelRoute], TJLabsJupiter.NavigationRouteFailureReason?) -> Void) {}
     
-    func setSimulationMode(flag: Bool, rfdFileName: String, uvdFileName: String, eventFileName: String) {}
+    func setReplayMode(flag: Bool, rfdFileName: String, uvdFileName: String, eventFileName: String) {}
     
-    func setSimulationModeLegacy(flag: Bool, bleFileName: String, sensorFileName: String) {}
+    func setReplayModeLegacy(flag: Bool, bleFileName: String, sensorFileName: String) {}
     
-    func setMockingMode() {}
+    func setMockMode(mode: TJLabsJupiter.JupiterMockMode, completion: @escaping (Bool) -> Void) {
+        completion(true)
+    }
     
     func completeStop(success: Bool = true, message: String = "stopped") {
         let completion = stopCompletion

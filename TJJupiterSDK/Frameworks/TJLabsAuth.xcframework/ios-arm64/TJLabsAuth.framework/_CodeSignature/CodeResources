@@ -10,27 +10,27 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		XjWV/rhmgeMZO9nxh41Okz8lKio=
+		I3HgtuhMJjcvrDTmGXZw/rJvvcE=
 		</data>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		VP/+DcT/FeEOqrvE2t6+k4dB7H4=
+		EhknESYKfWivBLj5HlylBMzxgrY=
 		</data>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		eIGjppGZZz/OXWnzHSdDJB8HwsA=
+		t3+/J8Ve+ip/GgFTr/kv43G0rhA=
 		</data>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		iukc+2tboe38BO0J5Ug7BAJtKbI=
+		XXwEsiNbaPe/OitJfKjOSS71dqk=
 		</data>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		eIGjppGZZz/OXWnzHSdDJB8HwsA=
+		t3+/J8Ve+ip/GgFTr/kv43G0rhA=
 		</data>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<data>
-		n7WIocVgK/Jmxwu/fAfKPHKbwCs=
+		yfwB++o1Q+M2AkNQujWlRv7vz3M=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -38,7 +38,7 @@
 		</data>
 		<key>TJLabsAuthSecretConfig.plist</key>
 		<data>
-		w5Mo+thk3fLxAvYYbmwEk6qxu9U=
+		WHwLg9j6uYGoOCVjZg4Nn7aYX5A=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -54,35 +54,35 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			XZH4o6yJpMuHyb/33z8VuyRhwSF6bFydGVg83xBE/QE=
+			xp9yFY1NufA3nEphVbf8ZaNW8f2VH4Vl2oEcL5T5coA=
 			</data>
 		</dict>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bXrr6x9OrXybuk9Ld63hNwuDcEi7V6bpGCfX8pGzdh4=
+			KbJeCEXjczRDXMcAao8WUReJUGx0xeKx/c436ib3LHE=
 			</data>
 		</dict>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			HX9guEIAajXEvJqMCyjcVx6+/JQQwvi0DDC9yQaKPXE=
+			d4IwU97+u+ewZ8tMew7b9cuoTJb0ZXWW0jdbuDJ80Ww=
 			</data>
 		</dict>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bXrr6x9OrXybuk9Ld63hNwuDcEi7V6bpGCfX8pGzdh4=
+			KbJeCEXjczRDXMcAao8WUReJUGx0xeKx/c436ib3LHE=
 			</data>
 		</dict>
 		<key>Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cairNPlekcGcMfR24ABnsRRZ5NTZgxNy7zLOuNreqi0=
+			7Opzr1Kw3ys5DmPew5bDTkWuvA9uPFfJpdOWS4yaG54=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -96,7 +96,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			yFOcm9dWjQylhYeUdYvs5chyoLGmOspkmCNydmBiVEg=
+			kPWlWYZ6WvUczJz6XJ1ugXrgcYWv7qQKLJ0Zc5bDZ/Q=
 			</data>
 		</dict>
 	</dict>
