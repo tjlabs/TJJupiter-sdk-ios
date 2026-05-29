@@ -16,7 +16,6 @@ protocol JupiterNavigationServiceManaging: AnyObject {
 }
 
 extension NavigationManager: JupiterNavigationServiceManaging {}
-
 private extension NSLock {
     func sync<T>(_ work: () -> T) -> T {
         lock()
