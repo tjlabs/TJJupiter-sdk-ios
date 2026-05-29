@@ -521,6 +521,7 @@ public protocol NavigationManagerDelegate : AnyObject {
   func isWaypointChanged(_ waypoints: [[Swift.Double]])
 }
 public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
+  public static let sdkVersion: Swift.String
   public func onRfdResult(receivedForce: TJLabsCommon.ReceivedForce)
   #if compiler(>=5.3) && $NonescapableTypes
   public func onEntering(userVelocity: TJLabsCommon.UserVelocity, peakIndex: Swift.Int?, key: Swift.String, level_id: Swift.Int)

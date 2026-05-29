@@ -61,6 +61,7 @@ public enum JupiterServiceCode: Int {
     case BLUETOOTH_OFF = 5
     case BLUETOOTH_SCAN_STOP = 6
     case NETWORK_DISCONNECT = 7
+    case GET_FIRST_RESULT = 8
 }
 
 public enum NavigationRouteFailureReason: String, Codable {
