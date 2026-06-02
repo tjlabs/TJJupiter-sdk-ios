@@ -72,10 +72,10 @@ public enum NavigationRouteFailureReason: String, Codable {
 
 public enum JupiterMockMode: String {
     case NONE = "NONE"
-    case VEHICLE_INDOOR_OUTDOOR = "VEHICLE_INDOOR_OUTDOOR"
-    case VEHICLE_OUTDOOR_PARKING = "VEHICLE_OUTDOOR_PARKING"
-    case PEDESTRIAN_INDOOR_PARKING = "PEDESTRIAN_INDOOR_PARKING"
-    case PEDESTRIAN_PARKING_INDOOR = "PEDESTRIAN_PARKING_INDOOR"
+    case VEHICLE_INDOOR_OUTDOOR = "indoor_outdoor"
+    case VEHICLE_OUTDOOR_PARKING = "outdoor_parking"
+    case PEDESTRIAN_INDOOR_PARKING = "indoor_parking"
+    case PEDESTRIAN_PARKING_INDOOR = "parking_indoor"
 }
 
 public struct JupiterResult: Codable {
