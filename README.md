@@ -1,5 +1,5 @@
 # TJJupiterSDK
-### Version 2.0.2
+### Version 2.0.3
 
 [![Version](https://img.shields.io/cocoapods/v/TJJupiterSDK.svg?style=flat)](https://cocoapods.org/pods/TJJupiterSDK)
 [![License](https://img.shields.io/cocoapods/l/TJJupiterSDK.svg?style=flat)](https://cocoapods.org/pods/TJJupiterSDK)
@@ -129,7 +129,7 @@ extension ViewController: JupiterServiceManagerDelegate {
 
     func isUserArrived() {}
 
-    func isNavigationRouteChanged(_ routes: [(String, String, Int, Float, Float)]) {}
+    func isNavigationRouteChanged(_ routes: [(String, String, Float, Float)]) {}
 
     func isNavigationRouteFailed(_ reason: NavigationRouteFailureReason) {}
 
@@ -257,6 +257,8 @@ public enum JupiterServiceCode: Int {
     case BLUETOOTH_OFF = 5
     case BLUETOOTH_SCAN_STOP = 6
     case NETWORK_DISCONNECT = 7
+    case GET_FIRST_RESULT = 8
+    case PEAK_DETECTED = 300
 }
 ```
 
