@@ -25,7 +25,6 @@ private extension NSLock {
 }
 
 public class JupiterServiceManager: NavigationManagerDelegate {
-    
     private enum ServiceState {
         case stopped
         case starting
