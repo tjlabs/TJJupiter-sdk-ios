@@ -10,7 +10,7 @@ public protocol JupiterServiceManagerDelegate: AnyObject {
     func isJupiterInOutStateChanged(_ state: InOutState)
     func isUserGuidanceOut()
     func isUserArrived()
-    func isNavigationRouteChanged(_ routes: [(String, String, Int, Float, Float)])
+    func isNavigationRouteChanged(_ routes: [(String, String, Float, Float)])
     func isNavigationRouteFailed(_ reason: NavigationRouteFailureReason)
     func isWaypointChanged(_ waypoints: [[Double]])
 }
@@ -62,6 +62,7 @@ public enum JupiterServiceCode: Int {
     case BLUETOOTH_SCAN_STOP = 6
     case NETWORK_DISCONNECT = 7
     case GET_FIRST_RESULT = 8
+    case PEAK_DETECTED = 300
 }
 
 public enum NavigationRouteFailureReason: String, Codable {
