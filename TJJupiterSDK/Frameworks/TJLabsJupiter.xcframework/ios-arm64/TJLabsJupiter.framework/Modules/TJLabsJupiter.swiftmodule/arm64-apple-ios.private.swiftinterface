@@ -2,6 +2,7 @@
 // swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name TJLabsJupiter
 // swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+import CoreLocation
 import Foundation
 import Swift
 import SystemConfiguration
@@ -85,7 +86,7 @@ public protocol JupiterManagerDelegate : AnyObject {
   func onJupiterSuccess(_ isSuccess: Swift.Bool, _ code: TJLabsJupiter.JupiterErrorCode?)
   #endif
   func onJupiterReport(_ code: TJLabsJupiter.JupiterServiceCode, _ msg: Swift.String)
-  func onJupiterResult(_ result: TJLabsJupiter.JupiterResult)
+  func onJupiterResult(_ result: TJLabsJupiter.JupiterResult, _ isShowLSE: Swift.Bool)
   func isJupiterInOutStateChanged(_ state: TJLabsJupiter.InOutState)
   #if compiler(>=5.3) && $NonescapableTypes
   func isJupiterPhaseChanged(index: Swift.Int, phase: TJLabsJupiter.JupiterPhase, xyh: [Swift.Float]?)
@@ -127,6 +128,7 @@ public enum JupiterServiceCode : Swift.Int {
   case BLUETOOTH_SCAN_STOP
   case NETWORK_DISCONNECT
   case GET_FIRST_RESULT
+  case PEAK_DETECTED
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
   #endif
@@ -248,6 +250,8 @@ public struct SearchResult {
   public let loss_lm: Swift.Float
   public let loss_g_d: Swift.Float
   public let loss_g_h: Swift.Float
+  public let loss_lse: Swift.Float
+  public let loss_lse_heading: Swift.Float
 }
 public struct SelectedSearch {
   public let older: TJLabsResource.PeakData?
@@ -274,6 +278,7 @@ public struct CandidateResult {
   public let loss_lm: Swift.Float
   public let loss_g_d: Swift.Float
   public let loss_g_h: Swift.Float
+  public let loss_pre_fixed: Swift.Float?
 }
 public struct SelectedCandidate {
   public let older: TJLabsResource.PeakData?
@@ -405,10 +410,25 @@ public struct NavigationLevelRoute : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public struct Route : Swift.Codable {
+  public let origin: TJLabsJupiter.Origin
+  public let destination: TJLabsJupiter.Point
+  public let waypoints: [TJLabsJupiter.Point]
+  public let segments: [TJLabsJupiter.RouteSegment]
+  public let distance: Swift.Int
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
-public struct RouteNode : Swift.Codable {
+public struct RouteSegment : Swift.Codable {
+  public let level_id: Swift.Int
+  public let guides: [TJLabsJupiter.RouteGuide]
+  public let distance: Swift.Int
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RouteGuide : Swift.Codable {
+  public let x: Swift.Int
+  public let y: Swift.Int
+  public let out_heading: Swift.Int
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -417,6 +437,14 @@ public struct Point : Swift.Codable {
   public let x: Swift.Int
   public let y: Swift.Int
   public init(level_id: Swift.Int, x: Swift.Int, y: Swift.Int)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Origin : Swift.Codable {
+  public let level_id: Swift.Int
+  public let x: Swift.Int
+  public let y: Swift.Int
+  public let absolute_heading: Swift.Int
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -446,8 +474,7 @@ public struct RoutingStart : Swift.Codable {
 public struct RoutingResult : Swift.Codable {
   public let code: Swift.Int
   public let request_id: Swift.String
-  public let routes: [TJLabsJupiter.Route]
-  public let total_distance: Swift.Int
+  public let route: TJLabsJupiter.Route
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -516,7 +543,7 @@ public protocol NavigationManagerDelegate : AnyObject {
   func isJupiterInOutStateChanged(_ state: TJLabsJupiter.InOutState)
   func isUserArrived()
   func isUserGuidanceOut()
-  func isNavigationRouteChanged(_ routes: [(Swift.String, Swift.String, Swift.Int, Swift.Float, Swift.Float)])
+  func isNavigationRouteChanged(_ routes: [(Swift.String, Swift.String, Swift.Float, Swift.Float)])
   func isNavigationRouteFailed(_ reason: TJLabsJupiter.NavigationRouteFailureReason)
   func isWaypointChanged(_ waypoints: [[Swift.Double]])
 }
@@ -537,13 +564,13 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   public func onJupiterSuccess(_ isSuccess: Swift.Bool, _ code: TJLabsJupiter.JupiterErrorCode?)
   #endif
   public func onJupiterReport(_ code: TJLabsJupiter.JupiterServiceCode, _ msg: Swift.String)
-  public func onJupiterResult(_ result: TJLabsJupiter.JupiterResult)
+  public func onJupiterResult(_ result: TJLabsJupiter.JupiterResult, _ isShowLSEResult: Swift.Bool)
   public func isJupiterInOutStateChanged(_ state: TJLabsJupiter.InOutState)
   #if compiler(>=5.3) && $NonescapableTypes
   public func isJupiterPhaseChanged(index: Swift.Int, phase: TJLabsJupiter.JupiterPhase, xyh: [Swift.Float]?)
   #endif
   weak public var delegate: (any TJLabsJupiter.NavigationManagerDelegate)?
-  public init(id: Swift.String, cloud: Swift.String = JupiterCloud.AWS.rawValue, region: Swift.String = JupiterRegion.KOREA.rawValue, sectorId: Swift.Int, debugOption: Swift.Bool = false)
+  public init(id: Swift.String, cloud: Swift.String = JupiterCloud.GCP.rawValue, region: Swift.String = JupiterRegion.KOREA.rawValue, sectorId: Swift.Int, debugOption: Swift.Bool = false)
   @objc deinit
   public func startService(mode: TJLabsCommon.UserMode)
   public func stopService(completion: @escaping (Swift.Bool, Swift.String) -> Swift.Void)
@@ -592,26 +619,26 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   #endif
 }
 @_hasMissingDesignatedInitializers public class JupiterNetworkConstants {
+  public static func setServerBranch(prod: Swift.Bool)
   public static func setServerURL(cloud: Swift.String, region: Swift.String)
   public static func getUserBaseURL() -> Swift.String
   public static func getRecBaseURL() -> Swift.String
   public static func getCalcBaseURL() -> Swift.String
   public static func getClientBaseURL() -> Swift.String
   public static func getUserLoginVersion() -> Swift.String
-  public static func getUserRcVersion() -> Swift.String
+  public static func getUserFileUploadServerVersion() -> Swift.String
   public static func getRecRfdServerVersion() -> Swift.String
   public static func getRecUvdServerVersion() -> Swift.String
   public static func getRecMobileResultServerVersion() -> Swift.String
-  public static func getRecFileUploadServerVersion() -> Swift.String
   public static func getUserLoginURL() -> Swift.String
-  public static func getUserRcURL() -> Swift.String
+  public static func getUserFileUploadURL() -> Swift.String
   public static func getRecRfdURL() -> Swift.String
   public static func getRecUvdURL() -> Swift.String
   public static func getRecMobileResultURL() -> Swift.String
   public static func getRecMobileReportURL() -> Swift.String
-  public static func getRecFileUploadURL() -> Swift.String
   public static func getCalcDirsServerVersion() -> Swift.String
   public static func getCalcDirsURL() -> Swift.String
+  public static func getLocationSingleEpochURL() -> Swift.String
   @objc deinit
 }
 extension Swift.Array where Element : Swift.BinaryInteger {
