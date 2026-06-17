@@ -37,7 +37,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         case stop
     }
     
-    public static let sdkVersion = "2.0.3"
+    public static let sdkVersion = "2.0.4"
     private let lifecycleLock = NSLock()
     private var serviceState: ServiceState = .stopped
     private var activeMode: UserMode?
