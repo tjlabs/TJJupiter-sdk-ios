@@ -39,7 +39,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         case stop
     }
     
-    public static let sdkVersion = "2.0.5"
+    public static let sdkVersion = "2.0.6"
     private let lifecycleLock = NSLock()
     private var serviceState: ServiceState = .stopped
     private var activeMode: UserMode?
@@ -49,6 +49,8 @@ public class JupiterServiceManager: NavigationManagerDelegate {
     public func onInitSuccess(_ isSuccess: Bool, _ code: TJLabsJupiter.InitErrorCode?) {
         if !isSuccess {
             handleStartFailure()
+        } else {
+            self.serviceManager.setLSEAppName(name: "ios_jupiter_prod")
         }
         delegate?.onInitSuccess(isSuccess, code?.toWrap())
     }
@@ -105,8 +107,6 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         self.id = id
         self.serviceManager = navigationManager
         self.serviceManager.delegate = self
-        
-        self.serviceManager.setLSEAppName(name: "ios_jupiter_prod")
     }
     
     init(id: String, serviceManager: JupiterNavigationServiceManaging) {
