@@ -138,7 +138,7 @@ public enum JupiterServiceCode : Swift.Int {
   }
 }
 public enum JupiterPhase {
-  case NONE, ENTERING, SEARCHING, TRACKING, EXITING
+  case NONE, ENTERING, SEARCHING, TRACKING, EXITING, OUTDOOR
   public static func == (a: TJLabsJupiter.JupiterPhase, b: TJLabsJupiter.JupiterPhase) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
@@ -593,6 +593,7 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   public func setReplayModeLegacy(flag: Swift.Bool, bleFileName: Swift.String, sensorFileName: Swift.String)
   public func setMockMode(mode: TJLabsJupiter.JupiterMockMode, completion: @escaping (Swift.Bool) -> Swift.Void)
   public func cancelNavigation()
+  public func setLSEAppName(name: Swift.String)
   #if compiler(>=5.3) && $NonescapableTypes
   public func getMatchedLevelId(key: Swift.String) -> Swift.Int?
   #endif
