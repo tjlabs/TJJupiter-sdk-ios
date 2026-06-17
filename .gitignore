@@ -15,8 +15,12 @@ xcuserdata/
 *.xccheckout
 *.moved-aside
 DerivedData
+DerivedData/
 *.hmap
 *.ipa
+
+# Local secrets
+Config/Secrets.xcconfig
 
 # Bundler
 .bundle
