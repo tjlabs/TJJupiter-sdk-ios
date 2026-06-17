@@ -4,6 +4,7 @@ import TJLabsCommon
 import TJLabsJupiter
 
 private final class MockNavigationManager: JupiterNavigationServiceManaging {
+    
     var delegate: (any NavigationManagerDelegate)?
     private(set) var startModes: [TJLabsCommon.UserMode] = []
     private(set) var stopCallCount = 0
@@ -30,6 +31,10 @@ private final class MockNavigationManager: JupiterNavigationServiceManaging {
     
     func setMockMode(mode: TJLabsJupiter.JupiterMockMode, completion: @escaping (Bool) -> Void) {
         completion(true)
+    }
+    
+    func setLSEAppName(name: String) {
+        
     }
     
     func completeStop(success: Bool = true, message: String = "stopped") {

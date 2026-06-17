@@ -13,6 +13,7 @@ protocol JupiterNavigationServiceManaging: AnyObject {
     func setReplayMode(flag: Bool, rfdFileName: String, uvdFileName: String, eventFileName: String)
     func setReplayModeLegacy(flag: Bool, bleFileName: String, sensorFileName: String)
     func setMockMode(mode: TJLabsJupiter.JupiterMockMode, completion: @escaping (Bool) -> Void)
+    func setLSEAppName(name: String)
 }
 
 extension NavigationManager: JupiterNavigationServiceManaging {}
@@ -38,7 +39,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         case stop
     }
     
-    public static let sdkVersion = "2.0.4"
+    public static let sdkVersion = "2.0.5"
     private let lifecycleLock = NSLock()
     private var serviceState: ServiceState = .stopped
     private var activeMode: UserMode?
@@ -104,6 +105,8 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         self.id = id
         self.serviceManager = navigationManager
         self.serviceManager.delegate = self
+        
+        self.serviceManager.setLSEAppName(name: "ios_jupiter_prod")
     }
     
     init(id: String, serviceManager: JupiterNavigationServiceManaging) {
