@@ -291,17 +291,6 @@ public struct SelectedCandidate {
   public let headResult: TJLabsJupiter.FineLocationTrackingOutput
   public let loss: Swift.Float
 }
-public struct RecoveryResult3Peaks : Swift.Codable {
-  public let traj: [[Swift.Double]]
-  public let shiftedTraj: [TJLabsJupiter.RecoveryTrajectory]
-  public let loss: Swift.Float
-  public let bestThird: [Swift.Int]
-  public let bestSecond: [Swift.Int]
-  public let bestFirst: [Swift.Int]
-  public let bestResult: TJLabsJupiter.FineLocationTrackingOutput?
-  public func encode(to encoder: any Swift.Encoder) throws
-  public init(from decoder: any Swift.Decoder) throws
-}
 public enum InOutState : Swift.Int, Swift.Codable {
   case OUT_TO_IN
   case INDOOR
