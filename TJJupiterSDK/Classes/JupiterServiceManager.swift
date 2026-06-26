@@ -100,6 +100,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
     public weak var delegate: JupiterServiceManagerDelegate?
     
     public init(id: String, region: String, sectorId: Int, debugOption: Bool = true) {
+        JupiterLogger.setDebugOption(set: false)
         JupiterNetworkConstants.setServerBranch(prod: true)
         let navigationManager = NavigationManager(id: id, region: region, sectorId: sectorId, debugOption: debugOption)
         self.id = id

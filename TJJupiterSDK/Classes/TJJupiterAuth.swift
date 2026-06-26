@@ -14,7 +14,8 @@ public class TJJupiterAuth {
     init () {
         setDeviceInfo()
         let clientMeta = makeClientMeta()
-        SecretConfig.set(clientMeta: clientMeta)
+        TJLabsAuthConstants.setServerURL(cloud: "GCP", region: AuthRegion.KOREA.rawValue, serverType: "jupiter")
+        SecretConfig.set(customerKey: "JUPITER", clientMeta: clientMeta)
     }
     
     private func setDeviceInfo() {
@@ -29,7 +30,7 @@ public class TJJupiterAuth {
             SdkMeta(name: "TJLabsAuth", version: "1.0.3"),
             SdkMeta(name: "TJLabsCommon", version: "0.1.4"),
             SdkMeta(name: "TJLabsResource", version: "0.1.4"),
-            SdkMeta(name: "TJLabsJupiter", version: "2.0.7")
+            SdkMeta(name: "TJLabsJupiter", version: "2.0.8")
         ]
         
         let bundleIdentifier = Bundle.main.bundleIdentifier ?? ""
