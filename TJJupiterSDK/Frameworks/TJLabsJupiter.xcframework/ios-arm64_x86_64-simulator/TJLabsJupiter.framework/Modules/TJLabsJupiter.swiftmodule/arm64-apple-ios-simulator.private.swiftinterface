@@ -198,6 +198,23 @@ public struct LLH : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+public struct LSELinkDebugInfo {
+  public var link_number: Swift.Int
+  public var start_node: Swift.Int
+  public var end_node: Swift.Int
+  public var start_coord: [Swift.Float]
+  public var end_coord: [Swift.Float]
+  public var lse_coord: [Swift.Float]
+  public var lse_uvd_index: Swift.Int
+  public var confidence: Swift.Float
+  public var confidence_level: Swift.String
+  public var posterior_probability: Swift.Float
+  public var log_likelihood_margin: Swift.Float
+  public var mean_fit_distance: Swift.Float
+  public var path_consistency: Swift.Float
+  public var observation_count: Swift.Int
+  public var candidate_count: Swift.Int
+}
 public struct JupiterDebugResult {
   public var mobile_time: Swift.Int
   public var building_name: Swift.String
@@ -208,11 +225,16 @@ public struct JupiterDebugResult {
   public var absolute_heading: Swift.Float
   public var index: Swift.Int
   public var velocity: Swift.Float
+  public var uvd_speed_mps: Swift.Float?
+  public var lse_speed_mps: Swift.Float?
   public var mode: Swift.String
   public var ble_only_position: Swift.Bool
   public var isIndoor: Swift.Bool
   public var validity: Swift.Bool
   public var validity_flag: Swift.Int
+  public var cur_lse_result: TJLabsJupiter.FineLocationTrackingOutput?
+  public var confidence_info: Swift.String?
+  public var lse_link: TJLabsJupiter.LSELinkDebugInfo?
   public var calc_xyh: [Swift.Float]
   public var tu_xyh: [Swift.Float]
   public var landmark: TJLabsResource.LandmarkData?
@@ -252,6 +274,7 @@ public struct SearchResult {
   public let loss_g_h: Swift.Float
   public let loss_lse: Swift.Float
   public let loss_lse_heading: Swift.Float
+  public let loss_lse_link: Swift.Float
 }
 public struct SelectedSearch {
   public let older: TJLabsResource.PeakData?

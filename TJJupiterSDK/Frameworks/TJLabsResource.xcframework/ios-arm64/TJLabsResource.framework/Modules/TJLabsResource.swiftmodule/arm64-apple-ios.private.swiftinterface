@@ -77,7 +77,8 @@ public enum ResourceRegion : Swift.String {
 public struct SectorIdOsInput : Swift.Codable {
   public var sector_id: Swift.Int
   public var operating_system: Swift.String
-  public init(sector_id: Swift.Int, operating_system: Swift.String = "iOS")
+  public init(sector_id: Swift.Int)
+  public init(sector_id: Swift.Int, operating_system: Swift.String)
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }

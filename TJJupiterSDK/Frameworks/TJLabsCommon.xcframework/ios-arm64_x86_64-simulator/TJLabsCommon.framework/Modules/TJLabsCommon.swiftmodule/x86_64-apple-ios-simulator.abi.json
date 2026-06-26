@@ -12995,28 +12995,28 @@
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/RFD\/RFDGenerator.swift",
       "kind": "IntegerLiteral",
-      "offset": 2165,
+      "offset": 2491,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/RFD\/RFDGenerator.swift",
       "kind": "IntegerLiteral",
-      "offset": 2167,
+      "offset": 2493,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/RFD\/RFDGenerator.swift",
       "kind": "IntegerLiteral",
-      "offset": 2194,
+      "offset": 2520,
       "length": 4,
       "value": "-100"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/RFD\/RFDGenerator.swift",
       "kind": "IntegerLiteral",
-      "offset": 2224,
+      "offset": 2550,
       "length": 3,
       "value": "-40"
     },
@@ -14898,232 +14898,232 @@
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
-      "kind": "FloatLiteral",
+      "kind": "IntegerLiteral",
       "offset": 148,
-      "length": 4,
-      "value": "16.2"
+      "length": 2,
+      "value": "18"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 203,
+      "offset": 201,
       "length": 3,
       "value": "8.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 252,
+      "offset": 250,
       "length": 4,
       "value": "0.67"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 307,
+      "offset": 305,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 393,
+      "offset": 391,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 447,
+      "offset": 445,
       "length": 4,
       "value": "3000"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 473,
+      "offset": 471,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 846,
+      "offset": 844,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 884,
+      "offset": 882,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 918,
+      "offset": 916,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 949,
+      "offset": 947,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 984,
+      "offset": 982,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 1017,
+      "offset": 1015,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 1132,
+      "offset": 1130,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 1161,
+      "offset": 1159,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 1188,
+      "offset": 1186,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 1211,
+      "offset": 1209,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 1238,
+      "offset": 1236,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 1261,
+      "offset": 1259,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 1290,
+      "offset": 1288,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 1327,
+      "offset": 1325,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 1364,
+      "offset": 1362,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "BooleanLiteral",
-      "offset": 1404,
+      "offset": 1402,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "BooleanLiteral",
-      "offset": 1456,
+      "offset": 1454,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "BooleanLiteral",
-      "offset": 1508,
+      "offset": 1506,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "BooleanLiteral",
-      "offset": 1548,
+      "offset": 1546,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 1596,
+      "offset": 1594,
       "length": 4,
       "value": "0.12"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 1639,
+      "offset": 1637,
       "length": 4,
       "value": "0.03"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 1685,
+      "offset": 1683,
       "length": 5,
       "value": "0.005"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 1733,
+      "offset": 1731,
       "length": 5,
       "value": "0.001"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 1770,
+      "offset": 1768,
       "length": 4,
       "value": "0.20"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 1807,
+      "offset": 1805,
       "length": 4,
       "value": "0.05"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/DR\/TJLabsDRDistanceEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 1957,
+      "offset": 1955,
       "length": 2,
       "value": "40"
     },
