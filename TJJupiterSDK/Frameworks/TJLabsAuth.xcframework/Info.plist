@@ -25,25 +25,6 @@
 		</dict>
 		<dict>
 			<key>BinaryPath</key>
-			<string>TJLabsAuth.framework/Versions/A/TJLabsAuth</string>
-			<key>DebugSymbolsPath</key>
-			<string>dSYMs</string>
-			<key>LibraryIdentifier</key>
-			<string>ios-arm64_x86_64-maccatalyst</string>
-			<key>LibraryPath</key>
-			<string>TJLabsAuth.framework</string>
-			<key>SupportedArchitectures</key>
-			<array>
-				<string>arm64</string>
-				<string>x86_64</string>
-			</array>
-			<key>SupportedPlatform</key>
-			<string>ios</string>
-			<key>SupportedPlatformVariant</key>
-			<string>maccatalyst</string>
-		</dict>
-		<dict>
-			<key>BinaryPath</key>
 			<string>TJLabsAuth.framework/TJLabsAuth</string>
 			<key>DebugSymbolsPath</key>
 			<string>dSYMs</string>

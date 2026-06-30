@@ -1,6 +1,0 @@
-framework module TJLabsResource {
-  umbrella header "TJLabsResource.h"
-  export *
-
-  module * { export * }
-}
