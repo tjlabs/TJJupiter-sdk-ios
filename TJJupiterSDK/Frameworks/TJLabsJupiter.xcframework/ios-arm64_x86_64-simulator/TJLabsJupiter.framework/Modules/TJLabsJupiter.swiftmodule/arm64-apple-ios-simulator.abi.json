@@ -10699,6 +10699,116 @@
           },
           {
             "kind": "Var",
+            "name": "mapmatch",
+            "printedName": "mapmatch",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "TJLabsJupiter.LSEMapMatch?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "LSEMapMatch",
+                    "printedName": "TJLabsJupiter.LSEMapMatch",
+                    "usr": "s:13TJLabsJupiter11LSEMapMatchV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13TJLabsJupiter0B11DebugResultV8mapmatchAA11LSEMapMatchVSgvp",
+            "mangledName": "$s13TJLabsJupiter0B11DebugResultV8mapmatchAA11LSEMapMatchVSgvp",
+            "moduleName": "TJLabsJupiter",
+            "declAttributes": [
+              "HasInitialValue",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "TJLabsJupiter.LSEMapMatch?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LSEMapMatch",
+                        "printedName": "TJLabsJupiter.LSEMapMatch",
+                        "usr": "s:13TJLabsJupiter11LSEMapMatchV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13TJLabsJupiter0B11DebugResultV8mapmatchAA11LSEMapMatchVSgvg",
+                "mangledName": "$s13TJLabsJupiter0B11DebugResultV8mapmatchAA11LSEMapMatchVSgvg",
+                "moduleName": "TJLabsJupiter",
+                "implicit": true,
+                "accessorKind": "get"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Set",
+                "printedName": "Set()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "TJLabsJupiter.LSEMapMatch?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "LSEMapMatch",
+                        "printedName": "TJLabsJupiter.LSEMapMatch",
+                        "usr": "s:13TJLabsJupiter11LSEMapMatchV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13TJLabsJupiter0B11DebugResultV8mapmatchAA11LSEMapMatchVSgvs",
+                "mangledName": "$s13TJLabsJupiter0B11DebugResultV8mapmatchAA11LSEMapMatchVSgvs",
+                "moduleName": "TJLabsJupiter",
+                "implicit": true,
+                "accessorKind": "set"
+              },
+              {
+                "kind": "Accessor",
+                "name": "Modify",
+                "printedName": "Modify()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13TJLabsJupiter0B11DebugResultV8mapmatchAA11LSEMapMatchVSgvM",
+                "mangledName": "$s13TJLabsJupiter0B11DebugResultV8mapmatchAA11LSEMapMatchVSgvM",
+                "moduleName": "TJLabsJupiter",
+                "implicit": true,
+                "accessorKind": "_modify"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "lse_link",
             "printedName": "lse_link",
             "children": [
@@ -10724,8 +10834,7 @@
             "declAttributes": [
               "HasInitialValue",
               "HasStorage",
-              "AccessControl",
-              "RawDocComment"
+              "AccessControl"
             ],
             "hasStorage": true,
             "accessors": [
@@ -23874,6 +23983,1145 @@
         "moduleName": "TJLabsJupiter"
       },
       {
+        "kind": "TypeDecl",
+        "name": "JSONValue",
+        "printedName": "JSONValue",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "string",
+            "printedName": "string",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TJLabsJupiter.JSONValue.Type) -> (Swift.String) -> TJLabsJupiter.JSONValue",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.String) -> TJLabsJupiter.JSONValue",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSONValue",
+                        "printedName": "TJLabsJupiter.JSONValue",
+                        "usr": "s:13TJLabsJupiter9JSONValueO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TJLabsJupiter.JSONValue.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSONValue",
+                        "printedName": "TJLabsJupiter.JSONValue",
+                        "usr": "s:13TJLabsJupiter9JSONValueO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13TJLabsJupiter9JSONValueO6stringyACSScACmF",
+            "mangledName": "$s13TJLabsJupiter9JSONValueO6stringyACSScACmF",
+            "moduleName": "TJLabsJupiter"
+          },
+          {
+            "kind": "Var",
+            "name": "int",
+            "printedName": "int",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TJLabsJupiter.JSONValue.Type) -> (Swift.Int) -> TJLabsJupiter.JSONValue",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Int) -> TJLabsJupiter.JSONValue",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSONValue",
+                        "printedName": "TJLabsJupiter.JSONValue",
+                        "usr": "s:13TJLabsJupiter9JSONValueO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TJLabsJupiter.JSONValue.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSONValue",
+                        "printedName": "TJLabsJupiter.JSONValue",
+                        "usr": "s:13TJLabsJupiter9JSONValueO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13TJLabsJupiter9JSONValueO3intyACSicACmF",
+            "mangledName": "$s13TJLabsJupiter9JSONValueO3intyACSicACmF",
+            "moduleName": "TJLabsJupiter"
+          },
+          {
+            "kind": "Var",
+            "name": "double",
+            "printedName": "double",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TJLabsJupiter.JSONValue.Type) -> (Swift.Double) -> TJLabsJupiter.JSONValue",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Double) -> TJLabsJupiter.JSONValue",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSONValue",
+                        "printedName": "TJLabsJupiter.JSONValue",
+                        "usr": "s:13TJLabsJupiter9JSONValueO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TJLabsJupiter.JSONValue.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSONValue",
+                        "printedName": "TJLabsJupiter.JSONValue",
+                        "usr": "s:13TJLabsJupiter9JSONValueO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13TJLabsJupiter9JSONValueO6doubleyACSdcACmF",
+            "mangledName": "$s13TJLabsJupiter9JSONValueO6doubleyACSdcACmF",
+            "moduleName": "TJLabsJupiter"
+          },
+          {
+            "kind": "Var",
+            "name": "bool",
+            "printedName": "bool",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TJLabsJupiter.JSONValue.Type) -> (Swift.Bool) -> TJLabsJupiter.JSONValue",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "(Swift.Bool) -> TJLabsJupiter.JSONValue",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSONValue",
+                        "printedName": "TJLabsJupiter.JSONValue",
+                        "usr": "s:13TJLabsJupiter9JSONValueO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Bool",
+                        "printedName": "Swift.Bool",
+                        "usr": "s:Sb"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TJLabsJupiter.JSONValue.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSONValue",
+                        "printedName": "TJLabsJupiter.JSONValue",
+                        "usr": "s:13TJLabsJupiter9JSONValueO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13TJLabsJupiter9JSONValueO4boolyACSbcACmF",
+            "mangledName": "$s13TJLabsJupiter9JSONValueO4boolyACSbcACmF",
+            "moduleName": "TJLabsJupiter"
+          },
+          {
+            "kind": "Var",
+            "name": "object",
+            "printedName": "object",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TJLabsJupiter.JSONValue.Type) -> ([Swift.String : TJLabsJupiter.JSONValue]) -> TJLabsJupiter.JSONValue",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "([Swift.String : TJLabsJupiter.JSONValue]) -> TJLabsJupiter.JSONValue",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSONValue",
+                        "printedName": "TJLabsJupiter.JSONValue",
+                        "usr": "s:13TJLabsJupiter9JSONValueO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Dictionary",
+                        "printedName": "[Swift.String : TJLabsJupiter.JSONValue]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "String",
+                            "printedName": "Swift.String",
+                            "usr": "s:SS"
+                          },
+                          {
+                            "kind": "TypeNominal",
+                            "name": "JSONValue",
+                            "printedName": "TJLabsJupiter.JSONValue",
+                            "usr": "s:13TJLabsJupiter9JSONValueO"
+                          }
+                        ],
+                        "usr": "s:SD"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TJLabsJupiter.JSONValue.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSONValue",
+                        "printedName": "TJLabsJupiter.JSONValue",
+                        "usr": "s:13TJLabsJupiter9JSONValueO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13TJLabsJupiter9JSONValueO6objectyACSDySSACGcACmF",
+            "mangledName": "$s13TJLabsJupiter9JSONValueO6objectyACSDySSACGcACmF",
+            "moduleName": "TJLabsJupiter"
+          },
+          {
+            "kind": "Var",
+            "name": "array",
+            "printedName": "array",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TJLabsJupiter.JSONValue.Type) -> ([TJLabsJupiter.JSONValue]) -> TJLabsJupiter.JSONValue",
+                "children": [
+                  {
+                    "kind": "TypeFunc",
+                    "name": "Function",
+                    "printedName": "([TJLabsJupiter.JSONValue]) -> TJLabsJupiter.JSONValue",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSONValue",
+                        "printedName": "TJLabsJupiter.JSONValue",
+                        "usr": "s:13TJLabsJupiter9JSONValueO"
+                      },
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[TJLabsJupiter.JSONValue]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "JSONValue",
+                            "printedName": "TJLabsJupiter.JSONValue",
+                            "usr": "s:13TJLabsJupiter9JSONValueO"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ]
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TJLabsJupiter.JSONValue.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSONValue",
+                        "printedName": "TJLabsJupiter.JSONValue",
+                        "usr": "s:13TJLabsJupiter9JSONValueO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13TJLabsJupiter9JSONValueO5arrayyACSayACGcACmF",
+            "mangledName": "$s13TJLabsJupiter9JSONValueO5arrayyACSayACGcACmF",
+            "moduleName": "TJLabsJupiter"
+          },
+          {
+            "kind": "Var",
+            "name": "null",
+            "printedName": "null",
+            "children": [
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TJLabsJupiter.JSONValue.Type) -> TJLabsJupiter.JSONValue",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "JSONValue",
+                    "printedName": "TJLabsJupiter.JSONValue",
+                    "usr": "s:13TJLabsJupiter9JSONValueO"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Metatype",
+                    "printedName": "TJLabsJupiter.JSONValue.Type",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSONValue",
+                        "printedName": "TJLabsJupiter.JSONValue",
+                        "usr": "s:13TJLabsJupiter9JSONValueO"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            "declKind": "EnumElement",
+            "usr": "s:13TJLabsJupiter9JSONValueO4nullyA2CmF",
+            "mangledName": "$s13TJLabsJupiter9JSONValueO4nullyA2CmF",
+            "moduleName": "TJLabsJupiter"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "JSONValue",
+                "printedName": "TJLabsJupiter.JSONValue",
+                "usr": "s:13TJLabsJupiter9JSONValueO"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13TJLabsJupiter9JSONValueO4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s13TJLabsJupiter9JSONValueO4fromACs7Decoder_p_tKcfc",
+            "moduleName": "TJLabsJupiter",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:13TJLabsJupiter9JSONValueO6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s13TJLabsJupiter9JSONValueO6encode2toys7Encoder_p_tKF",
+            "moduleName": "TJLabsJupiter",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Enum",
+        "usr": "s:13TJLabsJupiter9JSONValueO",
+        "mangledName": "$s13TJLabsJupiter9JSONValueO",
+        "moduleName": "TJLabsJupiter",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "LSEMapMatch",
+        "printedName": "LSEMapMatch",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "snapped_x",
+            "printedName": "snapped_x",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13TJLabsJupiter11LSEMapMatchV9snapped_xSdSgvp",
+            "mangledName": "$s13TJLabsJupiter11LSEMapMatchV9snapped_xSdSgvp",
+            "moduleName": "TJLabsJupiter",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Double?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13TJLabsJupiter11LSEMapMatchV9snapped_xSdSgvg",
+                "mangledName": "$s13TJLabsJupiter11LSEMapMatchV9snapped_xSdSgvg",
+                "moduleName": "TJLabsJupiter",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "snapped_y",
+            "printedName": "snapped_y",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13TJLabsJupiter11LSEMapMatchV9snapped_ySdSgvp",
+            "mangledName": "$s13TJLabsJupiter11LSEMapMatchV9snapped_ySdSgvp",
+            "moduleName": "TJLabsJupiter",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Double?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13TJLabsJupiter11LSEMapMatchV9snapped_ySdSgvg",
+                "mangledName": "$s13TJLabsJupiter11LSEMapMatchV9snapped_ySdSgvg",
+                "moduleName": "TJLabsJupiter",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "floor",
+            "printedName": "floor",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13TJLabsJupiter11LSEMapMatchV5floorSSSgvp",
+            "mangledName": "$s13TJLabsJupiter11LSEMapMatchV5floorSSSgvp",
+            "moduleName": "TJLabsJupiter",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13TJLabsJupiter11LSEMapMatchV5floorSSSgvg",
+                "mangledName": "$s13TJLabsJupiter11LSEMapMatchV5floorSSSgvg",
+                "moduleName": "TJLabsJupiter",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "level_id",
+            "printedName": "level_id",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Int?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13TJLabsJupiter11LSEMapMatchV8level_idSiSgvp",
+            "mangledName": "$s13TJLabsJupiter11LSEMapMatchV8level_idSiSgvp",
+            "moduleName": "TJLabsJupiter",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Int?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13TJLabsJupiter11LSEMapMatchV8level_idSiSgvg",
+                "mangledName": "$s13TJLabsJupiter11LSEMapMatchV8level_idSiSgvg",
+                "moduleName": "TJLabsJupiter",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "edge_id",
+            "printedName": "edge_id",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.String?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13TJLabsJupiter11LSEMapMatchV7edge_idSSSgvp",
+            "mangledName": "$s13TJLabsJupiter11LSEMapMatchV7edge_idSSSgvp",
+            "moduleName": "TJLabsJupiter",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.String?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "String",
+                        "printedName": "Swift.String",
+                        "usr": "s:SS"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13TJLabsJupiter11LSEMapMatchV7edge_idSSSgvg",
+                "mangledName": "$s13TJLabsJupiter11LSEMapMatchV7edge_idSSSgvg",
+                "moduleName": "TJLabsJupiter",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "distance_to_link_m",
+            "printedName": "distance_to_link_m",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13TJLabsJupiter11LSEMapMatchV18distance_to_link_mSdSgvp",
+            "mangledName": "$s13TJLabsJupiter11LSEMapMatchV18distance_to_link_mSdSgvp",
+            "moduleName": "TJLabsJupiter",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Double?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13TJLabsJupiter11LSEMapMatchV18distance_to_link_mSdSgvg",
+                "mangledName": "$s13TJLabsJupiter11LSEMapMatchV18distance_to_link_mSdSgvg",
+                "moduleName": "TJLabsJupiter",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "match_score",
+            "printedName": "match_score",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13TJLabsJupiter11LSEMapMatchV11match_scoreSdSgvp",
+            "mangledName": "$s13TJLabsJupiter11LSEMapMatchV11match_scoreSdSgvp",
+            "moduleName": "TJLabsJupiter",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Double?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13TJLabsJupiter11LSEMapMatchV11match_scoreSdSgvg",
+                "mangledName": "$s13TJLabsJupiter11LSEMapMatchV11match_scoreSdSgvg",
+                "moduleName": "TJLabsJupiter",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "bearing",
+            "printedName": "bearing",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13TJLabsJupiter11LSEMapMatchV7bearingSdSgvp",
+            "mangledName": "$s13TJLabsJupiter11LSEMapMatchV7bearingSdSgvp",
+            "moduleName": "TJLabsJupiter",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Double?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13TJLabsJupiter11LSEMapMatchV7bearingSdSgvg",
+                "mangledName": "$s13TJLabsJupiter11LSEMapMatchV7bearingSdSgvg",
+                "moduleName": "TJLabsJupiter",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "heading",
+            "printedName": "heading",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Swift.Double?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13TJLabsJupiter11LSEMapMatchV7headingSdSgvp",
+            "mangledName": "$s13TJLabsJupiter11LSEMapMatchV7headingSdSgvp",
+            "moduleName": "TJLabsJupiter",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "Swift.Double?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Double",
+                        "printedName": "Swift.Double",
+                        "usr": "s:Sd"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13TJLabsJupiter11LSEMapMatchV7headingSdSgvg",
+                "mangledName": "$s13TJLabsJupiter11LSEMapMatchV7headingSdSgvg",
+                "moduleName": "TJLabsJupiter",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "candidates",
+            "printedName": "candidates",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "[TJLabsJupiter.JSONValue]?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[TJLabsJupiter.JSONValue]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "JSONValue",
+                        "printedName": "TJLabsJupiter.JSONValue",
+                        "usr": "s:13TJLabsJupiter9JSONValueO"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:13TJLabsJupiter11LSEMapMatchV10candidatesSayAA9JSONValueOGSgvp",
+            "mangledName": "$s13TJLabsJupiter11LSEMapMatchV10candidatesSayAA9JSONValueOGSgvp",
+            "moduleName": "TJLabsJupiter",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "[TJLabsJupiter.JSONValue]?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[TJLabsJupiter.JSONValue]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "JSONValue",
+                            "printedName": "TJLabsJupiter.JSONValue",
+                            "usr": "s:13TJLabsJupiter9JSONValueO"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:13TJLabsJupiter11LSEMapMatchV10candidatesSayAA9JSONValueOGSgvg",
+                "mangledName": "$s13TJLabsJupiter11LSEMapMatchV10candidatesSayAA9JSONValueOGSgvg",
+                "moduleName": "TJLabsJupiter",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "LSEMapMatch",
+                "printedName": "TJLabsJupiter.LSEMapMatch",
+                "usr": "s:13TJLabsJupiter11LSEMapMatchV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:13TJLabsJupiter11LSEMapMatchV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s13TJLabsJupiter11LSEMapMatchV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "TJLabsJupiter",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:13TJLabsJupiter11LSEMapMatchV",
+        "mangledName": "$s13TJLabsJupiter11LSEMapMatchV",
+        "moduleName": "TJLabsJupiter",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          }
+        ]
+      },
+      {
         "kind": "Import",
         "name": "Foundation",
         "printedName": "Foundation",
@@ -26097,29 +27345,6 @@
             "declKind": "Func",
             "usr": "s:13TJLabsJupiter0B16NetworkConstantsC14getCalcBaseURLSSyFZ",
             "mangledName": "$s13TJLabsJupiter0B16NetworkConstantsC14getCalcBaseURLSSyFZ",
-            "moduleName": "TJLabsJupiter",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "getClientBaseURL",
-            "printedName": "getClientBaseURL()",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:13TJLabsJupiter0B16NetworkConstantsC16getClientBaseURLSSyFZ",
-            "mangledName": "$s13TJLabsJupiter0B16NetworkConstantsC16getClientBaseURLSSyFZ",
             "moduleName": "TJLabsJupiter",
             "static": true,
             "declAttributes": [
@@ -28776,244 +30001,377 @@
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "FloatLiteral",
       "offset": 2752,
-      "length": 4,
-      "value": "0.45"
+      "length": 3,
+      "value": "0.7"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "FloatLiteral",
-      "offset": 2799,
+      "offset": 2798,
       "length": 3,
       "value": "1.4"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "FloatLiteral",
-      "offset": 3030,
+      "offset": 3029,
       "length": 3,
       "value": "0.5"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "FloatLiteral",
-      "offset": 3214,
+      "offset": 3213,
       "length": 3,
       "value": "1.5"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "StringLiteral",
-      "offset": 3344,
+      "offset": 3343,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3385,
+      "offset": 3384,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "StringLiteral",
-      "offset": 3466,
+      "offset": 3465,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3508,
+      "offset": 3507,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 3556,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3711,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3756,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3843,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3884,
-      "length": 1,
-      "value": "0"
-    },
-    {
-      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 3954,
+      "offset": 3555,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 4121,
+      "offset": 4004,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4268,
+      "offset": 4072,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4375,
+      "offset": 4117,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4427,
+      "offset": 4204,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4245,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4315,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4482,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4629,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4736,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4788,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4483,
+      "offset": 4844,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4536,
+      "offset": 4897,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4590,
+      "offset": 4951,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4639,
+      "offset": 5000,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4687,
+      "offset": 5048,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 4804,
+      "offset": 5165,
+      "length": 5,
+      "value": "5000"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5222,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5275,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5332,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5395,
+      "length": 2,
+      "value": "20"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5463,
+      "length": 2,
+      "value": "12"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5525,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5586,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5657,
+      "length": 1,
+      "value": "2"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "FloatLiteral",
+      "offset": 5723,
+      "length": 4,
+      "value": "0.25"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5779,
+      "length": 2,
+      "value": "20"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5835,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5899,
+      "length": 2,
+      "value": "25"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 5968,
+      "length": 1,
+      "value": "8"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6021,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 6134,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5357,
+      "offset": 6335,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5391,
+      "offset": 7765,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 7799,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "Array",
-      "offset": 5431,
+      "offset": 7839,
       "length": 9,
       "value": "[0, 0, 0]"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "Array",
-      "offset": 5473,
+      "offset": 7881,
       "length": 9,
       "value": "[0, 0, 0]"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "Array",
-      "offset": 5820,
+      "offset": 8228,
       "length": 9,
       "value": "[0, 0, 0]"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 5993,
+      "offset": 8401,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 52102,
+      "offset": 55247,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 70540,
+      "offset": 55288,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "StringLiteral",
+      "offset": 55312,
+      "length": 9,
+      "value": "\"unknown\""
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 75069,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 124458,
+      "offset": 143119,
       "length": 2,
       "value": "15"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 124628,
+      "offset": 143289,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/JupiterCalcManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 124833,
+      "offset": 143494,
       "length": 2,
       "value": "45"
     },
@@ -29384,14 +30742,14 @@
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/KalmanFilter.swift",
       "kind": "FloatLiteral",
-      "offset": 12587,
+      "offset": 12807,
       "length": 4,
       "value": "10.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/KalmanFilter.swift",
       "kind": "BooleanLiteral",
-      "offset": 24637,
+      "offset": 24857,
       "length": 5,
       "value": "false"
     },
@@ -29523,99 +30881,113 @@
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
-      "kind": "IntegerLiteral",
-      "offset": 365,
-      "length": 5,
-      "value": "5000"
-    },
-    {
-      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
       "kind": "Array",
-      "offset": 416,
+      "offset": 372,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 487,
+      "offset": 443,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
       "kind": "StringLiteral",
-      "offset": 934,
+      "offset": 890,
       "length": 4,
       "value": "\"dr\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
       "kind": "StringLiteral",
-      "offset": 1000,
+      "offset": 956,
       "length": 5,
       "value": "\"LSE\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
       "kind": "StringLiteral",
-      "offset": 1035,
+      "offset": 991,
       "length": 8,
       "value": "\"tjlabs\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1106,
+      "offset": 1062,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1132,
+      "offset": 1088,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 1159,
+      "offset": 1115,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 1652,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1643,
+      "offset": 1796,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 1679,
+      "offset": 1949,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2247,
+      "length": 1,
+      "value": "0"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2283,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
       "kind": "FloatLiteral",
-      "offset": 6416,
+      "offset": 7980,
       "length": 4,
       "value": "10.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 6583,
+      "offset": 8147,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/LSEManager.swift",
       "kind": "FloatLiteral",
-      "offset": 6858,
+      "offset": 8422,
       "length": 4,
       "value": "20.0"
     },
@@ -30300,295 +31672,309 @@
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
+      "kind": "BooleanLiteral",
+      "offset": 38321,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "Array",
-      "offset": 38367,
+      "offset": 38410,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "Array",
-      "offset": 38495,
+      "offset": 38538,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 38791,
+      "offset": 38834,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 38874,
+      "offset": 39090,
+      "length": 3,
+      "value": "1.0"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
+      "kind": "FloatLiteral",
+      "offset": 39096,
       "length": 3,
       "value": "2.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
-      "kind": "FloatLiteral",
-      "offset": 38880,
-      "length": 3,
-      "value": "1.0"
-    },
-    {
-      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 38940,
+      "offset": 39156,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 39036,
+      "offset": 39252,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 39655,
+      "offset": 39871,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 39698,
+      "offset": 39914,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 39794,
+      "offset": 40010,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 41080,
+      "offset": 41296,
       "length": 3,
       "value": "1.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 41148,
+      "offset": 41364,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 41259,
+      "offset": 41475,
       "length": 1,
       "value": "4"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "Array",
-      "offset": 42128,
+      "offset": 42344,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 42167,
+      "offset": 42383,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 42341,
+      "offset": 42557,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 42388,
+      "offset": 42604,
       "length": 2,
       "value": "-1"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "StringLiteral",
-      "offset": 42413,
+      "offset": 42629,
       "length": 53,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "StringLiteral",
-      "offset": 42424,
+      "offset": 42640,
       "length": 1,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "StringLiteral",
-      "offset": 42435,
+      "offset": 42651,
       "length": 1,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "StringLiteral",
-      "offset": 42450,
+      "offset": 42666,
       "length": 1,
       "value": "\"_\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "StringLiteral",
-      "offset": 42465,
+      "offset": 42681,
       "length": 1,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 43313,
+      "offset": 43529,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 43538,
+      "offset": 43754,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 43756,
+      "offset": 43972,
       "length": 1,
       "value": "2"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
+      "kind": "Array",
+      "offset": 44218,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 43943,
+      "offset": 45179,
       "length": 2,
       "value": "10"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 43946,
+      "offset": 45182,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 43976,
+      "offset": 45212,
       "length": 2,
       "value": "20"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 43979,
+      "offset": 45215,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 44010,
+      "offset": 45246,
       "length": 2,
       "value": "30"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 44013,
+      "offset": 45249,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 44043,
+      "offset": 45279,
       "length": 3,
       "value": "0.3"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 44076,
+      "offset": 45312,
       "length": 3,
       "value": "0.6"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 44179,
+      "offset": 45399,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 44240,
+      "offset": 45460,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 44253,
+      "offset": 45473,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 44340,
+      "offset": 45552,
       "length": 2,
       "value": "40"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 44343,
+      "offset": 45555,
       "length": 1,
       "value": "3"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 44426,
+      "offset": 45638,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 44625,
+      "offset": 45829,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "FloatLiteral",
-      "offset": 44655,
+      "offset": 45859,
       "length": 3,
       "value": "0.0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/SolutionEstimator.swift",
       "kind": "IntegerLiteral",
-      "offset": 44996,
+      "offset": 46192,
       "length": 2,
       "value": "10"
     },
@@ -30604,7 +31990,7 @@
       "kind": "IntegerLiteral",
       "offset": 238,
       "length": 2,
-      "value": "35"
+      "value": "25"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/StackManager.swift",
@@ -30679,28 +32065,28 @@
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/StackManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 20549,
+      "offset": 21041,
       "length": 1,
       "value": "1"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/StackManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 21324,
+      "offset": 21816,
       "length": 1,
       "value": "5"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/StackManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 24682,
+      "offset": 25174,
       "length": 1,
       "value": "7"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Calc\/StackManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 25113,
+      "offset": 25605,
       "length": 1,
       "value": "7"
     },
@@ -31428,7 +32814,7 @@
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Data\/Model\/LSEModel.swift",
       "kind": "StringLiteral",
-      "offset": 1390,
+      "offset": 3530,
       "length": 5,
       "value": "\"iOS\""
     },
@@ -31779,69 +33165,55 @@
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Network\/JupiterNetworkConstants.swift",
       "kind": "StringLiteral",
       "offset": 733,
-      "length": 21,
-      "value": "\".jupiter.tjlabs.dev\""
+      "length": 10,
+      "value": "\".jupiter\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Network\/JupiterNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 804,
+      "offset": 788,
+      "length": 13,
+      "value": "\".tjlabs.dev\""
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Network\/JupiterNetworkConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 851,
       "length": 17,
       "value": "\"ap-northeast-2.\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Network\/JupiterNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 864,
+      "offset": 911,
       "length": 7,
       "value": "\"Korea\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Network\/JupiterNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 946,
+      "offset": 993,
       "length": 6,
       "value": "\"user\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Network\/JupiterNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1040,
-      "length": 5,
-      "value": "\"img\""
-    },
-    {
-      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Network\/JupiterNetworkConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 1131,
-      "length": 5,
-      "value": "\"csv\""
-    },
-    {
-      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Network\/JupiterNetworkConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 1222,
+      "offset": 1101,
       "length": 5,
       "value": "\"rec\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Network\/JupiterNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 1314,
+      "offset": 1209,
       "length": 6,
       "value": "\"calc\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Network\/JupiterNetworkConstants.swift",
-      "kind": "StringLiteral",
-      "offset": 1409,
-      "length": 8,
-      "value": "\"client\""
-    },
-    {
-      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsJupiter-sdk-ios\/TJLabsJupiter\/Network\/JupiterNetworkConstants.swift",
       "kind": "BooleanLiteral",
-      "offset": 1478,
+      "offset": 1292,
       "length": 5,
       "value": "false"
     },
