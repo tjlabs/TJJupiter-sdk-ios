@@ -38,7 +38,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         case stop
     }
     
-    public static let sdkVersion = "2.0.10"
+    public static let sdkVersion = "2.0.11"
     private let lifecycleLock = NSLock()
     private var serviceState: ServiceState = .stopped
     private var activeMode: UserMode?
@@ -99,8 +99,8 @@ public class JupiterServiceManager: NavigationManagerDelegate {
     let serviceManager: JupiterNavigationServiceManaging
     public weak var delegate: JupiterServiceManagerDelegate?
     
-    public init(id: String, region: String, sectorId: Int, debugOption: Bool = true) {
-        JupiterLogger.setDebugOption(set: true)
+    public init(id: String, region: String, sectorId: Int, debugOption: Bool = false) {
+        JupiterLogger.setDebugOption(set: false)
         JupiterNetworkConstants.setServerBranch(prod: true)
         let navigationManager = NavigationManager(id: id, region: region, sectorId: sectorId, debugOption: debugOption)
         self.id = id
