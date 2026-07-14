@@ -234,6 +234,7 @@ public struct JupiterDebugResult {
   public var validity_flag: Swift.Int
   public var cur_lse_result: TJLabsJupiter.FineLocationTrackingOutput?
   public var confidence_info: Swift.String?
+  public var mapmatch: TJLabsJupiter.LSEMapMatch?
   public var lse_link: TJLabsJupiter.LSELinkDebugInfo?
   public var calc_xyh: [Swift.Float]
   public var tu_xyh: [Swift.Float]
@@ -543,6 +544,30 @@ public struct JupiterNaviResult : Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
+public enum JSONValue : Swift.Codable {
+  case string(Swift.String)
+  case int(Swift.Int)
+  case double(Swift.Double)
+  case bool(Swift.Bool)
+  case object([Swift.String : TJLabsJupiter.JSONValue])
+  case array([TJLabsJupiter.JSONValue])
+  case null
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct LSEMapMatch : Swift.Decodable {
+  public let snapped_x: Swift.Double?
+  public let snapped_y: Swift.Double?
+  public let floor: Swift.String?
+  public let level_id: Swift.Int?
+  public let edge_id: Swift.String?
+  public let distance_to_link_m: Swift.Double?
+  public let match_score: Swift.Double?
+  public let bearing: Swift.Double?
+  public let heading: Swift.Double?
+  public let candidates: [TJLabsJupiter.JSONValue]?
+  public init(from decoder: any Swift.Decoder) throws
+}
 public protocol NavigationManagerDelegate : AnyObject {
   #if compiler(>=5.3) && $NonescapableTypes
   func onInitSuccess(_ isSuccess: Swift.Bool, _ code: TJLabsJupiter.InitErrorCode?)
@@ -637,7 +662,6 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   public static func getUserBaseURL() -> Swift.String
   public static func getRecBaseURL() -> Swift.String
   public static func getCalcBaseURL() -> Swift.String
-  public static func getClientBaseURL() -> Swift.String
   public static func getUserLoginVersion() -> Swift.String
   public static func getUserFileUploadServerVersion() -> Swift.String
   public static func getRecRfdServerVersion() -> Swift.String

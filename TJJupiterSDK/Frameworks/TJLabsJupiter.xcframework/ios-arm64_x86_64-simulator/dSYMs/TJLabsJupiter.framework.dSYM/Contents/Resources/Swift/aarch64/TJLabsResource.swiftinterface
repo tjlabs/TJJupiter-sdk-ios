@@ -492,6 +492,7 @@ public class TJLabsResourceManager {
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class TJLabsResourceNetworkConstants {
+  public static func setServerBranch(prod: Swift.Bool)
   public static func setServerURL(cloud: Swift.String, region: Swift.String)
   public static func setOnpremiseURL(sectorBundleURL: Swift.String)
   public static func getUserBaseURL() -> Swift.String

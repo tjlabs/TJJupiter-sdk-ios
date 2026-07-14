@@ -1504,6 +1504,34 @@
         "children": [
           {
             "kind": "Function",
+            "name": "setServerBranch",
+            "printedName": "setServerBranch(prod:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:10TJLabsAuth0aB9ConstantsC15setServerBranch4prodySb_tFZ",
+            "mangledName": "$s10TJLabsAuth0aB9ConstantsC15setServerBranch4prodySb_tFZ",
+            "moduleName": "TJLabsAuth",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "setServerURL",
             "printedName": "setServerURL(cloud:region:serverType:)",
             "children": [
@@ -2171,37 +2199,44 @@
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthConstants.swift",
       "kind": "StringLiteral",
-      "offset": 456,
+      "offset": 468,
       "length": 13,
       "value": "\".tjlabs.dev\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthConstants.swift",
       "kind": "StringLiteral",
-      "offset": 519,
+      "offset": 531,
       "length": 18,
       "value": "\"asia-northeast3.\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthConstants.swift",
       "kind": "StringLiteral",
-      "offset": 580,
+      "offset": 592,
       "length": 7,
       "value": "\"Korea\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthConstants.swift",
       "kind": "StringLiteral",
-      "offset": 638,
+      "offset": 650,
       "length": 9,
       "value": "\"jupiter\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthConstants.swift",
       "kind": "StringLiteral",
-      "offset": 717,
+      "offset": 729,
       "length": 7,
       "value": "\"user.\""
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthConstants.swift",
+      "kind": "BooleanLiteral",
+      "offset": 810,
+      "length": 5,
+      "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthManager.swift",
