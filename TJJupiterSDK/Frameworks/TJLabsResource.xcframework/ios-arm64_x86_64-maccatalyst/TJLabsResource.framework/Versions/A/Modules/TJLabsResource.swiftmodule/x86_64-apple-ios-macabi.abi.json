@@ -15324,7 +15324,7 @@
           {
             "kind": "Function",
             "name": "loadResources",
-            "printedName": "loadResources(cloud:region:sectorId:landmarkTh:forceUpdate:completion:)",
+            "printedName": "loadResources(cloud:region:sectorId:landmarkTh:forceUpdate:dev:completion:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -15364,6 +15364,13 @@
                 "usr": "s:Sb"
               },
               {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
                 "kind": "TypeFunc",
                 "name": "Function",
                 "printedName": "(Swift.Bool) -> ()",
@@ -15383,8 +15390,8 @@
               }
             ],
             "declKind": "Func",
-            "usr": "s:14TJLabsResource0aB7ManagerC13loadResources5cloud6region8sectorId10landmarkTh11forceUpdate10completionySS_SSSiSfSbySbctF",
-            "mangledName": "$s14TJLabsResource0aB7ManagerC13loadResources5cloud6region8sectorId10landmarkTh11forceUpdate10completionySS_SSSiSfSbySbctF",
+            "usr": "s:14TJLabsResource0aB7ManagerC13loadResources5cloud6region8sectorId10landmarkTh11forceUpdate3dev10completionySS_SSSiSfS2bySbctF",
+            "mangledName": "$s14TJLabsResource0aB7ManagerC13loadResources5cloud6region8sectorId10landmarkTh11forceUpdate3dev10completionySS_SSSiSfS2bySbctF",
             "moduleName": "TJLabsResource",
             "declAttributes": [
               "AccessControl",
@@ -16314,58 +16321,37 @@
         "children": [
           {
             "kind": "Function",
-            "name": "setServerBranch",
-            "printedName": "setServerBranch(prod:)",
+            "name": "setServerURL",
+            "printedName": "setServerURL(cloud:region:dev:)",
             "children": [
               {
                 "kind": "TypeNominal",
                 "name": "Void",
                 "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
               },
               {
                 "kind": "TypeNominal",
                 "name": "Bool",
                 "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
                 "usr": "s:Sb"
               }
             ],
             "declKind": "Func",
-            "usr": "s:14TJLabsResource0aB16NetworkConstantsC15setServerBranch4prodySb_tFZ",
-            "mangledName": "$s14TJLabsResource0aB16NetworkConstantsC15setServerBranch4prodySb_tFZ",
-            "moduleName": "TJLabsResource",
-            "static": true,
-            "declAttributes": [
-              "Final",
-              "AccessControl"
-            ],
-            "funcSelfKind": "NonMutating"
-          },
-          {
-            "kind": "Function",
-            "name": "setServerURL",
-            "printedName": "setServerURL(cloud:region:)",
-            "children": [
-              {
-                "kind": "TypeNominal",
-                "name": "Void",
-                "printedName": "()"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              },
-              {
-                "kind": "TypeNominal",
-                "name": "String",
-                "printedName": "Swift.String",
-                "usr": "s:SS"
-              }
-            ],
-            "declKind": "Func",
-            "usr": "s:14TJLabsResource0aB16NetworkConstantsC12setServerURL5cloud6regionySS_SStFZ",
-            "mangledName": "$s14TJLabsResource0aB16NetworkConstantsC12setServerURL5cloud6regionySS_SStFZ",
+            "usr": "s:14TJLabsResource0aB16NetworkConstantsC12setServerURL5cloud6region3devySS_SSSbtFZ",
+            "mangledName": "$s14TJLabsResource0aB16NetworkConstantsC12setServerURL5cloud6region3devySS_SSSbtFZ",
             "moduleName": "TJLabsResource",
             "static": true,
             "declAttributes": [
@@ -16951,14 +16937,28 @@
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 27329,
+      "offset": 10045,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 27613,
+      "offset": 27358,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 27642,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 32695,
       "length": 5,
       "value": "false"
     },
@@ -17001,41 +17001,48 @@
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "StringLiteral",
       "offset": 448,
-      "length": 13,
-      "value": "\".tjlabs.dev\""
+      "length": 17,
+      "value": "\".tjlabscorp.com\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 511,
+      "offset": 515,
       "length": 17,
       "value": "\"ap-northeast-2.\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 571,
+      "offset": 575,
       "length": 7,
       "value": "\"Korea\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 679,
+      "offset": 683,
       "length": 6,
       "value": "\"user\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 772,
+      "offset": 776,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "BooleanLiteral",
-      "offset": 818,
+      "offset": 821,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
+      "kind": "BooleanLiteral",
+      "offset": 907,
       "length": 5,
       "value": "false"
     }
