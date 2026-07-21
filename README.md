@@ -1,5 +1,5 @@
 # TJJupiterSDK
-### Version 2.0.11
+### Version 2.0.12
 
 [![Version](https://img.shields.io/cocoapods/v/TJJupiterSDK.svg?style=flat)](https://cocoapods.org/pods/TJJupiterSDK)
 [![License](https://img.shields.io/cocoapods/l/TJJupiterSDK.svg?style=flat)](https://cocoapods.org/pods/TJJupiterSDK)
@@ -68,7 +68,25 @@ source '<https://github.com/CocoaPods/Specs.git>'
 import TJJupiterSDK
 ```
 
-### 2. Authentication
+### 2. Server Configuration (Dev / Prod)
+- Use `setServerConfig(branch:)` to select which server environment the SDK connects to.
+- ⚠️ **This must be called before authentication (`auth`).** Calling it after `auth` has no effect on the authentication request.
+- If you **do not** call `setServerConfig(branch:)`, the SDK connects to the **production (`.PROD`) server by default**.
+- Use `.DEV` only for development/testing against the dev server.
+
+```swift
+public enum ServerBranch {
+    case DEV
+    case PROD
+}
+```
+
+```swift
+// Call BEFORE auth. Skip this call to use PROD automatically.
+TJJupiterAuth.shared.setServerConfig(branch: .DEV)   // or .PROD
+```
+
+### 3. Authentication
 - You must obtain a token to use the SDK.
 - The link below is a guide to the token issuance process.
 - https://www.notion.so/tjlabs/SDK-Authorization-33eaef6d5b728034856ddc23489588f0?source=copy_link
@@ -82,7 +100,7 @@ TJJupiterAuth.shared.auth(
 }
 ```
 
-### 3. Initialize Service
+### 4. Initialize Service
 
 ```swift
 let manager = JupiterServiceManager(
@@ -94,13 +112,13 @@ let manager = JupiterServiceManager(
 manager.delegate = self
 ```
 
-### 4. Start Service
+### 5. Start Service
 
 ```swift
 manager.startService(mode: .MODE_AUTO)
 ```
 
-### 5. Stop Service
+### 6. Stop Service
 
 ```swift
 manager.stopService { success, message in
