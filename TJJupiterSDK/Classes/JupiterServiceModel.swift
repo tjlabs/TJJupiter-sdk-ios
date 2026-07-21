@@ -15,6 +15,11 @@ public protocol JupiterServiceManagerDelegate: AnyObject {
     func isWaypointChanged(_ waypoints: [[Double]])
 }
 
+var tjBranch: ServerBranch = .PROD
+public enum ServerBranch {
+    case DEV, PROD
+}
+
 public enum JupiterRegion: String {
     case KOREA = "KOREA"
     case US_EAST = "US_EAST"

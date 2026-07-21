@@ -129,6 +129,7 @@ public enum JupiterServiceCode : Swift.Int {
   case NETWORK_DISCONNECT
   case GET_FIRST_RESULT
   case PEAK_DETECTED
+  case UVD_STOPPED
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
   #endif
@@ -243,6 +244,13 @@ public struct JupiterDebugResult {
   public var recon_raw_traj: [[Swift.Double]]?
   public var recon_corr_traj: [TJLabsJupiter.FineLocationTrackingOutput]?
   public var selected_cand: TJLabsJupiter.SelectedCandidate?
+  public var selected_cand_second: TJLabsJupiter.SelectedCandidate?
+  public var select_cand_reason: Swift.String?
+  public var apply2peak_skip_reason: Swift.String?
+  public var head_lse_dist: Swift.Float?
+  public var show_lse_reason: Swift.String?
+  public var phase_downgrade_reason: Swift.String?
+  public var lse_mapmatch_missing: Swift.Bool?
   public var selected_search: TJLabsJupiter.SelectedSearch?
   public var ratio: Swift.Float?
   public var navi_xyh: [Swift.Float]
@@ -314,6 +322,8 @@ public struct SelectedCandidate {
   public let head: TJLabsJupiter.ixyhs
   public let headResult: TJLabsJupiter.FineLocationTrackingOutput
   public let loss: Swift.Float
+  public let penalty: Swift.Float
+  public let divideNum: Swift.Float
 }
 public enum InOutState : Swift.Int, Swift.Codable {
   case OUT_TO_IN
@@ -607,7 +617,7 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   public func isJupiterPhaseChanged(index: Swift.Int, phase: TJLabsJupiter.JupiterPhase, xyh: [Swift.Float]?)
   #endif
   weak public var delegate: (any TJLabsJupiter.NavigationManagerDelegate)?
-  public init(id: Swift.String, cloud: Swift.String = JupiterCloud.GCP.rawValue, region: Swift.String = JupiterRegion.KOREA.rawValue, sectorId: Swift.Int, debugOption: Swift.Bool = false)
+  public init(id: Swift.String, cloud: Swift.String = JupiterCloud.GCP.rawValue, region: Swift.String = JupiterRegion.KOREA.rawValue, sectorId: Swift.Int, debugOption: Swift.Bool = false, dev: Swift.Bool = false)
   @objc deinit
   public func startService(mode: TJLabsCommon.UserMode)
   public func stopService(completion: @escaping (Swift.Bool, Swift.String) -> Swift.Void)
@@ -657,8 +667,7 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   #endif
 }
 @_hasMissingDesignatedInitializers public class JupiterNetworkConstants {
-  public static func setServerBranch(prod: Swift.Bool)
-  public static func setServerURL(cloud: Swift.String, region: Swift.String)
+  public static func setServerURL(cloud: Swift.String, region: Swift.String, dev: Swift.Bool = false)
   public static func getUserBaseURL() -> Swift.String
   public static func getRecBaseURL() -> Swift.String
   public static func getCalcBaseURL() -> Swift.String

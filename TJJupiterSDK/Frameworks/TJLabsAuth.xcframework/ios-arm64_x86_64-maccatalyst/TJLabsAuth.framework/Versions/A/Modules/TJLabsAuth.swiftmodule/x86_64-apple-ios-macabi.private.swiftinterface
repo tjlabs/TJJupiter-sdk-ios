@@ -78,8 +78,7 @@ public enum SecretConfig {
   #endif
 }
 @_hasMissingDesignatedInitializers public class TJLabsAuthConstants {
-  public static func setServerBranch(prod: Swift.Bool)
-  public static func setServerURL(cloud: Swift.String, region: Swift.String, serverType: Swift.String)
+  public static func setServerURL(cloud: Swift.String, region: Swift.String, serverType: Swift.String, dev: Swift.Bool = false)
   public static func getUserBaseURL() -> Swift.String
   public static func getUserTokenVersion() -> Swift.String
   public static func getUserTokenURL() -> Swift.String

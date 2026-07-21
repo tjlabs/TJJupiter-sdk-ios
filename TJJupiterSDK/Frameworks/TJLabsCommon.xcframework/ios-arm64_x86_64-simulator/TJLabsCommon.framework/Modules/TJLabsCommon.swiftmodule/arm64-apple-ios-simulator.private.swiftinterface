@@ -102,7 +102,7 @@ public struct ReplayUserVelocity {
   public func saveFilesForReplay(completion: @escaping (Swift.Bool) -> Swift.Void)
   public func loadFilesForReplayLegacy(bleFile: Swift.String, sensorFile: Swift.String) -> ([[Swift.String : Swift.Double]], [TJLabsCommon.SensorData])
   public func loadFilesForReplay(rfdFile: Swift.String, eventFile: Swift.String) -> (rfdTimeOffset: Swift.Int, rfdList: [TJLabsCommon.ReceivedForce])
-  public func loadFilesForReplay(rfdFile: Swift.String, uvdFile: Swift.String, eventFile: Swift.String) -> (rfdTimeOffset: Swift.Int, rfdList: [TJLabsCommon.ReceivedForce], uvdTimeOffset: Swift.Int, uvdList: [TJLabsCommon.ReplayUserVelocity])
+  public func loadFilesForReplay(rfdFile: Swift.String, uvdFile: Swift.String, eventFile: Swift.String) -> (rfdTimeOffset: Swift.Int, rfdList: [TJLabsCommon.ReceivedForce], uvdTimeOffset: Swift.Int, uvdList: [TJLabsCommon.ReplayUserVelocity], stopEvents: [TJLabsCommon.JupiterEvent])
   public func writeEvent(event: TJLabsCommon.JupiterEvent)
   public func writeRFD(rfd: TJLabsCommon.ReceivedForce)
   public func writeUVD(uvd: TJLabsCommon.UserVelocity, mode: TJLabsCommon.UserMode)
@@ -125,6 +125,7 @@ public struct ReplayUserVelocity {
   public func setReplayMode(flag: Swift.Bool, rfdFileName: Swift.String, uvdFileName: Swift.String, eventFileName: Swift.String)
   public func getRfdForReplay() -> (rfdTimeOffset: Swift.Int, replayRfd: [TJLabsCommon.ReceivedForce])
   public func getUvdForReplay() -> (uvdTimeOffset: Swift.Int, replayUvd: [TJLabsCommon.ReplayUserVelocity])
+  public func getStopEventsForReplay() -> [TJLabsCommon.JupiterEvent]
   @objc deinit
 }
 extension Swift.Array where Element : Swift.BinaryInteger {
@@ -356,6 +357,7 @@ public protocol UVDGeneratorDelegate : AnyObject {
   func onVelocityResult(_ generator: TJLabsCommon.UVDGenerator, kmPh: Swift.Double)
   func onMagNormSmoothingVarResult(_ generator: TJLabsCommon.UVDGenerator, value: Swift.Double)
   func onUvdPauseMillis(_ generator: TJLabsCommon.UVDGenerator, time: Swift.Double)
+  func onUvdStopped(_ generator: TJLabsCommon.UVDGenerator, time: Swift.Double, index: Swift.Int)
   func onUvdError(_ generator: TJLabsCommon.UVDGenerator, error: Swift.String)
 }
 @_hasMissingDesignatedInitializers public class CommonConstants {
