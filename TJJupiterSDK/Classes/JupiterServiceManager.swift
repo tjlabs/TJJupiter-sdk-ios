@@ -38,7 +38,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         case stop
     }
     
-    public static let sdkVersion = "2.0.12"
+    public static let sdkVersion = "2.0.13"
     private let lifecycleLock = NSLock()
     private var serviceState: ServiceState = .stopped
     private var activeMode: UserMode?
@@ -97,10 +97,13 @@ public class JupiterServiceManager: NavigationManagerDelegate {
     
     var id: String = ""
     let serviceManager: JupiterNavigationServiceManaging
+    var isDev: Bool = false
     public weak var delegate: JupiterServiceManagerDelegate?
     
     public init(id: String, region: String, sectorId: Int, debugOption: Bool = false) {
         let dev = tjBranch == .DEV
+        self.isDev = tjBranch == .DEV
+        
         JupiterLogger.setDebugOption(set: false)
         let navigationManager = NavigationManager(id: id, region: region, sectorId: sectorId, debugOption: debugOption, dev: dev)
         self.id = id
@@ -250,7 +253,8 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         switch action {
         case .start(let mode):
             if !didSetLSEAppName {
-                let appName = JupiterReplayer.shared.replayMode ? "ios_jupiter_replay" : "ios_jupiter_prod"
+                let suffix = self.isDev ? "dev" : "prod"
+                let appName = JupiterReplayer.shared.replayMode ? "ios_jupiter_replay" : "ios_jupiter_\(suffix)"
                 self.serviceManager.setLSEAppName(name: appName)
                 didSetLSEAppName = true
             }
