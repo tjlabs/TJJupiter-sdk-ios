@@ -3,6 +3,7 @@
 // swift-module-flags: -target arm64-apple-ios15.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name TJLabsResource
 // swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
 import Foundation
+import Security
 import Swift
 import TJLabsAuth
 @_exported import TJLabsResource
@@ -13,6 +14,7 @@ import _SwiftConcurrencyShims
 public protocol TJLabsResourceManagerDelegate : AnyObject {
   func onSectorBundleData(_ manager: TJLabsResource.TJLabsResourceManager, sectorId: Swift.Int, data: TJLabsResource.BundleOutput)
   func onBuildingsData(_ manager: TJLabsResource.TJLabsResourceManager, sectorId: Swift.Int, data: [TJLabsResource.BuildingData])
+  func onTransitionData(_ manager: TJLabsResource.TJLabsResourceManager, sectorId: Swift.Int, data: [TJLabsResource.Transition])
   func onScaleOffsetData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, data: [Swift.Float])
   func onPathPixelData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, data: TJLabsResource.PathPixelData)
   func onNodeLinkData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, type: TJLabsResource.NodeLinkType, data: Any)
@@ -24,6 +26,9 @@ public protocol TJLabsResourceManagerDelegate : AnyObject {
   func onImageData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, data: UIKit.UIImage?)
   #endif
   func onWardsData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, data: [TJLabsResource.LevelWard])
+  #if compiler(>=5.3) && $NonescapableTypes
+  func onMatchesData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, levelId: Swift.Int, data: [TJLabsResource.ParkingMatch], levelMatch: Swift.String?)
+  #endif
   func onAffineParam(_ manager: TJLabsResource.TJLabsResourceManager, data: TJLabsResource.WGS84Transform)
   func onLandmarkData(_ manager: TJLabsResource.TJLabsResourceManager, key: Swift.String, data: [Swift.String : TJLabsResource.LandmarkData])
   func onSimulationData(_ manager: TJLabsResource.TJLabsResourceManager, sectorId: Swift.Int, data: [TJLabsResource.SimulationInfo])
@@ -44,15 +49,67 @@ public enum ResourceError {
   case Affine
   case Landmark
   case Simulation
+  case ParkingMatches
   public static func == (a: TJLabsResource.ResourceError, b: TJLabsResource.ResourceError) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
   public var hashValue: Swift.Int {
     get
   }
 }
+public enum ResourceLoadStage : Swift.Equatable {
+  case sectorBundleMetadata
+  case sectorBundleDownload
+  case image
+  case geofence
+  case entrance
+  case entranceRoute
+  case units
+  case nodeLink
+  case pathPixel
+  case wards
+  case parkingMatches
+  public static func == (a: TJLabsResource.ResourceLoadStage, b: TJLabsResource.ResourceLoadStage) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct ResourceLoadStageFailure {
+  public let stage: TJLabsResource.ResourceLoadStage
+  public let key: Swift.String
+  public let isCritical: Swift.Bool
+  public let eventCode: Swift.Int?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(stage: TJLabsResource.ResourceLoadStage, key: Swift.String, isCritical: Swift.Bool, statusCode: Swift.Int? = nil)
+  #endif
+}
+public struct ResourceLoadInput {
+  public let cloud: Swift.String
+  public let region: Swift.String
+  public let sectorId: Swift.Int
+  public let landmarkTh: Swift.Float
+  public let forceUpdate: Swift.Bool
+  public let dev: Swift.Bool
+  public init(cloud: Swift.String, region: Swift.String, sectorId: Swift.Int, landmarkTh: Swift.Float, forceUpdate: Swift.Bool, dev: Swift.Bool)
+}
+public struct ResourceLoadResult {
+  public let eventCode: Swift.Int
+  public let message: Swift.String
+  public let isSuccess: Swift.Bool
+  public let failedStage: TJLabsResource.ResourceLoadStage?
+  public let failures: [TJLabsResource.ResourceLoadStageFailure]
+  public let input: TJLabsResource.ResourceLoadInput
+  public let versionId: Swift.String
+  public static let unknownVersionId: Swift.String
+  public let isCached: Swift.Bool
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(eventCode: Swift.Int, message: Swift.String, isSuccess: Swift.Bool, failedStage: TJLabsResource.ResourceLoadStage?, failures: [TJLabsResource.ResourceLoadStageFailure] = [], input: TJLabsResource.ResourceLoadInput, versionId: Swift.String? = nil, isCached: Swift.Bool = false)
+  #endif
+}
 public enum ResourceCloud : Swift.String {
   case AWS
   case GCP
+  case onPremise
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
   #endif
@@ -61,7 +118,7 @@ public enum ResourceCloud : Swift.String {
     get
   }
 }
-public enum ResourceRegion : Swift.String {
+public enum ResourceRegion : Swift.String, Swift.CaseIterable {
   case KOREA
   case CANADA
   case US_EAST
@@ -69,7 +126,11 @@ public enum ResourceRegion : Swift.String {
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
   #endif
+  public typealias AllCases = [TJLabsResource.ResourceRegion]
   public typealias RawValue = Swift.String
+  nonisolated public static var allCases: [TJLabsResource.ResourceRegion] {
+    get
+  }
   public var rawValue: Swift.String {
     get
   }
@@ -97,6 +158,35 @@ public struct SectorBundle : Swift.Codable {
   public let wgs84Transform: TJLabsResource.WGS84Transform?
   public let buildings: [TJLabsResource.Building]
   public let simulations: [TJLabsResource.SimulationInfo]
+  public let transitions: [TJLabsResource.Transition]
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct Transition : Swift.Codable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public let level: TJLabsResource.TransitionLevelRef
+  public let lowerLevel: TJLabsResource.TransitionLevelRef
+  public let upperLevel: TJLabsResource.TransitionLevelRef
+  public let points: [TJLabsResource.TransitionPoint]
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct TransitionPoint : Swift.Codable {
+  public let id: Swift.Int
+  public let isVehicle: Swift.Bool
+  public let transitionType: Swift.String
+  public let lowerX: Swift.Float
+  public let lowerY: Swift.Float
+  public let upperX: Swift.Float
+  public let upperY: Swift.Float
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct TransitionLevelRef : Swift.Codable {
+  public let id: Swift.Int
+  public let name: Swift.String
+  public let buildingId: Swift.Int?
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -142,19 +232,55 @@ public struct Building : Swift.Codable {
 public struct Level : Swift.Codable {
   public let id: Swift.Int
   public let name: Swift.String
+  public let type: TJLabsResource.LevelType
   public let mapImage: TJLabsResource.MapImage
   public let geofence: TJLabsResource.GeofenceData
   public let entrances: [TJLabsResource.Entrance]
-  public let units: [TJLabsResource.UnitData]
+  public let units: [TJLabsResource.UnitData]?
   public let graphs: [TJLabsResource.Graph]
   public let wards: [TJLabsResource.Ward]
+  public let rf_landmarks: [TJLabsResource.RFLandmark]
+  public let parkingMatches: TJLabsResource.ParkingMatchesInfo?
   #if compiler(>=5.3) && $NonescapableTypes
   public var graph: TJLabsResource.Graph? {
     get
   }
   #endif
+  public var isTransition: Swift.Bool {
+    get
+  }
   public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct ParkingMatchesInfo : Swift.Codable {
+  public let url: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ParkingMatch : Swift.Codable {
+  public let id: Swift.String
+  public let matchingId: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ParkingMatchesFile : Swift.Codable {
+  public let matches: [TJLabsResource.ParkingMatch]
+  public let levelMatch: Swift.String?
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum LevelType : Swift.String, Swift.Codable {
+  case floor
+  case transition
+  case unknown
+  public init(from decoder: any Swift.Decoder) throws
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
 }
 public struct SimulationInfo : Swift.Codable {
   public let is_vehicle: Swift.Bool
@@ -263,6 +389,9 @@ public struct UnitData : Swift.Codable {
 public enum Category : Swift.String, Swift.Codable {
   case PARKING_SPACE
   case ENTRANCE_EXIT
+  case VERTICAL_TRANSPORTATION
+  case ROOM
+  case RESTROOM
   case UNKNOWN
   public init(from decoder: any Swift.Decoder) throws
   #if compiler(>=5.3) && $NonescapableTypes
@@ -389,7 +518,6 @@ public struct PathPixelData {
 public struct Ward : Swift.Codable {
   public let id: Swift.Int
   public let name: Swift.String
-  public let rf_landmarks: [TJLabsResource.RFLandmark]
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -404,6 +532,7 @@ public struct RFLandmark : Swift.Codable {
   public let x: Swift.Int
   public let y: Swift.Int
   public let rssi: Swift.Float
+  public let ward: TJLabsResource.Ward
   public let links: [TJLabsResource.GraphLinkMini]
   public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
@@ -430,15 +559,28 @@ public struct PeakData : Swift.Codable {
 @_hasMissingDesignatedInitializers public class TJLabsFileDownloader {
   public static let shared: TJLabsResource.TJLabsFileDownloader
   #if compiler(>=5.3) && $NonescapableTypes
-  public func downloadCSVFile(from url: Foundation.URL, fname: Swift.String, forceUpdate: Swift.Bool = false, completion: @escaping (Foundation.URL?, (any Swift.Error)?) -> Swift.Void)
+  public func downloadCSVFile(from url: Foundation.URL, fname: Swift.String, forceUpdate: Swift.Bool = false, completion: @escaping (Foundation.URL?, (any Swift.Error)?, Swift.Int?) -> Swift.Void)
   #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func downloadJSONFile(from url: Foundation.URL, fname: Swift.String, forceUpdate: Swift.Bool = false, completion: @escaping (Foundation.URL?, (any Swift.Error)?, Swift.Int?) -> Swift.Void)
+  #endif
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class TJLabsResourceCode {
+  public static let cacheHitStatus: Swift.Int
+  public static let unclassifiedFailureStatus: Swift.Int
+  public static let resourceFrameworkId: Swift.Int
+  public static let loadResourcesSuccessEventCode: Swift.Int
+  public static let loadResourcesFailureEventCode: Swift.Int
+  public static let operatingSystem: Swift.String
   @objc deinit
 }
 public class TJLabsResourceManager {
   public static let shared: TJLabsResource.TJLabsResourceManager
   weak public var delegate: (any TJLabsResource.TJLabsResourceManagerDelegate)?
   public init()
-  public func loadResources(cloud: Swift.String, region: Swift.String, sectorId: Swift.Int, landmarkTh: Swift.Float = -90, forceUpdate: Swift.Bool = false, dev: Swift.Bool = false, completion: @escaping (Swift.Bool) -> Swift.Void)
+  public func loadResources(cloud: Swift.String, region: Swift.String, sectorId: Swift.Int, landmarkTh: Swift.Float = -90, forceUpdate: Swift.Bool = false, dev: Swift.Bool = false, completion: @escaping (TJLabsResource.ResourceLoadResult) -> Swift.Void)
+  public func loadOnPremiseResources(baseURL: Swift.String, region: Swift.String = ResourceRegion.KOREA.rawValue, sectorId: Swift.Int, landmarkTh: Swift.Float = -90, forceUpdate: Swift.Bool = false, completion: @escaping (TJLabsResource.ResourceLoadResult) -> Swift.Void)
   public func isDebug() -> Swift.Bool
   #if compiler(>=5.3) && $NonescapableTypes
   public func loadSectorBundle(region: Swift.String, sectorId: Swift.Int, forceUpdate: Swift.Bool = false, completion: @escaping (TJLabsResource.BundleOutput?) -> Swift.Void)
@@ -447,6 +589,7 @@ public class TJLabsResourceManager {
   public func getMatchedLevelId(key: Swift.String) -> Swift.Int?
   #endif
   public func getBuildingData() -> [Swift.Int : [TJLabsResource.BuildingData]]
+  public func getTransitions(sectorId: Swift.Int) -> [TJLabsResource.Transition]
   #if compiler(>=5.3) && $NonescapableTypes
   public func getBuildingName(buildingId: Swift.Int) -> Swift.String?
   #endif
@@ -461,6 +604,15 @@ public class TJLabsResourceManager {
   #endif
   public func getScaleOffset() -> [Swift.String : [Swift.Float]]
   public func getPathPixelData() -> [Swift.String : TJLabsResource.PathPixelData]
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getNodeData(sectorId: Swift.Int, building: Swift.String, level: Swift.String, isVehicle: Swift.Bool) -> [Swift.Int : TJLabsResource.NodeData]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getLinkData(sectorId: Swift.Int, building: Swift.String, level: Swift.String, isVehicle: Swift.Bool) -> [Swift.Int : TJLabsResource.LinkData]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getPathPixelData(sectorId: Swift.Int, building: Swift.String, level: Swift.String, isVehicle: Swift.Bool) -> TJLabsResource.PathPixelData?
+  #endif
   public func getBuildingLevelUnitsData() -> [Swift.String : [TJLabsResource.UnitData]]
   #if compiler(>=5.3) && $NonescapableTypes
   public func getUnitsByLevelId(levelId: Swift.Int) -> [TJLabsResource.UnitData]?
@@ -473,6 +625,7 @@ public class TJLabsResourceManager {
   public func getEntranceRouteData() -> [Swift.String : TJLabsResource.EntranceRouteData]
   public func getBuildingLevelImageData() -> [Swift.String : UIKit.UIImage]
   public func getBuildingLevelWardsData() -> [Swift.String : [TJLabsResource.LevelWard]]
+  public func getBuildingLevelParkingMatchesData() -> [Swift.String : [TJLabsResource.ParkingMatch]]
   #if compiler(>=5.3) && $NonescapableTypes
   public func getWGS84Transform(sectorId: Swift.Int) -> TJLabsResource.WGS84Transform?
   #endif
@@ -489,6 +642,7 @@ public class TJLabsResourceManager {
   public func getDefaultPosition(sectorId: Swift.Int) -> TJLabsResource.DefaultPosition?
   #endif
   public func setDebugOption(flag: Swift.Bool)
+  public func clearCache()
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class TJLabsResourceNetworkConstants {
@@ -501,16 +655,40 @@ public class TJLabsResourceManager {
   public static func getUserSectorBundleURL() -> Swift.String
   @objc deinit
 }
+public enum ResourceOnPremiseService : Swift.String {
+  case jupiter
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class TJLabsResourceOnPremiseNetworkConstants {
+  public static func setBaseURL(_ url: Swift.String)
+  public static func isEnabled() -> Swift.Bool
+  public static func getUserBaseURL() -> Swift.String
+  public static func getUserSectorBundleURL() -> Swift.String
+  @objc deinit
+}
 extension TJLabsResource.ResourceError : Swift.Equatable {}
 extension TJLabsResource.ResourceError : Swift.Hashable {}
+extension TJLabsResource.ResourceLoadStage : Swift.Hashable {}
 extension TJLabsResource.ResourceCloud : Swift.Equatable {}
 extension TJLabsResource.ResourceCloud : Swift.Hashable {}
 extension TJLabsResource.ResourceCloud : Swift.RawRepresentable {}
 extension TJLabsResource.ResourceRegion : Swift.Equatable {}
 extension TJLabsResource.ResourceRegion : Swift.Hashable {}
 extension TJLabsResource.ResourceRegion : Swift.RawRepresentable {}
+extension TJLabsResource.LevelType : Swift.Equatable {}
+extension TJLabsResource.LevelType : Swift.Hashable {}
+extension TJLabsResource.LevelType : Swift.RawRepresentable {}
 extension TJLabsResource.Category : Swift.Equatable {}
 extension TJLabsResource.Category : Swift.Hashable {}
 extension TJLabsResource.Category : Swift.RawRepresentable {}
 extension TJLabsResource.NodeLinkType : Swift.Equatable {}
 extension TJLabsResource.NodeLinkType : Swift.Hashable {}
+extension TJLabsResource.ResourceOnPremiseService : Swift.Equatable {}
+extension TJLabsResource.ResourceOnPremiseService : Swift.Hashable {}
+extension TJLabsResource.ResourceOnPremiseService : Swift.RawRepresentable {}

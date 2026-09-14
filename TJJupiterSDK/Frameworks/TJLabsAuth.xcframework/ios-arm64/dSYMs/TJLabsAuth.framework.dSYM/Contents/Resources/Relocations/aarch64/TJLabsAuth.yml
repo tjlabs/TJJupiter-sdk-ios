@@ -2,8 +2,8 @@
 triple:          'arm64-apple-darwin'
 binary-path:     '/Users/leo/Library/Developer/Xcode/DerivedData/TJLabsAuth-dyyknbzbmdvengdxuimghqjdydjc/Build/Intermediates.noindex/ArchiveIntermediates/TJLabsAuth/InstallationBuildProductsLocation/Library/Frameworks/TJLabsAuth.framework/TJLabsAuth'
 relocations:
-  - { offset: 0x4D806, size: 0x8, addend: 0x0, symName: _TJLabsAuthVersionString, symObjAddr: 0x0, symBinAddr: 0x10230, symSize: 0x0 }
-  - { offset: 0x4D83D, size: 0x8, addend: 0x0, symName: _TJLabsAuthVersionNumber, symObjAddr: 0x30, symBinAddr: 0x10260, symSize: 0x0 }
+  - { offset: 0x4D806, size: 0x8, addend: 0x0, symName: _TJLabsAuthVersionString, symObjAddr: 0x0, symBinAddr: 0x10FB0, symSize: 0x0 }
+  - { offset: 0x4D83D, size: 0x8, addend: 0x0, symName: _TJLabsAuthVersionNumber, symObjAddr: 0x30, symBinAddr: 0x10FE0, symSize: 0x0 }
   - { offset: 0x4D8DE, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0B5CloudOSQAASQ2eeoiySbx_xtFZTW', symObjAddr: 0xDC, symBinAddr: 0x40DC, symSize: 0x74 }
   - { offset: 0x4D982, size: 0x8, addend: 0x0, symName: '_$ss2eeoiySbx_xtSYRzSQ8RawValueRpzlF10TJLabsAuth0E6RegionO_TB5', symObjAddr: 0x150, symBinAddr: 0x4150, symSize: 0x12C }
   - { offset: 0x4DA9A, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0B5CloudOSHAASH9hashValueSivgTW', symObjAddr: 0x27C, symBinAddr: 0x427C, symSize: 0x64 }
@@ -222,11 +222,11 @@ relocations:
   - { offset: 0x50502, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth14KeychainHelperC4save3key5valueySS_SStFTf4nnd_n', symObjAddr: 0x3B0, symBinAddr: 0x8EDC, symSize: 0x234 }
   - { offset: 0x50622, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth14KeychainHelperC4load3keySSSgSS_tFTf4nd_n', symObjAddr: 0x7A8, symBinAddr: 0x9250, symSize: 0x2D8 }
   - { offset: 0x5081A, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth12SecretConfigO3set10clientMetayAA06ClientG0VSg_tFZ', symObjAddr: 0x0, symBinAddr: 0x9528, symSize: 0x94 }
-  - { offset: 0x5083E, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth12SecretConfigO15storedClientKey33_681F86C20B15184428FA2E561545E1C0LLSSvpZ', symObjAddr: 0xFF8, symBinAddr: 0x18768, symSize: 0x0 }
-  - { offset: 0x50858, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth12SecretConfigO012storedClientC033_681F86C20B15184428FA2E561545E1C0LLSSvpZ', symObjAddr: 0x1008, symBinAddr: 0x18778, symSize: 0x0 }
-  - { offset: 0x50872, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth12SecretConfigO16storedClientMeta33_681F86C20B15184428FA2E561545E1C0LLAA0fG0VSgvpZ', symObjAddr: 0x1018, symBinAddr: 0x18788, symSize: 0x0 }
-  - { offset: 0x50893, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth12SecretConfigO17storedCustomerKey33_681F86C20B15184428FA2E561545E1C0LLSSSgvpZ', symObjAddr: 0x1060, symBinAddr: 0x187D0, symSize: 0x0 }
-  - { offset: 0x508AD, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth12SecretConfigO015didLoadEmbeddedD033_681F86C20B15184428FA2E561545E1C0LLSbvpZ', symObjAddr: 0x1070, symBinAddr: 0x187E0, symSize: 0x0 }
+  - { offset: 0x5083E, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth12SecretConfigO15storedClientKey33_681F86C20B15184428FA2E561545E1C0LLSSvpZ', symObjAddr: 0xFF8, symBinAddr: 0x1CC58, symSize: 0x0 }
+  - { offset: 0x50858, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth12SecretConfigO012storedClientC033_681F86C20B15184428FA2E561545E1C0LLSSvpZ', symObjAddr: 0x1008, symBinAddr: 0x1CC68, symSize: 0x0 }
+  - { offset: 0x50872, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth12SecretConfigO16storedClientMeta33_681F86C20B15184428FA2E561545E1C0LLAA0fG0VSgvpZ', symObjAddr: 0x1018, symBinAddr: 0x1CC78, symSize: 0x0 }
+  - { offset: 0x50893, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth12SecretConfigO17storedCustomerKey33_681F86C20B15184428FA2E561545E1C0LLSSSgvpZ', symObjAddr: 0x1060, symBinAddr: 0x1CCC0, symSize: 0x0 }
+  - { offset: 0x508AD, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth12SecretConfigO015didLoadEmbeddedD033_681F86C20B15184428FA2E561545E1C0LLSbvpZ', symObjAddr: 0x1070, symBinAddr: 0x1CCD0, symSize: 0x0 }
   - { offset: 0x50A3A, size: 0x8, addend: 0x0, symName: ___swift_memcpy0_1, symObjAddr: 0xDFC, symBinAddr: 0xA288, symSize: 0x4 }
   - { offset: 0x50A4E, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth12SecretConfigOwet', symObjAddr: 0xE04, symBinAddr: 0xA28C, symSize: 0x50 }
   - { offset: 0x50A62, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth12SecretConfigOwst', symObjAddr: 0xE54, symBinAddr: 0xA2DC, symSize: 0x7C }
@@ -246,73 +246,87 @@ relocations:
   - { offset: 0x50FE7, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth12SecretConfigO3set11customerKey10clientMetaySS_AA06ClientI0VSgtFZTf4nnd_n', symObjAddr: 0xC10, symBinAddr: 0xA09C, symSize: 0x12C }
   - { offset: 0x51048, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth12SecretConfigO06clientC0SSvgZTf4d_g', symObjAddr: 0xD3C, symBinAddr: 0xA1C8, symSize: 0xC0 }
   - { offset: 0x51129, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC8USER_URL_WZ', symObjAddr: 0x0, symBinAddr: 0xA408, symSize: 0xFC }
-  - { offset: 0x5114D, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC13BRANCH_SUFFIXSSvpZ', symObjAddr: 0x888, symBinAddr: 0x18890, symSize: 0x0 }
-  - { offset: 0x51167, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC13REGION_PREFIXSSvpZ', symObjAddr: 0x898, symBinAddr: 0x188A0, symSize: 0x0 }
-  - { offset: 0x51181, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC11REGION_NAMESSvpZ', symObjAddr: 0x8A8, symBinAddr: 0x188B0, symSize: 0x0 }
-  - { offset: 0x5119B, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC11SERVER_TYPE33_ABEAF1F618731DB917D572A62DB361FCLLSSvpZ', symObjAddr: 0x8B8, symBinAddr: 0x188C0, symSize: 0x0 }
-  - { offset: 0x511B5, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC8USER_URLSSvpZ', symObjAddr: 0x2FC0, symBinAddr: 0x1A648, symSize: 0x0 }
-  - { offset: 0x511CF, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC6IS_DEVSbvpZ', symObjAddr: 0x2FD0, symBinAddr: 0x1A658, symSize: 0x0 }
+  - { offset: 0x5114D, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC13BRANCH_SUFFIXSSvpZ', symObjAddr: 0x8D0, symBinAddr: 0x1CD80, symSize: 0x0 }
+  - { offset: 0x51167, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC13REGION_PREFIXSSvpZ', symObjAddr: 0x8E0, symBinAddr: 0x1CD90, symSize: 0x0 }
+  - { offset: 0x51181, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC11REGION_NAMESSvpZ', symObjAddr: 0x8F0, symBinAddr: 0x1CDA0, symSize: 0x0 }
+  - { offset: 0x5119B, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC11SERVER_TYPE33_ABEAF1F618731DB917D572A62DB361FCLLSSvpZ', symObjAddr: 0x900, symBinAddr: 0x1CDB0, symSize: 0x0 }
+  - { offset: 0x511B5, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC8USER_URLSSvpZ', symObjAddr: 0x3118, symBinAddr: 0x1EC18, symSize: 0x0 }
+  - { offset: 0x511CF, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC6IS_DEVSbvpZ', symObjAddr: 0x3128, symBinAddr: 0x1EC28, symSize: 0x0 }
   - { offset: 0x511DD, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC8USER_URL_WZ', symObjAddr: 0x0, symBinAddr: 0xA408, symSize: 0xFC }
-  - { offset: 0x51307, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsCMa', symObjAddr: 0x858, symBinAddr: 0xAC50, symSize: 0x20 }
-  - { offset: 0x5137C, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC12setServerURL5cloud6region10serverType3devySS_S2SSbtFZ', symObjAddr: 0xFC, symBinAddr: 0xA504, symSize: 0x444 }
-  - { offset: 0x51560, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC14getUserBaseURLSSyFZ', symObjAddr: 0x540, symBinAddr: 0xA948, symSize: 0x5C }
-  - { offset: 0x5158E, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC19getUserTokenVersionSSyFZ', symObjAddr: 0x59C, symBinAddr: 0xA9A4, symSize: 0xF8 }
-  - { offset: 0x5162D, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC15getUserTokenURLSSyFZ', symObjAddr: 0x694, symBinAddr: 0xAA9C, symSize: 0x4 }
-  - { offset: 0x51641, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsCfd', symObjAddr: 0x698, symBinAddr: 0xAAA0, symSize: 0x8 }
-  - { offset: 0x51666, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC15getUserTokenURLSSyFZTf4d_n', symObjAddr: 0x6B0, symBinAddr: 0xAAA8, symSize: 0x1A8 }
-  - { offset: 0x517CE, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC6sharedACvpZ', symObjAddr: 0x4420, symBinAddr: 0x18968, symSize: 0x0 }
-  - { offset: 0x51C66, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC6shared_WZ', symObjAddr: 0x0, symBinAddr: 0xAC7C, symSize: 0x3C }
-  - { offset: 0x51D87, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_TA', symObjAddr: 0xE24, symBinAddr: 0xBA94, symSize: 0xC }
-  - { offset: 0x51DFF, size: 0x8, addend: 0x0, symName: _block_copy_helper, symObjAddr: 0x1394, symBinAddr: 0xC004, symSize: 0x10 }
-  - { offset: 0x51E13, size: 0x8, addend: 0x0, symName: _block_destroy_helper, symObjAddr: 0x13A4, symBinAddr: 0xC014, symSize: 0x8 }
-  - { offset: 0x51EB2, size: 0x8, addend: 0x0, symName: '_$s10Foundation4DataVSgSo13NSURLResponseCSgs5Error_pSgIeghggg_So6NSDataCSgAGSo7NSErrorCSgIeyBhyyy_TR', symObjAddr: 0x31F4, symBinAddr: 0xDDD8, symSize: 0xC8 }
-  - { offset: 0x51F2D, size: 0x8, addend: 0x0, symName: '_$ss12_ArrayBufferV20_consumeAndCreateNew14bufferIsUnique15minimumCapacity13growForAppendAByxGSb_SiSbtFy10TJLabsAuth11TokenResultOc_Tg5', symObjAddr: 0x3390, symBinAddr: 0xDF74, symSize: 0x120 }
-  - { offset: 0x520F5, size: 0x8, addend: 0x0, symName: '_$sSS11withCStringyxxSPys4Int8VGKXEKlFSb_Tg5024$sSdySdSgxcSyRzlufcSbSpyf6GXEfU_j5SPys4C7VGXEfU_SpySdGTf1cn_n', symObjAddr: 0x34B0, symBinAddr: 0xE094, symSize: 0xEC }
-  - { offset: 0x52277, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC4auth9accessKey012secretAccessF010completionySS_SSySi_SbtctFySi_SSAA0B5InputVtcfU_TA', symObjAddr: 0x35C8, symBinAddr: 0xE1AC, symSize: 0xC }
-  - { offset: 0x5228B, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth6TenantVSgWOe', symObjAddr: 0x3608, symBinAddr: 0xE1B8, symSize: 0x30 }
-  - { offset: 0x5229F, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerCMU', symObjAddr: 0x36DC, symBinAddr: 0xE28C, symSize: 0x8 }
-  - { offset: 0x522B3, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerCMa', symObjAddr: 0x36E4, symBinAddr: 0xE294, symSize: 0x38 }
-  - { offset: 0x522C7, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerCMr', symObjAddr: 0x371C, symBinAddr: 0xE2CC, symSize: 0xAC }
-  - { offset: 0x522DB, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0B5InputVACSEAAWl', symObjAddr: 0x384C, symBinAddr: 0xE3FC, symSize: 0x40 }
-  - { offset: 0x522EF, size: 0x8, addend: 0x0, symName: '_$sSo17OS_dispatch_queueCMa', symObjAddr: 0x388C, symBinAddr: 0xE43C, symSize: 0x44 }
-  - { offset: 0x52303, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC04postB5Token3url5input10completionySS_AA0B5InputVySi_SSAItctFyyScMYccfU_TA', symObjAddr: 0x38D0, symBinAddr: 0xE480, symSize: 0x74 }
-  - { offset: 0x52351, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14performRequest33_ACDAE52089DAAF14B15B5CE17470A97ALL7request7session5input10completiony10Foundation10URLRequestV_So12NSURLSessionCxySi_SSxtctlFyAJ4DataVSg_So13NSURLResponseCSgs5Error_pSgtYbcfU_AA0B5InputV_TG5TA', symObjAddr: 0x3A6C, symBinAddr: 0xE560, symSize: 0x4C }
-  - { offset: 0x52385, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14performRequest33_ACDAE52089DAAF14B15B5CE17470A97ALL7request7session5input10completiony10Foundation10URLRequestV_So12NSURLSessionCxySi_SSxtctlFyAJ4DataVSg_So13NSURLResponseCSgs5Error_pSgtYbcfU_yyScMYccfU0_AA0B5InputV_TG5TA', symObjAddr: 0x3B34, symBinAddr: 0xE614, symSize: 0x80 }
-  - { offset: 0x523F2, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14performRequest33_ACDAE52089DAAF14B15B5CE17470A97ALL7request7session5input10completiony10Foundation10URLRequestV_So12NSURLSessionCxySi_SSxtctlFyAJ4DataVSg_So13NSURLResponseCSgs5Error_pSgtYbcfU_yyScMYccfU_AA0B5InputV_TG5TA', symObjAddr: 0x3D78, symBinAddr: 0xE858, symSize: 0x6C }
-  - { offset: 0x52457, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0B6OutputVACSeAAWl', symObjAddr: 0x40A8, symBinAddr: 0xEB0C, symSize: 0x40 }
-  - { offset: 0x5246B, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yyScMYccfU_TA', symObjAddr: 0x4114, symBinAddr: 0xEB78, symSize: 0xC }
-  - { offset: 0x5248A, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth11TokenResultOIegn_ACytIegnr_TRTA', symObjAddr: 0x4144, symBinAddr: 0xEBA8, symSize: 0x20 }
-  - { offset: 0x524B3, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yAHcfU0_TA', symObjAddr: 0x4164, symBinAddr: 0xEBC8, symSize: 0x8 }
-  - { offset: 0x524C7, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC24reauthenticateIfPossible33_ACDAE52089DAAF14B15B5CE17470A97ALL10completionyyAA11TokenResultOc_tFySi_SbtcfU_TA', symObjAddr: 0x4198, symBinAddr: 0xEBFC, symSize: 0xC }
-  - { offset: 0x524DB, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yAHcfU0_yyYbcfU_TA', symObjAddr: 0x41B0, symBinAddr: 0xEC14, symSize: 0xC }
-  - { offset: 0x524EF, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth11TokenResultOWOc', symObjAddr: 0x41BC, symBinAddr: 0xEC20, symSize: 0x3C }
-  - { offset: 0x52503, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yAHcfU0_yyYbcfU_yyScMYccfU_TA', symObjAddr: 0x423C, symBinAddr: 0xECA0, symSize: 0xC }
-  - { offset: 0x52517, size: 0x8, addend: 0x0, symName: '_$sSdySdSgxcSyRzlufcSbSpySdGXEfU_SbSPys4Int8VGXEfU_TA', symObjAddr: 0x42C8, symBinAddr: 0xED2C, symSize: 0x78 }
-  - { offset: 0x5285B, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC6sharedACvgZ', symObjAddr: 0x3C, symBinAddr: 0xACB8, symSize: 0x40 }
-  - { offset: 0x52888, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC12isAuthorizedSbvg', symObjAddr: 0x7C, symBinAddr: 0xACF8, symSize: 0x40 }
-  - { offset: 0x528AE, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC12isAuthorizedSbvs', symObjAddr: 0xBC, symBinAddr: 0xAD38, symSize: 0x4C }
-  - { offset: 0x528D7, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC12isAuthorizedSbvM', symObjAddr: 0x108, symBinAddr: 0xAD84, symSize: 0x40 }
-  - { offset: 0x528FC, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC12isAuthorizedSbvM.resume.0', symObjAddr: 0x148, symBinAddr: 0xADC4, symSize: 0x4 }
-  - { offset: 0x529C0, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerCACyc33_ACDAE52089DAAF14B15B5CE17470A97ALlfc', symObjAddr: 0x14C, symBinAddr: 0xADC8, symSize: 0x440 }
-  - { offset: 0x52CA7, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC12setTokenInfo10authOutputyAA0bH0V_tF', symObjAddr: 0x58C, symBinAddr: 0xB208, symSize: 0x220 }
-  - { offset: 0x52DE0, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctF', symObjAddr: 0x7AC, symBinAddr: 0xB428, symSize: 0x238 }
-  - { offset: 0x52E6C, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_', symObjAddr: 0x9F0, symBinAddr: 0xB660, symSize: 0x430 }
-  - { offset: 0x530FF, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yyScMYccfU_', symObjAddr: 0xE30, symBinAddr: 0xBAA0, symSize: 0x50 }
-  - { offset: 0x5313A, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yAHcfU0_', symObjAddr: 0xE84, symBinAddr: 0xBAF4, symSize: 0x220 }
-  - { offset: 0x5319F, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yAHcfU0_yyYbcfU_', symObjAddr: 0x10A4, symBinAddr: 0xBD14, symSize: 0x24C }
-  - { offset: 0x53293, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yAHcfU0_yyYbcfU_yyScMYccfU_', symObjAddr: 0x12F0, symBinAddr: 0xBF60, symSize: 0x78 }
-  - { offset: 0x53488, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC11getTenantIdSiyF', symObjAddr: 0x1438, symBinAddr: 0xC01C, symSize: 0x14 }
-  - { offset: 0x534AE, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC11getTenantIdSiyF', symObjAddr: 0x1438, symBinAddr: 0xC01C, symSize: 0x14 }
-  - { offset: 0x534C9, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC13getTenantNameSSyF', symObjAddr: 0x144C, symBinAddr: 0xC030, symSize: 0x4C }
-  - { offset: 0x53523, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC17getTenantUserNameSSyF', symObjAddr: 0x1498, symBinAddr: 0xC07C, symSize: 0x4C }
-  - { offset: 0x53584, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC18setClientConfigKey_10clientMetaySS_AA0eI0VSgtF', symObjAddr: 0x14E4, symBinAddr: 0xC0C8, symSize: 0x38 }
-  - { offset: 0x5362D, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC4auth9accessKey012secretAccessF010completionySS_SSySi_SbtctF', symObjAddr: 0x151C, symBinAddr: 0xC100, symSize: 0x20C }
-  - { offset: 0x537A9, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC4auth9accessKey012secretAccessF010completionySS_SSySi_SbtctFySi_SSAA0B5InputVtcfU_', symObjAddr: 0x1728, symBinAddr: 0xC30C, symSize: 0xC8 }
-  - { offset: 0x53886, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC24reauthenticateIfPossible33_ACDAE52089DAAF14B15B5CE17470A97ALL10completionyyAA11TokenResultOc_tFySi_SbtcfU_', symObjAddr: 0x17F0, symBinAddr: 0xC3D4, symSize: 0x84 }
-  - { offset: 0x5390E, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC17isTokenNearExpiry9thresholdSbSd_tF', symObjAddr: 0x1874, symBinAddr: 0xC458, symSize: 0x16C }
-  - { offset: 0x53AD8, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC04postB5Token3url5input10completionySS_AA0B5InputVySi_SSAItctF', symObjAddr: 0x19E0, symBinAddr: 0xC5C4, symSize: 0x7EC }
-  - { offset: 0x53D0F, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14performRequest33_ACDAE52089DAAF14B15B5CE17470A97ALL7request7session5input10completiony10Foundation10URLRequestV_So12NSURLSessionCxySi_SSxtctlFyAJ4DataVSg_So13NSURLResponseCSgs5Error_pSgtYbcfU_AA0B5InputV_TB5', symObjAddr: 0x21CC, symBinAddr: 0xCDB0, symSize: 0x1028 }
-  - { offset: 0x54167, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerCfd', symObjAddr: 0x32BC, symBinAddr: 0xDEA0, symSize: 0xB0 }
-  - { offset: 0x5418C, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerCfD', symObjAddr: 0x336C, symBinAddr: 0xDF50, symSize: 0x24 }
-  - { offset: 0x54241, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC06decodeB6Output10jsonStringAA0bE0VSgSS_tFTf4nd_n', symObjAddr: 0x3DE4, symBinAddr: 0xE8C4, symSize: 0x248 }
+  - { offset: 0x5131E, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsCMa', symObjAddr: 0x8A0, symBinAddr: 0xAC98, symSize: 0x20 }
+  - { offset: 0x51393, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC12setServerURL5cloud6region10serverType3devySS_S2SSbtFZ', symObjAddr: 0xFC, symBinAddr: 0xA504, symSize: 0x444 }
+  - { offset: 0x51577, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC14getUserBaseURLSSyFZ', symObjAddr: 0x540, symBinAddr: 0xA948, symSize: 0x5C }
+  - { offset: 0x515A5, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC19getUserTokenVersionSSyFZ', symObjAddr: 0x59C, symBinAddr: 0xA9A4, symSize: 0xF8 }
+  - { offset: 0x51644, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC15getUserTokenURLSSyFZ', symObjAddr: 0x694, symBinAddr: 0xAA9C, symSize: 0x4 }
+  - { offset: 0x5165F, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC15getServerConfigSS6region_Sb3devtyFZ', symObjAddr: 0x698, symBinAddr: 0xAAA0, symSize: 0x48 }
+  - { offset: 0x51680, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsCfd', symObjAddr: 0x6E0, symBinAddr: 0xAAE8, symSize: 0x8 }
+  - { offset: 0x516A5, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB9ConstantsC15getUserTokenURLSSyFZTf4d_n', symObjAddr: 0x6F8, symBinAddr: 0xAAF0, symSize: 0x1A8 }
+  - { offset: 0x5180D, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC6sharedACvpZ', symObjAddr: 0x4D00, symBinAddr: 0x1CE58, symSize: 0x0 }
+  - { offset: 0x51C94, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC6shared_WZ', symObjAddr: 0x0, symBinAddr: 0xACC4, symSize: 0x3C }
+  - { offset: 0x51E7A, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_TA', symObjAddr: 0xE58, symBinAddr: 0xBB10, symSize: 0xC }
+  - { offset: 0x51EF2, size: 0x8, addend: 0x0, symName: _block_copy_helper, symObjAddr: 0x13C8, symBinAddr: 0xC080, symSize: 0x10 }
+  - { offset: 0x51F06, size: 0x8, addend: 0x0, symName: _block_destroy_helper, symObjAddr: 0x13D8, symBinAddr: 0xC090, symSize: 0x8 }
+  - { offset: 0x51FFA, size: 0x8, addend: 0x0, symName: '_$s10Foundation4DataVSgSo13NSURLResponseCSgs5Error_pSgIeghggg_So6NSDataCSgAGSo7NSErrorCSgIeyBhyyy_TR', symObjAddr: 0x3600, symBinAddr: 0xE22C, symSize: 0xC8 }
+  - { offset: 0x52075, size: 0x8, addend: 0x0, symName: '_$ss12_ArrayBufferV20_consumeAndCreateNew14bufferIsUnique15minimumCapacity13growForAppendAByxGSb_SiSbtFy10TJLabsAuth11TokenResultOc_Tg5', symObjAddr: 0x38AC, symBinAddr: 0xE4D8, symSize: 0x120 }
+  - { offset: 0x5223D, size: 0x8, addend: 0x0, symName: '_$sSS11withCStringyxxSPys4Int8VGKXEKlFSb_Tg5024$sSdySdSgxcSyRzlufcSbSpyf6GXEfU_j5SPys4C7VGXEfU_SpySdGTf1cn_n', symObjAddr: 0x39CC, symBinAddr: 0xE5F8, symSize: 0xEC }
+  - { offset: 0x523BF, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC4auth9accessKey012secretAccessF010completionySS_SSySi_SbtctFySi_SSAA0B5InputVtcfU_TA', symObjAddr: 0x3AE4, symBinAddr: 0xE710, symSize: 0xC }
+  - { offset: 0x523D3, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth6TenantVSgWOe', symObjAddr: 0x3B24, symBinAddr: 0xE71C, symSize: 0x30 }
+  - { offset: 0x523E7, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerCMU', symObjAddr: 0x3BF8, symBinAddr: 0xE7F0, symSize: 0x8 }
+  - { offset: 0x523FB, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerCMa', symObjAddr: 0x3C00, symBinAddr: 0xE7F8, symSize: 0x38 }
+  - { offset: 0x5240F, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerCMr', symObjAddr: 0x3C38, symBinAddr: 0xE830, symSize: 0xB0 }
+  - { offset: 0x52423, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth28OnPremiseServerTrustDelegateCMa', symObjAddr: 0x3D6C, symBinAddr: 0xE964, symSize: 0x20 }
+  - { offset: 0x5244D, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0B5InputVACSEAAWl', symObjAddr: 0x43B8, symBinAddr: 0xEFB0, symSize: 0x40 }
+  - { offset: 0x52461, size: 0x8, addend: 0x0, symName: '_$sSo17OS_dispatch_queueCMa', symObjAddr: 0x43F8, symBinAddr: 0xEFF0, symSize: 0x44 }
+  - { offset: 0x52475, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC04postB5Token3url5input10completionySS_AA0B5InputVySi_SSAItctFyyScMYccfU_TA', symObjAddr: 0x443C, symBinAddr: 0xF034, symSize: 0x74 }
+  - { offset: 0x524C3, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14performRequest33_ACDAE52089DAAF14B15B5CE17470A97ALL7request7session5input10completiony10Foundation10URLRequestV_So12NSURLSessionCxySi_SSxtctlFyAJ4DataVSg_So13NSURLResponseCSgs5Error_pSgtYbcfU_AA0B5InputV_TG5TA', symObjAddr: 0x4570, symBinAddr: 0xF0AC, symSize: 0x4C }
+  - { offset: 0x524F7, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14performRequest33_ACDAE52089DAAF14B15B5CE17470A97ALL7request7session5input10completiony10Foundation10URLRequestV_So12NSURLSessionCxySi_SSxtctlFyAJ4DataVSg_So13NSURLResponseCSgs5Error_pSgtYbcfU_yyScMYccfU0_AA0B5InputV_TG5TA', symObjAddr: 0x4638, symBinAddr: 0xF160, symSize: 0x74 }
+  - { offset: 0x5255A, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14performRequest33_ACDAE52089DAAF14B15B5CE17470A97ALL7request7session5input10completiony10Foundation10URLRequestV_So12NSURLSessionCxySi_SSxtctlFyAJ4DataVSg_So13NSURLResponseCSgs5Error_pSgtYbcfU_yyScMYccfU_AA0B5InputV_TG5TA', symObjAddr: 0x4870, symBinAddr: 0xF398, symSize: 0x6C }
+  - { offset: 0x525BF, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0B6OutputVACSeAAWl', symObjAddr: 0x4958, symBinAddr: 0xF404, symSize: 0x40 }
+  - { offset: 0x525D3, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yyScMYccfU_TA', symObjAddr: 0x49C4, symBinAddr: 0xF470, symSize: 0xC }
+  - { offset: 0x525F2, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth11TokenResultOIegn_ACytIegnr_TRTA', symObjAddr: 0x49F4, symBinAddr: 0xF4A0, symSize: 0x20 }
+  - { offset: 0x5261B, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yAHcfU0_TA', symObjAddr: 0x4A14, symBinAddr: 0xF4C0, symSize: 0x8 }
+  - { offset: 0x5262F, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC24reauthenticateIfPossible33_ACDAE52089DAAF14B15B5CE17470A97ALL10completionyyAA11TokenResultOc_tFySi_SbtcfU_TA', symObjAddr: 0x4A48, symBinAddr: 0xF4F4, symSize: 0xC }
+  - { offset: 0x52643, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yAHcfU0_yyYbcfU_TA', symObjAddr: 0x4A60, symBinAddr: 0xF50C, symSize: 0xC }
+  - { offset: 0x52657, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth11TokenResultOWOc', symObjAddr: 0x4A6C, symBinAddr: 0xF518, symSize: 0x3C }
+  - { offset: 0x5266B, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yAHcfU0_yyYbcfU_yyScMYccfU_TA', symObjAddr: 0x4AEC, symBinAddr: 0xF598, symSize: 0xC }
+  - { offset: 0x5267F, size: 0x8, addend: 0x0, symName: '_$sSdySdSgxcSyRzlufcSbSpySdGXEfU_SbSPys4Int8VGXEfU_TA', symObjAddr: 0x4B78, symBinAddr: 0xF624, symSize: 0x78 }
+  - { offset: 0x52A6D, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC6sharedACvgZ', symObjAddr: 0x3C, symBinAddr: 0xAD00, symSize: 0x40 }
+  - { offset: 0x52A9A, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC12isAuthorizedSbvg', symObjAddr: 0x7C, symBinAddr: 0xAD40, symSize: 0x40 }
+  - { offset: 0x52AC0, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC12isAuthorizedSbvs', symObjAddr: 0xBC, symBinAddr: 0xAD80, symSize: 0x4C }
+  - { offset: 0x52AE9, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC12isAuthorizedSbvM', symObjAddr: 0x108, symBinAddr: 0xADCC, symSize: 0x40 }
+  - { offset: 0x52B0E, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC12isAuthorizedSbvM.resume.0', symObjAddr: 0x148, symBinAddr: 0xAE0C, symSize: 0x4 }
+  - { offset: 0x52BC4, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerCACyc33_ACDAE52089DAAF14B15B5CE17470A97ALlfc', symObjAddr: 0x14C, symBinAddr: 0xAE10, symSize: 0x474 }
+  - { offset: 0x52EB1, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC12setTokenInfo10authOutputyAA0bH0V_tF', symObjAddr: 0x5C0, symBinAddr: 0xB284, symSize: 0x220 }
+  - { offset: 0x52FEA, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctF', symObjAddr: 0x7E0, symBinAddr: 0xB4A4, symSize: 0x238 }
+  - { offset: 0x53076, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_', symObjAddr: 0xA24, symBinAddr: 0xB6DC, symSize: 0x430 }
+  - { offset: 0x53309, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yyScMYccfU_', symObjAddr: 0xE64, symBinAddr: 0xBB1C, symSize: 0x50 }
+  - { offset: 0x53344, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yAHcfU0_', symObjAddr: 0xEB8, symBinAddr: 0xBB70, symSize: 0x220 }
+  - { offset: 0x533A9, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yAHcfU0_yyYbcfU_', symObjAddr: 0x10D8, symBinAddr: 0xBD90, symSize: 0x24C }
+  - { offset: 0x5349D, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14getAccessToken6update10completionySb_yAA0F6ResultOctFyyYbcfU_yAHcfU0_yyYbcfU_yyScMYccfU_', symObjAddr: 0x1324, symBinAddr: 0xBFDC, symSize: 0x78 }
+  - { offset: 0x53692, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC11getTenantIdSiyF', symObjAddr: 0x146C, symBinAddr: 0xC098, symSize: 0x14 }
+  - { offset: 0x536B8, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC11getTenantIdSiyF', symObjAddr: 0x146C, symBinAddr: 0xC098, symSize: 0x14 }
+  - { offset: 0x536D3, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC13getTenantNameSSyF', symObjAddr: 0x1480, symBinAddr: 0xC0AC, symSize: 0x4C }
+  - { offset: 0x5372D, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC17getTenantUserNameSSyF', symObjAddr: 0x14CC, symBinAddr: 0xC0F8, symSize: 0x4C }
+  - { offset: 0x5378E, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC18setClientConfigKey_10clientMetaySS_AA0eI0VSgtF', symObjAddr: 0x1518, symBinAddr: 0xC144, symSize: 0x38 }
+  - { offset: 0x5388B, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC4auth9accessKey012secretAccessF010completionySS_SSySi_SbtctF', symObjAddr: 0x1550, symBinAddr: 0xC17C, symSize: 0x434 }
+  - { offset: 0x53C7F, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC4auth9accessKey012secretAccessF010completionySS_SSySi_SbtctFySi_SSAA0B5InputVtcfU_', symObjAddr: 0x1984, symBinAddr: 0xC5B0, symSize: 0xC8 }
+  - { offset: 0x53D5C, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC24reauthenticateIfPossible33_ACDAE52089DAAF14B15B5CE17470A97ALL10completionyyAA11TokenResultOc_tFySi_SbtcfU_', symObjAddr: 0x1A4C, symBinAddr: 0xC678, symSize: 0x84 }
+  - { offset: 0x53DE4, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC17isTokenNearExpiry9thresholdSbSd_tF', symObjAddr: 0x1AD0, symBinAddr: 0xC6FC, symSize: 0x16C }
+  - { offset: 0x53FAE, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC04postB5Token3url5input10completionySS_AA0B5InputVySi_SSAItctF', symObjAddr: 0x1C3C, symBinAddr: 0xC868, symSize: 0x7EC }
+  - { offset: 0x541BB, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC14performRequest33_ACDAE52089DAAF14B15B5CE17470A97ALL7request7session5input10completiony10Foundation10URLRequestV_So12NSURLSessionCxySi_SSxtctlFyAJ4DataVSg_So13NSURLResponseCSgs5Error_pSgtYbcfU_AA0B5InputV_TB5', symObjAddr: 0x2428, symBinAddr: 0xD054, symSize: 0x11D8 }
+  - { offset: 0x5466E, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerCfd', symObjAddr: 0x36C8, symBinAddr: 0xE2F4, symSize: 0xC0 }
+  - { offset: 0x54693, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerCfD', symObjAddr: 0x3788, symBinAddr: 0xE3B4, symSize: 0x24 }
+  - { offset: 0x546C4, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth28OnPremiseServerTrustDelegateC10urlSession_10didReceive17completionHandlerySo12NSURLSessionC_So28NSURLAuthenticationChallengeCySo0nbP11DispositionV_So15NSURLCredentialCSgtctFTo', symObjAddr: 0x37AC, symBinAddr: 0xE3D8, symSize: 0x90 }
+  - { offset: 0x54709, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth28OnPremiseServerTrustDelegateCACycfcTo', symObjAddr: 0x383C, symBinAddr: 0xE468, symSize: 0x3C }
+  - { offset: 0x5473F, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth28OnPremiseServerTrustDelegateCfD', symObjAddr: 0x3878, symBinAddr: 0xE4A4, symSize: 0x34 }
+  - { offset: 0x5478C, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB7ManagerC06decodeB6Output10jsonStringAA0bE0VSgSS_tFTf4nd_n', symObjAddr: 0x3D8C, symBinAddr: 0xE984, symSize: 0x248 }
+  - { offset: 0x548B1, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth28OnPremiseServerTrustDelegateC10urlSession_10didReceive17completionHandlerySo12NSURLSessionC_So28NSURLAuthenticationChallengeCySo0nbP11DispositionV_So15NSURLCredentialCSgtctF06$sSo36nbpq5VSo15R21CSgIeyByy_AbEIegyg_TRAlOIeyByy_Tf1nncn_nTf4dndg_n', symObjAddr: 0x3FD4, symBinAddr: 0xEBCC, symSize: 0x3E4 }
+  - { offset: 0x54C7D, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB18OnPremiseConstantsC9isEnabledSbyFZ', symObjAddr: 0x0, symBinAddr: 0xF6FC, symSize: 0xC }
+  - { offset: 0x54CA1, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB18OnPremiseConstantsC7baseURLSSvpZ', symObjAddr: 0x310, symBinAddr: 0x1D1A8, symSize: 0x0 }
+  - { offset: 0x54CBB, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB18OnPremiseConstantsC22isBaseURLExplicitlySetSbvpZ', symObjAddr: 0x20A1, symBinAddr: 0x1EC38, symSize: 0x0 }
+  - { offset: 0x54D8F, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB18OnPremiseConstantsCMa', symObjAddr: 0x274, symBinAddr: 0xF918, symSize: 0x20 }
+  - { offset: 0x54DF6, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB18OnPremiseConstantsC9isEnabledSbyFZ', symObjAddr: 0x0, symBinAddr: 0xF6FC, symSize: 0xC }
+  - { offset: 0x54E17, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB18OnPremiseConstantsC15getUserTokenURLSSyFZ', symObjAddr: 0xC, symBinAddr: 0xF708, symSize: 0x58 }
+  - { offset: 0x54E45, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB18OnPremiseConstantsC14getUserBaseURLSSyFZ', symObjAddr: 0x64, symBinAddr: 0xF760, symSize: 0x34 }
+  - { offset: 0x54E74, size: 0x8, addend: 0x0, symName: '_$s10TJLabsAuth0aB18OnPremiseConstantsC10setBaseURLyySSFZ', symObjAddr: 0x98, symBinAddr: 0xF794, symSize: 0x184 }
 ...
