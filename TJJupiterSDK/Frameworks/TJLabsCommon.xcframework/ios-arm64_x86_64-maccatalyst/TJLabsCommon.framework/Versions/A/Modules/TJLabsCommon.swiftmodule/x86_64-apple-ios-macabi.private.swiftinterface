@@ -22,10 +22,10 @@ import simd
   @objc override dynamic public init()
   @objc deinit
 }
-@objc public class RFDGenerator : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers public class RFDGenerator : ObjectiveC.NSObject {
   weak public var delegate: (any TJLabsCommon.RFDGeneratorDelegate)?
   public var pressureProvider: () -> Swift.Float
-  public init(userId: Swift.String)
+  @objc override dynamic public init()
   public func setScanMode(scanMode: TJLabsCommon.ScanMode)
   public func checkIsAvailableRfd() -> (Swift.Bool, Swift.String)
   #if compiler(>=5.3) && $NonescapableTypes
@@ -35,6 +35,7 @@ import simd
   public func getBleLastScannedTime() -> Swift.Double?
   #endif
   public func generateRfd(rfdIntervalMillis: Foundation.TimeInterval = 1/2, minRssiThreshold: Swift.Int = -100, maxRssiThreshold: Swift.Int = -40)
+  public func setReplayRfd(rfdTimeOffset: Swift.Int, replayRfd: [TJLabsCommon.ReceivedForce])
   public func generateReplayRfd()
   public func stopRfdGeneration()
   @objc deinit
@@ -51,11 +52,10 @@ public enum ScanMode {
   }
 }
 public struct ReceivedForce : Swift.Encodable {
-  public let tenant_user_name: Swift.String
   public let mobile_time: Swift.Int
   public let rfs: [Swift.String : Swift.Double]
   public let pressure: Swift.Float
-  public init(tenant_user_name: Swift.String, mobile_time: Swift.Int, rfs: [Swift.String : Swift.Double], pressure: Swift.Float)
+  public init(mobile_time: Swift.Int, rfs: [Swift.String : Swift.Double], pressure: Swift.Float)
   public func encode(to encoder: any Swift.Encoder) throws
 }
 public protocol RFDGeneratorDelegate : AnyObject {
@@ -102,7 +102,7 @@ public struct ReplayUserVelocity {
   public func saveFilesForReplay(completion: @escaping (Swift.Bool) -> Swift.Void)
   public func loadFilesForReplayLegacy(bleFile: Swift.String, sensorFile: Swift.String) -> ([[Swift.String : Swift.Double]], [TJLabsCommon.SensorData])
   public func loadFilesForReplay(rfdFile: Swift.String, eventFile: Swift.String) -> (rfdTimeOffset: Swift.Int, rfdList: [TJLabsCommon.ReceivedForce])
-  public func loadFilesForReplay(rfdFile: Swift.String, uvdFile: Swift.String, eventFile: Swift.String) -> (rfdTimeOffset: Swift.Int, rfdList: [TJLabsCommon.ReceivedForce], uvdTimeOffset: Swift.Int, uvdList: [TJLabsCommon.ReplayUserVelocity], stopEvents: [TJLabsCommon.JupiterEvent])
+  public func loadFilesForReplay(rfdFile: Swift.String, uvdFile: Swift.String, eventFile: Swift.String) -> (rfdTimeOffset: Swift.Int, rfdList: [TJLabsCommon.ReceivedForce], uvdTimeOffset: Swift.Int, uvdList: [TJLabsCommon.ReplayUserVelocity], stopEvents: [TJLabsCommon.JupiterEvent], serviceStartTime: Swift.Int)
   public func writeEvent(event: TJLabsCommon.JupiterEvent)
   public func writeRFD(rfd: TJLabsCommon.ReceivedForce)
   public func writeUVD(uvd: TJLabsCommon.UserVelocity, mode: TJLabsCommon.UserMode)
@@ -283,9 +283,9 @@ public enum TimeFormat {
   public func setRunMode(mode: Swift.String)
   @objc deinit
 }
-@objc public class UVDGenerator : ObjectiveC.NSObject {
+@objc @_inheritsConvenienceInitializers public class UVDGenerator : ObjectiveC.NSObject {
   weak public var delegate: (any TJLabsCommon.UVDGeneratorDelegate)?
-  public init(userId: Swift.String)
+  @objc override dynamic public init()
   public func setRflow(rflow: Swift.Double, rflowForVelocity: Swift.Double, rflowForAutoMode: Swift.Double, isSufficient: Swift.Bool, isSufficientForVelocity: Swift.Bool, isSufficientForAutoMode: Swift.Bool)
   public func setRouteTrackFinishTime(value: Swift.Double)
   public func setIsInEntranceLevel(flag: Swift.Bool)
@@ -298,6 +298,7 @@ public enum TimeFormat {
   public func checkIsAvailableUvd() -> (Swift.Bool, Swift.String)
   public func generateUvd(defaultPDRStepLength: Swift.Double = 0.6, minPDRStepLength: Swift.Double = 0.5, maxPDRStepLength: Swift.Double = 0.7)
   public func stopUvdGeneration()
+  public func setReplayUvd(uvdTimeOffset: Swift.Int, replayUvd: [TJLabsCommon.ReplayUserVelocity], stopEvents: [TJLabsCommon.JupiterEvent])
   public func generateReplayUvd()
   @objc deinit
 }
@@ -319,13 +320,12 @@ public struct SensorData {
   public init()
 }
 public struct UserVelocity : Swift.Encodable {
-  public let tenant_user_name: Swift.String
   public let mobile_time: Swift.Int
   public let index: Swift.Int
   public var length: Swift.Double
   public var heading: Swift.Double
   public let looking: Swift.Bool
-  public init(tenant_user_name: Swift.String, mobile_time: Swift.Int, index: Swift.Int, length: Swift.Double, heading: Swift.Double, looking: Swift.Bool)
+  public init(mobile_time: Swift.Int, index: Swift.Int, length: Swift.Double, heading: Swift.Double, looking: Swift.Bool)
   public func encode(to encoder: any Swift.Encoder) throws
 }
 public enum UserMode : Swift.String, Swift.Codable {

@@ -4,8 +4,9 @@ import TJLabsJupiter
 
 protocol JupiterNavigationServiceManaging: AnyObject {
     var delegate: (any NavigationManagerDelegate)? { get set }
+    func initialize()
     func startService(mode: TJLabsCommon.UserMode)
-    func stopService(completion: @escaping (Bool, String) -> Void)
+    func stopService(completion: @escaping (Bool, String, JupiterServiceResult) -> Void)
     func setNaviDestination(dest: TJLabsJupiter.Point, isVehicle: Bool)
     func setNaviWaypoints(waypoints: [[Double]])
     func requestRouting(start: TJLabsJupiter.RoutingStart, end: TJLabsJupiter.Point, waypoints: [TJLabsJupiter.Point], is_vehicle: Bool, completion: @escaping (RoutingResult?, [NavigationLevelRoute], TJLabsJupiter.NavigationRouteFailureReason?) -> Void)
@@ -38,7 +39,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         case stop
     }
     
-    public static let sdkVersion = "2.0.13"
+    public static let sdkVersion = "2.0.17"
     private let lifecycleLock = NSLock()
     private var serviceState: ServiceState = .stopped
     private var activeMode: UserMode?
@@ -46,14 +47,14 @@ public class JupiterServiceManager: NavigationManagerDelegate {
     private var pendingStopCompletions: [(Bool, String) -> Void] = []
     private var didSetLSEAppName = false
     
-    public func onInitSuccess(_ isSuccess: Bool, _ code: TJLabsJupiter.InitErrorCode?) {
+    public func onInitSuccess(_ isSuccess: Bool, _ code: TJLabsJupiter.InitErrorCode?, _ result: TJLabsJupiter.JupiterServiceResult) {
         if !isSuccess {
             handleStartFailure()
         }
         delegate?.onInitSuccess(isSuccess, code?.toWrap())
     }
-    
-    public func onJupiterSuccess(_ isSuccess: Bool, _ code: TJLabsJupiter.JupiterErrorCode?) {
+
+    public func onJupiterSuccess(_ isSuccess: Bool, _ code: TJLabsJupiter.JupiterErrorCode?, _ result: TJLabsJupiter.JupiterServiceResult) {
         if isSuccess {
             handleStartSuccess()
         } else {
@@ -108,6 +109,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         let navigationManager = NavigationManager(id: id, region: region, sectorId: sectorId, debugOption: debugOption, dev: dev)
         self.id = id
         self.serviceManager = navigationManager
+        self.serviceManager.initialize()
         self.serviceManager.delegate = self
     }
     
@@ -122,7 +124,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         serviceManager.delegate = nil
         delegate = nil
 
-        serviceManager.stopService(completion: { _, _ in })
+        serviceManager.stopService(completion: { _, _, _ in })
     }
     
     public func startService(mode: UserMode) {
@@ -172,7 +174,6 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         }
     }
     
-    //MARK: - Replay Mode
     public func setReplayMode(flag: Bool, rfdFileName: String, uvdFileName: String, eventFileName: String) {
         serviceManager.setReplayMode(flag: flag, rfdFileName: rfdFileName, uvdFileName: uvdFileName, eventFileName: eventFileName)
     }
@@ -260,7 +261,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
             }
             serviceManager.startService(mode: mode.toJupiter())
         case .stop:
-            serviceManager.stopService { [weak self] success, message in
+            serviceManager.stopService { [weak self] success, message, _ in
                 self?.handleStopCompletion(success: success, message: message)
             }
         case nil:

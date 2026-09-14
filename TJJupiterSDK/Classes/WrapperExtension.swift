@@ -3,14 +3,12 @@ import Foundation
 import TJLabsCommon
 import TJLabsJupiter
 
-// MARK: - To Common
 extension UserMode {
     func toJupiter() -> TJLabsCommon.UserMode {
         return TJLabsCommon.UserMode(rawValue: self.rawValue) ?? .MODE_AUTO
     }
 }
 
-// MARK: - To Jupiter
 extension Point {
     func toJupiter() -> TJLabsJupiter.Point {
         return TJLabsJupiter.Point(
@@ -44,8 +42,6 @@ extension JupiterMockMode {
     }
 }
 
-
-// MARK: - To Wrap 필요
 extension TJLabsJupiter.InOutState {
     func toWrap() -> InOutState {
         return InOutState(rawValue: self.rawValue) ?? .UNKNOWN

@@ -3,18 +3,27 @@ import XCTest
 import TJLabsCommon
 import TJLabsJupiter
 
+private func makeMockServiceResult(isSuccess: Bool = true) -> TJLabsJupiter.JupiterServiceResult {
+    JupiterServiceResult(eventCode: nil, isSuccess: isSuccess, input: .stop)
+}
+
 private final class MockNavigationManager: JupiterNavigationServiceManaging {
-    
+
     var delegate: (any NavigationManagerDelegate)?
+    private(set) var initializeCallCount = 0
     private(set) var startModes: [TJLabsCommon.UserMode] = []
     private(set) var stopCallCount = 0
-    private var stopCompletion: ((Bool, String) -> Void)?
-    
+    private var stopCompletion: ((Bool, String, JupiterServiceResult) -> Void)?
+
+    func initialize() {
+        initializeCallCount += 1
+    }
+
     func startService(mode: TJLabsCommon.UserMode) {
         startModes.append(mode)
     }
-    
-    func stopService(completion: @escaping (Bool, String) -> Void) {
+
+    func stopService(completion: @escaping (Bool, String, JupiterServiceResult) -> Void) {
         stopCallCount += 1
         stopCompletion = completion
     }
@@ -40,7 +49,7 @@ private final class MockNavigationManager: JupiterNavigationServiceManaging {
     func completeStop(success: Bool = true, message: String = "stopped") {
         let completion = stopCompletion
         stopCompletion = nil
-        completion?(success, message)
+        completion?(success, message, makeMockServiceResult(isSuccess: success))
     }
 }
 
@@ -62,7 +71,7 @@ final class Tests: XCTestCase {
         let secondCompletion = expectation(description: "second stop completion")
         
         serviceManager.startService(mode: .MODE_AUTO)
-        serviceManager.onJupiterSuccess(true, nil)
+        serviceManager.onJupiterSuccess(true, nil, makeMockServiceResult())
         serviceManager.stopService { success, message in
             XCTAssertTrue(success)
             XCTAssertEqual(message, "stopped")
@@ -86,7 +95,7 @@ final class Tests: XCTestCase {
         let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager)
         
         serviceManager.startService(mode: .MODE_PEDESTRIAN)
-        serviceManager.onJupiterSuccess(true, nil)
+        serviceManager.onJupiterSuccess(true, nil, makeMockServiceResult())
         serviceManager.stopService { _, _ in }
         serviceManager.startService(mode: .MODE_VEHICLE)
         
@@ -103,7 +112,7 @@ final class Tests: XCTestCase {
         let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager)
         
         serviceManager.startService(mode: .MODE_AUTO)
-        serviceManager.onJupiterSuccess(false, TJLabsJupiter.JupiterErrorCode.NOT_INITIALIZED)
+        serviceManager.onJupiterSuccess(false, TJLabsJupiter.JupiterErrorCode.NOT_INITIALIZED, makeMockServiceResult(isSuccess: false))
         serviceManager.startService(mode: .MODE_AUTO)
         
         XCTAssertEqual(navigationManager.startModes, [.MODE_AUTO, .MODE_AUTO])
@@ -123,10 +132,10 @@ final class Tests: XCTestCase {
 
         XCTAssertEqual(navigationManager.stopCallCount, 0)
 
-        serviceManager.onInitSuccess(true, nil)
+        serviceManager.onInitSuccess(true, nil, makeMockServiceResult())
         XCTAssertEqual(navigationManager.stopCallCount, 0)
 
-        serviceManager.onJupiterSuccess(true, nil)
+        serviceManager.onJupiterSuccess(true, nil, makeMockServiceResult())
         XCTAssertEqual(navigationManager.stopCallCount, 1)
 
         navigationManager.completeStop()
@@ -140,7 +149,7 @@ final class Tests: XCTestCase {
         let stopCompletion = expectation(description: "stop failure completion")
 
         serviceManager.startService(mode: .MODE_PEDESTRIAN)
-        serviceManager.onJupiterSuccess(true, nil)
+        serviceManager.onJupiterSuccess(true, nil, makeMockServiceResult())
         serviceManager.stopService { success, message in
             XCTAssertFalse(success)
             XCTAssertEqual(message, "stop failed")
