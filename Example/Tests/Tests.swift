@@ -12,15 +12,18 @@ private final class MockNavigationManager: JupiterNavigationServiceManaging {
     var delegate: (any NavigationManagerDelegate)?
     private(set) var initializeCallCount = 0
     private(set) var startModes: [TJLabsCommon.UserMode] = []
+    private(set) var startSectorIds: [Int?] = []
     private(set) var stopCallCount = 0
     private var stopCompletion: ((Bool, String, JupiterServiceResult) -> Void)?
+    var mockModeResult = true
 
     func initialize() {
         initializeCallCount += 1
     }
 
-    func startService(mode: TJLabsCommon.UserMode) {
+    func startService(mode: TJLabsCommon.UserMode, sectorId: Int?) {
         startModes.append(mode)
+        startSectorIds.append(sectorId)
     }
 
     func stopService(completion: @escaping (Bool, String, JupiterServiceResult) -> Void) {
@@ -38,8 +41,8 @@ private final class MockNavigationManager: JupiterNavigationServiceManaging {
     
     func setReplayModeLegacy(flag: Bool, bleFileName: String, sensorFileName: String) {}
     
-    func setMockMode(mode: TJLabsJupiter.JupiterMockMode, completion: @escaping (Bool) -> Void) {
-        completion(true)
+    func setMockMode(mode: TJLabsJupiter.JupiterMockMode, sectorId: Int, completion: @escaping (Bool) -> Void) {
+        completion(mockModeResult)
     }
     
     func setLSEAppName(name: String) {
@@ -163,5 +166,107 @@ final class Tests: XCTestCase {
 
         XCTAssertEqual(navigationManager.startModes, [.MODE_PEDESTRIAN])
         wait(for: [stopCompletion], timeout: 1.0)
+    }
+
+    // MARK: - Multi sector
+
+    func testStartWithoutSectorUsesFirstLoadedSector() {
+        let navigationManager = MockNavigationManager()
+        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager, sectorIds: [10, 20])
+
+        serviceManager.startService(mode: .MODE_AUTO)
+
+        XCTAssertEqual(navigationManager.startSectorIds, [10])
+    }
+
+    func testStartWithDifferentSectorRestartsWithThatSector() {
+        let navigationManager = MockNavigationManager()
+        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager, sectorIds: [10, 20])
+
+        serviceManager.startService(mode: .MODE_AUTO, sectorId: 10)
+        serviceManager.onJupiterSuccess(true, nil, makeMockServiceResult())
+        serviceManager.startService(mode: .MODE_AUTO, sectorId: 20)
+
+        XCTAssertEqual(navigationManager.stopCallCount, 1)
+
+        navigationManager.completeStop()
+
+        XCTAssertEqual(navigationManager.startSectorIds, [10, 20])
+    }
+
+    func testStartWithoutSectorKeepsCurrentActiveSector() {
+        let navigationManager = MockNavigationManager()
+        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager, sectorIds: [10, 20])
+
+        serviceManager.startService(mode: .MODE_AUTO, sectorId: 20)
+        serviceManager.onJupiterSuccess(true, nil, makeMockServiceResult())
+        serviceManager.startService(mode: .MODE_AUTO)
+
+        XCTAssertEqual(navigationManager.stopCallCount, 0)
+
+        // stop 후 섹터 없이 다시 시작하면 마지막으로 시작한 섹터(20)로 시작한다.
+        serviceManager.stopService { _, _ in }
+        navigationManager.completeStop()
+        serviceManager.startService(mode: .MODE_AUTO)
+
+        XCTAssertEqual(navigationManager.startSectorIds, [20, 20])
+    }
+
+    func testStartWithoutSectorUsesMockSectorInMockMode() {
+        let navigationManager = MockNavigationManager()
+        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager, sectorIds: [10, 20])
+
+        serviceManager.setMockMode(mode: .VEHICLE_INDOOR_OUTDOOR, sectorId: 20) { _ in }
+        serviceManager.startService(mode: .MODE_VEHICLE)
+        serviceManager.onJupiterSuccess(true, nil, makeMockServiceResult())
+        serviceManager.stopService { _, _ in }
+        navigationManager.completeStop()
+
+        // 목업 해제 후에는 현재 활성 섹터(목업으로 시작한 20)를 그대로 쓴다.
+        serviceManager.setMockMode(mode: .NONE, sectorId: 20) { _ in }
+        serviceManager.startService(mode: .MODE_VEHICLE)
+
+        XCTAssertEqual(navigationManager.startSectorIds, [20, 20])
+    }
+
+    func testFailedMockModeDoesNotChangeStartSector() {
+        let navigationManager = MockNavigationManager()
+        navigationManager.mockModeResult = false
+        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager, sectorIds: [10, 20])
+
+        serviceManager.setMockMode(mode: .VEHICLE_INDOOR_OUTDOOR, sectorId: 30) { isSuccess in
+            XCTAssertFalse(isSuccess)
+        }
+        serviceManager.startService(mode: .MODE_VEHICLE)
+
+        XCTAssertEqual(navigationManager.startSectorIds, [10])
+    }
+
+    func testInvalidSectorStartFailureAllowsRetry() {
+        let navigationManager = MockNavigationManager()
+        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager, sectorIds: [10, 20])
+
+        serviceManager.startService(mode: .MODE_AUTO, sectorId: 99)
+        serviceManager.onJupiterSuccess(false, TJLabsJupiter.JupiterErrorCode.INVALID_SECTOR, makeMockServiceResult(isSuccess: false))
+        serviceManager.startService(mode: .MODE_AUTO, sectorId: 20)
+
+        XCTAssertEqual(navigationManager.startSectorIds, [99, 20])
+    }
+
+    func testWrapperConvertsNewJupiterValues() {
+        XCTAssertEqual(TJLabsJupiter.JupiterErrorCode.INVALID_SECTOR.toWrap(), .INVALID_SECTOR)
+        XCTAssertEqual(TJLabsJupiter.JupiterServiceCode.UVD_STOPPED.toWrap(), .UVD_STOPPED)
+        XCTAssertEqual(TJLabsJupiter.JupiterServiceCode.BUILDING_LEVEL_CHANGING.toWrap(), .BUILDING_LEVEL_CHANGING)
+        XCTAssertEqual(TJLabsJupiter.NavigationRouteFailureReason.networkError.toWrap(), .networkError)
+        XCTAssertEqual(JupiterRegion.SAUDI.toJupiter(), .SAUDI)
+
+        let result = TJLabsJupiter.JupiterResult(
+            mobile_time: 1, index: 2, building_name: "B", level_name: "L",
+            jupiter_pos: TJLabsJupiter.Position(x: 1, y: 2, heading: 3),
+            remaining_distance: 365,
+            velocity: 0, is_vehicle: true, is_indoor: true, validity_flag: 1
+        )
+        XCTAssertEqual(result.toWrap().remaining_distance, 365)
+        XCTAssertEqual(result.toWrap().toJupiter().remaining_distance, 365)
     }
 }
