@@ -5,14 +5,14 @@ import TJLabsJupiter
 protocol JupiterNavigationServiceManaging: AnyObject {
     var delegate: (any NavigationManagerDelegate)? { get set }
     func initialize()
-    func startService(mode: TJLabsCommon.UserMode)
+    func startService(mode: TJLabsCommon.UserMode, sectorId: Int?)
     func stopService(completion: @escaping (Bool, String, JupiterServiceResult) -> Void)
     func setNaviDestination(dest: TJLabsJupiter.Point, isVehicle: Bool)
     func setNaviWaypoints(waypoints: [[Double]])
     func requestRouting(start: TJLabsJupiter.RoutingStart, end: TJLabsJupiter.Point, waypoints: [TJLabsJupiter.Point], is_vehicle: Bool, completion: @escaping (RoutingResult?, [NavigationLevelRoute], TJLabsJupiter.NavigationRouteFailureReason?) -> Void)
     func setReplayMode(flag: Bool, rfdFileName: String, uvdFileName: String, eventFileName: String)
     func setReplayModeLegacy(flag: Bool, bleFileName: String, sensorFileName: String)
-    func setMockMode(mode: TJLabsJupiter.JupiterMockMode, completion: @escaping (Bool) -> Void)
+    func setMockMode(mode: TJLabsJupiter.JupiterMockMode, sectorId: Int, completion: @escaping (Bool) -> Void)
     func setLSEAppName(name: String)
 }
 
@@ -34,18 +34,28 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         case stopping
     }
 
+    // 서비스 요청 단위. mode 나 sectorId 가 바뀌면 다른 요청으로 보고 stop → start 로 전환한다.
+    private struct ServiceRequest: Equatable {
+        let mode: UserMode
+        let sectorId: Int?
+    }
+
     private enum LifecycleAction {
-        case start(UserMode)
+        case start(ServiceRequest)
         case stop
     }
-    
-    public static let sdkVersion = "2.0.17"
+
+    public static let sdkVersion = "2.0.20"
     private let lifecycleLock = NSLock()
     private var serviceState: ServiceState = .stopped
-    private var activeMode: UserMode?
-    private var desiredMode: UserMode?
+    private var activeRequest: ServiceRequest?
+    private var desiredRequest: ServiceRequest?
     private var pendingStopCompletions: [(Bool, String) -> Void] = []
     private var didSetLSEAppName = false
+    // Jupiter 의 활성 섹터. init 직후에는 첫 번째 섹터이며, start 성공 시 그 요청의 섹터로 바뀐다.
+    private var currentSectorId: Int?
+    // setMockMode 로 지정한 목업 데이터 섹터. 목업 모드에서는 Jupiter 와 같이 이 섹터가 start 의 기본 섹터다.
+    private var mockSectorId: Int?
     
     public func onInitSuccess(_ isSuccess: Bool, _ code: TJLabsJupiter.InitErrorCode?, _ result: TJLabsJupiter.JupiterServiceResult) {
         if !isSuccess {
@@ -95,27 +105,36 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         delegate?.isWaypointChanged(waypoints)
     }
     
-    
     var id: String = ""
     let serviceManager: JupiterNavigationServiceManaging
     var isDev: Bool = false
     public weak var delegate: JupiterServiceManagerDelegate?
     
-    public init(id: String, region: String, sectorId: Int, debugOption: Bool = false) {
+    /// 단일 섹터 초기화. `init(sectorIds: [sectorId])` 와 같다.
+    public convenience init(id: String, region: String, sectorId: Int, debugOption: Bool = false) {
+        self.init(id: id, region: region, sectorIds: [sectorId], debugOption: debugOption)
+    }
+
+    /// 멀티 섹터 초기화. `sectorIds` 의 리소스를 한 번에 로드하고, 첫 번째 섹터가 활성 섹터가 된다.
+    /// 하나라도 로드에 실패하면 init 실패(`onInitSuccess(false, .LOAD_RESOURCE_FAIL)`)다.
+    public init(id: String, region: String, sectorIds: [Int], debugOption: Bool = false) {
         let dev = tjBranch == .DEV
         self.isDev = tjBranch == .DEV
-        
+
         JupiterLogger.setDebugOption(set: false)
-        let navigationManager = NavigationManager(id: id, region: region, sectorId: sectorId, debugOption: debugOption, dev: dev)
+        let navigationManager = NavigationManager(id: id, region: region, sectorIds: sectorIds, debugOption: debugOption, dev: dev)
         self.id = id
         self.serviceManager = navigationManager
-        self.serviceManager.initialize()
+        self.currentSectorId = sectorIds.first
+        // 인증/네트워크 실패는 initialize() 안에서 동기적으로 통지되므로 delegate 를 먼저 연결한다.
         self.serviceManager.delegate = self
+        self.serviceManager.initialize()
     }
-    
-    init(id: String, serviceManager: JupiterNavigationServiceManaging) {
+
+    init(id: String, serviceManager: JupiterNavigationServiceManaging, sectorIds: [Int] = []) {
         self.id = id
         self.serviceManager = serviceManager
+        self.currentSectorId = sectorIds.first
         self.serviceManager.delegate = self
     }
     
@@ -127,17 +146,20 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         serviceManager.stopService(completion: { _, _, _ in })
     }
     
-    public func startService(mode: UserMode) {
+    /// 서비스를 시작한다. `sectorId` 가 nil 이면 현재 활성 섹터(목업 모드면 목업 데이터 섹터)로 시작한다.
+    /// 실행 중에 다른 mode 나 다른 섹터로 호출하면 stop 후 그 요청으로 다시 시작한다.
+    /// init 때 로드하지 않은 섹터면 `onJupiterSuccess(false, .INVALID_SECTOR)` 로 실패한다.
+    public func startService(mode: UserMode, sectorId: Int? = nil) {
         lifecycleLock.sync {
-            desiredMode = mode
+            desiredRequest = ServiceRequest(mode: mode, sectorId: sectorId ?? mockSectorId ?? currentSectorId)
         }
 
         processLifecycleIfNeeded()
     }
-    
+
     public func stopService(completion: @escaping (Bool, String) -> Void) {
         let shouldCompleteImmediately = lifecycleLock.sync { () -> Bool in
-            desiredMode = nil
+            desiredRequest = nil
 
             switch serviceState {
             case .stopped:
@@ -182,16 +204,26 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         serviceManager.setReplayModeLegacy(flag: flag, bleFileName: bleFileName, sensorFileName: sensorFileName)
     }
     
-    public func setMockMode(mode: JupiterMockMode, completion: @escaping (Bool) -> Void) {
-        serviceManager.setMockMode(mode: mode.toJupiter(), completion: { isSuccess in
+    /// 목업 시뮬레이션 데이터를 가져올 섹터를 지정한다. init 때 로드하지 않은 섹터면 `completion(false)`.
+    /// `.NONE`(해제)이면 섹터를 쓰지 않는다.
+    public func setMockMode(mode: JupiterMockMode, sectorId: Int, completion: @escaping (Bool) -> Void) {
+        serviceManager.setMockMode(mode: mode.toJupiter(), sectorId: sectorId, completion: { [weak self] isSuccess in
+            if isSuccess {
+                self?.lifecycleLock.sync {
+                    self?.mockSectorId = mode == .NONE ? nil : sectorId
+                }
+            }
             completion(isSuccess)
         })
     }
-    
+
     private func handleStartSuccess() {
         lifecycleLock.sync {
             guard serviceState == .starting else { return }
             serviceState = .started
+            if let sectorId = activeRequest?.sectorId {
+                currentSectorId = sectorId
+            }
         }
 
         processLifecycleIfNeeded()
@@ -202,8 +234,8 @@ public class JupiterServiceManager: NavigationManagerDelegate {
             guard serviceState == .starting else { return [] }
 
             serviceState = .stopped
-            activeMode = nil
-            desiredMode = nil
+            activeRequest = nil
+            desiredRequest = nil
             didSetLSEAppName = false
 
             let completions = pendingStopCompletions
@@ -223,14 +255,14 @@ public class JupiterServiceManager: NavigationManagerDelegate {
 
             if success {
                 serviceState = .stopped
-                activeMode = nil
+                activeRequest = nil
                 didSetLSEAppName = false
-            } else if let activeMode {
+            } else if let activeRequest {
                 serviceState = .started
-                desiredMode = activeMode
+                desiredRequest = activeRequest
             } else {
                 serviceState = .stopped
-                desiredMode = nil
+                desiredRequest = nil
             }
 
             return completions
@@ -242,7 +274,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
     
     private var isVehicleMode: Bool {
         lifecycleLock.sync {
-            (desiredMode ?? activeMode) == .MODE_VEHICLE
+            (desiredRequest ?? activeRequest)?.mode == .MODE_VEHICLE
         }
     }
 
@@ -252,14 +284,14 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         }
         
         switch action {
-        case .start(let mode):
+        case .start(let request):
             if !didSetLSEAppName {
                 let suffix = self.isDev ? "dev" : "prod"
                 let appName = JupiterReplayer.shared.replayMode ? "ios_jupiter_replay" : "ios_jupiter_\(suffix)"
                 self.serviceManager.setLSEAppName(name: appName)
                 didSetLSEAppName = true
             }
-            serviceManager.startService(mode: mode.toJupiter())
+            serviceManager.startService(mode: request.mode.toJupiter(), sectorId: request.sectorId)
         case .stop:
             serviceManager.stopService { [weak self] success, message, _ in
                 self?.handleStopCompletion(success: success, message: message)
@@ -272,14 +304,14 @@ public class JupiterServiceManager: NavigationManagerDelegate {
     private func nextLifecycleAction() -> LifecycleAction? {
         switch serviceState {
         case .stopped:
-            guard let desiredMode else { return nil }
+            guard let desiredRequest else { return nil }
             serviceState = .starting
-            activeMode = desiredMode
-            return .start(desiredMode)
+            activeRequest = desiredRequest
+            return .start(desiredRequest)
         case .starting:
             return nil
         case .started:
-            guard desiredMode != activeMode else { return nil }
+            guard desiredRequest != activeRequest else { return nil }
             serviceState = .stopping
             return .stop
         case .stopping:

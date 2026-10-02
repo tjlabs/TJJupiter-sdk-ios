@@ -71,7 +71,6 @@ extension TJLabsJupiter.NavigationRouteFailureReason {
         return NavigationRouteFailureReason(rawValue: self.rawValue) ?? .unknown
     }
 }
-
 extension TJLabsJupiter.Position {
     func toWrap() -> Position {
         return Position(
@@ -101,6 +100,7 @@ extension TJLabsJupiter.JupiterResult {
             level_name: self.level_name,
             jupiter_pos: self.jupiter_pos.toWrap(),
             navi_pos: self.navi_pos?.toWrap(),
+            remaining_distance: self.remaining_distance,
             llh: self.llh?.toWrap(),
             velocity: self.velocity,
             is_vehicle: self.is_vehicle,
@@ -140,6 +140,7 @@ extension JupiterResult {
             jupiter_pos: self.jupiter_pos.toJupiter(),
             navi_pos: self.navi_pos?.toJupiter(),
             llh: self.llh?.toJupiter(),
+            remaining_distance: self.remaining_distance,
             velocity: self.velocity,
             is_vehicle: self.is_vehicle,
             is_indoor: self.is_indoor,
