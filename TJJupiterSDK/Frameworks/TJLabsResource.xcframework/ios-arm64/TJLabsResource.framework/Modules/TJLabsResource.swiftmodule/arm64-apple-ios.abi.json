@@ -726,7 +726,7 @@
           {
             "kind": "Function",
             "name": "onAffineParam",
-            "printedName": "onAffineParam(_:data:)",
+            "printedName": "onAffineParam(_:sectorId:data:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -741,18 +741,27 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "WGS84Transform",
                 "printedName": "TJLabsResource.WGS84Transform",
                 "usr": "s:14TJLabsResource14WGS84TransformV"
               }
             ],
             "declKind": "Func",
-            "usr": "s:14TJLabsResource0aB15ManagerDelegateP13onAffineParam_4datayAA0abC0C_AA14WGS84TransformVtF",
-            "mangledName": "$s14TJLabsResource0aB15ManagerDelegateP13onAffineParam_4datayAA0abC0C_AA14WGS84TransformVtF",
+            "usr": "s:14TJLabsResource0aB15ManagerDelegateP13onAffineParam_8sectorId4datayAA0abC0C_SiAA14WGS84TransformVtF",
+            "mangledName": "$s14TJLabsResource0aB15ManagerDelegateP13onAffineParam_8sectorId4datayAA0abC0C_SiAA14WGS84TransformVtF",
             "moduleName": "TJLabsResource",
             "genericSig": "<τ_0_0 where τ_0_0 : TJLabsResource.TJLabsResourceManagerDelegate>",
             "sugared_genericSig": "<Self where Self : TJLabsResource.TJLabsResourceManagerDelegate>",
             "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
             "reqNewWitnessTableEntry": true,
             "funcSelfKind": "NonMutating"
           },
@@ -858,6 +867,48 @@
           },
           {
             "kind": "Function",
+            "name": "onSectorResourceLoadFinished",
+            "printedName": "onSectorResourceLoadFinished(_:sectorId:result:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TJLabsResourceManager",
+                "printedName": "TJLabsResource.TJLabsResourceManager",
+                "usr": "s:14TJLabsResource0aB7ManagerC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SectorLoadResult",
+                "printedName": "TJLabsResource.SectorLoadResult",
+                "usr": "s:14TJLabsResource16SectorLoadResultV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14TJLabsResource0aB15ManagerDelegateP08onSectorB12LoadFinished_8sectorId6resultyAA0abC0C_SiAA0fG6ResultVtF",
+            "mangledName": "$s14TJLabsResource0aB15ManagerDelegateP08onSectorB12LoadFinished_8sectorId6resultyAA0abC0C_SiAA0fG6ResultVtF",
+            "moduleName": "TJLabsResource",
+            "genericSig": "<τ_0_0 where τ_0_0 : TJLabsResource.TJLabsResourceManagerDelegate>",
+            "sugared_genericSig": "<Self where Self : TJLabsResource.TJLabsResourceManagerDelegate>",
+            "protocolReq": true,
+            "declAttributes": [
+              "RawDocComment"
+            ],
+            "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "onError",
             "printedName": "onError(_:error:key:)",
             "children": [
@@ -893,6 +944,44 @@
             "sugared_genericSig": "<Self where Self : TJLabsResource.TJLabsResourceManagerDelegate>",
             "protocolReq": true,
             "reqNewWitnessTableEntry": true,
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "onSectorResourceLoadFinished",
+            "printedName": "onSectorResourceLoadFinished(_:sectorId:result:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TJLabsResourceManager",
+                "printedName": "TJLabsResource.TJLabsResourceManager",
+                "usr": "s:14TJLabsResource0aB7ManagerC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "SectorLoadResult",
+                "printedName": "TJLabsResource.SectorLoadResult",
+                "usr": "s:14TJLabsResource16SectorLoadResultV"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14TJLabsResource0aB15ManagerDelegatePAAE08onSectorB12LoadFinished_8sectorId6resultyAA0abC0C_SiAA0fG6ResultVtF",
+            "mangledName": "$s14TJLabsResource0aB15ManagerDelegatePAAE08onSectorB12LoadFinished_8sectorId6resultyAA0abC0C_SiAA0fG6ResultVtF",
+            "moduleName": "TJLabsResource",
+            "genericSig": "<τ_0_0 where τ_0_0 : TJLabsResource.TJLabsResourceManagerDelegate>",
+            "sugared_genericSig": "<Self where Self : TJLabsResource.TJLabsResourceManagerDelegate>",
+            "isFromExtension": true,
             "funcSelfKind": "NonMutating"
           }
         ],
@@ -2561,7 +2650,8 @@
             "moduleName": "TJLabsResource",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "isLet": true,
             "hasStorage": true,
@@ -2581,6 +2671,66 @@
                 "declKind": "Accessor",
                 "usr": "s:14TJLabsResource0B9LoadInputV8sectorIdSivg",
                 "mangledName": "$s14TJLabsResource0B9LoadInputV8sectorIdSivg",
+                "moduleName": "TJLabsResource",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "sectorIds",
+            "printedName": "sectorIds",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.Int]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource0B9LoadInputV9sectorIdsSaySiGvp",
+            "mangledName": "$s14TJLabsResource0B9LoadInputV9sectorIdsSaySiGvp",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[Swift.Int]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Int",
+                        "printedName": "Swift.Int",
+                        "usr": "s:Si"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14TJLabsResource0B9LoadInputV9sectorIdsSaySiGvg",
+                "mangledName": "$s14TJLabsResource0B9LoadInputV9sectorIdsSaySiGvg",
                 "moduleName": "TJLabsResource",
                 "implicit": true,
                 "accessorKind": "get"
@@ -2775,6 +2925,71 @@
               "AccessControl"
             ],
             "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(cloud:region:sectorIds:landmarkTh:forceUpdate:dev:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ResourceLoadInput",
+                "printedName": "TJLabsResource.ResourceLoadInput",
+                "usr": "s:14TJLabsResource0B9LoadInputV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.Int]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14TJLabsResource0B9LoadInputV5cloud6region9sectorIds10landmarkTh11forceUpdate3devACSS_SSSaySiGSfS2btcfc",
+            "mangledName": "$s14TJLabsResource0B9LoadInputV5cloud6region9sectorIds10landmarkTh11forceUpdate3devACSS_SSSaySiGSfS2btcfc",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
           }
         ],
         "declKind": "Struct",
@@ -2783,6 +2998,408 @@
         "moduleName": "TJLabsResource",
         "declAttributes": [
           "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "SectorLoadResult",
+        "printedName": "SectorLoadResult",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "sectorId",
+            "printedName": "sectorId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource16SectorLoadResultV8sectorIdSivp",
+            "mangledName": "$s14TJLabsResource16SectorLoadResultV8sectorIdSivp",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14TJLabsResource16SectorLoadResultV8sectorIdSivg",
+                "mangledName": "$s14TJLabsResource16SectorLoadResultV8sectorIdSivg",
+                "moduleName": "TJLabsResource",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isSuccess",
+            "printedName": "isSuccess",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource16SectorLoadResultV9isSuccessSbvp",
+            "mangledName": "$s14TJLabsResource16SectorLoadResultV9isSuccessSbvp",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14TJLabsResource16SectorLoadResultV9isSuccessSbvg",
+                "mangledName": "$s14TJLabsResource16SectorLoadResultV9isSuccessSbvg",
+                "moduleName": "TJLabsResource",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "failedStage",
+            "printedName": "failedStage",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "TJLabsResource.ResourceLoadStage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ResourceLoadStage",
+                    "printedName": "TJLabsResource.ResourceLoadStage",
+                    "usr": "s:14TJLabsResource0B9LoadStageO"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource16SectorLoadResultV11failedStageAA0bdG0OSgvp",
+            "mangledName": "$s14TJLabsResource16SectorLoadResultV11failedStageAA0bdG0OSgvp",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "TJLabsResource.ResourceLoadStage?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ResourceLoadStage",
+                        "printedName": "TJLabsResource.ResourceLoadStage",
+                        "usr": "s:14TJLabsResource0B9LoadStageO"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14TJLabsResource16SectorLoadResultV11failedStageAA0bdG0OSgvg",
+                "mangledName": "$s14TJLabsResource16SectorLoadResultV11failedStageAA0bdG0OSgvg",
+                "moduleName": "TJLabsResource",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "failures",
+            "printedName": "failures",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[TJLabsResource.ResourceLoadStageFailure]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ResourceLoadStageFailure",
+                    "printedName": "TJLabsResource.ResourceLoadStageFailure",
+                    "usr": "s:14TJLabsResource0B16LoadStageFailureV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource16SectorLoadResultV8failuresSayAA0bD12StageFailureVGvp",
+            "mangledName": "$s14TJLabsResource16SectorLoadResultV8failuresSayAA0bD12StageFailureVGvp",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[TJLabsResource.ResourceLoadStageFailure]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ResourceLoadStageFailure",
+                        "printedName": "TJLabsResource.ResourceLoadStageFailure",
+                        "usr": "s:14TJLabsResource0B16LoadStageFailureV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14TJLabsResource16SectorLoadResultV8failuresSayAA0bD12StageFailureVGvg",
+                "mangledName": "$s14TJLabsResource16SectorLoadResultV8failuresSayAA0bD12StageFailureVGvg",
+                "moduleName": "TJLabsResource",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "versionId",
+            "printedName": "versionId",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource16SectorLoadResultV9versionIdSSvp",
+            "mangledName": "$s14TJLabsResource16SectorLoadResultV9versionIdSSvp",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "String",
+                    "printedName": "Swift.String",
+                    "usr": "s:SS"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14TJLabsResource16SectorLoadResultV9versionIdSSvg",
+                "mangledName": "$s14TJLabsResource16SectorLoadResultV9versionIdSSvg",
+                "moduleName": "TJLabsResource",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "isCached",
+            "printedName": "isCached",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource16SectorLoadResultV8isCachedSbvp",
+            "mangledName": "$s14TJLabsResource16SectorLoadResultV8isCachedSbvp",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Bool",
+                    "printedName": "Swift.Bool",
+                    "usr": "s:Sb"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14TJLabsResource16SectorLoadResultV8isCachedSbvg",
+                "mangledName": "$s14TJLabsResource16SectorLoadResultV8isCachedSbvg",
+                "moduleName": "TJLabsResource",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(sectorId:isSuccess:failedStage:failures:versionId:isCached:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SectorLoadResult",
+                "printedName": "TJLabsResource.SectorLoadResult",
+                "usr": "s:14TJLabsResource16SectorLoadResultV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "TJLabsResource.ResourceLoadStage?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ResourceLoadStage",
+                    "printedName": "TJLabsResource.ResourceLoadStage",
+                    "usr": "s:14TJLabsResource0B9LoadStageO"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[TJLabsResource.ResourceLoadStageFailure]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ResourceLoadStageFailure",
+                    "printedName": "TJLabsResource.ResourceLoadStageFailure",
+                    "usr": "s:14TJLabsResource0B16LoadStageFailureV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "usr": "s:Sb"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14TJLabsResource16SectorLoadResultV8sectorId9isSuccess11failedStage8failures07versionG00H6CachedACSi_SbAA0bdK0OSgSayAA0bdK7FailureVGSSSbtcfc",
+            "mangledName": "$s14TJLabsResource16SectorLoadResultV8sectorId9isSuccess11failedStage8failures07versionG00H6CachedACSi_SbAA0bdK0OSgSayAA0bdK7FailureVGSSSbtcfc",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:14TJLabsResource16SectorLoadResultV",
+        "mangledName": "$s14TJLabsResource16SectorLoadResultV",
+        "moduleName": "TJLabsResource",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
         ],
         "conformances": [
           {
@@ -3243,9 +3860,70 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "sectorResults",
+            "printedName": "sectorResults",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[TJLabsResource.SectorLoadResult]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SectorLoadResult",
+                    "printedName": "TJLabsResource.SectorLoadResult",
+                    "usr": "s:14TJLabsResource16SectorLoadResultV"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource0B10LoadResultV13sectorResultsSayAA06SectorcD0VGvp",
+            "mangledName": "$s14TJLabsResource0B10LoadResultV13sectorResultsSayAA06SectorcD0VGvp",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[TJLabsResource.SectorLoadResult]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "SectorLoadResult",
+                        "printedName": "TJLabsResource.SectorLoadResult",
+                        "usr": "s:14TJLabsResource16SectorLoadResultV"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14TJLabsResource0B10LoadResultV13sectorResultsSayAA06SectorcD0VGvg",
+                "mangledName": "$s14TJLabsResource0B10LoadResultV13sectorResultsSayAA06SectorcD0VGvg",
+                "moduleName": "TJLabsResource",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
-            "printedName": "init(eventCode:message:isSuccess:failedStage:failures:input:versionId:isCached:)",
+            "printedName": "init(eventCode:message:isSuccess:failedStage:failures:input:versionId:isCached:sectorResults:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -3327,11 +4005,26 @@
                 "printedName": "Swift.Bool",
                 "hasDefaultArg": true,
                 "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[TJLabsResource.SectorLoadResult]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SectorLoadResult",
+                    "printedName": "TJLabsResource.SectorLoadResult",
+                    "usr": "s:14TJLabsResource16SectorLoadResultV"
+                  }
+                ],
+                "hasDefaultArg": true,
+                "usr": "s:Sa"
               }
             ],
             "declKind": "Constructor",
-            "usr": "s:14TJLabsResource0B10LoadResultV9eventCode7message9isSuccess11failedStage8failures5input9versionId0H6CachedACSi_SSSbAA0bcK0OSgSayAA0bcK7FailureVGAA0bC5InputVSSSgSbtcfc",
-            "mangledName": "$s14TJLabsResource0B10LoadResultV9eventCode7message9isSuccess11failedStage8failures5input9versionId0H6CachedACSi_SSSbAA0bcK0OSgSayAA0bcK7FailureVGAA0bC5InputVSSSgSbtcfc",
+            "usr": "s:14TJLabsResource0B10LoadResultV9eventCode7message9isSuccess11failedStage8failures5input9versionId0H6Cached13sectorResultsACSi_SSSbAA0bcK0OSgSayAA0bcK7FailureVGAA0bC5InputVSSSgSbSayAA06SectorcD0VGtcfc",
+            "mangledName": "$s14TJLabsResource0B10LoadResultV9eventCode7message9isSuccess11failedStage8failures5input9versionId0H6Cached13sectorResultsACSi_SSSbAA0bcK0OSgSayAA0bcK7FailureVGAA0bC5InputVSSSgSbSayAA06SectorcD0VGtcfc",
             "moduleName": "TJLabsResource",
             "declAttributes": [
               "AccessControl"
@@ -6158,6 +6851,66 @@
             ]
           },
           {
+            "kind": "Var",
+            "name": "zoomLevel",
+            "printedName": "zoomLevel",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "TJLabsResource.ZoomLevel?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ZoomLevel",
+                    "printedName": "TJLabsResource.ZoomLevel",
+                    "usr": "s:14TJLabsResource9ZoomLevelV"
+                  }
+                ],
+                "usr": "s:Sq"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource15DefaultPositionV9zoomLevelAA04ZoomF0VSgvp",
+            "mangledName": "$s14TJLabsResource15DefaultPositionV9zoomLevelAA04ZoomF0VSgvp",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Optional",
+                    "printedName": "TJLabsResource.ZoomLevel?",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "ZoomLevel",
+                        "printedName": "TJLabsResource.ZoomLevel",
+                        "usr": "s:14TJLabsResource9ZoomLevelV"
+                      }
+                    ],
+                    "usr": "s:Sq"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14TJLabsResource15DefaultPositionV9zoomLevelAA04ZoomF0VSgvg",
+                "mangledName": "$s14TJLabsResource15DefaultPositionV9zoomLevelAA04ZoomF0VSgvg",
+                "moduleName": "TJLabsResource",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
             "kind": "Constructor",
             "name": "init",
             "printedName": "init(from:)",
@@ -6212,6 +6965,233 @@
         "declKind": "Struct",
         "usr": "s:14TJLabsResource15DefaultPositionV",
         "mangledName": "$s14TJLabsResource15DefaultPositionV",
+        "moduleName": "TJLabsResource",
+        "declAttributes": [
+          "AccessControl"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Decodable",
+            "printedName": "Decodable",
+            "usr": "s:Se",
+            "mangledName": "$sSe"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Encodable",
+            "printedName": "Encodable",
+            "usr": "s:SE",
+            "mangledName": "$sSE"
+          }
+        ]
+      },
+      {
+        "kind": "TypeDecl",
+        "name": "ZoomLevel",
+        "printedName": "ZoomLevel",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "min",
+            "printedName": "min",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource9ZoomLevelV3minSdvp",
+            "mangledName": "$s14TJLabsResource9ZoomLevelV3minSdvp",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14TJLabsResource9ZoomLevelV3minSdvg",
+                "mangledName": "$s14TJLabsResource9ZoomLevelV3minSdvg",
+                "moduleName": "TJLabsResource",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "defaultValue",
+            "printedName": "defaultValue",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource9ZoomLevelV12defaultValueSdvp",
+            "mangledName": "$s14TJLabsResource9ZoomLevelV12defaultValueSdvp",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14TJLabsResource9ZoomLevelV12defaultValueSdvg",
+                "mangledName": "$s14TJLabsResource9ZoomLevelV12defaultValueSdvg",
+                "moduleName": "TJLabsResource",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
+            "name": "max",
+            "printedName": "max",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Double",
+                "printedName": "Swift.Double",
+                "usr": "s:Sd"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource9ZoomLevelV3maxSdvp",
+            "mangledName": "$s14TJLabsResource9ZoomLevelV3maxSdvp",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Double",
+                    "printedName": "Swift.Double",
+                    "usr": "s:Sd"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14TJLabsResource9ZoomLevelV3maxSdvg",
+                "mangledName": "$s14TJLabsResource9ZoomLevelV3maxSdvg",
+                "moduleName": "TJLabsResource",
+                "implicit": true,
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(from:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ZoomLevel",
+                "printedName": "TJLabsResource.ZoomLevel",
+                "usr": "s:14TJLabsResource9ZoomLevelV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Decoder",
+                "printedName": "any Swift.Decoder",
+                "usr": "s:s7DecoderP"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14TJLabsResource9ZoomLevelV4fromACs7Decoder_p_tKcfc",
+            "mangledName": "$s14TJLabsResource9ZoomLevelV4fromACs7Decoder_p_tKcfc",
+            "moduleName": "TJLabsResource",
+            "implicit": true,
+            "throwing": true,
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "encode",
+            "printedName": "encode(to:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Encoder",
+                "printedName": "any Swift.Encoder",
+                "usr": "s:s7EncoderP"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14TJLabsResource9ZoomLevelV6encode2toys7Encoder_p_tKF",
+            "mangledName": "$s14TJLabsResource9ZoomLevelV6encode2toys7Encoder_p_tKF",
+            "moduleName": "TJLabsResource",
+            "implicit": true,
+            "throwing": true,
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Struct",
+        "usr": "s:14TJLabsResource9ZoomLevelV",
+        "mangledName": "$s14TJLabsResource9ZoomLevelV",
         "moduleName": "TJLabsResource",
         "declAttributes": [
           "AccessControl"
@@ -8284,6 +9264,33 @@
           {
             "kind": "Constructor",
             "name": "init",
+            "printedName": "init(url:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "ParkingMatchesInfo",
+                "printedName": "TJLabsResource.ParkingMatchesInfo",
+                "usr": "s:14TJLabsResource18ParkingMatchesInfoV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14TJLabsResource18ParkingMatchesInfoV3urlACSS_tcfc",
+            "mangledName": "$s14TJLabsResource18ParkingMatchesInfoV3urlACSS_tcfc",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
             "printedName": "init(from:)",
             "children": [
               {
@@ -8303,7 +9310,9 @@
             "usr": "s:14TJLabsResource18ParkingMatchesInfoV4fromACs7Decoder_p_tKcfc",
             "mangledName": "$s14TJLabsResource18ParkingMatchesInfoV4fromACs7Decoder_p_tKcfc",
             "moduleName": "TJLabsResource",
-            "implicit": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
             "throwing": true,
             "init_kind": "Designated"
           },
@@ -8328,7 +9337,9 @@
             "usr": "s:14TJLabsResource18ParkingMatchesInfoV6encode2toys7Encoder_p_tKF",
             "mangledName": "$s14TJLabsResource18ParkingMatchesInfoV6encode2toys7Encoder_p_tKF",
             "moduleName": "TJLabsResource",
-            "implicit": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
             "throwing": true,
             "funcSelfKind": "NonMutating"
           }
@@ -9348,7 +10359,8 @@
             "moduleName": "TJLabsResource",
             "declAttributes": [
               "HasStorage",
-              "AccessControl"
+              "AccessControl",
+              "RawDocComment"
             ],
             "isLet": true,
             "hasStorage": true,
@@ -9377,6 +10389,39 @@
           {
             "kind": "Constructor",
             "name": "init",
+            "printedName": "init(name:url:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "SimulationItem",
+                "printedName": "TJLabsResource.SimulationItem",
+                "usr": "s:14TJLabsResource14SimulationItemV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14TJLabsResource14SimulationItemV4name3urlACSS_SStcfc",
+            "mangledName": "$s14TJLabsResource14SimulationItemV4name3urlACSS_SStcfc",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
             "printedName": "init(from:)",
             "children": [
               {
@@ -9396,7 +10441,9 @@
             "usr": "s:14TJLabsResource14SimulationItemV4fromACs7Decoder_p_tKcfc",
             "mangledName": "$s14TJLabsResource14SimulationItemV4fromACs7Decoder_p_tKcfc",
             "moduleName": "TJLabsResource",
-            "implicit": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
             "throwing": true,
             "init_kind": "Designated"
           },
@@ -9421,7 +10468,9 @@
             "usr": "s:14TJLabsResource14SimulationItemV6encode2toys7Encoder_p_tKF",
             "mangledName": "$s14TJLabsResource14SimulationItemV6encode2toys7Encoder_p_tKF",
             "moduleName": "TJLabsResource",
-            "implicit": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
             "throwing": true,
             "funcSelfKind": "NonMutating"
           }
@@ -10307,41 +11356,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Array",
-                "printedName": "[[Swift.Float]]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[Swift.Float]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Float",
-                        "printedName": "Swift.Float",
-                        "usr": "s:Sf"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:14TJLabsResource12GeofenceDataV12entranceAreaSaySaySfGGvp",
-            "mangledName": "$s14TJLabsResource12GeofenceDataV12entranceAreaSaySaySfGGvp",
-            "moduleName": "TJLabsResource",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
+                "printedName": "[[[Swift.Float]]]",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -10366,9 +11381,59 @@
                     "usr": "s:Sa"
                   }
                 ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource12GeofenceDataV12entranceAreaSaySaySaySfGGGvp",
+            "mangledName": "$s14TJLabsResource12GeofenceDataV12entranceAreaSaySaySaySfGGGvp",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[[[Swift.Float]]]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[[Swift.Float]]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[Swift.Float]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Float",
+                                "printedName": "Swift.Float",
+                                "usr": "s:Sf"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
                 "declKind": "Accessor",
-                "usr": "s:14TJLabsResource12GeofenceDataV12entranceAreaSaySaySfGGvg",
-                "mangledName": "$s14TJLabsResource12GeofenceDataV12entranceAreaSaySaySfGGvg",
+                "usr": "s:14TJLabsResource12GeofenceDataV12entranceAreaSaySaySaySfGGGvg",
+                "mangledName": "$s14TJLabsResource12GeofenceDataV12entranceAreaSaySaySaySfGGGvg",
                 "moduleName": "TJLabsResource",
                 "implicit": true,
                 "accessorKind": "get"
@@ -10383,41 +11448,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Array",
-                "printedName": "[[Swift.Float]]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[Swift.Float]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Float",
-                        "printedName": "Swift.Float",
-                        "usr": "s:Sf"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:14TJLabsResource12GeofenceDataV20entranceMatchingAreaSaySaySfGGvp",
-            "mangledName": "$s14TJLabsResource12GeofenceDataV20entranceMatchingAreaSaySaySfGGvp",
-            "moduleName": "TJLabsResource",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
+                "printedName": "[[[Swift.Float]]]",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -10442,9 +11473,59 @@
                     "usr": "s:Sa"
                   }
                 ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource12GeofenceDataV20entranceMatchingAreaSaySaySaySfGGGvp",
+            "mangledName": "$s14TJLabsResource12GeofenceDataV20entranceMatchingAreaSaySaySaySfGGGvp",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[[[Swift.Float]]]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[[Swift.Float]]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[Swift.Float]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Float",
+                                "printedName": "Swift.Float",
+                                "usr": "s:Sf"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
                 "declKind": "Accessor",
-                "usr": "s:14TJLabsResource12GeofenceDataV20entranceMatchingAreaSaySaySfGGvg",
-                "mangledName": "$s14TJLabsResource12GeofenceDataV20entranceMatchingAreaSaySaySfGGvg",
+                "usr": "s:14TJLabsResource12GeofenceDataV20entranceMatchingAreaSaySaySaySfGGGvg",
+                "mangledName": "$s14TJLabsResource12GeofenceDataV20entranceMatchingAreaSaySaySaySfGGGvg",
                 "moduleName": "TJLabsResource",
                 "implicit": true,
                 "accessorKind": "get"
@@ -10459,41 +11540,7 @@
               {
                 "kind": "TypeNominal",
                 "name": "Array",
-                "printedName": "[[Swift.Float]]",
-                "children": [
-                  {
-                    "kind": "TypeNominal",
-                    "name": "Array",
-                    "printedName": "[Swift.Float]",
-                    "children": [
-                      {
-                        "kind": "TypeNominal",
-                        "name": "Float",
-                        "printedName": "Swift.Float",
-                        "usr": "s:Sf"
-                      }
-                    ],
-                    "usr": "s:Sa"
-                  }
-                ],
-                "usr": "s:Sa"
-              }
-            ],
-            "declKind": "Var",
-            "usr": "s:14TJLabsResource12GeofenceDataV15levelChangeAreaSaySaySfGGvp",
-            "mangledName": "$s14TJLabsResource12GeofenceDataV15levelChangeAreaSaySaySfGGvp",
-            "moduleName": "TJLabsResource",
-            "declAttributes": [
-              "HasStorage",
-              "AccessControl"
-            ],
-            "isLet": true,
-            "hasStorage": true,
-            "accessors": [
-              {
-                "kind": "Accessor",
-                "name": "Get",
-                "printedName": "Get()",
+                "printedName": "[[[Swift.Float]]]",
                 "children": [
                   {
                     "kind": "TypeNominal",
@@ -10518,14 +11565,175 @@
                     "usr": "s:Sa"
                   }
                 ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource12GeofenceDataV15levelChangeAreaSaySaySaySfGGGvp",
+            "mangledName": "$s14TJLabsResource12GeofenceDataV15levelChangeAreaSaySaySaySfGGGvp",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[[[Swift.Float]]]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[[Swift.Float]]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Array",
+                            "printedName": "[Swift.Float]",
+                            "children": [
+                              {
+                                "kind": "TypeNominal",
+                                "name": "Float",
+                                "printedName": "Swift.Float",
+                                "usr": "s:Sf"
+                              }
+                            ],
+                            "usr": "s:Sa"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
                 "declKind": "Accessor",
-                "usr": "s:14TJLabsResource12GeofenceDataV15levelChangeAreaSaySaySfGGvg",
-                "mangledName": "$s14TJLabsResource12GeofenceDataV15levelChangeAreaSaySaySfGGvg",
+                "usr": "s:14TJLabsResource12GeofenceDataV15levelChangeAreaSaySaySaySfGGGvg",
+                "mangledName": "$s14TJLabsResource12GeofenceDataV15levelChangeAreaSaySaySaySfGGGvg",
                 "moduleName": "TJLabsResource",
                 "implicit": true,
                 "accessorKind": "get"
               }
             ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(entranceArea:entranceMatchingArea:levelChangeArea:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "GeofenceData",
+                "printedName": "TJLabsResource.GeofenceData",
+                "usr": "s:14TJLabsResource12GeofenceDataV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[[[Swift.Float]]]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[[Swift.Float]]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Swift.Float]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Float",
+                            "printedName": "Swift.Float",
+                            "usr": "s:Sf"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[[[Swift.Float]]]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[[Swift.Float]]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Swift.Float]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Float",
+                            "printedName": "Swift.Float",
+                            "usr": "s:Sf"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[[[Swift.Float]]]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Array",
+                    "printedName": "[[Swift.Float]]",
+                    "children": [
+                      {
+                        "kind": "TypeNominal",
+                        "name": "Array",
+                        "printedName": "[Swift.Float]",
+                        "children": [
+                          {
+                            "kind": "TypeNominal",
+                            "name": "Float",
+                            "printedName": "Swift.Float",
+                            "usr": "s:Sf"
+                          }
+                        ],
+                        "usr": "s:Sa"
+                      }
+                    ],
+                    "usr": "s:Sa"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14TJLabsResource12GeofenceDataV12entranceArea0e8MatchingF0011levelChangeF0ACSaySaySaySfGGG_A2Itcfc",
+            "mangledName": "$s14TJLabsResource12GeofenceDataV12entranceArea0e8MatchingF0011levelChangeF0ACSaySaySaySfGGG_A2Itcfc",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
           },
           {
             "kind": "Constructor",
@@ -10549,7 +11757,9 @@
             "usr": "s:14TJLabsResource12GeofenceDataV4fromACs7Decoder_p_tKcfc",
             "mangledName": "$s14TJLabsResource12GeofenceDataV4fromACs7Decoder_p_tKcfc",
             "moduleName": "TJLabsResource",
-            "implicit": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
             "throwing": true,
             "init_kind": "Designated"
           },
@@ -17257,6 +18467,33 @@
           {
             "kind": "Constructor",
             "name": "init",
+            "printedName": "init(url:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "PathInfo",
+                "printedName": "TJLabsResource.PathInfo",
+                "usr": "s:14TJLabsResource8PathInfoV"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14TJLabsResource8PathInfoV3urlACSS_tcfc",
+            "mangledName": "$s14TJLabsResource8PathInfoV3urlACSS_tcfc",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
             "printedName": "init(from:)",
             "children": [
               {
@@ -17276,7 +18513,9 @@
             "usr": "s:14TJLabsResource8PathInfoV4fromACs7Decoder_p_tKcfc",
             "mangledName": "$s14TJLabsResource8PathInfoV4fromACs7Decoder_p_tKcfc",
             "moduleName": "TJLabsResource",
-            "implicit": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
             "throwing": true,
             "init_kind": "Designated"
           },
@@ -17301,7 +18540,9 @@
             "usr": "s:14TJLabsResource8PathInfoV6encode2toys7Encoder_p_tKF",
             "mangledName": "$s14TJLabsResource8PathInfoV6encode2toys7Encoder_p_tKF",
             "moduleName": "TJLabsResource",
-            "implicit": true,
+            "declAttributes": [
+              "AccessControl"
+            ],
             "throwing": true,
             "funcSelfKind": "NonMutating"
           }
@@ -19546,6 +20787,209 @@
       },
       {
         "kind": "TypeDecl",
+        "name": "TJLabsMultiResourceManager",
+        "printedName": "TJLabsMultiResourceManager",
+        "children": [
+          {
+            "kind": "Var",
+            "name": "shared",
+            "printedName": "shared",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TJLabsMultiResourceManager",
+                "printedName": "TJLabsResource.TJLabsMultiResourceManager",
+                "usr": "s:14TJLabsResource0a5MultiB7ManagerC"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:14TJLabsResource0a5MultiB7ManagerC6sharedACvpZ",
+            "mangledName": "$s14TJLabsResource0a5MultiB7ManagerC6sharedACvpZ",
+            "moduleName": "TJLabsResource",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "TJLabsMultiResourceManager",
+                    "printedName": "TJLabsResource.TJLabsMultiResourceManager",
+                    "usr": "s:14TJLabsResource0a5MultiB7ManagerC"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:14TJLabsResource0a5MultiB7ManagerC6sharedACvgZ",
+                "mangledName": "$s14TJLabsResource0a5MultiB7ManagerC6sharedACvgZ",
+                "moduleName": "TJLabsResource",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Constructor",
+            "name": "init",
+            "printedName": "init(resourceManager:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "TJLabsMultiResourceManager",
+                "printedName": "TJLabsResource.TJLabsMultiResourceManager",
+                "usr": "s:14TJLabsResource0a5MultiB7ManagerC"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "TJLabsResourceManager",
+                "printedName": "TJLabsResource.TJLabsResourceManager",
+                "hasDefaultArg": true,
+                "usr": "s:14TJLabsResource0aB7ManagerC"
+              }
+            ],
+            "declKind": "Constructor",
+            "usr": "s:14TJLabsResource0a5MultiB7ManagerC08resourceD0AcA0abD0C_tcfc",
+            "mangledName": "$s14TJLabsResource0a5MultiB7ManagerC08resourceD0AcA0abD0C_tcfc",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "init_kind": "Designated"
+          },
+          {
+            "kind": "Function",
+            "name": "loadResources",
+            "printedName": "loadResources(cloud:region:sectorIds:landmarkTh:forceUpdate:dev:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.Int]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "hasDefaultArg": true,
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TJLabsResource.ResourceLoadResult) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ResourceLoadResult",
+                    "printedName": "TJLabsResource.ResourceLoadResult",
+                    "usr": "s:14TJLabsResource0B10LoadResultV"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14TJLabsResource0a5MultiB7ManagerC13loadResources5cloud6region9sectorIds10landmarkTh11forceUpdate3dev10completionySS_SSSaySiGSfS2byAA0B10LoadResultVctF",
+            "mangledName": "$s14TJLabsResource0a5MultiB7ManagerC13loadResources5cloud6region9sectorIds10landmarkTh11forceUpdate3dev10completionySS_SSSaySiGSfS2byAA0B10LoadResultVctF",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          }
+        ],
+        "declKind": "Class",
+        "usr": "s:14TJLabsResource0a5MultiB7ManagerC",
+        "mangledName": "$s14TJLabsResource0a5MultiB7ManagerC",
+        "moduleName": "TJLabsResource",
+        "declAttributes": [
+          "AccessControl",
+          "RawDocComment"
+        ],
+        "conformances": [
+          {
+            "kind": "Conformance",
+            "name": "Copyable",
+            "printedName": "Copyable",
+            "usr": "s:s8CopyableP",
+            "mangledName": "$ss8CopyableP"
+          },
+          {
+            "kind": "Conformance",
+            "name": "Escapable",
+            "printedName": "Escapable",
+            "usr": "s:s9EscapableP",
+            "mangledName": "$ss9EscapableP"
+          }
+        ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TJLabsResource"
+      },
+      {
+        "kind": "TypeDecl",
         "name": "TJLabsResourceCode",
         "printedName": "TJLabsResourceCode",
         "children": [
@@ -20469,7 +21913,7 @@
           {
             "kind": "Function",
             "name": "getBuildingId",
-            "printedName": "getBuildingId(buildingName:)",
+            "printedName": "getBuildingId(sectorId:buildingName:)",
             "children": [
               {
                 "kind": "TypeNominal",
@@ -20487,17 +21931,59 @@
               },
               {
                 "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              },
+              {
+                "kind": "TypeNominal",
                 "name": "String",
                 "printedName": "Swift.String",
                 "usr": "s:SS"
               }
             ],
             "declKind": "Func",
-            "usr": "s:14TJLabsResource0aB7ManagerC13getBuildingId12buildingNameSiSgSS_tF",
-            "mangledName": "$s14TJLabsResource0aB7ManagerC13getBuildingId12buildingNameSiSgSS_tF",
+            "usr": "s:14TJLabsResource0aB7ManagerC13getBuildingId06sectorF012buildingNameSiSgSi_SStF",
+            "mangledName": "$s14TJLabsResource0aB7ManagerC13getBuildingId06sectorF012buildingNameSiSgSi_SStF",
             "moduleName": "TJLabsResource",
             "declAttributes": [
               "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getBundleArchiveFileData",
+            "printedName": "getBundleArchiveFileData(path:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "Foundation.Data?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Data",
+                    "printedName": "Foundation.Data",
+                    "usr": "s:10Foundation4DataV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14TJLabsResource0aB7ManagerC24getBundleArchiveFileData4path10Foundation0H0VSgSS_tF",
+            "mangledName": "$s14TJLabsResource0aB7ManagerC24getBundleArchiveFileData4path10Foundation0H0VSgSS_tF",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
           },
@@ -21261,6 +22747,71 @@
           },
           {
             "kind": "Function",
+            "name": "getSectorBundle",
+            "printedName": "getSectorBundle(sectorId:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Optional",
+                "printedName": "TJLabsResource.SectorBundle?",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "SectorBundle",
+                    "printedName": "TJLabsResource.SectorBundle",
+                    "usr": "s:14TJLabsResource12SectorBundleV"
+                  }
+                ],
+                "usr": "s:Sq"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Int",
+                "printedName": "Swift.Int",
+                "usr": "s:Si"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14TJLabsResource0aB7ManagerC15getSectorBundle8sectorIdAA0eF0VSgSi_tF",
+            "mangledName": "$s14TJLabsResource0aB7ManagerC15getSectorBundle8sectorIdAA0eF0VSgSi_tF",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getLoadedSectorIds",
+            "printedName": "getLoadedSectorIds()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.Int]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sa"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14TJLabsResource0aB7ManagerC18getLoadedSectorIdsSaySiGyF",
+            "mangledName": "$s14TJLabsResource0aB7ManagerC18getLoadedSectorIdsSaySiGyF",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
             "name": "getSectorId",
             "printedName": "getSectorId()",
             "children": [
@@ -21424,6 +22975,13 @@
             "mangledName": "$ss9EscapableP"
           }
         ]
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TJLabsResource"
       },
       {
         "kind": "Import",
@@ -21615,6 +23173,52 @@
             "declKind": "Func",
             "usr": "s:14TJLabsResource0aB16NetworkConstantsC22getUserSectorBundleURLSSyFZ",
             "mangledName": "$s14TJLabsResource0aB16NetworkConstantsC22getUserSectorBundleURLSSyFZ",
+            "moduleName": "TJLabsResource",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUserMultiSectorBundleVersion",
+            "printedName": "getUserMultiSectorBundleVersion()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14TJLabsResource0aB16NetworkConstantsC31getUserMultiSectorBundleVersionSSyFZ",
+            "mangledName": "$s14TJLabsResource0aB16NetworkConstantsC31getUserMultiSectorBundleVersionSSyFZ",
+            "moduleName": "TJLabsResource",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl"
+            ],
+            "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUserMultiSectorBundleURL",
+            "printedName": "getUserMultiSectorBundleURL()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14TJLabsResource0aB16NetworkConstantsC27getUserMultiSectorBundleURLSSyFZ",
+            "mangledName": "$s14TJLabsResource0aB16NetworkConstantsC27getUserMultiSectorBundleURLSSyFZ",
             "moduleName": "TJLabsResource",
             "static": true,
             "declAttributes": [
@@ -21979,6 +23583,20 @@
         "printedName": "Security",
         "declKind": "Import",
         "moduleName": "TJLabsResource"
+      },
+      {
+        "kind": "Import",
+        "name": "Foundation",
+        "printedName": "Foundation",
+        "declKind": "Import",
+        "moduleName": "TJLabsResource"
+      },
+      {
+        "kind": "Import",
+        "name": "Compression",
+        "printedName": "Compression",
+        "declKind": "Import",
+        "moduleName": "TJLabsResource"
       }
     ],
     "json_format_version": 8
@@ -22004,6 +23622,62 @@
       "offset": 492,
       "length": 6,
       "value": "\"_PDR\""
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/Manager\/TJLabsPathPixelManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11522,
+      "length": 4,
+      "value": "0x0A"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/Manager\/TJLabsPathPixelManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11554,
+      "length": 4,
+      "value": "0x0D"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/Manager\/TJLabsPathPixelManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11589,
+      "length": 4,
+      "value": "0x2C"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/Manager\/TJLabsPathPixelManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11630,
+      "length": 4,
+      "value": "0x5B"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/Manager\/TJLabsPathPixelManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11672,
+      "length": 4,
+      "value": "0x5D"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/Manager\/TJLabsPathPixelManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11707,
+      "length": 4,
+      "value": "0x20"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/Manager\/TJLabsPathPixelManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 11740,
+      "length": 4,
+      "value": "0x09"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/Manager\/TJLabsPathPixelManager.swift",
+      "kind": "StringLiteral",
+      "offset": 11783,
+      "length": 11,
+      "value": "\"encoding=\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/Manager\/TJLabsResourceNetworkManager.swift",
@@ -22034,6 +23708,13 @@
       "value": "false"
     },
     {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/Manager\/TJLabsResourceNetworkManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 6467,
+      "length": 5,
+      "value": "false"
+    },
+    {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/Manager\/TJLabsSectorBundleManager.swift",
       "kind": "BooleanLiteral",
       "offset": 543,
@@ -22042,435 +23723,463 @@
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
+      "kind": "Array",
+      "offset": 6207,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 5241,
+      "offset": 7849,
       "length": 9,
       "value": "\"unknown\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "Array",
-      "offset": 5589,
+      "offset": 8509,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "BooleanLiteral",
-      "offset": 5662,
+      "offset": 8582,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
+      "kind": "Array",
+      "offset": 8625,
+      "length": 2,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 6038,
+      "offset": 9041,
       "length": 5,
       "value": "\"AWS\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 6059,
+      "offset": 9062,
       "length": 5,
       "value": "\"GCP\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 6289,
+      "offset": 9292,
       "length": 11,
       "value": "\"ONPREMISE\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 6372,
+      "offset": 9375,
       "length": 7,
       "value": "\"KOREA\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 6398,
+      "offset": 9401,
       "length": 8,
       "value": "\"CANADA\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 6426,
+      "offset": 9429,
       "length": 9,
       "value": "\"US_EAST\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 6453,
+      "offset": 9456,
       "length": 7,
       "value": "\"SAUDI\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 6537,
+      "offset": 9540,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 7790,
+      "offset": 10793,
       "length": 18,
       "value": "\"operating_system\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 7840,
+      "offset": 10843,
       "length": 18,
       "value": "\"default_position\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 7889,
+      "offset": 10892,
       "length": 17,
       "value": "\"wgs84_transform\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 10444,
+      "offset": 13447,
       "length": 13,
       "value": "\"lower_level\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 10484,
+      "offset": 13487,
       "length": 13,
       "value": "\"upper_level\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 12101,
+      "offset": 15104,
       "length": 12,
       "value": "\"is_vehicle\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 12144,
+      "offset": 15147,
       "length": 17,
       "value": "\"transition_type\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 12184,
+      "offset": 15187,
       "length": 9,
       "value": "\"lower_x\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 12216,
+      "offset": 15219,
       "length": 9,
       "value": "\"lower_y\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 12248,
+      "offset": 15251,
       "length": 9,
       "value": "\"upper_x\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 12280,
+      "offset": 15283,
       "length": 9,
       "value": "\"upper_y\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 12516,
+      "offset": 15519,
       "length": 13,
       "value": "\"building_id\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 13283,
+      "offset": 15750,
+      "length": 12,
+      "value": "\"zoom_level\""
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
+      "kind": "StringLiteral",
+      "offset": 15989,
+      "length": 9,
+      "value": "\"default\""
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
+      "kind": "StringLiteral",
+      "offset": 16667,
       "length": 10,
       "value": "\"xx_scale\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 13317,
+      "offset": 16701,
       "length": 10,
       "value": "\"yy_scale\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 13351,
+      "offset": 16735,
       "length": 10,
       "value": "\"xy_shear\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 13385,
+      "offset": 16769,
       "length": 10,
       "value": "\"yx_shear\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 13424,
+      "offset": 16808,
       "length": 15,
       "value": "\"x_translation\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 13468,
+      "offset": 16852,
       "length": 15,
       "value": "\"y_translation\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 13513,
+      "offset": 16897,
       "length": 16,
       "value": "\"heading_offset\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 15187,
+      "offset": 18571,
       "length": 14,
       "value": "\"rf_landmarks\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 15226,
+      "offset": 18610,
       "length": 11,
       "value": "\"map_image\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 15290,
+      "offset": 18674,
       "length": 17,
       "value": "\"parking_matches\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 18466,
+      "offset": 22728,
       "length": 13,
       "value": "\"level_match\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 18568,
+      "offset": 22830,
       "length": 7,
       "value": "\"floor\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 18598,
+      "offset": 22860,
       "length": 12,
       "value": "\"transition\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 19798,
+      "offset": 25035,
       "length": 13,
       "value": "\"image_width\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 19839,
+      "offset": 25076,
       "length": 14,
       "value": "\"image_height\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 19876,
+      "offset": 25113,
       "length": 9,
       "value": "\"scale_x\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 19908,
+      "offset": 25145,
       "length": 9,
       "value": "\"scale_y\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 19941,
+      "offset": 25178,
       "length": 10,
       "value": "\"offset_x\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 19975,
+      "offset": 25212,
       "length": 10,
       "value": "\"offset_y\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 20251,
+      "offset": 26286,
       "length": 15,
       "value": "\"entrance_area\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 20303,
+      "offset": 26338,
       "length": 24,
       "value": "\"entrance_matching_area\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 20359,
+      "offset": 26394,
       "length": 19,
       "value": "\"level_change_area\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 20703,
+      "offset": 27468,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 20734,
+      "offset": 27499,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "IntegerLiteral",
-      "offset": 20774,
+      "offset": 27539,
       "length": 1,
       "value": "0"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "Array",
-      "offset": 21263,
+      "offset": 28028,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "Array",
-      "offset": 21300,
+      "offset": 28065,
       "length": 4,
       "value": "[[]]"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 22227,
+      "offset": 28992,
       "length": 15,
       "value": "\"PARKING_SPACE\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 22268,
+      "offset": 29033,
       "length": 15,
       "value": "\"ENTRANCE_EXIT\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 22319,
+      "offset": 29084,
       "length": 25,
       "value": "\"VERTICAL_TRANSPORTATION\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 22361,
+      "offset": 29126,
       "length": 6,
       "value": "\"ROOM\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 22388,
+      "offset": 29153,
       "length": 10,
       "value": "\"RESTROOM\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 23008,
+      "offset": 29773,
       "length": 12,
       "value": "\"is_vehicle\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 23049,
+      "offset": 29814,
       "length": 15,
       "value": "\"link_features\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "StringLiteral",
-      "offset": 23091,
+      "offset": 29856,
       "length": 13,
       "value": "\"link_groups\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "Array",
-      "offset": 26202,
+      "offset": 34123,
       "length": 4,
       "value": "[[]]"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "Array",
-      "offset": 26244,
+      "offset": 34165,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "Array",
-      "offset": 26283,
+      "offset": 34204,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/BundleModel.swift",
       "kind": "Array",
-      "offset": 26325,
+      "offset": 34246,
       "length": 2,
       "value": "[]"
     },
@@ -22506,6 +24215,34 @@
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsFileDownloader.swift",
       "kind": "BooleanLiteral",
       "offset": 1076,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsMultiResourceManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1706,
+      "length": 1,
+      "value": "3"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsMultiResourceManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 2177,
+      "length": 3,
+      "value": "-90"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsMultiResourceManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2232,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsMultiResourceManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 2281,
       "length": 5,
       "value": "false"
     },
@@ -22561,77 +24298,84 @@
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "StringLiteral",
-      "offset": 9561,
+      "offset": 9652,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
+      "kind": "Dictionary",
+      "offset": 10154,
+      "length": 3,
+      "value": "[]"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "StringLiteral",
-      "offset": 10098,
+      "offset": 11284,
       "length": 30,
       "value": "\"TJLabsResource.BundleOutput.\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 10157,
+      "offset": 11343,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 11149,
+      "offset": 12335,
       "length": 3,
       "value": "-90"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 11174,
+      "offset": 12360,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 11193,
-      "length": 5,
-      "value": "false"
-    },
-    {
-      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
-      "kind": "IntegerLiteral",
       "offset": 12379,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 13565,
       "length": 3,
       "value": "-90"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 12404,
+      "offset": 13590,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 36827,
+      "offset": 38013,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 37143,
+      "offset": 38329,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 48905,
+      "offset": 51657,
       "length": 5,
       "value": "false"
     },
@@ -22647,75 +24391,89 @@
       "kind": "StringLiteral",
       "offset": 171,
       "length": 12,
-      "value": "\"2026-09-10\""
+      "value": "\"2026-10-02\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 256,
+      "offset": 335,
+      "length": 12,
+      "value": "\"2026-10-02\""
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 420,
       "length": 12,
       "value": "\"2025-03-26\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 342,
+      "offset": 506,
       "length": 10,
       "value": "\"https:\/\/\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 393,
+      "offset": 557,
       "length": 10,
       "value": "\".jupiter\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 448,
+      "offset": 612,
       "length": 17,
       "value": "\".tjlabscorp.com\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 515,
+      "offset": 679,
       "length": 17,
       "value": "\"ap-northeast-2.\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 575,
+      "offset": 739,
       "length": 7,
       "value": "\"Korea\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 683,
+      "offset": 847,
       "length": 6,
       "value": "\"user\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "StringLiteral",
-      "offset": 776,
+      "offset": 940,
+      "length": 2,
+      "value": "\"\""
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
+      "kind": "StringLiteral",
+      "offset": 1092,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "BooleanLiteral",
-      "offset": 821,
+      "offset": 1137,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsResourceNetworkConstants.swift",
       "kind": "BooleanLiteral",
-      "offset": 907,
+      "offset": 1223,
       "length": 5,
       "value": "false"
     },
@@ -22767,6 +24525,34 @@
       "offset": 2242,
       "length": 5,
       "value": "false"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsZipArchive.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1248,
+      "length": 11,
+      "value": "0x06054b50"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsZipArchive.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1313,
+      "length": 11,
+      "value": "0x02014b50"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsZipArchive.swift",
+      "kind": "IntegerLiteral",
+      "offset": 1379,
+      "length": 11,
+      "value": "0x04034b50"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsZipArchive.swift",
+      "kind": "Dictionary",
+      "offset": 1653,
+      "length": 3,
+      "value": "[]"
     }
   ]
 }

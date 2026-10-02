@@ -34,12 +34,12 @@ public enum JupiterMockMode : Swift.String {
   public var mockMode: Swift.Bool
   public func initialize()
   public func isMockAvailable() -> Swift.Bool
-  public func setMockMode(mode: TJLabsJupiter.JupiterMockMode, completion: @escaping (Swift.Bool) -> Swift.Void)
+  public func setMockMode(mode: TJLabsJupiter.JupiterMockMode, sectorId: Swift.Int, completion: @escaping (Swift.Bool) -> Swift.Void)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class PathMatcher {
-  public var entranceMatchingArea: [Swift.String : [[Swift.Float]]]
-  public var entranceArea: [Swift.String : [[Swift.Float]]]
+  public var entranceMatchingArea: [Swift.String : [TJLabsResource.GeofencePolygon]]
+  public var entranceArea: [Swift.String : [TJLabsResource.GeofencePolygon]]
   @objc deinit
 }
 public enum JupiterCloud : Swift.String {
@@ -107,6 +107,7 @@ public enum JupiterErrorCode : Swift.Int {
   case NOT_INITIALIZED
   case DUPLICATED_SERVICE
   case GENERATOR_FAIL
+  case INVALID_SECTOR
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
   #endif
@@ -133,6 +134,7 @@ public enum JupiterErrorCode : Swift.Int {
   public static let startNotInitializedError: Swift.Int
   public static let startDuplicatedError: Swift.Int
   public static let startGeneratorError: Swift.Int
+  public static let startInvalidSectorError: Swift.Int
   public static let stopSuccess: Swift.Int
   public static let stopNotStartedWarn: Swift.Int
   public static let appForeground: Swift.Int
@@ -151,6 +153,7 @@ public enum JupiterServiceStage : Swift.Equatable {
   case notInitialized
   case duplicatedService
   case generator
+  case invalidSector
   case notStarted
   public static func == (a: TJLabsJupiter.JupiterServiceStage, b: TJLabsJupiter.JupiterServiceStage) -> Swift.Bool
   public func hash(into hasher: inout Swift.Hasher)
@@ -159,8 +162,8 @@ public enum JupiterServiceStage : Swift.Equatable {
   }
 }
 public enum JupiterServiceInput {
-  case initialize(cloud: Swift.String, region: Swift.String, sectorId: Swift.Int, debugOption: Swift.Bool, dev: Swift.Bool, id: Swift.String)
-  case start(mode: TJLabsCommon.UserMode)
+  case initialize(cloud: Swift.String, region: Swift.String, sectorIds: [Swift.Int], debugOption: Swift.Bool, dev: Swift.Bool, id: Swift.String)
+  case start(mode: TJLabsCommon.UserMode, sectorId: Swift.Int)
   case stop
 }
 public struct JupiterServiceResult {
@@ -426,7 +429,7 @@ public enum InOutState : Swift.Int, Swift.Codable {
 }
 public enum BuildingLevelChangeState : Swift.Int, Swift.Codable {
   case NORMAL
-  case CHANGING
+  case LEVEL_CHANGING
   case ENTERING
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.Int)
@@ -719,11 +722,16 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   #endif
   weak public var delegate: (any TJLabsJupiter.NavigationManagerDelegate)?
   #if compiler(>=5.3) && $NonescapableTypes
-  public init(id: Swift.String, cloud: Swift.String = JupiterCloud.GCP.rawValue, region: Swift.String = JupiterRegion.KOREA.rawValue, sectorId: Swift.Int, debugOption: Swift.Bool = false, uploadOption: Swift.Bool = false, dev: Swift.Bool = false, onPremiseBaseURL: Swift.String? = nil)
+  convenience public init(id: Swift.String, cloud: Swift.String = JupiterCloud.GCP.rawValue, region: Swift.String = JupiterRegion.KOREA.rawValue, sectorId: Swift.Int, debugOption: Swift.Bool = false, uploadOption: Swift.Bool = false, dev: Swift.Bool = false, onPremiseBaseURL: Swift.String? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(id: Swift.String, cloud: Swift.String = JupiterCloud.GCP.rawValue, region: Swift.String = JupiterRegion.KOREA.rawValue, sectorIds: [Swift.Int], debugOption: Swift.Bool = false, uploadOption: Swift.Bool = false, dev: Swift.Bool = false, onPremiseBaseURL: Swift.String? = nil)
   #endif
   public func initialize()
   @objc deinit
-  public func startService(mode: TJLabsCommon.UserMode)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func startService(mode: TJLabsCommon.UserMode, sectorId: Swift.Int? = nil)
+  #endif
   public func stopService(completion: @escaping (Swift.Bool, Swift.String, TJLabsJupiter.JupiterServiceResult) -> Swift.Void)
   public func clearResourceCache()
   public func uploadReplayFiles()
@@ -752,7 +760,7 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   public func setReplayModeLegacy(flag: Swift.Bool, bleFileName: Swift.String, sensorFileName: Swift.String)
   @discardableResult
   public func setMobileResultReplayMode(flag: Swift.Bool, fileName: Swift.String) -> Swift.Bool
-  public func setMockMode(mode: TJLabsJupiter.JupiterMockMode, completion: @escaping (Swift.Bool) -> Swift.Void)
+  public func setMockMode(mode: TJLabsJupiter.JupiterMockMode, sectorId: Swift.Int, completion: @escaping (Swift.Bool) -> Swift.Void)
   public func cancelNavigation()
   public func setLSEAppName(name: Swift.String)
   #if compiler(>=5.3) && $NonescapableTypes
@@ -765,10 +773,16 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   public func getTransitionData() -> [TJLabsResource.Transition]?
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
+  public func getBuildingsData(sectorId: Swift.Int) -> [TJLabsResource.BuildingData]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getTransitionData(sectorId: Swift.Int) -> [TJLabsResource.Transition]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
   public func getBuildingName(buildingId: Swift.Int) -> Swift.String?
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
-  public func getBuildingId(buildingName: Swift.String) -> Swift.Int?
+  public func getBuildingId(sectorId: Swift.Int, buildingName: Swift.String) -> Swift.Int?
   #endif
   #if compiler(>=5.3) && $NonescapableTypes
   public func getLevelName(levelId: Swift.Int) -> Swift.String?
