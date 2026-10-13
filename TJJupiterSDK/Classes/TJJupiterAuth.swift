@@ -13,7 +13,6 @@ public class TJJupiterAuth {
     
     init () {
         setDeviceInfo()
-        
         let dev = tjBranch == .DEV
         let clientMeta = makeClientMeta()
         TJLabsAuthConstants.setServerURL(cloud: "GCP", region: AuthRegion.KOREA.rawValue, serverType: "jupiter", dev: dev)
