@@ -12,16 +12,16 @@ private final class MockNavigationManager: JupiterNavigationServiceManaging {
     var delegate: (any NavigationManagerDelegate)?
     private(set) var initializeCallCount = 0
     private(set) var startModes: [TJLabsCommon.UserMode] = []
-    private(set) var startSectorIds: [Int?] = []
+    private(set) var startSectorIds: [Int] = []
     private(set) var stopCallCount = 0
     private var stopCompletion: ((Bool, String, JupiterServiceResult) -> Void)?
     var mockModeResult = true
 
-    func initialize() {
+    func initialize(includeImages: Bool) {
         initializeCallCount += 1
     }
 
-    func startService(mode: TJLabsCommon.UserMode, sectorId: Int?) {
+    func startService(mode: TJLabsCommon.UserMode, sectorId: Int) {
         startModes.append(mode)
         startSectorIds.append(sectorId)
     }
@@ -61,8 +61,8 @@ final class Tests: XCTestCase {
         let navigationManager = MockNavigationManager()
         let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager)
         
-        serviceManager.startService(mode: .MODE_AUTO)
-        serviceManager.startService(mode: .MODE_AUTO)
+        serviceManager.startService(mode: .MODE_AUTO, sectorId: 10)
+        serviceManager.startService(mode: .MODE_AUTO, sectorId: 10)
         
         XCTAssertEqual(navigationManager.startModes, [.MODE_AUTO])
     }
@@ -73,7 +73,7 @@ final class Tests: XCTestCase {
         let firstCompletion = expectation(description: "first stop completion")
         let secondCompletion = expectation(description: "second stop completion")
         
-        serviceManager.startService(mode: .MODE_AUTO)
+        serviceManager.startService(mode: .MODE_AUTO, sectorId: 10)
         serviceManager.onJupiterSuccess(true, nil, makeMockServiceResult())
         serviceManager.stopService { success, message in
             XCTAssertTrue(success)
@@ -97,10 +97,10 @@ final class Tests: XCTestCase {
         let navigationManager = MockNavigationManager()
         let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager)
         
-        serviceManager.startService(mode: .MODE_PEDESTRIAN)
+        serviceManager.startService(mode: .MODE_PEDESTRIAN, sectorId: 10)
         serviceManager.onJupiterSuccess(true, nil, makeMockServiceResult())
         serviceManager.stopService { _, _ in }
-        serviceManager.startService(mode: .MODE_VEHICLE)
+        serviceManager.startService(mode: .MODE_VEHICLE, sectorId: 10)
         
         XCTAssertEqual(navigationManager.startModes, [.MODE_PEDESTRIAN])
         XCTAssertEqual(navigationManager.stopCallCount, 1)
@@ -114,9 +114,9 @@ final class Tests: XCTestCase {
         let navigationManager = MockNavigationManager()
         let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager)
         
-        serviceManager.startService(mode: .MODE_AUTO)
+        serviceManager.startService(mode: .MODE_AUTO, sectorId: 10)
         serviceManager.onJupiterSuccess(false, TJLabsJupiter.JupiterErrorCode.NOT_INITIALIZED, makeMockServiceResult(isSuccess: false))
-        serviceManager.startService(mode: .MODE_AUTO)
+        serviceManager.startService(mode: .MODE_AUTO, sectorId: 10)
         
         XCTAssertEqual(navigationManager.startModes, [.MODE_AUTO, .MODE_AUTO])
     }
@@ -126,7 +126,7 @@ final class Tests: XCTestCase {
         let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager)
         let stopCompletion = expectation(description: "stop completion")
 
-        serviceManager.startService(mode: .MODE_AUTO)
+        serviceManager.startService(mode: .MODE_AUTO, sectorId: 10)
         serviceManager.stopService { success, message in
             XCTAssertTrue(success)
             XCTAssertEqual(message, "stopped")
@@ -151,14 +151,14 @@ final class Tests: XCTestCase {
         let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager)
         let stopCompletion = expectation(description: "stop failure completion")
 
-        serviceManager.startService(mode: .MODE_PEDESTRIAN)
+        serviceManager.startService(mode: .MODE_PEDESTRIAN, sectorId: 10)
         serviceManager.onJupiterSuccess(true, nil, makeMockServiceResult())
         serviceManager.stopService { success, message in
             XCTAssertFalse(success)
             XCTAssertEqual(message, "stop failed")
             stopCompletion.fulfill()
         }
-        serviceManager.startService(mode: .MODE_VEHICLE)
+        serviceManager.startService(mode: .MODE_VEHICLE, sectorId: 10)
 
         XCTAssertEqual(navigationManager.stopCallCount, 1)
 
@@ -170,18 +170,9 @@ final class Tests: XCTestCase {
 
     // MARK: - Multi sector
 
-    func testStartWithoutSectorUsesFirstLoadedSector() {
-        let navigationManager = MockNavigationManager()
-        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager, sectorIds: [10, 20])
-
-        serviceManager.startService(mode: .MODE_AUTO)
-
-        XCTAssertEqual(navigationManager.startSectorIds, [10])
-    }
-
     func testStartWithDifferentSectorRestartsWithThatSector() {
         let navigationManager = MockNavigationManager()
-        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager, sectorIds: [10, 20])
+        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager)
 
         serviceManager.startService(mode: .MODE_AUTO, sectorId: 10)
         serviceManager.onJupiterSuccess(true, nil, makeMockServiceResult())
@@ -194,57 +185,33 @@ final class Tests: XCTestCase {
         XCTAssertEqual(navigationManager.startSectorIds, [10, 20])
     }
 
-    func testStartWithoutSectorKeepsCurrentActiveSector() {
+    func testStartForwardsRequestedSectorWithoutSubstitution() {
         let navigationManager = MockNavigationManager()
-        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager, sectorIds: [10, 20])
+        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager)
 
-        serviceManager.startService(mode: .MODE_AUTO, sectorId: 20)
-        serviceManager.onJupiterSuccess(true, nil, makeMockServiceResult())
-        serviceManager.startService(mode: .MODE_AUTO)
-
-        XCTAssertEqual(navigationManager.stopCallCount, 0)
-
-        // stop 후 섹터 없이 다시 시작하면 마지막으로 시작한 섹터(20)로 시작한다.
-        serviceManager.stopService { _, _ in }
-        navigationManager.completeStop()
-        serviceManager.startService(mode: .MODE_AUTO)
-
-        XCTAssertEqual(navigationManager.startSectorIds, [20, 20])
-    }
-
-    func testStartWithoutSectorUsesMockSectorInMockMode() {
-        let navigationManager = MockNavigationManager()
-        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager, sectorIds: [10, 20])
-
+        // 목업 섹터(20)가 있어도 wrapper 는 섹터를 대신 고르지 않고 요청한 섹터를 그대로 넘긴다(검증은 Jupiter 가 한다).
         serviceManager.setMockMode(mode: .VEHICLE_INDOOR_OUTDOOR, sectorId: 20) { _ in }
-        serviceManager.startService(mode: .MODE_VEHICLE)
-        serviceManager.onJupiterSuccess(true, nil, makeMockServiceResult())
-        serviceManager.stopService { _, _ in }
-        navigationManager.completeStop()
-
-        // 목업 해제 후에는 현재 활성 섹터(목업으로 시작한 20)를 그대로 쓴다.
-        serviceManager.setMockMode(mode: .NONE, sectorId: 20) { _ in }
-        serviceManager.startService(mode: .MODE_VEHICLE)
-
-        XCTAssertEqual(navigationManager.startSectorIds, [20, 20])
-    }
-
-    func testFailedMockModeDoesNotChangeStartSector() {
-        let navigationManager = MockNavigationManager()
-        navigationManager.mockModeResult = false
-        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager, sectorIds: [10, 20])
-
-        serviceManager.setMockMode(mode: .VEHICLE_INDOOR_OUTDOOR, sectorId: 30) { isSuccess in
-            XCTAssertFalse(isSuccess)
-        }
-        serviceManager.startService(mode: .MODE_VEHICLE)
+        serviceManager.startService(mode: .MODE_VEHICLE, sectorId: 10)
 
         XCTAssertEqual(navigationManager.startSectorIds, [10])
     }
 
+    func testRestartAfterStopUsesExplicitSector() {
+        let navigationManager = MockNavigationManager()
+        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager)
+
+        serviceManager.startService(mode: .MODE_AUTO, sectorId: 20)
+        serviceManager.onJupiterSuccess(true, nil, makeMockServiceResult())
+        serviceManager.stopService { _, _ in }
+        navigationManager.completeStop()
+        serviceManager.startService(mode: .MODE_AUTO, sectorId: 10)
+
+        XCTAssertEqual(navigationManager.startSectorIds, [20, 10])
+    }
+
     func testInvalidSectorStartFailureAllowsRetry() {
         let navigationManager = MockNavigationManager()
-        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager, sectorIds: [10, 20])
+        let serviceManager = JupiterServiceManager(id: "user", serviceManager: navigationManager)
 
         serviceManager.startService(mode: .MODE_AUTO, sectorId: 99)
         serviceManager.onJupiterSuccess(false, TJLabsJupiter.JupiterErrorCode.INVALID_SECTOR, makeMockServiceResult(isSuccess: false))

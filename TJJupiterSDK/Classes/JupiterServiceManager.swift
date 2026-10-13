@@ -4,8 +4,8 @@ import TJLabsJupiter
 
 protocol JupiterNavigationServiceManaging: AnyObject {
     var delegate: (any NavigationManagerDelegate)? { get set }
-    func initialize()
-    func startService(mode: TJLabsCommon.UserMode, sectorId: Int?)
+    func initialize(includeImages: Bool)
+    func startService(mode: TJLabsCommon.UserMode, sectorId: Int)
     func stopService(completion: @escaping (Bool, String, JupiterServiceResult) -> Void)
     func setNaviDestination(dest: TJLabsJupiter.Point, isVehicle: Bool)
     func setNaviWaypoints(waypoints: [[Double]])
@@ -37,7 +37,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
     // 서비스 요청 단위. mode 나 sectorId 가 바뀌면 다른 요청으로 보고 stop → start 로 전환한다.
     private struct ServiceRequest: Equatable {
         let mode: UserMode
-        let sectorId: Int?
+        let sectorId: Int
     }
 
     private enum LifecycleAction {
@@ -52,10 +52,6 @@ public class JupiterServiceManager: NavigationManagerDelegate {
     private var desiredRequest: ServiceRequest?
     private var pendingStopCompletions: [(Bool, String) -> Void] = []
     private var didSetLSEAppName = false
-    // Jupiter 의 활성 섹터. init 직후에는 첫 번째 섹터이며, start 성공 시 그 요청의 섹터로 바뀐다.
-    private var currentSectorId: Int?
-    // setMockMode 로 지정한 목업 데이터 섹터. 목업 모드에서는 Jupiter 와 같이 이 섹터가 start 의 기본 섹터다.
-    private var mockSectorId: Int?
     
     public func onInitSuccess(_ isSuccess: Bool, _ code: TJLabsJupiter.InitErrorCode?, _ result: TJLabsJupiter.JupiterServiceResult) {
         if !isSuccess {
@@ -115,7 +111,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         self.init(id: id, region: region, sectorIds: [sectorId], debugOption: debugOption)
     }
 
-    /// 멀티 섹터 초기화. `sectorIds` 의 리소스를 한 번에 로드하고, 첫 번째 섹터가 활성 섹터가 된다.
+    /// 멀티 섹터 초기화. `sectorIds` 의 리소스를 한 번에 로드한다. 서비스할 섹터는 `startService(mode:sectorId:)` 에서 지정한다.
     /// 하나라도 로드에 실패하면 init 실패(`onInitSuccess(false, .LOAD_RESOURCE_FAIL)`)다.
     public init(id: String, region: String, sectorIds: [Int], debugOption: Bool = false) {
         let dev = tjBranch == .DEV
@@ -125,16 +121,14 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         let navigationManager = NavigationManager(id: id, region: region, sectorIds: sectorIds, debugOption: debugOption, dev: dev)
         self.id = id
         self.serviceManager = navigationManager
-        self.currentSectorId = sectorIds.first
         // 인증/네트워크 실패는 initialize() 안에서 동기적으로 통지되므로 delegate 를 먼저 연결한다.
         self.serviceManager.delegate = self
-        self.serviceManager.initialize()
+        self.serviceManager.initialize(includeImages: false)
     }
 
-    init(id: String, serviceManager: JupiterNavigationServiceManaging, sectorIds: [Int] = []) {
+    init(id: String, serviceManager: JupiterNavigationServiceManaging) {
         self.id = id
         self.serviceManager = serviceManager
-        self.currentSectorId = sectorIds.first
         self.serviceManager.delegate = self
     }
     
@@ -146,12 +140,12 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         serviceManager.stopService(completion: { _, _, _ in })
     }
     
-    /// 서비스를 시작한다. `sectorId` 가 nil 이면 현재 활성 섹터(목업 모드면 목업 데이터 섹터)로 시작한다.
+    /// 서비스를 시작한다. `sectorId` 는 필수이며 자동으로 고르지 않는다(목업 모드면 목업 데이터 섹터와 같아야 한다).
     /// 실행 중에 다른 mode 나 다른 섹터로 호출하면 stop 후 그 요청으로 다시 시작한다.
     /// init 때 로드하지 않은 섹터면 `onJupiterSuccess(false, .INVALID_SECTOR)` 로 실패한다.
-    public func startService(mode: UserMode, sectorId: Int? = nil) {
+    public func startService(mode: UserMode, sectorId: Int) {
         lifecycleLock.sync {
-            desiredRequest = ServiceRequest(mode: mode, sectorId: sectorId ?? mockSectorId ?? currentSectorId)
+            desiredRequest = ServiceRequest(mode: mode, sectorId: sectorId)
         }
 
         processLifecycleIfNeeded()
@@ -207,23 +201,13 @@ public class JupiterServiceManager: NavigationManagerDelegate {
     /// 목업 시뮬레이션 데이터를 가져올 섹터를 지정한다. init 때 로드하지 않은 섹터면 `completion(false)`.
     /// `.NONE`(해제)이면 섹터를 쓰지 않는다.
     public func setMockMode(mode: JupiterMockMode, sectorId: Int, completion: @escaping (Bool) -> Void) {
-        serviceManager.setMockMode(mode: mode.toJupiter(), sectorId: sectorId, completion: { [weak self] isSuccess in
-            if isSuccess {
-                self?.lifecycleLock.sync {
-                    self?.mockSectorId = mode == .NONE ? nil : sectorId
-                }
-            }
-            completion(isSuccess)
-        })
+        serviceManager.setMockMode(mode: mode.toJupiter(), sectorId: sectorId, completion: completion)
     }
 
     private func handleStartSuccess() {
         lifecycleLock.sync {
             guard serviceState == .starting else { return }
             serviceState = .started
-            if let sectorId = activeRequest?.sectorId {
-                currentSectorId = sectorId
-            }
         }
 
         processLifecycleIfNeeded()

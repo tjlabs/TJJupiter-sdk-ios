@@ -88,7 +88,7 @@ New enum cases were added (see below). If you `switch` over these enums **exhaus
 
 - **Multi-sector support.** Load several sectors once and switch between them without re-initializing. See [Initialize Service](#4-initialize-service) and [Start Service](#5-start-service).
     - `JupiterServiceManager(id:region:sectorIds:debugOption:)`
-    - `startService(mode:sectorId:)` — `sectorId` is optional; omit it to use the current active sector.
+    - `startService(mode:sectorId:)` — `sectorId` is required; the SDK never picks a sector for you.
     - The single-sector `JupiterServiceManager(id:region:sectorId:debugOption:)` still works.
 
 ### 📝 Documentation Fixes
@@ -165,12 +165,11 @@ let multiSectorManager = JupiterServiceManager(
 ### 5. Start Service
 
 ```swift
-// Start with the current active sector (the first sector right after initialization)
-manager.startService(mode: .MODE_AUTO)
-
-// Start with a specific sector loaded at initialization
+// `sectorId` is required and must be one of the sectors loaded at initialization
 manager.startService(mode: .MODE_AUTO, sectorId: 456)
 ```
+
+- `sectorId` must always be passed, even when a single sector was loaded.
 
 - Positioning runs on one active sector at a time. To switch sectors, call `startService` with another `sectorId`; a running service is stopped and restarted on that sector without reloading resources.
 - A sector that was not loaded at initialization fails with `onJupiterSuccess(false, .INVALID_SECTOR)`.
@@ -355,7 +354,7 @@ public enum NavigationRouteFailureReason: String {
 - Since Jupiter performs positioning based on TJLABS' BLE beacons, it cannot receive indoor location data outside of the actual service area.
 - If you use the mocking mode below, you can receive a randomly defined JupiterResult even outside the service area.
 - Specify the sector whose simulation data is used. It must be a sector loaded at initialization; otherwise `success` is false.
-- In mock mode, `startService` without a `sectorId` starts on the mock sector.
+- In mock mode, `startService` must be called with the mock sector's `sectorId`; another sector fails with `.INVALID_SECTOR`.
 
 ```swift
 manager.setMockMode(mode: .VEHICLE_INDOOR_OUTDOOR, sectorId: 123) { success in

@@ -1752,6 +1752,58 @@
           },
           {
             "kind": "Var",
+            "name": "tenantDidChangeNotification",
+            "printedName": "tenantDidChangeNotification",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Name",
+                "printedName": "Foundation.NSNotification.Name",
+                "usr": "c:@T@NSNotificationName"
+              }
+            ],
+            "declKind": "Var",
+            "usr": "s:10TJLabsAuth0aB7ManagerC27tenantDidChangeNotificationSo18NSNotificationNameavpZ",
+            "mangledName": "$s10TJLabsAuth0aB7ManagerC27tenantDidChangeNotificationSo18NSNotificationNameavpZ",
+            "moduleName": "TJLabsAuth",
+            "static": true,
+            "declAttributes": [
+              "HasInitialValue",
+              "Final",
+              "HasStorage",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "isLet": true,
+            "hasStorage": true,
+            "accessors": [
+              {
+                "kind": "Accessor",
+                "name": "Get",
+                "printedName": "Get()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Name",
+                    "printedName": "Foundation.NSNotification.Name",
+                    "usr": "c:@T@NSNotificationName"
+                  }
+                ],
+                "declKind": "Accessor",
+                "usr": "s:10TJLabsAuth0aB7ManagerC27tenantDidChangeNotificationSo18NSNotificationNameavgZ",
+                "mangledName": "$s10TJLabsAuth0aB7ManagerC27tenantDidChangeNotificationSo18NSNotificationNameavgZ",
+                "moduleName": "TJLabsAuth",
+                "static": true,
+                "implicit": true,
+                "declAttributes": [
+                  "Final"
+                ],
+                "accessorKind": "get"
+              }
+            ]
+          },
+          {
+            "kind": "Var",
             "name": "isAuthorized",
             "printedName": "isAuthorized",
             "children": [
@@ -2402,70 +2454,77 @@
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthManager.swift",
       "kind": "StringLiteral",
-      "offset": 167,
+      "offset": 605,
+      "length": 27,
+      "value": "\"TJLabsAuthTenantDidChange\""
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthManager.swift",
+      "kind": "StringLiteral",
+      "offset": 678,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthManager.swift",
       "kind": "StringLiteral",
-      "offset": 307,
+      "offset": 1290,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthManager.swift",
       "kind": "StringLiteral",
-      "offset": 358,
+      "offset": 1341,
       "length": 2,
       "value": "\"\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthManager.swift",
       "kind": "StringLiteral",
-      "offset": 727,
+      "offset": 1710,
       "length": 30,
       "value": "\"com.tjlabs.auth.tokenrefresh\""
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 790,
+      "offset": 1773,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthManager.swift",
       "kind": "Array",
-      "offset": 863,
+      "offset": 1846,
       "length": 2,
       "value": "[]"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 903,
+      "offset": 1886,
       "length": 5,
       "value": "false"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthManager.swift",
       "kind": "BooleanLiteral",
-      "offset": 2414,
+      "offset": 3943,
       "length": 4,
       "value": "true"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthManager.swift",
       "kind": "IntegerLiteral",
-      "offset": 6426,
+      "offset": 7955,
       "length": 2,
       "value": "60"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsAuth-sdk-ios\/TJLabsAuth\/TJLabsAuthManager.swift",
       "kind": "StringLiteral",
-      "offset": 7216,
+      "offset": 8745,
       "length": 6,
       "value": "\"POST\""
     },

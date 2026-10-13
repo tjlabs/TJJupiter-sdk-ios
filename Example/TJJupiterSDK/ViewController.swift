@@ -64,6 +64,6 @@ class ViewController: UIViewController, JupiterServiceManagerDelegate {
     }
     
     func start() {
-        serviceManager?.startService(mode: .MODE_VEHICLE)
+        serviceManager?.startService(mode: .MODE_VEHICLE, sectorId: 20)
     }
 }

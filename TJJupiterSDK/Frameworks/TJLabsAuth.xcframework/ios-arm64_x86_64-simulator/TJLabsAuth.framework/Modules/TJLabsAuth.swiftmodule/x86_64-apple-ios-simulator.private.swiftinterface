@@ -87,6 +87,7 @@ public enum SecretConfig {
 }
 @_hasMissingDesignatedInitializers public class TJLabsAuthManager {
   public static let shared: TJLabsAuth.TJLabsAuthManager
+  public static let tenantDidChangeNotification: Foundation.Notification.Name
   public var isAuthorized: Swift.Bool
   public func getAccessToken(update: Swift.Bool = true, completion: @escaping (TJLabsAuth.TokenResult) -> Swift.Void)
   public func getTenantId() -> Swift.Int

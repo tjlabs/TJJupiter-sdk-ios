@@ -96,8 +96,9 @@ public struct ResourceLoadInput {
   public let landmarkTh: Swift.Float
   public let forceUpdate: Swift.Bool
   public let dev: Swift.Bool
+  public let includeImages: Swift.Bool
   public init(cloud: Swift.String, region: Swift.String, sectorId: Swift.Int, landmarkTh: Swift.Float, forceUpdate: Swift.Bool, dev: Swift.Bool)
-  public init(cloud: Swift.String, region: Swift.String, sectorIds: [Swift.Int], landmarkTh: Swift.Float, forceUpdate: Swift.Bool, dev: Swift.Bool)
+  public init(cloud: Swift.String, region: Swift.String, sectorIds: [Swift.Int], landmarkTh: Swift.Float, forceUpdate: Swift.Bool, dev: Swift.Bool, includeImages: Swift.Bool = true)
 }
 public struct SectorLoadResult {
   public let sectorId: Swift.Int
@@ -363,8 +364,8 @@ public struct Entrance : Swift.Codable {
   public let url: Swift.String
   public let innermost_ward: TJLabsResource.InnermostWard
   public let outermost_ward: TJLabsResource.OutermostWard
-  public func encode(to encoder: any Swift.Encoder) throws
   public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
 }
 public struct EntranceData : Swift.Codable {
   public var id: Swift.Int
@@ -601,7 +602,7 @@ public struct PeakData : Swift.Codable {
 public class TJLabsMultiResourceManager {
   public static let shared: TJLabsResource.TJLabsMultiResourceManager
   public init(resourceManager: TJLabsResource.TJLabsResourceManager = .shared)
-  public func loadResources(cloud: Swift.String, region: Swift.String, sectorIds: [Swift.Int], landmarkTh: Swift.Float = -90, forceUpdate: Swift.Bool = false, dev: Swift.Bool = false, completion: @escaping (TJLabsResource.ResourceLoadResult) -> Swift.Void)
+  public func loadResources(cloud: Swift.String, region: Swift.String, sectorIds: [Swift.Int], landmarkTh: Swift.Float = -90, forceUpdate: Swift.Bool = false, dev: Swift.Bool = false, includeImages: Swift.Bool = true, completion: @escaping (TJLabsResource.ResourceLoadResult) -> Swift.Void)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class TJLabsResourceCode {
