@@ -1,0 +1,102 @@
+name: Deploy to CocoaPods Trunk
+
+# 버전 태그(예: 2.0.18)가 push되면 자동으로 pod trunk push 실행
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+'
+
+jobs:
+  deploy:
+    runs-on: macos-15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      # vendored xcframework의 .swiftinterface가 Swift 6.2(Xcode 26)로 생성됨.
+      # 구버전 Xcode는 이 인터페이스를 소비하지 못해 컴파일 에러가 나므로 Xcode 26을 사용.
+      - name: Select Xcode
+        run: |
+          XCODE=$(ls -d /Applications/Xcode_26*.app 2>/dev/null | sort -V | tail -1)
+          if [ -z "$XCODE" ]; then
+            echo "::error::Xcode 26 not found on runner. Available:"; ls -d /Applications/Xcode*.app
+            exit 1
+          fi
+          echo "Selected Xcode: $XCODE"
+          sudo xcode-select -switch "$XCODE"
+
+      - name: Show environment
+        run: |
+          xcodebuild -version
+          pod --version
+          ruby --version
+
+      # 태그 이름과 podspec의 s.version이 일치하는지 검증 (불일치 시 배포 중단)
+      - name: Verify tag matches podspec version
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          POD_VERSION=$(grep -E "s\.version" TJJupiterSDK.podspec | head -1 | cut -d "'" -f2)
+          echo "Git tag       : $TAG"
+          echo "Podspec version: $POD_VERSION"
+          if [ "$TAG" != "$POD_VERSION" ]; then
+            echo "::error::Tag ($TAG) does not match podspec version ($POD_VERSION)."
+            exit 1
+          fi
+
+      # 소스가 호출하는 심볼이 번들된 xcframework 에 실제로 있는지 검증 (has-no-member 방지)
+      - name: Verify vendored framework symbols
+        run: ./Scripts/verify_vendored_symbols.sh
+
+      - name: Lint podspec
+        run: pod lib lint TJJupiterSDK.podspec --allow-warnings
+
+      # push 전 인증 확인 — 토큰이 잘못됐으면 여기서 명확히 중단됨
+      - name: Verify CocoaPods Trunk authentication
+        env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+        run: pod trunk me
+
+      # trunk 서버(Heroku)가 spec을 게시하고도 응답을 500으로 끊는 경우가 잦아
+      # pod trunk push가 exit 1을 낸다. 실제 게시는 완료되므로 실패를 흡수하고
+      # 다음 스텝에서 trunk API로 실게시 여부를 검증한다.
+      - name: Push to CocoaPods Trunk
+        id: push
+        continue-on-error: true
+        env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
+        run: pod trunk push TJJupiterSDK.podspec --allow-warnings --verbose
+
+      # push가 실패로 끝났어도 trunk에 해당 버전이 실제 게시됐으면 성공으로 간주.
+      # 진짜 실패(인증/lint/네트워크 단절)만 여기서 걸러진다.
+      - name: Verify publication on trunk
+        run: |
+          TAG="${GITHUB_REF_NAME}"
+          for i in $(seq 1 10); do
+            if curl -s --max-time 20 "https://trunk.cocoapods.org/api/v1/pods/TJJupiterSDK" \
+                 | grep -q "\"name\":\"${TAG}\""; then
+              echo "✅ ${TAG} is published on trunk."
+              exit 0
+            fi
+            echo "Not visible yet (attempt $i/10), retrying in 15s..."
+            sleep 15
+          done
+          echo "::error::${TAG} not found on trunk after push (push step outcome: ${{ steps.push.outcome }})."
+          exit 1
+
+      - name: Notify Slack (success)
+        if: success()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          curl -sS -X POST "$SLACK_WEBHOOK_URL" \
+            -H 'Content-Type: application/json' \
+            -d "{\"text\":\":white_check_mark: *TJJupiterSDK ${GITHUB_REF_NAME}* 배포 성공 :tada:\n• 작성자: ${GITHUB_ACTOR}\n<https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}|워크플로우 로그 보기>\"}"
+
+      - name: Notify Slack (failure)
+        if: failure()
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+        run: |
+          curl -sS -X POST "$SLACK_WEBHOOK_URL" \
+            -H 'Content-Type: application/json' \
+            -d "{\"text\":\":x: *TJJupiterSDK ${GITHUB_REF_NAME}* 배포 실패\n• 작성자: ${GITHUB_ACTOR}\n<https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}|에러 로그 확인>\"}"

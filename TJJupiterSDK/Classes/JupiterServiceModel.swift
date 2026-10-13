@@ -24,6 +24,7 @@ public enum JupiterRegion: String {
     case KOREA = "KOREA"
     case US_EAST = "US_EAST"
     case CANADA = "CANADA"
+    case SAUDI = "SAUDI"
 }
 
 public enum UserMode: String {
@@ -54,6 +55,8 @@ public enum JupiterErrorCode: Int {
     case NOT_INITIALIZED = 0
     case DUPLICATED_SERVICE = 1
     case GENERATOR_FAIL = 2
+    // startService 에 init 때 로드하지 않은 sectorId 를 지정함
+    case INVALID_SECTOR = 3
 }
 
 public enum JupiterServiceCode: Int {
@@ -68,11 +71,14 @@ public enum JupiterServiceCode: Int {
     case NETWORK_DISCONNECT = 7
     case GET_FIRST_RESULT = 8
     case PEAK_DETECTED = 300
+    case UVD_STOPPED = 301
+    case BUILDING_LEVEL_CHANGING = 302
 }
 
 public enum NavigationRouteFailureReason: String, Codable {
     case unknown = "unknown"
     case serverResponse = "server_response"
+    case networkError = "network_error"
     case tooClose = "too_close"
 }
 
@@ -91,6 +97,8 @@ public struct JupiterResult: Codable {
     public var level_name: String
     public var jupiter_pos: Position
     public var navi_pos: Position?
+    // 목적지까지 남은 경로 거리(m). 차량 모드 + 길안내 경로가 있을 때만 값이 있고, 보행자 모드·경로 없음·도착/stop 이후는 nil.
+    public var remaining_distance: Int?
     public var llh: LLH?
     public var velocity: Float
     public var is_vehicle: Bool
