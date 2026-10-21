@@ -1,5 +1,5 @@
 # TJJupiterSDK
-### Version 2.0.20
+### Version 2.0.22
 
 [![Version](https://img.shields.io/cocoapods/v/TJJupiterSDK.svg?style=flat)](https://cocoapods.org/pods/TJJupiterSDK)
 [![License](https://img.shields.io/cocoapods/l/TJJupiterSDK.svg?style=flat)](https://cocoapods.org/pods/TJJupiterSDK)
@@ -58,13 +58,13 @@ source '<https://github.com/CocoaPods/Specs.git>'
 
 ---
 
-## 🔄 Migration Guide (2.0.17 → 2.0.20)
+## 🔄 Migration Guide (2.0.17 → 2.0.22)
 
 If you are upgrading from 2.0.17 or earlier, check the items below. Existing single-sector code keeps working except for **Breaking Changes**.
 
 ### ⚠️ Breaking Changes
 
-| Before (≤ 2.0.17) | After (2.0.20) | Action |
+| Before (≤ 2.0.17) | After (2.0.22) | Action |
 |---|---|---|
 | `setMockMode(mode:completion:)` | `setMockMode(mode:sectorId:completion:)` | Pass the sector whose simulation data to use. See [Mocking Mode](#-mocking-mode). |
 
