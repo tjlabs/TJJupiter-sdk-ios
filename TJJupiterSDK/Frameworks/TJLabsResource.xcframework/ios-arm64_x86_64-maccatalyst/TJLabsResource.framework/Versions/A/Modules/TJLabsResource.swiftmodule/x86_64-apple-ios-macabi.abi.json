@@ -21018,6 +21018,93 @@
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "loadOnPremiseResources",
+            "printedName": "loadOnPremiseResources(baseURL:region:sectorIds:landmarkTh:forceUpdate:includeImages:completion:)",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "Void",
+                "printedName": "()"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "hasDefaultArg": true,
+                "usr": "s:SS"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Array",
+                "printedName": "[Swift.Int]",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Int",
+                    "printedName": "Swift.Int",
+                    "usr": "s:Si"
+                  }
+                ],
+                "usr": "s:Sa"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Float",
+                "printedName": "Swift.Float",
+                "hasDefaultArg": true,
+                "usr": "s:Sf"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeNominal",
+                "name": "Bool",
+                "printedName": "Swift.Bool",
+                "hasDefaultArg": true,
+                "usr": "s:Sb"
+              },
+              {
+                "kind": "TypeFunc",
+                "name": "Function",
+                "printedName": "(TJLabsResource.ResourceLoadResult) -> ()",
+                "children": [
+                  {
+                    "kind": "TypeNominal",
+                    "name": "Void",
+                    "printedName": "()"
+                  },
+                  {
+                    "kind": "TypeNominal",
+                    "name": "ResourceLoadResult",
+                    "printedName": "TJLabsResource.ResourceLoadResult",
+                    "usr": "s:14TJLabsResource0B10LoadResultV"
+                  }
+                ]
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14TJLabsResource0a5MultiB7ManagerC22loadOnPremiseResources7baseURL6region9sectorIds10landmarkTh11forceUpdate13includeImages10completionySS_SSSaySiGSfS2byAA0B10LoadResultVctF",
+            "mangledName": "$s14TJLabsResource0a5MultiB7ManagerC22loadOnPremiseResources7baseURL6region9sectorIds10landmarkTh11forceUpdate13includeImages10completionySS_SSSaySiGSfS2byAA0B10LoadResultVctF",
+            "moduleName": "TJLabsResource",
+            "declAttributes": [
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -23606,6 +23693,30 @@
               "RawDocComment"
             ],
             "funcSelfKind": "NonMutating"
+          },
+          {
+            "kind": "Function",
+            "name": "getUserMultiSectorBundleURL",
+            "printedName": "getUserMultiSectorBundleURL()",
+            "children": [
+              {
+                "kind": "TypeNominal",
+                "name": "String",
+                "printedName": "Swift.String",
+                "usr": "s:SS"
+              }
+            ],
+            "declKind": "Func",
+            "usr": "s:14TJLabsResource0aB25OnPremiseNetworkConstantsC27getUserMultiSectorBundleURLSSyFZ",
+            "mangledName": "$s14TJLabsResource0aB25OnPremiseNetworkConstantsC27getUserMultiSectorBundleURLSSyFZ",
+            "moduleName": "TJLabsResource",
+            "static": true,
+            "declAttributes": [
+              "Final",
+              "AccessControl",
+              "RawDocComment"
+            ],
+            "funcSelfKind": "NonMutating"
           }
         ],
         "declKind": "Class",
@@ -24321,6 +24432,27 @@
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsMultiResourceManager.swift",
       "kind": "BooleanLiteral",
       "offset": 2497,
+      "length": 4,
+      "value": "true"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsMultiResourceManager.swift",
+      "kind": "IntegerLiteral",
+      "offset": 4105,
+      "length": 3,
+      "value": "-90"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsMultiResourceManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4169,
+      "length": 5,
+      "value": "false"
+    },
+    {
+      "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsResource-sdk-ios\/TJLabsResource\/TJLabsMultiResourceManager.swift",
+      "kind": "BooleanLiteral",
+      "offset": 4237,
       "length": 4,
       "value": "true"
     },

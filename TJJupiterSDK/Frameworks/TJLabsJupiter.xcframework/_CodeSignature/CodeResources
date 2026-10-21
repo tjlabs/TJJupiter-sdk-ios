@@ -14,19 +14,19 @@
 		</data>
 		<key>ios-arm64/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
-		+bHCOJ2Duhg4HDZ7A4Qtdz80erQ=
+		S9g+3lucyZ6KNzAJcTkKV4XSyEU=
 		</data>
 		<key>ios-arm64/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<data>
-		nvBsbO6badF4x178vz0VjkdkxaE=
+		fRiZwubSdXd8dUG0l7ps36Pn/Gk=
 		</data>
 		<key>ios-arm64/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<data>
-		YP7dBaFEBamYtKT8D+Qn15PozEM=
+		2lSWuRUKpqxsF2NRiJhQZVprXjE=
 		</data>
 		<key>ios-arm64/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<data>
-		nvBsbO6badF4x178vz0VjkdkxaE=
+		fRiZwubSdXd8dUG0l7ps36Pn/Gk=
 		</data>
 		<key>ios-arm64/TJLabsJupiter.framework/Modules/module.modulemap</key>
 		<data>
@@ -34,11 +34,11 @@
 		</data>
 		<key>ios-arm64/TJLabsJupiter.framework/TJLabsJupiter</key>
 		<data>
-		G89pFx1aH5+ghAP6aCyO93kZW38=
+		8hPZUhib4btMS4t10icrzOJwUzk=
 		</data>
 		<key>ios-arm64/TJLabsJupiter.framework/_CodeSignature/CodeResources</key>
 		<data>
-		976MYqtaTZDGZRlxZNI+fdhvYJg=
+		taNS4B/Nxba4u/jKjUTSLG2OZ28=
 		</data>
 		<key>ios-arm64/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Info.plist</key>
 		<data>
@@ -46,11 +46,11 @@
 		</data>
 		<key>ios-arm64/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/DWARF/TJLabsJupiter</key>
 		<data>
-		1DZF87pdPgiLfp2rng9LQYtEYu4=
+		5uvU+xJ++51CAiBlUESIDCRkFAc=
 		</data>
 		<key>ios-arm64/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Relocations/aarch64/TJLabsJupiter.yml</key>
 		<data>
-		mdLSZOUnpwgLngyE2gFbYsxTpnA=
+		ffGuizpOhRFjc4mcm+wv84WXXbc=
 		</data>
 		<key>ios-arm64/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/aarch64/TJLabsAuth.swiftinterface</key>
 		<data>
@@ -62,7 +62,99 @@
 		</data>
 		<key>ios-arm64/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/aarch64/TJLabsResource.swiftinterface</key>
 		<data>
-		x7TTsKbhS0fa+WIOl3Y2HxYItvY=
+		rW+absH7ZX/s04seHIhb/ktbebU=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Headers/TJLabsJupiter.h</key>
+		<data>
+		kHFBymCEdzdJzMVfkeQyjAA7M4s=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-macabi.abi.json</key>
+		<data>
+		S9g+3lucyZ6KNzAJcTkKV4XSyEU=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface</key>
+		<data>
+		F0wu1rhRI2la6Ty3EQBPW1R1IWk=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-macabi.swiftdoc</key>
+		<data>
+		e7K8r6LDcCkBfcnsIAj35Uca64I=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-macabi.swiftinterface</key>
+		<data>
+		F0wu1rhRI2la6Ty3EQBPW1R1IWk=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-macabi.abi.json</key>
+		<data>
+		S9g+3lucyZ6KNzAJcTkKV4XSyEU=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface</key>
+		<data>
+		Pjwg29Pu+/fddfjIcJgRZEVaEJE=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-macabi.swiftdoc</key>
+		<data>
+		N3fbaxxRQZhXcGUJj1/fRVUf0Fg=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-macabi.swiftinterface</key>
+		<data>
+		Pjwg29Pu+/fddfjIcJgRZEVaEJE=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/module.modulemap</key>
+		<data>
+		4xgmRCHSZh6aheP3GsEZ2f6uNVY=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Resources/Info.plist</key>
+		<data>
+		gxgaQv05nffEzuxDSsAqycfQSOI=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/TJLabsJupiter</key>
+		<data>
+		ydCmP407StOHYA69AD2BACN42zY=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/_CodeSignature/CodeResources</key>
+		<data>
+		4pfkfVEJrPcXngd+vZWP5FKpsRk=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Info.plist</key>
+		<data>
+		8MzmyyXUCbcDkyq0OmrGkocx6g4=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/DWARF/TJLabsJupiter</key>
+		<data>
+		62h/cinJ4jgZevQ/sxjvmXf581s=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Relocations/aarch64/TJLabsJupiter.yml</key>
+		<data>
+		2hiKoa3Y+R6aC+88OkZ2DROE7xU=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Relocations/x86_64/TJLabsJupiter.yml</key>
+		<data>
+		mQCiliQkRHmkxfaswAI0SXB8vVg=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/aarch64/TJLabsAuth.swiftinterface</key>
+		<data>
+		fg24hDS0Cpo7eC8ojoh0CSCNL+o=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/aarch64/TJLabsCommon.swiftinterface</key>
+		<data>
+		qbV2VqV7yewkBcogVEpFrNtaCd0=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/aarch64/TJLabsResource.swiftinterface</key>
+		<data>
+		Dl2hQm+Y9jA7bIPW8tjktJywZOI=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/x86_64/TJLabsAuth.swiftinterface</key>
+		<data>
+		qOJz3ukUgVBpGCpOhTxWfBfY5LI=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/x86_64/TJLabsCommon.swiftinterface</key>
+		<data>
+		CnjZBwBt+v1P4OAYyCa1PdPQ6/A=
+		</data>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/x86_64/TJLabsResource.swiftinterface</key>
+		<data>
+		aUJdwJzD/usu+ml73d0aHgnIqW0=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Headers/TJLabsJupiter.h</key>
 		<data>
@@ -74,35 +166,35 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		+bHCOJ2Duhg4HDZ7A4Qtdz80erQ=
+		S9g+3lucyZ6KNzAJcTkKV4XSyEU=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		P1tUGkx87NL0LgGh2lUHHouH49Q=
+		l13UPuIqWyQ8JLFTr6P2Ve6rc4A=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		Ji/04shIWaPdaxs3PYWc3VVb6Iw=
+		lS24ArcJH4XMr6Atjhi8cUylWLc=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		P1tUGkx87NL0LgGh2lUHHouH49Q=
+		l13UPuIqWyQ8JLFTr6P2Ve6rc4A=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		+bHCOJ2Duhg4HDZ7A4Qtdz80erQ=
+		S9g+3lucyZ6KNzAJcTkKV4XSyEU=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		BsHSIbQnf+KqqdyQhh36xkqXqWo=
+		/3Ci6T2Or6Jyff68j21C6k9cREg=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		XnpMVNdeXs/HwA7ZxbOstj0fN8c=
+		JTW13Eg4I8QtFylSQaVUUb0E6p4=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		BsHSIbQnf+KqqdyQhh36xkqXqWo=
+		/3Ci6T2Or6Jyff68j21C6k9cREg=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/module.modulemap</key>
 		<data>
@@ -110,11 +202,11 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/TJLabsJupiter</key>
 		<data>
-		KkMfPivx4AeGANBl4cYDSqldIMM=
+		PsjVJbHhFe5uH/J8NCh8b8jdbZw=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/_CodeSignature/CodeResources</key>
 		<data>
-		42lpQ+NNYWvrUvONZ+siv6WyZKs=
+		FJcvLJAKilgMNduA3ABz90p1ncs=
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Info.plist</key>
 		<data>
@@ -122,15 +214,15 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/DWARF/TJLabsJupiter</key>
 		<data>
-		ptcjMO1HyyPHy+/dTW4uEwl+DsY=
+		4Ub9O4tXuwSdixhvKapajA+9o+I=
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Relocations/aarch64/TJLabsJupiter.yml</key>
 		<data>
-		SSSiFcmCmi7jwVwGn22HO0vWGFs=
+		79CNA2dSGvxswgdxpMo7W8+O40E=
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Relocations/x86_64/TJLabsJupiter.yml</key>
 		<data>
-		55ZZVGr+t35Yj42NfuIZn9mStac=
+		ZVJIhy0IZl30rCBmgELFPfMqj1w=
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/aarch64/TJLabsAuth.swiftinterface</key>
 		<data>
@@ -142,7 +234,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/aarch64/TJLabsResource.swiftinterface</key>
 		<data>
-		47Js+9jW4CtZQHKHAAWhQ6B1Gq4=
+		xct4kNjnpvD7BJFYvnS45gCHpCs=
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/x86_64/TJLabsAuth.swiftinterface</key>
 		<data>
@@ -154,7 +246,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/x86_64/TJLabsResource.swiftinterface</key>
 		<data>
-		nWJUWbUoIGNuhflkXsQBwgLq//A=
+		GKt7f2KMQU136b+DtkGEZdbieVw=
 		</data>
 	</dict>
 	<key>files2</key>
@@ -177,28 +269,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5UHgREG2rBbE+IRZEsJanJj/eo77iu148MsPs5L94O8=
+			zCzAuT2nHb4qxSXzzCHEQC11O/b0U4UANzd6T0VA+/0=
 			</data>
 		</dict>
 		<key>ios-arm64/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NxF1sOl2AUeDgo76BIvxc9P3vs/m8gJxmH8aqdyj0lw=
+			gmEIlYwsGJwekUBTFJqmnHE9QN2PYcrvpaaK1NhMbd8=
 			</data>
 		</dict>
 		<key>ios-arm64/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Uj/5D7RzS/7qO2ttxcv2NwFDKRnbzD1fZqRgXtUKiEA=
+			us5yKXo6NHjNDpQnQKuJpsaAphn6QdrVqSyzVmxB7AM=
 			</data>
 		</dict>
 		<key>ios-arm64/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NxF1sOl2AUeDgo76BIvxc9P3vs/m8gJxmH8aqdyj0lw=
+			gmEIlYwsGJwekUBTFJqmnHE9QN2PYcrvpaaK1NhMbd8=
 			</data>
 		</dict>
 		<key>ios-arm64/TJLabsJupiter.framework/Modules/module.modulemap</key>
@@ -212,14 +304,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			kiR7OYi5zGm0iltKnD1vExXCNGiNics2+XtXHEoDUJE=
+			IWqQ49PpYE6TYBoEQg4rURIReTBGrWkdIhnS8LwY+KI=
 			</data>
 		</dict>
 		<key>ios-arm64/TJLabsJupiter.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9TezkTi7UeFQ/Z4+5BL4cegkzw/5f0FOfQEAdYfO1cA=
+			eAzWKsWsce2mmmjmpCHuWs6uc21TvDPFsNzDLCP4+SY=
 			</data>
 		</dict>
 		<key>ios-arm64/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Info.plist</key>
@@ -233,14 +325,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			CnaWBGpxhDmiyngz+lPMjiQ+JXXlBRyyHWBsQr2Ng8E=
+			En/gxdBywz+ZqasuVkTyRowN0QmymoG7fuHFNLqjbVQ=
 			</data>
 		</dict>
 		<key>ios-arm64/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Relocations/aarch64/TJLabsJupiter.yml</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			KDIeHXLXB7rvHULahY7o+Ii6SleInUrmyrAdlG9U7p8=
+			v9YfUHD3+vmi3Jal78DEHdgEaSK03P6sSxw/Aqg2cVk=
 			</data>
 		</dict>
 		<key>ios-arm64/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/aarch64/TJLabsAuth.swiftinterface</key>
@@ -261,7 +353,193 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			OHp33ejMRQtx9jNLOJraDSlrlRykJp+zPTyv4OUwojk=
+			YayOKeTCxzW6/bBgo7hBxXWfEGRO11xnOwoEaRJtrUg=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Headers</key>
+		<dict>
+			<key>symlink</key>
+			<string>Versions/Current/Headers</string>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Modules</key>
+		<dict>
+			<key>symlink</key>
+			<string>Versions/Current/Modules</string>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Resources</key>
+		<dict>
+			<key>symlink</key>
+			<string>Versions/Current/Resources</string>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/TJLabsJupiter</key>
+		<dict>
+			<key>symlink</key>
+			<string>Versions/Current/TJLabsJupiter</string>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Headers/TJLabsJupiter.h</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rCExss9AZ6ejBajMg8Ibh0fnX1jTGjMNd0jDur8V9KM=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-macabi.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zCzAuT2nHb4qxSXzzCHEQC11O/b0U4UANzd6T0VA+/0=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-macabi.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			l5wvvr+Ts6T7W4jRT+owKvspvb64W1p24zLPpO65P0c=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-macabi.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			yZYC6FTtgFvVIJyridC7NMsoE0A/VGQD97bWRqCwh0w=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-macabi.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			l5wvvr+Ts6T7W4jRT+owKvspvb64W1p24zLPpO65P0c=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-macabi.abi.json</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zCzAuT2nHb4qxSXzzCHEQC11O/b0U4UANzd6T0VA+/0=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-macabi.private.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Doh3Z+U24pwBF/PHLbeQa/WfUvofikm9tCVipCHQ+Fw=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-macabi.swiftdoc</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			USfH8wSw5VAi1fhdlYcc60CjTkj3SEY+Fan3/TSsviw=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-macabi.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Doh3Z+U24pwBF/PHLbeQa/WfUvofikm9tCVipCHQ+Fw=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Modules/module.modulemap</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/+3uv9WNbH1qrKhE9JuqBLRAvSBJfSOqdg+J4Dm+fYw=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/Resources/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			l3b+NyjMTtU3wL15vmbY/yTR8w64kU3RCDpdac7vpYs=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/TJLabsJupiter</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LDcIMdCUxUqbuGOYGKj5LvaC1Qlp3arhhS+KDS6eSOg=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/A/_CodeSignature/CodeResources</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			i9J6e1z0YnD+oD6lCaog/6oeSsheBzYtGs5wzsmwAPw=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/TJLabsJupiter.framework/Versions/Current</key>
+		<dict>
+			<key>symlink</key>
+			<string>A</string>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Info.plist</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/PATDRt93vGDZPPD043R3iyheAds+RyPs9qE5IVycH4=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/DWARF/TJLabsJupiter</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			/Avkbq1y6CTU4gOWO2LZDklP0BkqS3YKq0BGyc2Cm7A=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Relocations/aarch64/TJLabsJupiter.yml</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GoF1DNaPJbdC0rvOFBuYukQ6ydf2a27cQBmBRuEjUus=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Relocations/x86_64/TJLabsJupiter.yml</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			bH7EMuGyl8dxTpcfWcQwhyIQV3X17ejZZWWkW7Bo23w=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/aarch64/TJLabsAuth.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nopLjbS8mHV5gipKuURUubxU+lEV+UjLa2OdAy+jW6E=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/aarch64/TJLabsCommon.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			A2tMmdHhlN5aoAa4EYaiP2Vpg99HGkTgKcLI2tC8phQ=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/aarch64/TJLabsResource.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			KtiazXDWixDwO4N6a3s52hAqaj/6PJBaa8tzOSZC9dc=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/x86_64/TJLabsAuth.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Z/XyAQqlPTLzg720SUFhvkEhOLe70zJp0rekU1IiTIk=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/x86_64/TJLabsCommon.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			dDlBm0d4HXWnhyxlMS27OGivpn9ortAklKhN1lui4cs=
+			</data>
+		</dict>
+		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/x86_64/TJLabsResource.swiftinterface</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			s7lkPZJMerm/q5qXJ/2+xXgJez79TIfBd1MZgbYuEps=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Headers/TJLabsJupiter.h</key>
@@ -282,56 +560,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			5UHgREG2rBbE+IRZEsJanJj/eo77iu148MsPs5L94O8=
+			zCzAuT2nHb4qxSXzzCHEQC11O/b0U4UANzd6T0VA+/0=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6II/Q6A5BgK7yRpibiIgVkJ4P3oWuFQ542QPvyThzwM=
+			YbqoLUSKj48PAOMo7aaRGFdDCZXbOAVQ05P3PG6FozI=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			qtWXknW98ZMeEJZc2DcO9xl0AMF4bJPYU3pxNnhsD0k=
+			eFvQ0GfKFmaEWNP6l5R79lUo7oR4dweEkz2JEha9Gjo=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6II/Q6A5BgK7yRpibiIgVkJ4P3oWuFQ542QPvyThzwM=
+			YbqoLUSKj48PAOMo7aaRGFdDCZXbOAVQ05P3PG6FozI=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			5UHgREG2rBbE+IRZEsJanJj/eo77iu148MsPs5L94O8=
+			zCzAuT2nHb4qxSXzzCHEQC11O/b0U4UANzd6T0VA+/0=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NXhrct4oNo6rOM/8J+MBg+Oll9BX3hqdZSb3wqYwEcc=
+			Dq9V9hl/g9r0Lxkd/LIqf0SOlaOzdHg+6alHg+kKuHA=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ua9h2A3ll83oFJNSyRc/ClehJGHa81CUjfjOpW8PXAM=
+			ZIuylSrki8svfEpcsdSlb+8TicfdMwYQF1IXewRAgS4=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/TJLabsJupiter.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NXhrct4oNo6rOM/8J+MBg+Oll9BX3hqdZSb3wqYwEcc=
+			Dq9V9hl/g9r0Lxkd/LIqf0SOlaOzdHg+6alHg+kKuHA=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/Modules/module.modulemap</key>
@@ -345,14 +623,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q9HaQF3dUEL/UuH1dwINyDkmKWpAppvrW/dqhYR4kZI=
+			yKx8FP7hvcUj8nZFgk02LrLpsTSm9fiytZkgwGsdnCc=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TJLabsJupiter.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NG5vsyI2QvCFCMUbkEm1XjjdAiTLwwLv9Z9n15Jh5bE=
+			t8/mkGzQc0I8c9M8JpurVKiEe/COb7NSQl754jt7swE=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Info.plist</key>
@@ -366,21 +644,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gMvLs8zbp1kWPU1ES1Lb0aPVdLSt8ywRf7NzfX83H94=
+			DoQrh4AbnKSlU4jjmNECaEz3b6rrvG8NAyWClY4dGRQ=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Relocations/aarch64/TJLabsJupiter.yml</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lfuVib2w4Wbs4pMGKME5SmtPgQ5frQCS5+83hs0pHZI=
+			/gSBZ1CuZ4kXxpkNzw6mP+3eYZVSbAe3m1VRrdSMQeg=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Relocations/x86_64/TJLabsJupiter.yml</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1/fHANQgCoBJYF7YckCkp6DPoPcP3P21Ys+46TEBHf8=
+			ZYFC3C2jL/kRwNIAXr7eMSJSjpQyoZz75KEYeogqx2I=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/aarch64/TJLabsAuth.swiftinterface</key>
@@ -401,7 +679,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gJcE2Z0Bix8oL51M6bna7RGSdPdAeCbimcZBZKw4vmE=
+			e85mwANxycmHZaS5/ZgWhcnx3/bUBB9PRfKefoRJ0v4=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/dSYMs/TJLabsJupiter.framework.dSYM/Contents/Resources/Swift/x86_64/TJLabsAuth.swiftinterface</key>
@@ -422,7 +700,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			QRJzJa0TQlO6OunmdXtWFFRkeSptyj+b0uOlccXDp1I=
+			CCTOIdNkVAuTcAf1Swjj6fGl+bW7fgP7RSyW5ZQqoDE=
 			</data>
 		</dict>
 	</dict>
