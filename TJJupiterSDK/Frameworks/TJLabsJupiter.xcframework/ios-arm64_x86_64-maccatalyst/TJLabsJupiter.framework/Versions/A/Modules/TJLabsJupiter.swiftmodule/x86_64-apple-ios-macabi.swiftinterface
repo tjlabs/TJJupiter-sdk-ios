@@ -1,0 +1,923 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 6.2 effective-5.10 (swiftlang-6.2.0.19.9 clang-1700.3.19.1)
+// swift-module-flags: -target x86_64-apple-ios15.0-macabi -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -enable-experimental-feature DebugDescriptionMacro -enable-bare-slash-regex -module-name TJLabsJupiter
+// swift-module-flags-ignorable:  -formal-cxx-interoperability-mode=off -interface-compiler-version 6.2
+import CoreLocation
+import Foundation
+import Swift
+import SystemConfiguration
+import TJLabsAuth
+import TJLabsCommon
+@_exported import TJLabsJupiter
+import TJLabsResource
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+import simd
+public enum JupiterMockMode : Swift.String {
+  case NONE
+  case VEHICLE_INDOOR_OUTDOOR
+  case VEHICLE_OUTDOOR_PARKING
+  case PEDESTRIAN_INDOOR_PARKING
+  case PEDESTRIAN_PARKING_INDOOR
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class JupiterMockManager {
+  public static let shared: TJLabsJupiter.JupiterMockManager
+  public var mockMode: Swift.Bool
+  public func initialize()
+  public func isMockAvailable() -> Swift.Bool
+  public func setMockMode(mode: TJLabsJupiter.JupiterMockMode, sectorId: Swift.Int, completion: @escaping (Swift.Bool) -> Swift.Void)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class PathMatcher {
+  public var entranceMatchingArea: [Swift.String : [TJLabsResource.GeofencePolygon]]
+  public var entranceArea: [Swift.String : [TJLabsResource.GeofencePolygon]]
+  @objc deinit
+}
+public enum JupiterCloud : Swift.String {
+  case AWS
+  case GCP
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum JupiterRegion : Swift.String {
+  case KOREA
+  case US_EAST
+  case CANADA
+  case SAUDI
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol JupiterManagerDelegate : AnyObject {
+  func onRfdResult(receivedForce: TJLabsCommon.ReceivedForce)
+  #if compiler(>=5.3) && $NonescapableTypes
+  func onEntering(userVelocity: TJLabsCommon.UserVelocity, peakIndex: Swift.Int?, key: Swift.String, level_id: Swift.Int)
+  #endif
+  func mockTracking(jupiterResult: TJLabsJupiter.JupiterResult)
+  #if compiler(>=5.3) && $NonescapableTypes
+  func provideTrackingCorrection(mode: TJLabsCommon.UserMode, userVelocity: TJLabsCommon.UserVelocity, peakIndex: Swift.Int?, recentLandmarkPeaks: [TJLabsResource.PeakData]?, travelingLinkDist: Swift.Float, indexForEdit: Swift.Int, curPmResult: TJLabsJupiter.FineLocationTrackingOutput?) -> (TJLabsJupiter.NaviCorrectionInfo, [TJLabsJupiter.StackEditInfo])?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  func onInitSuccess(_ isSuccess: Swift.Bool, _ code: TJLabsJupiter.InitErrorCode?, _ result: TJLabsJupiter.JupiterServiceResult)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  func onJupiterSuccess(_ isSuccess: Swift.Bool, _ code: TJLabsJupiter.JupiterErrorCode?, _ result: TJLabsJupiter.JupiterServiceResult)
+  #endif
+  func onJupiterReport(_ code: TJLabsJupiter.JupiterServiceCode, _ msg: Swift.String)
+  func onJupiterResult(_ result: TJLabsJupiter.JupiterResult, _ isShowLSE: Swift.Bool)
+  func isJupiterInOutStateChanged(_ state: TJLabsJupiter.InOutState)
+  #if compiler(>=5.3) && $NonescapableTypes
+  func isJupiterPhaseChanged(index: Swift.Int, phase: TJLabsJupiter.JupiterPhase, xyh: [Swift.Float]?)
+  #endif
+  func onBuildingLevelChangeStateChanged(state: TJLabsJupiter.BuildingLevelChangeState, fromBuilding: Swift.String, fromLevel: Swift.String, toBuilding: Swift.String, toLevel: Swift.String, index: Swift.Int)
+}
+public enum InitErrorCode : Swift.Int {
+  case NOT_AUTHORIZED
+  case INVALID_ID
+  case NETWORK_DISCONNECT
+  case LOGIN_FAIL
+  case LOAD_RESOURCE_FAIL
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum JupiterErrorCode : Swift.Int {
+  case NOT_INITIALIZED
+  case DUPLICATED_SERVICE
+  case GENERATOR_FAIL
+  case INVALID_SECTOR
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class JupiterEventCode {
+  public static let successStatus: Swift.Int
+  public static let timeoutStatus: Swift.Int
+  public static let connectionLostStatus: Swift.Int
+  public static let unclassifiedFailureStatus: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
+  public static func isServerReported(statusCode: Swift.Int?) -> Swift.Bool
+  #endif
+  public static let initSuccess: Swift.Int
+  public static let initAuthorizationError: Swift.Int
+  public static let initIdValidationError: Swift.Int
+  public static let initNetworkError: Swift.Int
+  public static let initLoginError: Swift.Int
+  public static let initLoadResourceError: Swift.Int
+  public static let startSuccess: Swift.Int
+  public static let startNotInitializedError: Swift.Int
+  public static let startDuplicatedError: Swift.Int
+  public static let startGeneratorError: Swift.Int
+  public static let startInvalidSectorError: Swift.Int
+  public static let stopSuccess: Swift.Int
+  public static let stopNotStartedWarn: Swift.Int
+  public static let appForeground: Swift.Int
+  public static let appBackground: Swift.Int
+  public static let buildingLevelChange: Swift.Int
+  public static let exiting: Swift.Int
+  public static let rfdGenerator: Swift.Int
+  @objc deinit
+}
+public enum JupiterServiceStage : Swift.Equatable {
+  case authorization
+  case idValidation
+  case network
+  case login
+  case loadResource
+  case notInitialized
+  case duplicatedService
+  case generator
+  case invalidSector
+  case notStarted
+  public static func == (a: TJLabsJupiter.JupiterServiceStage, b: TJLabsJupiter.JupiterServiceStage) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public enum JupiterServiceInput {
+  case initialize(cloud: Swift.String, region: Swift.String, sectorIds: [Swift.Int], debugOption: Swift.Bool, dev: Swift.Bool, id: Swift.String)
+  case start(mode: TJLabsCommon.UserMode, sectorId: Swift.Int)
+  case stop
+}
+public struct JupiterServiceResult {
+  public let eventCode: Swift.Int?
+  public let isSuccess: Swift.Bool
+  public let failedStage: TJLabsJupiter.JupiterServiceStage?
+  public let message: Swift.String
+  public let input: TJLabsJupiter.JupiterServiceInput
+  public let resourceResult: TJLabsResource.ResourceLoadResult?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(eventCode: Swift.Int?, isSuccess: Swift.Bool, input: TJLabsJupiter.JupiterServiceInput, failedStage: TJLabsJupiter.JupiterServiceStage? = nil, message: Swift.String = "", resourceResult: TJLabsResource.ResourceLoadResult? = nil)
+  #endif
+}
+public protocol JupiterEventReporter : AnyObject {
+  func reportServiceEvent(_ result: TJLabsJupiter.JupiterServiceResult)
+}
+extension TJLabsJupiter.JupiterServiceResult {
+  public func toEventMessage() -> [Swift.String : TJLabsJupiter.JSONValue]
+}
+public enum JupiterServiceCode : Swift.Int {
+  case SERVICE_FAIL
+  case SERVICE_SUCCESS
+  case BECOME_BACKGROUND
+  case BECOME_FOREGROUND
+  case BLUETOOTH_UNAVAILABLE
+  case BLUETOOTH_OFF
+  case BLUETOOTH_SCAN_STOP
+  case NETWORK_DISCONNECT
+  case GET_FIRST_RESULT
+  case PEAK_DETECTED
+  case UVD_STOPPED
+  case BUILDING_LEVEL_CHANGING
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum JupiterPhase : Swift.CaseIterable {
+  case NONE, ENTERING, SEARCHING, TRACKING, EXITING, OUTDOOR
+  public static func == (a: TJLabsJupiter.JupiterPhase, b: TJLabsJupiter.JupiterPhase) -> Swift.Bool
+  public typealias AllCases = [TJLabsJupiter.JupiterPhase]
+  nonisolated public static var allCases: [TJLabsJupiter.JupiterPhase] {
+    get
+  }
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct JupiterPhaseTransition {
+  public let phase: TJLabsJupiter.JupiterPhase
+  public let uvdIndex: Swift.Int
+  public let timestampMillis: Swift.Int
+}
+public struct JupiterPhaseStatistics {
+  public let sessionStartMillis: Swift.Int
+  public let durationMillisByPhase: [TJLabsJupiter.JupiterPhase : Swift.Int]
+  public let transitionCountByPhase: [TJLabsJupiter.JupiterPhase : Swift.Int]
+  public let transitionsByPhase: [TJLabsJupiter.JupiterPhase : [TJLabsJupiter.JupiterPhaseTransition]]
+  public let transitionsInOrder: [TJLabsJupiter.JupiterPhaseTransition]
+}
+extension TJLabsJupiter.JupiterPhaseStatistics {
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func millisUntilFirstTransition(to phase: TJLabsJupiter.JupiterPhase) -> Swift.Int?
+  #endif
+  public func trackingRecoveryDurationsMillis() -> [Swift.Int]
+}
+public struct JupiterResult : Swift.Codable {
+  public var mobile_time: Swift.Int
+  public var index: Swift.Int
+  public var building_name: Swift.String
+  public var level_name: Swift.String
+  public var jupiter_pos: TJLabsJupiter.Position
+  public var navi_pos: TJLabsJupiter.Position?
+  public var remaining_distance: Swift.Int?
+  public var llh: TJLabsJupiter.LLH?
+  public var velocity: Swift.Float
+  public var is_vehicle: Swift.Bool
+  public var is_indoor: Swift.Bool
+  public var validity_flag: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(mobile_time: Swift.Int, index: Swift.Int, building_name: Swift.String, level_name: Swift.String, jupiter_pos: TJLabsJupiter.Position, navi_pos: TJLabsJupiter.Position? = nil, llh: TJLabsJupiter.LLH? = nil, remaining_distance: Swift.Int? = nil, velocity: Swift.Float, is_vehicle: Swift.Bool, is_indoor: Swift.Bool, validity_flag: Swift.Int)
+  #endif
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct MockResult : Swift.Codable {
+  public var time_ms: Swift.Int
+  public var index: Swift.Int
+  public var building_name: Swift.String
+  public var level_name: Swift.String
+  public var jupiter_pos: TJLabsJupiter.Position
+  public var navi_pos: TJLabsJupiter.Position?
+  public var llh: TJLabsJupiter.LLH?
+  public var velocity: Swift.Float
+  public var is_vehicle: Swift.Bool
+  public var is_indoor: Swift.Bool
+  public var validity_flag: Swift.Int
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(time_ms: Swift.Int, index: Swift.Int, building_name: Swift.String, level_name: Swift.String, jupiter_pos: TJLabsJupiter.Position, navi_pos: TJLabsJupiter.Position? = nil, llh: TJLabsJupiter.LLH? = nil, velocity: Swift.Float, is_vehicle: Swift.Bool, is_indoor: Swift.Bool, validity_flag: Swift.Int)
+  #endif
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Position : Swift.Codable {
+  public var x: Swift.Float
+  public var y: Swift.Float
+  public var heading: Swift.Float
+  public init(x: Swift.Float, y: Swift.Float, heading: Swift.Float)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LLH : Swift.Codable {
+  public var lat: Swift.Double
+  public var lon: Swift.Double
+  public var azimuth: Swift.Double
+  public init(lat: Swift.Double, lon: Swift.Double, azimuth: Swift.Double)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LSELinkDebugInfo {
+  public var link_number: Swift.Int
+  public var start_node: Swift.Int
+  public var end_node: Swift.Int
+  public var start_coord: [Swift.Float]
+  public var end_coord: [Swift.Float]
+  public var lse_coord: [Swift.Float]
+  public var lse_uvd_index: Swift.Int
+  public var confidence: Swift.Float
+  public var confidence_level: Swift.String
+  public var posterior_probability: Swift.Float
+  public var log_likelihood_margin: Swift.Float
+  public var mean_fit_distance: Swift.Float
+  public var path_consistency: Swift.Float
+  public var observation_count: Swift.Int
+  public var candidate_count: Swift.Int
+}
+public struct JupiterDebugResult {
+  public var mobile_time: Swift.Int
+  public var building_name: Swift.String
+  public var level_name: Swift.String
+  public var x: Swift.Float
+  public var y: Swift.Float
+  public var llh: TJLabsJupiter.LLH?
+  public var absolute_heading: Swift.Float
+  public var index: Swift.Int
+  public var velocity: Swift.Float
+  public var uvd_speed_mps: Swift.Float?
+  public var lse_speed_mps: Swift.Float?
+  public var mode: Swift.String
+  public var ble_only_position: Swift.Bool
+  public var isIndoor: Swift.Bool
+  public var validity: Swift.Bool
+  public var validity_flag: Swift.Int
+  public var cur_lse_result: TJLabsJupiter.FineLocationTrackingOutput?
+  public var confidence_info: Swift.String?
+  public var mapmatch: TJLabsJupiter.LSEMapMatch?
+  public var lse_link: TJLabsJupiter.LSELinkDebugInfo?
+  public var calc_xyh: [Swift.Float]
+  public var tu_xyh: [Swift.Float]
+  public var landmark: TJLabsResource.LandmarkData?
+  public var best_landmark: TJLabsResource.PeakData?
+  public var recon_raw_traj: [[Swift.Double]]?
+  public var recon_corr_traj: [TJLabsJupiter.FineLocationTrackingOutput]?
+  public var selected_cand: TJLabsJupiter.SelectedCandidate?
+  public var selected_cand_second: TJLabsJupiter.SelectedCandidate?
+  public var select_cand_reason: Swift.String?
+  public var apply2peak_skip_reason: Swift.String?
+  public var head_lse_dist: Swift.Float?
+  public var show_lse_reason: Swift.String?
+  public var phase_downgrade_reason: Swift.String?
+  public var lse_mapmatch_missing: Swift.Bool?
+  public var selected_search: TJLabsJupiter.SelectedSearch?
+  public var ratio: Swift.Float?
+  public var navi_xyh: [Swift.Float]
+}
+public struct RecoveryResult : Swift.Codable {
+  public let traj: [[Swift.Double]]
+  public let shiftedTraj: [TJLabsJupiter.RecoveryTrajectory]
+  public let loss: Swift.Float
+  public var bestRecentCand: TJLabsResource.PeakData
+  public let bestOlder: [Swift.Int]
+  public let bestResult: TJLabsJupiter.FineLocationTrackingOutput?
+  public var curLinkNum: Swift.Int?
+  public var curGroupNum: Swift.Int?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(traj: [[Swift.Double]], shiftedTraj: [TJLabsJupiter.RecoveryTrajectory], loss: Swift.Float, bestRecentCand: TJLabsResource.PeakData, bestOlder: [Swift.Int], bestResult: TJLabsJupiter.FineLocationTrackingOutput?, curLinkNum: Swift.Int? = nil, curGroupNum: Swift.Int? = nil)
+  #endif
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct SearchResult {
+  public let older: TJLabsResource.PeakData?
+  public let recent: TJLabsResource.PeakData?
+  public let traj: [TJLabsJupiter.CandidateTrajectory]
+  public let tail: TJLabsJupiter.ixyhs
+  public let head: TJLabsJupiter.ixyhs
+  public let headResult: TJLabsJupiter.FineLocationTrackingOutput
+  public let lossPointResultList: [TJLabsJupiter.LossPointResult]
+  public let loss_lm: Swift.Float
+  public let loss_g_d: Swift.Float
+  public let loss_g_h: Swift.Float
+  public let loss_lse: Swift.Float
+  public let loss_lse_heading: Swift.Float
+  public let loss_lse_link: Swift.Float
+}
+public struct SelectedSearch {
+  public let older: TJLabsResource.PeakData?
+  public let recent: TJLabsResource.PeakData?
+  public let traj: [TJLabsJupiter.CandidateTrajectory]
+  public let tail: TJLabsJupiter.ixyhs
+  public let head: TJLabsJupiter.ixyhs
+  public var headResult: TJLabsJupiter.FineLocationTrackingOutput
+  public let loss: Swift.Float
+}
+public struct CandidateResult {
+  public let older: TJLabsResource.PeakData?
+  public let recent: TJLabsResource.PeakData?
+  public let links: [Swift.Int]
+  public let linkGroups: Swift.Set<Swift.Int>
+  public let traj: [TJLabsJupiter.CandidateTrajectory]
+  public let tail: TJLabsJupiter.ixyhs
+  public let head: TJLabsJupiter.ixyhs
+  public let headResult: TJLabsJupiter.FineLocationTrackingOutput
+  public let isInSameLinkGroup: Swift.Bool
+  public let linkGroupSwitchCount: Swift.Int
+  public let distWithRecentPeakResult: Swift.Float?
+  public let lossPointResultList: [TJLabsJupiter.LossPointResult]
+  public let loss_lm: Swift.Float
+  public let loss_g_d: Swift.Float
+  public let loss_g_h: Swift.Float
+  public let loss_pre_fixed: Swift.Float?
+}
+public struct SelectedCandidate {
+  public let older: TJLabsResource.PeakData?
+  public let recent: TJLabsResource.PeakData?
+  public let links: [Swift.Int]
+  public let linkGroups: Swift.Set<Swift.Int>
+  public let traj: [TJLabsJupiter.CandidateTrajectory]
+  public let tail: TJLabsJupiter.ixyhs
+  public let head: TJLabsJupiter.ixyhs
+  public let headResult: TJLabsJupiter.FineLocationTrackingOutput
+  public let loss: Swift.Float
+  public let penalty: Swift.Float
+  public let divideNum: Swift.Float
+}
+public enum InOutState : Swift.Int, Swift.Codable {
+  case OUT_TO_IN
+  case INDOOR
+  case IN_TO_OUT
+  case OUTDOOR
+  case UNKNOWN
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public enum BuildingLevelChangeState : Swift.Int, Swift.Codable {
+  case NORMAL
+  case LEVEL_CHANGING
+  case ENTERING
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.Int)
+  #endif
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct ExternalUserInput : Swift.Codable {
+  public var external_name: Swift.String
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct FineLocationTrackingOutput : Swift.Codable, Swift.Equatable {
+  public var mobile_time: Swift.Int
+  public var index: Swift.Int
+  public var building_name: Swift.String
+  public var level_name: Swift.String
+  public var x: Swift.Float
+  public var y: Swift.Float
+  public var absolute_heading: Swift.Float
+  public static func == (a: TJLabsJupiter.FineLocationTrackingOutput, b: TJLabsJupiter.FineLocationTrackingOutput) -> Swift.Bool
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct ixyhs {
+}
+public typealias WardId = Swift.String
+public struct UserPeak {
+  public let id: TJLabsJupiter.WardId
+  public let start_index: Swift.Int
+  public let end_index: Swift.Int
+  public let peak_index: Swift.Int
+  public let start_rssi: Swift.Double
+  public let end_rssi: Swift.Double
+  public let peak_rssi: Swift.Double
+  public let threshold: Swift.Double
+}
+public struct RecoveryTrajectory : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct CandidateTrajectory : Swift.Codable {
+  public var index: Swift.Int
+  public var x: Swift.Float
+  public var y: Swift.Float
+  public var heading: Swift.Float
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct LossPointResult : Swift.Codable {
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct NaviCorrectionInfo {
+  public let x: Swift.Float
+  public let y: Swift.Float
+  public let heading: Swift.Float
+  public init(x: Swift.Float, y: Swift.Float, heading: Swift.Float)
+}
+public struct StackEditInfo : Swift.Codable {
+  public let index: Swift.Int
+  public let building: Swift.String
+  public let level: Swift.String
+  public var x: Swift.Float
+  public var y: Swift.Float
+  public var heading: Swift.Float
+  public init(index: Swift.Int, building: Swift.String, level: Swift.String, x: Swift.Float, y: Swift.Float, heading: Swift.Float)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum NavigationRoutePointType : Swift.String, Swift.Codable {
+  case ORIGIN
+  case NORMAL
+  case VERTICAL
+  case DESTINATION
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct NavigationRoutePoint : Swift.Codable {
+  public let pointId: Swift.Int
+  public let x: Swift.Float
+  public let y: Swift.Float
+  public let pointType: TJLabsJupiter.NavigationRoutePointType
+  public init(pointId: Swift.Int, x: Swift.Float, y: Swift.Float, pointType: TJLabsJupiter.NavigationRoutePointType)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct NavigationLevelRoute : Swift.Codable {
+  public let levelId: Swift.Int
+  public let points: [TJLabsJupiter.NavigationRoutePoint]
+  public init(levelId: Swift.Int, points: [TJLabsJupiter.NavigationRoutePoint])
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Route : Swift.Codable {
+  public let origin: TJLabsJupiter.Origin
+  public let destination: TJLabsJupiter.Point
+  public let waypoints: [TJLabsJupiter.Point]
+  public let segments: [TJLabsJupiter.RouteSegment]
+  public let distance: Swift.Int
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RouteSegment : Swift.Codable {
+  public let level_id: Swift.Int
+  public let guides: [TJLabsJupiter.RouteGuide]
+  public let distance: Swift.Int
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RouteGuide : Swift.Codable {
+  public let x: Swift.Int
+  public let y: Swift.Int
+  public let out_heading: Swift.Int
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Point : Swift.Codable {
+  public let level_id: Swift.Int
+  public let x: Swift.Int
+  public let y: Swift.Int
+  public init(level_id: Swift.Int, x: Swift.Int, y: Swift.Int)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct Origin : Swift.Codable {
+  public let level_id: Swift.Int
+  public let x: Swift.Int
+  public let y: Swift.Int
+  public let absolute_heading: Swift.Int
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum DirRqType : Swift.String, Swift.Codable {
+  case INITIAL
+  case REROUTE
+  case DEST_CHANGED
+  case WP_CHANGED
+  case RESUME
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct RoutingStart : Swift.Codable {
+  public let level_id: Swift.Int
+  public let x: Swift.Int
+  public let y: Swift.Int
+  public var absolute_heading: Swift.Int
+  public init(level_id: Swift.Int, x: Swift.Int, y: Swift.Int, absolute_heading: Swift.Int)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RoutingResult : Swift.Codable {
+  public let code: Swift.Int
+  public let request_id: Swift.String
+  public let route: TJLabsJupiter.Route
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum NavigationRouteFailureReason : Swift.String, Swift.Codable {
+  case serverResponse
+  case networkError
+  case tooClose
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init?(rawValue: Swift.String)
+  #endif
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct NaviDestination : Swift.Codable {
+  public let building: Swift.String
+  public let level: Swift.String
+  public let level_id: Swift.Int
+  public let category: TJLabsResource.Category
+  public let name: Swift.String
+  public let x: Swift.Float
+  public let y: Swift.Float
+  public init(building: Swift.String, level: Swift.String, level_id: Swift.Int, category: TJLabsResource.Category, name: Swift.String, x: Swift.Float, y: Swift.Float)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct RoutingRoute : Swift.Codable {
+  public let building: Swift.String
+  public let level: Swift.String
+  public let section: Swift.Int
+  public var turnPoint: Swift.Bool
+  public var x: Swift.Float
+  public var y: Swift.Float
+  public var heading: Swift.Float
+  public var passedPointId: Swift.Int
+  public var passable: Swift.Bool
+  public init(building: Swift.String, level: Swift.String, section: Swift.Int, turnPoint: Swift.Bool, x: Swift.Float, y: Swift.Float, heading: Swift.Float)
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public struct JupiterNaviResult : Swift.Codable {
+  public let building: Swift.String
+  public let level: Swift.String
+  public let section: Swift.Int
+  public let passedPointId: Swift.Int
+  public let remainingDistance: Swift.Int
+  public var x: Swift.Float
+  public var y: Swift.Float
+  public var heading: Swift.Float
+  public var llh: TJLabsJupiter.LLH?
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(building: Swift.String, level: Swift.String, section: Swift.Int, passedPointId: Swift.Int, remainingDistance: Swift.Int, x: Swift.Float, y: Swift.Float, heading: Swift.Float, llh: TJLabsJupiter.LLH?)
+  #endif
+  public func encode(to encoder: any Swift.Encoder) throws
+  public init(from decoder: any Swift.Decoder) throws
+}
+public enum JSONValue : Swift.Codable {
+  case string(Swift.String)
+  case int(Swift.Int)
+  case double(Swift.Double)
+  case bool(Swift.Bool)
+  case object([Swift.String : TJLabsJupiter.JSONValue])
+  case array([TJLabsJupiter.JSONValue])
+  case null
+  public init(from decoder: any Swift.Decoder) throws
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+public struct LSEMapMatch : Swift.Decodable {
+  public let snapped_x: Swift.Double?
+  public let snapped_y: Swift.Double?
+  public let floor: Swift.String?
+  public let level_id: Swift.Int?
+  public let edge_id: Swift.String?
+  public let distance_to_link_m: Swift.Double?
+  public let match_score: Swift.Double?
+  public let bearing: Swift.Double?
+  public let heading: Swift.Double?
+  public let candidates: [TJLabsJupiter.JSONValue]?
+  public init(from decoder: any Swift.Decoder) throws
+}
+public protocol NavigationManagerDelegate : AnyObject {
+  #if compiler(>=5.3) && $NonescapableTypes
+  func onInitSuccess(_ isSuccess: Swift.Bool, _ code: TJLabsJupiter.InitErrorCode?, _ result: TJLabsJupiter.JupiterServiceResult)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  func onJupiterSuccess(_ isSuccess: Swift.Bool, _ code: TJLabsJupiter.JupiterErrorCode?, _ result: TJLabsJupiter.JupiterServiceResult)
+  #endif
+  func onJupiterResult(_ result: TJLabsJupiter.JupiterResult)
+  func onJupiterReport(_ code: TJLabsJupiter.JupiterServiceCode, _ msg: Swift.String)
+  func isJupiterInOutStateChanged(_ state: TJLabsJupiter.InOutState)
+  func onBuildingLevelChangeStateChanged(state: TJLabsJupiter.BuildingLevelChangeState, fromBuilding: Swift.String, fromLevel: Swift.String, toBuilding: Swift.String, toLevel: Swift.String, index: Swift.Int)
+  func isUserArrived()
+  func isUserGuidanceOut()
+  func isNavigationRouteChanged(_ routes: [(Swift.String, Swift.String, Swift.Float, Swift.Float)])
+  func isNavigationRouteFailed(_ reason: TJLabsJupiter.NavigationRouteFailureReason)
+  func isWaypointChanged(_ waypoints: [[Swift.Double]])
+}
+extension TJLabsJupiter.NavigationManagerDelegate {
+  public func onBuildingLevelChangeStateChanged(state: TJLabsJupiter.BuildingLevelChangeState, fromBuilding: Swift.String, fromLevel: Swift.String, toBuilding: Swift.String, toLevel: Swift.String, index: Swift.Int)
+}
+public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
+  public func onRfdResult(receivedForce: TJLabsCommon.ReceivedForce)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func onEntering(userVelocity: TJLabsCommon.UserVelocity, peakIndex: Swift.Int?, key: Swift.String, level_id: Swift.Int)
+  #endif
+  public func mockTracking(jupiterResult: TJLabsJupiter.JupiterResult)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func provideTrackingCorrection(mode: TJLabsCommon.UserMode, userVelocity: TJLabsCommon.UserVelocity, peakIndex: Swift.Int?, recentLandmarkPeaks: [TJLabsResource.PeakData]?, travelingLinkDist: Swift.Float, indexForEdit: Swift.Int, curPmResult: TJLabsJupiter.FineLocationTrackingOutput?) -> (TJLabsJupiter.NaviCorrectionInfo, [TJLabsJupiter.StackEditInfo])?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func onInitSuccess(_ isSuccess: Swift.Bool, _ code: TJLabsJupiter.InitErrorCode?, _ result: TJLabsJupiter.JupiterServiceResult)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func onJupiterSuccess(_ isSuccess: Swift.Bool, _ code: TJLabsJupiter.JupiterErrorCode?, _ result: TJLabsJupiter.JupiterServiceResult)
+  #endif
+  public func onJupiterReport(_ code: TJLabsJupiter.JupiterServiceCode, _ msg: Swift.String)
+  public func onJupiterResult(_ result: TJLabsJupiter.JupiterResult, _ isShowLSEResult: Swift.Bool)
+  public func isJupiterInOutStateChanged(_ state: TJLabsJupiter.InOutState)
+  public func onBuildingLevelChangeStateChanged(state: TJLabsJupiter.BuildingLevelChangeState, fromBuilding: Swift.String, fromLevel: Swift.String, toBuilding: Swift.String, toLevel: Swift.String, index: Swift.Int)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func isJupiterPhaseChanged(index: Swift.Int, phase: TJLabsJupiter.JupiterPhase, xyh: [Swift.Float]?)
+  #endif
+  weak public var delegate: (any TJLabsJupiter.NavigationManagerDelegate)?
+  public static let DEFAULT_PEDESTRIAN_ROUTE_MATCHING_RADIUS: Swift.Float
+  #if compiler(>=5.3) && $NonescapableTypes
+  convenience public init(id: Swift.String, cloud: Swift.String = JupiterCloud.GCP.rawValue, region: Swift.String = JupiterRegion.KOREA.rawValue, sectorId: Swift.Int, debugOption: Swift.Bool = false, uploadOption: Swift.Bool = false, dev: Swift.Bool = false, onPremiseBaseURL: Swift.String? = nil)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public init(id: Swift.String, cloud: Swift.String = JupiterCloud.GCP.rawValue, region: Swift.String = JupiterRegion.KOREA.rawValue, sectorIds: [Swift.Int], debugOption: Swift.Bool = false, uploadOption: Swift.Bool = false, dev: Swift.Bool = false, onPremiseBaseURL: Swift.String? = nil)
+  #endif
+  public func initialize(includeImages: Swift.Bool = true)
+  @objc deinit
+  public func startService(mode: TJLabsCommon.UserMode, sectorId: Swift.Int)
+  public func stopService(completion: @escaping (Swift.Bool, Swift.String, TJLabsJupiter.JupiterServiceResult) -> Swift.Void)
+  public func clearResourceCache()
+  public func uploadReplayFiles()
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func setEventReporter(_ reporter: (any TJLabsJupiter.JupiterEventReporter)?)
+  #endif
+  public func setNaviDestination(dest: TJLabsJupiter.Point, isVehicle: Swift.Bool)
+  public func setNaviWaypoints(waypoints: [[Swift.Double]])
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getJupiterDebugResult() -> TJLabsJupiter.JupiterDebugResult?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getPhaseStatistics() -> TJLabsJupiter.JupiterPhaseStatistics?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func requestRouting(start: TJLabsJupiter.RoutingStart, end: TJLabsJupiter.Point, waypoints: [TJLabsJupiter.Point] = [], is_vehicle: Swift.Bool, completion: @escaping (TJLabsJupiter.RoutingResult?, [TJLabsJupiter.NavigationLevelRoute]) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func requestRouting(start: TJLabsJupiter.RoutingStart, end: TJLabsJupiter.Point, waypoints: [TJLabsJupiter.Point] = [], is_vehicle: Swift.Bool, completion: @escaping (TJLabsJupiter.RoutingResult?, [TJLabsJupiter.NavigationLevelRoute], TJLabsJupiter.NavigationRouteFailureReason?) -> Swift.Void)
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getRoutingInfo() -> (requestId: Swift.String, totalDistance: Swift.Int, routes: [TJLabsJupiter.NavigationLevelRoute], reason: TJLabsJupiter.NavigationRouteFailureReason?)
+  #endif
+  public func getLevelRoutes() -> [TJLabsJupiter.NavigationLevelRoute]
+  public func setReplayMode(flag: Swift.Bool, rfdFileName: Swift.String, uvdFileName: Swift.String, eventFileName: Swift.String)
+  public func setReplayModeLegacy(flag: Swift.Bool, bleFileName: Swift.String, sensorFileName: Swift.String)
+  @discardableResult
+  public func setMobileResultReplayMode(flag: Swift.Bool, fileName: Swift.String) -> Swift.Bool
+  public func setMockMode(mode: TJLabsJupiter.JupiterMockMode, sectorId: Swift.Int, completion: @escaping (Swift.Bool) -> Swift.Void)
+  public func setPedestrianPathMatching(enabled: Swift.Bool)
+  public func setPedestrianRouteMatching(enabled: Swift.Bool, radius: Swift.Float = DEFAULT_PEDESTRIAN_ROUTE_MATCHING_RADIUS)
+  public func cancelNavigation()
+  public func setLSEAppName(name: Swift.String)
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getMatchedLevelId(key: Swift.String) -> Swift.Int?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getBuildingsData() -> [TJLabsResource.BuildingData]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getTransitionData() -> [TJLabsResource.Transition]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getBuildingsData(sectorId: Swift.Int) -> [TJLabsResource.BuildingData]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getTransitionData(sectorId: Swift.Int) -> [TJLabsResource.Transition]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getBuildingName(buildingId: Swift.Int) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getBuildingId(sectorId: Swift.Int, buildingName: Swift.String) -> Swift.Int?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getLevelName(levelId: Swift.Int) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getLevelId(sectorId: Swift.Int, buildingName: Swift.String, levelName: Swift.String) -> Swift.Int?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getLevelMatchesData(sectorId: Swift.Int, buildingName: Swift.String, levelName: Swift.String) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getLevelId(sectorId: Swift.Int, buildingName: Swift.String, levelMatch: Swift.String) -> Swift.Int?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getLevelMatch(levelId: Swift.Int) -> Swift.String?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getParkingMatchesData(sectorId: Swift.Int, buildingName: Swift.String, levelName: Swift.String) -> [TJLabsResource.ParkingMatch]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getScaleOffset(sectorId: Swift.Int, buildingName: Swift.String, levelName: Swift.String) -> [Swift.Float]?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getDefaultPosition(sectorId: Swift.Int) -> TJLabsResource.DefaultPosition?
+  #endif
+  #if compiler(>=5.3) && $NonescapableTypes
+  public func getWgs84Transform(sectorId: Swift.Int) -> TJLabsResource.WGS84Transform?
+  #endif
+}
+@_hasMissingDesignatedInitializers public class JupiterNetworkConstants {
+  public static func setOnPremise(baseURL: Swift.String)
+  public static func setServerURL(cloud: Swift.String, region: Swift.String, dev: Swift.Bool = false)
+  public static func getUserBaseURL() -> Swift.String
+  public static func getRecBaseURL() -> Swift.String
+  public static func getCalcBaseURL() -> Swift.String
+  public static func getUserExternalMappingVersion() -> Swift.String
+  public static func getUserFileUploadServerVersion() -> Swift.String
+  public static func getRecRfdServerVersion() -> Swift.String
+  public static func getRecUvdServerVersion() -> Swift.String
+  public static func getRecMobileResultServerVersion() -> Swift.String
+  public static func getUserExternalMappingURL() -> Swift.String
+  public static func getUserFileUploadURL() -> Swift.String
+  public static func getRecRfdURL() -> Swift.String
+  public static func getRecUvdURL() -> Swift.String
+  public static func getRecMobileResultURL() -> Swift.String
+  public static func getRecMobileEventURL() -> Swift.String
+  public static func getCalcDirsServerVersion() -> Swift.String
+  public static func getCalcDirsURL() -> Swift.String
+  public static func getLocationSingleEpochURL() -> Swift.String
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class JupiterOnPremiseNetworkConstants {
+  public static func setBaseURL(_ url: Swift.String)
+  public static func isEnabled() -> Swift.Bool
+  public static func getUserExternalMappingURL() -> Swift.String
+  public static func getUserFileUploadURL() -> Swift.String
+  public static func getRecRfdURL() -> Swift.String
+  public static func getRecUvdURL() -> Swift.String
+  public static func getRecMobileResultURL() -> Swift.String
+  public static func getRecMobileEventURL() -> Swift.String
+  public static func getCalcDirsURL() -> Swift.String
+  public static func getLocationSingleEpochURL() -> Swift.String
+  @objc deinit
+}
+extension Swift.Array where Element : Swift.BinaryInteger {
+  public var average: Swift.Double {
+    get
+  }
+}
+extension Swift.Array where Element : Swift.BinaryFloatingPoint {
+  public var average: Swift.Double {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class JupiterLogger {
+  public static func setDebugOption(set: Swift.Bool)
+  public static func setInfoOption(set: Swift.Bool)
+  @objc deinit
+}
+extension Foundation.NSNotification.Name {
+  public static let bluetoothReady: Foundation.Notification.Name
+  public static let startScan: Foundation.Notification.Name
+  public static let stopScan: Foundation.Notification.Name
+  public static let foundDevice: Foundation.Notification.Name
+  public static let deviceConnected: Foundation.Notification.Name
+  public static let deviceReady: Foundation.Notification.Name
+  public static let didReceiveData: Foundation.Notification.Name
+  public static let scanInfo: Foundation.Notification.Name
+  public static let notificationEnabled: Foundation.Notification.Name
+  public static let serviceStarted: Foundation.Notification.Name
+  public static let didEnterBackground: Foundation.Notification.Name
+  public static let didBecomeActive: Foundation.Notification.Name
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class JupiterFileUploader : ObjectiveC.NSObject, Foundation.URLSessionTaskDelegate {
+  public static let shared: TJLabsJupiter.JupiterFileUploader
+  public func getReplayFilesInExports() -> (rfdFiles: [(name: Swift.String, path: Swift.String)], uvdFiles: [(name: Swift.String, path: Swift.String)], eventFiles: [(name: Swift.String, path: Swift.String)])
+  #if compiler(>=5.3) && $NonescapableTypes
+  @objc public func urlSession(_ session: Foundation.URLSession, task: Foundation.URLSessionTask, didCompleteWithError error: (any Swift.Error)?)
+  #endif
+  @objc deinit
+}
+extension TJLabsJupiter.JupiterMockMode : Swift.Equatable {}
+extension TJLabsJupiter.JupiterMockMode : Swift.Hashable {}
+extension TJLabsJupiter.JupiterMockMode : Swift.RawRepresentable {}
+extension TJLabsJupiter.JupiterCloud : Swift.Equatable {}
+extension TJLabsJupiter.JupiterCloud : Swift.Hashable {}
+extension TJLabsJupiter.JupiterCloud : Swift.RawRepresentable {}
+extension TJLabsJupiter.JupiterRegion : Swift.Equatable {}
+extension TJLabsJupiter.JupiterRegion : Swift.Hashable {}
+extension TJLabsJupiter.JupiterRegion : Swift.RawRepresentable {}
+extension TJLabsJupiter.InitErrorCode : Swift.Equatable {}
+extension TJLabsJupiter.InitErrorCode : Swift.Hashable {}
+extension TJLabsJupiter.InitErrorCode : Swift.RawRepresentable {}
+extension TJLabsJupiter.JupiterErrorCode : Swift.Equatable {}
+extension TJLabsJupiter.JupiterErrorCode : Swift.Hashable {}
+extension TJLabsJupiter.JupiterErrorCode : Swift.RawRepresentable {}
+extension TJLabsJupiter.JupiterServiceStage : Swift.Hashable {}
+extension TJLabsJupiter.JupiterServiceCode : Swift.Equatable {}
+extension TJLabsJupiter.JupiterServiceCode : Swift.Hashable {}
+extension TJLabsJupiter.JupiterServiceCode : Swift.RawRepresentable {}
+extension TJLabsJupiter.JupiterPhase : Swift.Equatable {}
+extension TJLabsJupiter.JupiterPhase : Swift.Hashable {}
+extension TJLabsJupiter.InOutState : Swift.Equatable {}
+extension TJLabsJupiter.InOutState : Swift.Hashable {}
+extension TJLabsJupiter.InOutState : Swift.RawRepresentable {}
+extension TJLabsJupiter.BuildingLevelChangeState : Swift.Equatable {}
+extension TJLabsJupiter.BuildingLevelChangeState : Swift.Hashable {}
+extension TJLabsJupiter.BuildingLevelChangeState : Swift.RawRepresentable {}
+extension TJLabsJupiter.NavigationRoutePointType : Swift.Equatable {}
+extension TJLabsJupiter.NavigationRoutePointType : Swift.Hashable {}
+extension TJLabsJupiter.NavigationRoutePointType : Swift.RawRepresentable {}
+extension TJLabsJupiter.DirRqType : Swift.Equatable {}
+extension TJLabsJupiter.DirRqType : Swift.Hashable {}
+extension TJLabsJupiter.DirRqType : Swift.RawRepresentable {}
+extension TJLabsJupiter.NavigationRouteFailureReason : Swift.Equatable {}
+extension TJLabsJupiter.NavigationRouteFailureReason : Swift.Hashable {}
+extension TJLabsJupiter.NavigationRouteFailureReason : Swift.RawRepresentable {}

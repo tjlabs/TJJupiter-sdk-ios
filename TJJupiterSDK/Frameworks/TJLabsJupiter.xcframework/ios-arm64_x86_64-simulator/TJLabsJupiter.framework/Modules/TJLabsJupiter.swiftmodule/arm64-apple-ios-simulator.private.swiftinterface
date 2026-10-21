@@ -721,6 +721,7 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   public func isJupiterPhaseChanged(index: Swift.Int, phase: TJLabsJupiter.JupiterPhase, xyh: [Swift.Float]?)
   #endif
   weak public var delegate: (any TJLabsJupiter.NavigationManagerDelegate)?
+  public static let DEFAULT_PEDESTRIAN_ROUTE_MATCHING_RADIUS: Swift.Float
   #if compiler(>=5.3) && $NonescapableTypes
   convenience public init(id: Swift.String, cloud: Swift.String = JupiterCloud.GCP.rawValue, region: Swift.String = JupiterRegion.KOREA.rawValue, sectorId: Swift.Int, debugOption: Swift.Bool = false, uploadOption: Swift.Bool = false, dev: Swift.Bool = false, onPremiseBaseURL: Swift.String? = nil)
   #endif
@@ -759,6 +760,8 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   @discardableResult
   public func setMobileResultReplayMode(flag: Swift.Bool, fileName: Swift.String) -> Swift.Bool
   public func setMockMode(mode: TJLabsJupiter.JupiterMockMode, sectorId: Swift.Int, completion: @escaping (Swift.Bool) -> Swift.Void)
+  public func setPedestrianPathMatching(enabled: Swift.Bool)
+  public func setPedestrianRouteMatching(enabled: Swift.Bool, radius: Swift.Float = DEFAULT_PEDESTRIAN_ROUTE_MATCHING_RADIUS)
   public func cancelNavigation()
   public func setLSEAppName(name: Swift.String)
   #if compiler(>=5.3) && $NonescapableTypes

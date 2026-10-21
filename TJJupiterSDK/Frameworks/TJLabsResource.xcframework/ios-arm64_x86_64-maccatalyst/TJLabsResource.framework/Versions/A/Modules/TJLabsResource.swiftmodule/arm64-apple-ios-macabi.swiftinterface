@@ -603,6 +603,7 @@ public class TJLabsMultiResourceManager {
   public static let shared: TJLabsResource.TJLabsMultiResourceManager
   public init(resourceManager: TJLabsResource.TJLabsResourceManager = .shared)
   public func loadResources(cloud: Swift.String, region: Swift.String, sectorIds: [Swift.Int], landmarkTh: Swift.Float = -90, forceUpdate: Swift.Bool = false, dev: Swift.Bool = false, includeImages: Swift.Bool = true, completion: @escaping (TJLabsResource.ResourceLoadResult) -> Swift.Void)
+  public func loadOnPremiseResources(baseURL: Swift.String, region: Swift.String = ResourceRegion.KOREA.rawValue, sectorIds: [Swift.Int], landmarkTh: Swift.Float = -90, forceUpdate: Swift.Bool = false, includeImages: Swift.Bool = true, completion: @escaping (TJLabsResource.ResourceLoadResult) -> Swift.Void)
   @objc deinit
 }
 @_hasMissingDesignatedInitializers public class TJLabsResourceCode {
@@ -718,6 +719,7 @@ public enum ResourceOnPremiseService : Swift.String {
   public static func isEnabled() -> Swift.Bool
   public static func getUserBaseURL() -> Swift.String
   public static func getUserSectorBundleURL() -> Swift.String
+  public static func getUserMultiSectorBundleURL() -> Swift.String
   @objc deinit
 }
 extension TJLabsResource.ResourceError : Swift.Equatable {}
