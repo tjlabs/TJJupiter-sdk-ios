@@ -77,9 +77,15 @@ public enum JupiterServiceCode: Int {
 
 public enum NavigationRouteFailureReason: String, Codable {
     case unknown = "unknown"
-    case serverResponse = "server_response"
-    case networkError = "network_error"
-    case tooClose = "too_close"
+    case tooClose = "too_close"                 // 같은 층 출발~목적지 직선거리가 최소 거리 이하라 요청하지 않음
+    case networkError = "network_error"         // 서버 미도달(타임아웃/연결끊김 등)
+    case requestError = "request_error"         // 요청 생성 실패(인코딩/URL/access token)
+    case requestRejected = "request_rejected"   // 서버가 4xx 로 거절
+    case serverError = "server_error"           // 서버가 5xx 로 응답
+    case invalidResponse = "invalid_response"   // 서버 응답 해석 실패
+    case invalidRoute = "invalid_route"         // 응답 경로를 로드된 지도 정보로 구성하지 못함
+    case notReady = "not_ready"                 // 서비스가 시작되지 않음
+    case cancelled = "cancelled"                // 응답 전에 서비스가 중지됨
 }
 
 public enum JupiterMockMode: String {
