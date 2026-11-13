@@ -120,6 +120,7 @@ public enum JupiterErrorCode : Swift.Int {
   public static let successStatus: Swift.Int
   public static let timeoutStatus: Swift.Int
   public static let connectionLostStatus: Swift.Int
+  public static let requestBuildFailureStatus: Swift.Int
   public static let unclassifiedFailureStatus: Swift.Int
   #if compiler(>=5.3) && $NonescapableTypes
   public static func isServerReported(statusCode: Swift.Int?) -> Swift.Bool
@@ -142,6 +143,12 @@ public enum JupiterErrorCode : Swift.Int {
   public static let buildingLevelChange: Swift.Int
   public static let exiting: Swift.Int
   public static let rfdGenerator: Swift.Int
+  public static let routingTooCloseWarn: Swift.Int
+  public static let routingRequestBuildError: Swift.Int
+  public static let routingNetworkError: Swift.Int
+  public static let routingDecodeError: Swift.Int
+  public static let routingInvalidRouteError: Swift.Int
+  public static let routingNotReadyError: Swift.Int
   @objc deinit
 }
 public enum JupiterServiceStage : Swift.Equatable {
@@ -601,9 +608,15 @@ public struct RoutingResult : Swift.Codable {
   public init(from decoder: any Swift.Decoder) throws
 }
 public enum NavigationRouteFailureReason : Swift.String, Swift.Codable {
-  case serverResponse
-  case networkError
   case tooClose
+  case networkError
+  case requestError
+  case requestRejected
+  case serverError
+  case invalidResponse
+  case invalidRoute
+  case notReady
+  case cancelled
   #if compiler(>=5.3) && $NonescapableTypes
   public init?(rawValue: Swift.String)
   #endif
@@ -722,6 +735,9 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   #endif
   weak public var delegate: (any TJLabsJupiter.NavigationManagerDelegate)?
   public static let DEFAULT_PEDESTRIAN_ROUTE_MATCHING_RADIUS: Swift.Float
+  public static let DEFAULT_VEHICLE_ROUTE_FOLLOWING_DISTANCE: Swift.Float
+  public static let DEFAULT_VEHICLE_SEARCH_GUIDANCE_OUT_DISTANCE: Swift.Float
+  public static let DEFAULT_VEHICLE_SEARCH_GUIDANCE_OUT_COUNT: Swift.Int
   #if compiler(>=5.3) && $NonescapableTypes
   convenience public init(id: Swift.String, cloud: Swift.String = JupiterCloud.GCP.rawValue, region: Swift.String = JupiterRegion.KOREA.rawValue, sectorId: Swift.Int, debugOption: Swift.Bool = false, uploadOption: Swift.Bool = false, dev: Swift.Bool = false, onPremiseBaseURL: Swift.String? = nil)
   #endif
@@ -760,10 +776,15 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   @discardableResult
   public func setMobileResultReplayMode(flag: Swift.Bool, fileName: Swift.String) -> Swift.Bool
   public func setMockMode(mode: TJLabsJupiter.JupiterMockMode, sectorId: Swift.Int, completion: @escaping (Swift.Bool) -> Swift.Void)
+  public func reportRoutingPreconditionFailure(source: Swift.String, reason: Swift.String, input: [Swift.String : TJLabsJupiter.JSONValue], detail: [Swift.String : TJLabsJupiter.JSONValue] = [:])
   public func setPedestrianPathMatching(enabled: Swift.Bool)
   public func setPedestrianRouteMatching(enabled: Swift.Bool, radius: Swift.Float = DEFAULT_PEDESTRIAN_ROUTE_MATCHING_RADIUS)
+  public func setVehicleRouteFollowingDistance(_ distance: Swift.Float)
+  public func setVehicleSearchGuidanceOutDistance(_ distance: Swift.Float)
+  public func setVehicleSearchGuidanceOutCount(_ count: Swift.Int)
   public func cancelNavigation()
   public func setLSEAppName(name: Swift.String)
+  public func setLSEUseRfdWindow(enabled: Swift.Bool)
   #if compiler(>=5.3) && $NonescapableTypes
   public func getMatchedLevelId(key: Swift.String) -> Swift.Int?
   #endif
