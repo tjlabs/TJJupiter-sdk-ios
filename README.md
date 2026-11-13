@@ -341,9 +341,15 @@ public enum JupiterServiceCode: Int {
 ```swift
 public enum NavigationRouteFailureReason: String {
     case unknown = "unknown"
-    case serverResponse = "server_response"
-    case networkError = "network_error"
-    case tooClose = "too_close"
+    case tooClose = "too_close"                 // destination is too close to the origin on the same level
+    case networkError = "network_error"         // server unreachable (timeout, connection lost, ...)
+    case requestError = "request_error"         // failed to build the request (encoding, URL, access token)
+    case requestRejected = "request_rejected"   // server rejected the request (4xx)
+    case serverError = "server_error"           // server error (5xx)
+    case invalidResponse = "invalid_response"   // failed to parse the server response
+    case invalidRoute = "invalid_route"         // the returned route does not match the loaded map
+    case notReady = "not_ready"                 // service has not been started
+    case cancelled = "cancelled"                // service stopped before the response arrived
 }
 ```
 

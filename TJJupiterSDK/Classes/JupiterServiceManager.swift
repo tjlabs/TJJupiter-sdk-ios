@@ -26,6 +26,7 @@ private extension NSLock {
 }
 
 public class JupiterServiceManager: NavigationManagerDelegate {
+    public static let sdkVersion = "2.0.23"
     
     private enum ServiceState {
         case stopped
@@ -44,8 +45,7 @@ public class JupiterServiceManager: NavigationManagerDelegate {
         case start(ServiceRequest)
         case stop
     }
-
-    public static let sdkVersion = "2.0.20"
+    
     private let lifecycleLock = NSLock()
     private var serviceState: ServiceState = .stopped
     private var activeRequest: ServiceRequest?
@@ -113,12 +113,13 @@ public class JupiterServiceManager: NavigationManagerDelegate {
 
     /// 멀티 섹터 초기화. `sectorIds` 의 리소스를 한 번에 로드한다. 서비스할 섹터는 `startService(mode:sectorId:)` 에서 지정한다.
     /// 하나라도 로드에 실패하면 init 실패(`onInitSuccess(false, .LOAD_RESOURCE_FAIL)`)다.
+    /// `debugOption` 이 true 면 이번 세션 RFD/UVD/EVENT 파일을 저장하고, 서비스 시작 시 지난 세션 파일을 서버로 업로드한다.
     public init(id: String, region: String, sectorIds: [Int], debugOption: Bool = false) {
         let dev = tjBranch == .DEV
         self.isDev = tjBranch == .DEV
 
         JupiterLogger.setDebugOption(set: false)
-        let navigationManager = NavigationManager(id: id, region: region, sectorIds: sectorIds, debugOption: debugOption, dev: dev)
+        let navigationManager = NavigationManager(id: id, region: region, sectorIds: sectorIds, debugOption: debugOption, uploadOption: debugOption, dev: dev)
         self.id = id
         self.serviceManager = navigationManager
         // 인증/네트워크 실패는 initialize() 안에서 동기적으로 통지되므로 delegate 를 먼저 연결한다.
