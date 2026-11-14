@@ -15395,7 +15395,7 @@
       "kind": "FloatLiteral",
       "offset": 572,
       "length": 3,
-      "value": "0.5"
+      "value": "0.2"
     },
     {
       "filePath": "\/Users\/leo\/SwiftProjects\/Frameworks\/TJLabsCommon-sdk-ios\/TJLabsCommon\/UVD\/PDR\/TJLabsStepLengthEstimator.swift",

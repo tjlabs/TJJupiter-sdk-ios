@@ -10,7 +10,7 @@
 		</data>
 		<key>ios-arm64/TJLabsAuth.framework/Info.plist</key>
 		<data>
-		I3HgtuhMJjcvrDTmGXZw/rJvvcE=
+		9wK8W2cFmHhWdjKgGBaZV5M1mSY=
 		</data>
 		<key>ios-arm64/TJLabsAuth.framework/Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.abi.json</key>
 		<data>
@@ -34,15 +34,15 @@
 		</data>
 		<key>ios-arm64/TJLabsAuth.framework/TJLabsAuth</key>
 		<data>
-		PQ44ibg3Rg+/43xEZw3m2Q7nHV0=
+		PNtTsDygwH/kqlT9lP7Y4SGwXz8=
 		</data>
 		<key>ios-arm64/TJLabsAuth.framework/TJLabsAuthSecretConfig.plist</key>
 		<data>
-		Cnf3InZXkdS/ORgVNVmIUhxHQkM=
+		odiaQfbfZTyqf8YkGqwkx5LcHY4=
 		</data>
 		<key>ios-arm64/TJLabsAuth.framework/_CodeSignature/CodeResources</key>
 		<data>
-		y3KoZVehqjK7nwoRtYtrBh3TCno=
+		zvwufW9GzPdBzbcDuKIDZ2zxmgQ=
 		</data>
 		<key>ios-arm64/dSYMs/TJLabsAuth.framework.dSYM/Contents/Info.plist</key>
 		<data>
@@ -98,19 +98,19 @@
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/TJLabsAuth.framework/Versions/A/Resources/Info.plist</key>
 		<data>
-		6xZkrSQKAR6RWV90RBM4e7e3tXM=
+		OMY/fZfGMQnsli6vEDYr0f6CjUA=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/TJLabsAuth.framework/Versions/A/Resources/TJLabsAuthSecretConfig.plist</key>
 		<data>
-		1Z0yEI337f9hDY3S9vBAcy/IX0M=
+		mtRDbmkAq3Y4kIbhKFTder/NyKc=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/TJLabsAuth.framework/Versions/A/TJLabsAuth</key>
 		<data>
-		Ai0pOtF9H6S0Zox2hCSi55pOkg4=
+		T7PoLCJ+vxrJzYvXuwxC1n+aBAE=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/TJLabsAuth.framework/Versions/A/_CodeSignature/CodeResources</key>
 		<data>
-		q+wRrFVrHAyBt6RUSAvHWNs2J4k=
+		KiLPEed155w/mteIE3dyncDz4bo=
 		</data>
 		<key>ios-arm64_x86_64-maccatalyst/dSYMs/TJLabsAuth.framework.dSYM/Contents/Info.plist</key>
 		<data>
@@ -134,7 +134,7 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsAuth.framework/Info.plist</key>
 		<data>
-		Lbdweip6uKE3o3NsF+zeSdLQX6k=
+		8oABEb3nhkEJqORWCyt0E2EiUfA=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsAuth.framework/Modules/TJLabsAuth.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -174,15 +174,15 @@
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsAuth.framework/TJLabsAuth</key>
 		<data>
-		LA/L4g5Dk51AHFUrGGsKXADNeBo=
+		8RdLsSqH/PplRsemJis8IbbHA1A=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsAuth.framework/TJLabsAuthSecretConfig.plist</key>
 		<data>
-		Cnf3InZXkdS/ORgVNVmIUhxHQkM=
+		odiaQfbfZTyqf8YkGqwkx5LcHY4=
 		</data>
 		<key>ios-arm64_x86_64-simulator/TJLabsAuth.framework/_CodeSignature/CodeResources</key>
 		<data>
-		8e1dJDtSLoLz+Ij3GoclV0CBj6Q=
+		JrCotiED4P+f3CA6nJvMHG9zBdA=
 		</data>
 		<key>ios-arm64_x86_64-simulator/dSYMs/TJLabsAuth.framework.dSYM/Contents/Info.plist</key>
 		<data>
@@ -214,7 +214,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YMoNfuGC9u1+A0mz1x8Oc68WMdIzgm/jbjyqk9LEwyk=
+			22oyWTfT17BDK+y66kQvPUy0R5ICgG+mKOGuCImS/fg=
 			</data>
 		</dict>
 		<key>ios-arm64/TJLabsAuth.framework/Modules/TJLabsAuth.swiftmodule/arm64-apple-ios.abi.json</key>
@@ -256,21 +256,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			TplGgCRMEH98KPasm/wrNEhM1NJVM6wDWREq717aYVo=
+			GTZg8UV+v98fBawbRvaqYyb3YMxmTDUSTxIZ+0mBsss=
 			</data>
 		</dict>
 		<key>ios-arm64/TJLabsAuth.framework/TJLabsAuthSecretConfig.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pl7hl0iBkWaMQgALF8tFyzUebkRtkraNHw5PEelU7ho=
+			MDrrjyZ9ajrEJfFVaGFTo8nqQ4EXvvfWMosEpy6Ti3E=
 			</data>
 		</dict>
 		<key>ios-arm64/TJLabsAuth.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XvEIWVMziqR051WsAn2p5fdQXPY/gTebxIx7W3Z64Tc=
+			i5WfpfbyBTlRj4w7LP/z7aCM5PzOACTxh0tekzIW8oA=
 			</data>
 		</dict>
 		<key>ios-arm64/dSYMs/TJLabsAuth.framework.dSYM/Contents/Info.plist</key>
@@ -388,28 +388,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			u7migNzH3Ak5zY5QS2dDEfHsW44XqdUy/dbggWiknjo=
+			YsRiNOMr8rX/Y3nwU7dlb574AFm7+wAKgwLG1I7NHew=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/TJLabsAuth.framework/Versions/A/Resources/TJLabsAuthSecretConfig.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			00MD7wEM+bl69LC9mkpfvugMQDpILn14uxA4GEXGm5U=
+			nkssb7rKqg8U+0Hu+ZQnq3sHpgX+cR5Kw4Jf5qmB3BY=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/TJLabsAuth.framework/Versions/A/TJLabsAuth</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			wRDc4L4clEauliuuKF3LowZ79yBY02yg4F/yk+DGVNw=
+			XcV0PCNlLIkHMmvq7dHHSWSI74116qwYuiLIXjEGnOw=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/TJLabsAuth.framework/Versions/A/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sI1nMHjPx+lx0NVOqo9tamMagtTAYgv1xPHXe7ZSNOg=
+			w/tqCb/r6vmEUJ1QwSNRI3JZV3wNAm4EWfPO+Q39+uE=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-maccatalyst/TJLabsAuth.framework/Versions/Current</key>
@@ -456,7 +456,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			bYs4uLuyvlMWlaaMEWYP7SeTJH6Mv8MIzteL0WTZBp8=
+			PlqL8Sah6MnaxjLVljneqq3viqY16fQSs4TF26ZOe80=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TJLabsAuth.framework/Modules/TJLabsAuth.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
@@ -526,21 +526,21 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WwglCZLdnWk8t4UxDNy7LQImdEMXp0RUXbpeQ45pC0c=
+			hDtVTfnUtbMavfujc/ZrKvqN0PIgTywwlgd9FlOSZ9Y=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TJLabsAuth.framework/TJLabsAuthSecretConfig.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pl7hl0iBkWaMQgALF8tFyzUebkRtkraNHw5PEelU7ho=
+			MDrrjyZ9ajrEJfFVaGFTo8nqQ4EXvvfWMosEpy6Ti3E=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/TJLabsAuth.framework/_CodeSignature/CodeResources</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Tx3w9c8TtFBdMca1qHY8Kt/+3RhpG5NtPdDjI/nbCPo=
+			eoSGMgufdZBkAuFoKpUxa+Gx6b0Y075LDTDbZcTdpUM=
 			</data>
 		</dict>
 		<key>ios-arm64_x86_64-simulator/dSYMs/TJLabsAuth.framework.dSYM/Contents/Info.plist</key>

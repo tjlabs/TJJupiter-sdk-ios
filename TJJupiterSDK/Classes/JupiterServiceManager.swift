@@ -26,7 +26,7 @@ private extension NSLock {
 }
 
 public class JupiterServiceManager: NavigationManagerDelegate {
-    public static let sdkVersion = "2.0.23"
+    public static let sdkVersion = "2.0.24"
     
     private enum ServiceState {
         case stopped

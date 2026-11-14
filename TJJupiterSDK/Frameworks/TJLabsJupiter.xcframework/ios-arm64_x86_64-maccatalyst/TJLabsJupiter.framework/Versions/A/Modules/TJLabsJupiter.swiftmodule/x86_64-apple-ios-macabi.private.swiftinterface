@@ -688,6 +688,7 @@ public struct LSEMapMatch : Swift.Decodable {
   public let match_score: Swift.Double?
   public let bearing: Swift.Double?
   public let heading: Swift.Double?
+  public let heading_confirmed: Swift.Bool?
   public let candidates: [TJLabsJupiter.JSONValue]?
   public init(from decoder: any Swift.Decoder) throws
 }
@@ -738,6 +739,10 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   public static let DEFAULT_VEHICLE_ROUTE_FOLLOWING_DISTANCE: Swift.Float
   public static let DEFAULT_VEHICLE_SEARCH_GUIDANCE_OUT_DISTANCE: Swift.Float
   public static let DEFAULT_VEHICLE_SEARCH_GUIDANCE_OUT_COUNT: Swift.Int
+  public static let DEFAULT_BADCASE_LSE_CANDIDATE_MAX_DISTANCE: Swift.Float
+  public static let DEFAULT_LSE_LINK_GROUP_CORRECTION_COUNT: Swift.Int
+  public static let DEFAULT_LSE_LINK_GROUP_CORRECTION_MAX_LATERAL_DISTANCE: Swift.Float
+  public static let DEFAULT_LSE_LINK_GROUP_CORRECTION_PEAK_SKIP_SECONDS: Swift.Float
   #if compiler(>=5.3) && $NonescapableTypes
   convenience public init(id: Swift.String, cloud: Swift.String = JupiterCloud.GCP.rawValue, region: Swift.String = JupiterRegion.KOREA.rawValue, sectorId: Swift.Int, debugOption: Swift.Bool = false, uploadOption: Swift.Bool = false, dev: Swift.Bool = false, onPremiseBaseURL: Swift.String? = nil)
   #endif
@@ -785,6 +790,8 @@ public class NavigationManager : TJLabsJupiter.JupiterManagerDelegate {
   public func cancelNavigation()
   public func setLSEAppName(name: Swift.String)
   public func setLSEUseRfdWindow(enabled: Swift.Bool)
+  public func setBadCaseLseCandidateMaxDistance(_ distance: Swift.Float)
+  public func setLseLinkGroupCorrection(enabled: Swift.Bool, requiredCount: Swift.Int = NavigationManager.DEFAULT_LSE_LINK_GROUP_CORRECTION_COUNT, maxLateralDistance: Swift.Float = NavigationManager.DEFAULT_LSE_LINK_GROUP_CORRECTION_MAX_LATERAL_DISTANCE, peakSkipSeconds: Swift.Float = NavigationManager.DEFAULT_LSE_LINK_GROUP_CORRECTION_PEAK_SKIP_SECONDS)
   #if compiler(>=5.3) && $NonescapableTypes
   public func getMatchedLevelId(key: Swift.String) -> Swift.Int?
   #endif
